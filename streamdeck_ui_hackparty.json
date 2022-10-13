@@ -1,0 +1,655 @@
+{
+    "streamdeck_ui_version": 1,
+    "state": {
+        "AL14J2C08719": {
+            "buttons": {
+                "0": {
+                    "0": {
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/microphone-slash.png",
+                        "text": "Mic",
+                        "command": "./mute_mics.sh",
+                        "keys": "",
+                        "write": "",
+                        "switch_page": 0
+                    },
+                    "1": {
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/windows.png",
+                        "text": "Split Screen",
+                        "command": "./press_obs_shortcut.sh ctrl+alt+n",
+                        "keys": "",
+                        "write": ""
+                    },
+                    "2": {
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/gamepad.png",
+                        "text": "Game",
+                        "command": "./press_obs_shortcut.sh ctrl+shift+g",
+                        "keys": "",
+                        "write": ""
+                    },
+                    "3": {
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/file-video-o.png",
+                        "text": "Video",
+                        "command": "./press_obs_shortcut.sh ctrl+shift+l",
+                        "keys": "",
+                        "write": ""
+                    },
+                    "4": {
+                        "write": "",
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/chevron-right.png",
+                        "switch_page": 2,
+                        "command": ""
+                    },
+                    "5": {
+                        "command": "./press_obs_shortcut.sh ctrl+shift+F1",
+                        "keys": "",
+                        "write": "",
+                        "text": "T-Left",
+                        "icon": "/home/rspectre/Storage/workspace/streamdeck/images/window-restore.png"
+                    },
+                    "6": {
+                        "command": "./press_obs_shortcut.sh ctrl+shift+F2",
+                        "keys": "",
+                        "write": "",
+                        "text": "T-Right",
+                        "icon": "/home/rspectre/Storage/workspace/streamdeck/images/window-restore.png"
+                    },
+                    "7": {
+                        "command": "./press_obs_shortcut.sh ctrl+shift+F3",
+                        "keys": "",
+                        "text": "Game Board",
+                        "icon": "/home/rspectre/Storage/workspace/streamdeck/images/window-maximize.png",
+                        "write": ""
+                    },
+                    "8": {
+                        "command": "./press_obs_shortcut.sh ctrl+shift+f",
+                        "keys": "",
+                        "text": "Face",
+                        "icon": "/home/rspectre/Storage/workspace/streamdeck/images/user-circle.png",
+                        "write": "",
+                        "switch_page": 0
+                    },
+                    "9": {
+                        "command": "./press_obs_shortcut.sh ctrl+shift+F5",
+                        "keys": "",
+                        "text": "Ada Cam",
+                        "icon": "/home/rspectre/Storage/workspace/streamdeck/images/optin-monster.png",
+                        "write": ""
+                    },
+                    "10": {
+                        "command": "./press_obs_shortcut.sh ctrl+shift+F6",
+                        "write": "",
+                        "icon": "/home/rspectre/Storage/workspace/streamdeck/images/window-restore.png",
+                        "keys": "",
+                        "switch_page": 0,
+                        "text": "B-Left"
+                    },
+                    "11": {
+                        "command": "./press_obs_shortcut.sh ctrl+shift+F7",
+                        "keys": "",
+                        "write": "",
+                        "text": "B-Right",
+                        "icon": "/home/rspectre/Storage/workspace/streamdeck/images/window-restore.png"
+                    },
+                    "12": {
+                        "command": "./press_obs_shortcut.sh ctrl+shift+i",
+                        "keys": "",
+                        "text": "PiP",
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/file-video-o.png",
+                        "write": ""
+                    },
+                    "13": {
+                        "command": "./press_obs_shortcut.sh ctrl+shift+F12",
+                        "keys": "",
+                        "text": "Chroma Key",
+                        "icon": "/home/rspectre/Storage/workspace/streamdeck/images/user.png",
+                        "write": ""
+                    },
+                    "14": {
+                        "command": "./press_obs_shortcut.sh ctrl+shift+l",
+                        "keys": "",
+                        "write": "",
+                        "text": "Office",
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/desktop.png"
+                    }
+                },
+                "1": {
+                    "0": {
+                        "write": "",
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/chevron-left.png",
+                        "switch_page": 1,
+                        "command": ""
+                    },
+                    "1": {
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/space-shuttle.png",
+                        "command": "./press_obs_shortcut.sh ctrl+alt+p",
+                        "text": "UFO"
+                    },
+                    "2": {
+                        "command": "./press_obs_shortcut.sh ctrl+alt+k",
+                        "keys": "",
+                        "write": "",
+                        "text": "Aw Snap",
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/snapchat.png",
+                        "switch_page": 0
+                    },
+                    "3": {
+                        "command": "./press_obs_shortcut.sh ctrl+alt+j",
+                        "keys": "",
+                        "write": "",
+                        "text": "Toasty",
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fire.png",
+                        "switch_page": 0
+                    },
+                    "4": {
+                        "write": "",
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/chevron-right.png",
+                        "switch_page": 3,
+                        "command": ""
+                    },
+                    "5": {
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fire.png",
+                        "text": "He's On Fire",
+                        "command": "./press_obs_shortcut.sh ctrl+alt+x"
+                    },
+                    "6": {
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/black-tie.png",
+                        "command": "./press_obs_shortcut.sh ctrl+alt+z",
+                        "text": "To Be Fair"
+                    },
+                    "7": {
+                        "command": "./press_obs_shortcut.sh ctrl+alt+q",
+                        "keys": "",
+                        "write": "",
+                        "text": "Sad",
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/thumbs-down.png",
+                        "switch_page": 0
+                    },
+                    "8": {
+                        "command": "./press_obs_shortcut.sh ctrl+alt+y",
+                        "keys": "",
+                        "write": "",
+                        "text": "Winner",
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/certificate.png",
+                        "switch_page": 0
+                    },
+                    "9": {
+                        "command": "./press_obs_shortcut.sh ctrl+alt+u",
+                        "keys": "",
+                        "write": "",
+                        "text": "Vibing",
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/optin-monster.png",
+                        "switch_page": 0
+                    },
+                    "10": {
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/coffee.png",
+                        "text": "Hyper",
+                        "command": "./press_obs_shortcut.sh ctrl+alt+l"
+                    },
+                    "11": {
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/bug.png",
+                        "text": "Crickets",
+                        "command": "./press_obs_shortcut.sh ctrl+alt+f"
+                    },
+                    "12": {
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/thumbs-up.png",
+                        "text": "Laughs",
+                        "command": "./press_obs_shortcut.sh ctrl+alt+b"
+                    },
+                    "13": {
+                        "command": "./press_obs_shortcut.sh ctrl+alt+i",
+                        "keys": "",
+                        "write": "",
+                        "text": "Bitcoin",
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/bitcoin.png",
+                        "switch_page": 0
+                    },
+                    "14": {
+                        "command": "./press_obs_shortcut.sh ctrl+alt+semicolon",
+                        "keys": "",
+                        "write": ";",
+                        "text": "Virus",
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/bug.png",
+                        "switch_page": 0
+                    }
+                },
+                "2": {
+                    "0": {
+                        "write": "",
+                        "command": "",
+                        "switch_page": 2,
+                        "keys": "",
+                        "text": "",
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/chevron-left.png"
+                    },
+                    "1": {
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/folder-open.png",
+                        "text": "Next Tab",
+                        "command": "xdotool search --name 'Google Keep' windowactivate && xdotool key ctrl+Page_Down"
+                    },
+                    "2": {
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/folder.png",
+                        "text": "Close Tab",
+                        "command": "xdotool search --name 'Google Keep' windowactivate && xdotool key ctrl+w"
+                    },
+                    "3": {
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/check.png",
+                        "text": "1",
+                        "command": "./press_hack_party_shortcut.sh alt+a"
+                    },
+                    "4": {
+                        "write": "",
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/chevron-right.png",
+                        "switch_page": 4,
+                        "command": ""
+                    },
+                    "5": {
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/refresh.png",
+                        "command": "./press_hack_party_shortcut.sh F5",
+                        "keys": "",
+                        "write": "",
+                        "text": ""
+                    },
+                    "6": {
+                        "write": "",
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/arrow-up.png",
+                        "command": "./press_hack_party_shortcut.sh Up",
+                        "keys": "",
+                        "switch_page": 0
+                    },
+                    "7": {
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/check-square.png",
+                        "text": "Enter",
+                        "command": "./press_hack_party_shortcut.sh alt+z"
+                    },
+                    "8": {
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/check.png",
+                        "text": "2",
+                        "command": "./press_hack_party_shortcut.sh alt+b"
+                    },
+                    "9": {
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/check.png",
+                        "text": "4",
+                        "command": "./press_hack_party_shortcut.sh alt+d"
+                    },
+                    "10": {
+                        "write": "",
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/arrow-left.png",
+                        "command": "./press_hack_party_shortcut.sh Left",
+                        "keys": ""
+                    },
+                    "11": {
+                        "write": "",
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/arrow-down.png",
+                        "command": "./press_hack_party_shortcut.sh Down",
+                        "keys": ""
+                    },
+                    "12": {
+                        "write": "",
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/arrow-right.png",
+                        "command": "./press_hack_party_shortcut.sh Right",
+                        "keys": ""
+                    },
+                    "13": {
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/check.png",
+                        "text": "3",
+                        "command": "./press_hack_party_shortcut.sh alt+c"
+                    },
+                    "14": {
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/check.png",
+                        "text": "5",
+                        "command": "./press_hack_party_shortcut.sh alt+e"
+                    }
+                },
+                "3": {
+                    "0": {
+                        "write": "",
+                        "command": "",
+                        "switch_page": 3,
+                        "keys": "",
+                        "text": "",
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/chevron-left.png"
+                    },
+                    "1": {
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/keyboard-o.png",
+                        "text": "7",
+                        "command": "./press_hack_party_shortcut.sh KP_7"
+                    },
+                    "2": {
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/keyboard-o.png",
+                        "text": "8",
+                        "command": "./press_hack_party_shortcut.sh KP_8"
+                    },
+                    "3": {
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/keyboard-o.png",
+                        "text": "9",
+                        "command": "./press_hack_party_shortcut.sh KP_9"
+                    },
+                    "4": {
+                        "write": "",
+                        "command": "",
+                        "switch_page": 5,
+                        "keys": "",
+                        "text": "",
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/chevron-right.png"
+                    },
+                    "5": {
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/dot-circle-o.png",
+                        "text": "Decimal",
+                        "command": "./press_hack_party_shortcut.sh period "
+                    },
+                    "6": {
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/keyboard-o.png",
+                        "text": "4",
+                        "command": "./press_hack_party_shortcut.sh KP_4"
+                    },
+                    "7": {
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/keyboard-o.png",
+                        "text": "5",
+                        "command": "./press_hack_party_shortcut.sh KP_5"
+                    },
+                    "8": {
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/keyboard-o.png",
+                        "text": "6",
+                        "command": "./press_hack_party_shortcut.sh KP_6"
+                    },
+                    "9": {
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/backward.png",
+                        "text": "Backspace",
+                        "command": "./press_hack_party_shortcut.sh BackSpace"
+                    },
+                    "10": {
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/check-square-o.png",
+                        "command": "./press_hack_party_shortcut.sh alt+i",
+                        "text": "Input"
+                    },
+                    "11": {
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/keyboard-o.png",
+                        "text": "1",
+                        "command": "./press_hack_party_shortcut.sh KP_1"
+                    },
+                    "12": {
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/keyboard-o.png",
+                        "text": "2",
+                        "command": "./press_hack_party_shortcut.sh KP_2"
+                    },
+                    "13": {
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/keyboard-o.png",
+                        "text": "3",
+                        "command": "./press_hack_party_shortcut.sh KP_3"
+                    },
+                    "14": {
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/check-square.png",
+                        "text": "Enter",
+                        "command": "./press_hack_party_shortcut.sh Return"
+                    }
+                },
+                "4": {
+                    "0": {
+                        "write": "",
+                        "command": "",
+                        "switch_page": 4,
+                        "keys": "",
+                        "text": "",
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/chevron-left.png"
+                    },
+                    "1": {
+                        "write": "",
+                        "switch_page": 0,
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/image.png",
+                        "text": "Mars",
+                        "command": "./press_obs_shortcut.sh ctrl+alt+m",
+                        "keys": ""
+                    },
+                    "2": {
+                        "write": "",
+                        "switch_page": 0,
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/image.png",
+                        "text": "'Merica",
+                        "command": "./press_obs_shortcut.sh ctrl+alt+a",
+                        "keys": ""
+                    },
+                    "3": {
+                        "write": "",
+                        "switch_page": 0,
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/image.png",
+                        "text": "Space Golf",
+                        "command": "./press_obs_shortcut.sh ctrl+alt+g",
+                        "keys": ""
+                    },
+                    "4": {
+                        "write": "",
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/chevron-right.png",
+                        "switch_page": 6,
+                        "command": ""
+                    },
+                    "5": {
+                        "write": "",
+                        "switch_page": 0,
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/image.png",
+                        "text": "Code Grid",
+                        "command": "./press_obs_shortcut.sh ctrl+alt+v",
+                        "keys": ""
+                    },
+                    "6": {
+                        "write": "",
+                        "switch_page": 0,
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/image.png",
+                        "text": "Space HUD",
+                        "command": "./press_obs_shortcut.sh ctrl+alt+c",
+                        "keys": ""
+                    },
+                    "7": {
+                        "write": "",
+                        "switch_page": 0,
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/image.png",
+                        "text": "Medical HUD",
+                        "command": "./press_obs_shortcut.sh ctrl+alt+w",
+                        "keys": ""
+                    },
+                    "8": {
+                        "write": "",
+                        "switch_page": 0,
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/image.png",
+                        "text": "Topical",
+                        "command": "./press_obs_shortcut.sh ctrl+alt+h",
+                        "keys": ""
+                    },
+                    "9": {
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/image.png",
+                        "text": "Spooky",
+                        "command": "./press_obs_shortcut.sh ctrl+alt+s",
+                        "keys": ""
+                    },
+                    "10": {
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/image.png",
+                        "command": "./press_obs_shortcut.sh ctrl+alt+r",
+                        "keys": "",
+                        "text": "Record Store"
+                    },
+                    "11": {
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/image.png",
+                        "text": "Comic Book",
+                        "command": "./press_obs_shortcut.sh ctrl+alt+apostrophe"
+                    },
+                    "12": {
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/image.png",
+                        "text": "Pitfall",
+                        "command": "./press_obs_shortcut.sh ctrl+alt+slash"
+                    },
+                    "13": {
+                        "command": "./press_obs_shortcut.sh ctrl+alt+period",
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/image.png",
+                        "text": "BotW"
+                    },
+                    "14": {
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/image.png",
+                        "text": "CC",
+                        "command": "./press_obs_shortcut.sh ctrl+alt+bracketright",
+                        "text_vertical_align": ""
+                    }
+                },
+                "5": {
+                    "0": {
+                        "write": "",
+                        "command": "",
+                        "switch_page": 5,
+                        "keys": "",
+                        "text": "",
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/chevron-left.png"
+                    },
+                    "1": {
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/lightbulb-o.png",
+                        "command": "python control_lights.py toggle"
+                    },
+                    "2": {
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/lightbulb-o.png",
+                        "text": "Key",
+                        "command": "python control_lights.py toggle --light Key",
+                        "write": "",
+                        "switch_page": 0
+                    },
+                    "3": {
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/lightbulb-o.png",
+                        "text": "Fill",
+                        "command": "python control_lights.py toggle --light Fill"
+                    },
+                    "4": {
+                        "write": "",
+                        "command": "",
+                        "switch_page": 7,
+                        "keys": "",
+                        "text": "",
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/chevron-right.png"
+                    },
+                    "5": {
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/plus-circle.png",
+                        "command": "python control_lights.py brighten"
+                    },
+                    "6": {
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/minus-circle.png",
+                        "command": "python control_lights.py dim"
+                    },
+                    "7": {},
+                    "8": {},
+                    "9": {
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/headphones.png",
+                        "command": "./toggle_audio.sh",
+                        "text": "Audio Mode"
+                    },
+                    "10": {
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/thermometer-0.png",
+                        "command": "python control_lights.py cool"
+                    },
+                    "11": {
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/thermometer-3.png",
+                        "command": "python control_lights.py warm"
+                    },
+                    "12": {},
+                    "13": {},
+                    "14": {
+                        "command": "./launch_stream.sh",
+                        "keys": "",
+                        "write": "",
+                        "text": "Stream",
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/desktop.png"
+                    }
+                },
+                "6": {
+                    "0": {
+                        "write": "",
+                        "command": "",
+                        "switch_page": 6,
+                        "keys": "",
+                        "text": "",
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/chevron-left.png"
+                    },
+                    "1": {},
+                    "2": {},
+                    "3": {},
+                    "4": {
+                        "write": "",
+                        "command": "",
+                        "switch_page": 8,
+                        "keys": "",
+                        "text": "",
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/chevron-right.png"
+                    },
+                    "5": {},
+                    "6": {},
+                    "7": {},
+                    "8": {},
+                    "9": {},
+                    "10": {},
+                    "11": {},
+                    "12": {},
+                    "13": {},
+                    "14": {}
+                },
+                "7": {
+                    "0": {
+                        "write": "",
+                        "command": "",
+                        "switch_page": 7,
+                        "keys": "",
+                        "text": "",
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/chevron-left.png"
+                    },
+                    "1": {},
+                    "2": {},
+                    "3": {},
+                    "4": {},
+                    "5": {},
+                    "6": {},
+                    "7": {},
+                    "8": {},
+                    "9": {},
+                    "10": {},
+                    "11": {},
+                    "12": {},
+                    "13": {},
+                    "14": {}
+                },
+                "8": {
+                    "0": {
+                        "write": ""
+                    },
+                    "1": {},
+                    "2": {},
+                    "3": {},
+                    "4": {},
+                    "5": {},
+                    "6": {},
+                    "7": {},
+                    "8": {},
+                    "9": {},
+                    "10": {},
+                    "11": {},
+                    "12": {},
+                    "13": {},
+                    "14": {}
+                },
+                "9": {
+                    "0": {
+                        "write": ""
+                    },
+                    "1": {},
+                    "2": {},
+                    "3": {},
+                    "4": {},
+                    "5": {},
+                    "6": {},
+                    "7": {},
+                    "8": {},
+                    "9": {},
+                    "10": {},
+                    "11": {},
+                    "12": {},
+                    "13": {},
+                    "14": {}
+                }
+            },
+            "brightness": 84,
+            "page": 2
+        }
+    }
+}
