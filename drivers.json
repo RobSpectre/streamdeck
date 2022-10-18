@@ -1,0 +1,82 @@
+{
+  "VER": {
+    "name": "Max Verstappen",
+    "index": 4 
+  },
+  "PER": {
+    "name": "Sergio Perez",
+    "index": 5
+  },
+  "RIC": {
+    "name": "Daniel Ricciardo",
+    "index": 6
+  },
+  "NOR": {
+    "name": "Lando Norris",
+    "index": 7
+  },
+  "VET": {
+    "name": "Sebastian Vettel",
+    "index": 8
+  },
+  "STR": {
+    "name": "Lance Stroll",
+    "index": 9
+  },
+  "LAT": {
+    "name": "Nicholas Latifi",
+    "index": 10 
+  },
+  "ALB": {
+    "name": "Alexander Albon",
+    "index": 11 
+  },
+  "GAS": {
+    "name": "Pierre Gasly",
+    "index": 12 
+  },
+  "TSU": {
+    "name": "Yuki Tsunoda",
+    "index": 13 
+  },
+  "ALO": {
+    "name": "Fernando Alonso",
+    "index": 14 
+  },
+  "OCO": {
+    "name": "Esteban Ocon",
+    "index": 15 
+  },
+  "LEC": {
+    "name": "Charles Leclerc",
+    "index": 16
+  },
+  "SAI": {
+    "name": "Carlos Sainz",
+    "index": 17 
+  },
+  "MAG": {
+    "name": "Kevin Magnussen",
+    "index": 18 
+  },
+  "MSC": {
+    "name": "Mick Schumacher",
+    "index": 19
+  },
+  "ZHO": {
+    "name": "Guanyu Zhou",
+    "index": 20
+  },
+  "BOT": {
+    "name": "Valtteri Bottas",
+    "index": 21
+  },
+  "HAM": {
+    "name": "Lewis Hamilton",
+    "index": 22
+  },
+  "RUS": {
+    "name": "George Russell",
+    "index": 23 
+  }
+}

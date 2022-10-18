@@ -1,3 +1,3 @@
 #!/bin/bash
-xdotool search --name 'hack.party - ' windowactivate
+xdotool search --name 'hack.party - ' windowactivate --sync
 xdotool key $1
