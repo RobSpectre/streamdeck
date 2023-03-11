@@ -128,16 +128,16 @@
                         "command": "./press_obs_shortcut.sh ctrl+alt+k",
                         "keys": "",
                         "write": "",
-                        "text": "Aw Snap",
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/snapchat.png",
+                        "text": "Math",
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/calculator.png",
                         "switch_page": 0
                     },
                     "3": {
                         "command": "./press_obs_shortcut.sh ctrl+alt+j",
                         "keys": "",
                         "write": "",
-                        "text": "Toasty",
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fire.png",
+                        "text": "Rd One Fight",
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/gamepad.png",
                         "switch_page": 0
                     },
                     "4": {
@@ -148,7 +148,7 @@
                     },
                     "5": {
                         "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fire.png",
-                        "text": "He's On Fire",
+                        "text": "Wasted",
                         "command": "./press_obs_shortcut.sh ctrl+alt+x"
                     },
                     "6": {
@@ -181,8 +181,8 @@
                         "switch_page": 0
                     },
                     "10": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/coffee.png",
-                        "text": "Hyper",
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/keyboard-o.png",
+                        "text": "Key Cat",
                         "command": "./press_obs_shortcut.sh ctrl+alt+l"
                     },
                     "11": {
@@ -199,8 +199,8 @@
                         "command": "./press_obs_shortcut.sh ctrl+alt+i",
                         "keys": "",
                         "write": "",
-                        "text": "Bitcoin",
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/bitcoin.png",
+                        "text": "Shredder",
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/envelope-o.png",
                         "switch_page": 0
                     },
                     "14": {
@@ -480,7 +480,7 @@
                     },
                     "14": {
                         "icon": "/media/rspectre/Storage/workspace/streamdeck/images/image.png",
-                        "text": "CC",
+                        "text": "Score",
                         "command": "./press_obs_shortcut.sh ctrl+alt+bracketright",
                         "text_vertical_align": ""
                     }
@@ -561,17 +561,17 @@
                         "icon": "/media/rspectre/Storage/workspace/streamdeck/images/chevron-left.png"
                     },
                     "1": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/formula_1/f1_logo.png",
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/formula_1/f1mv-us.png",
                         "command": "./launch_f1tv.sh",
                         "text": ""
                     },
                     "2": {
                         "icon": "/media/rspectre/Storage/workspace/streamdeck/images/refresh.png",
-                        "command": "./control_f1tv_players.sh s"
+                        "command": "mvf1-cli players sync"
                     },
                     "3": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fast-forward.png",
-                        "command": "./control_f1tv_players.sh l"
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/microphone.png",
+                        "command": "python control_driver_feeds.py toggle-driver-radio"
                     },
                     "4": {
                         "write": "",
@@ -583,11 +583,11 @@
                     },
                     "5": {
                         "icon": "/media/rspectre/Storage/workspace/streamdeck/images/angle-left.png",
-                        "command": "./control_f1tv_players.sh comma"
+                        "command": "./mvf1_command_with_sync.sh player --title INTERNATIONAL seek --relative -2"
                     },
                     "6": {
                         "icon": "/media/rspectre/Storage/workspace/streamdeck/images/pause.png",
-                        "command": "./control_f1tv_players.sh shift+space"
+                        "command": "mvf1-cli players pause"
                     },
                     "7": {
                         "icon": "/media/rspectre/Storage/workspace/streamdeck/images/external-link.png",
@@ -603,11 +603,11 @@
                     },
                     "10": {
                         "icon": "/media/rspectre/Storage/workspace/streamdeck/images/angle-double-left.png",
-                        "command": "./control_f1tv_players.sh Left"
+                        "command": "./mvf1_command_with_sync.sh  player --title INTERNATIONAL seek --relative -10"
                     },
                     "11": {
                         "icon": "/media/rspectre/Storage/workspace/streamdeck/images/angle-double-right.png",
-                        "command": "./control_f1tv_players.sh Right"
+                        "command": "./mvf1_command_with_sync.sh  player --title INTERNATIONAL seek --relative 10"
                     },
                     "12": {
                         "icon": "/media/rspectre/Storage/workspace/streamdeck/images/external-link.png",
@@ -655,7 +655,7 @@
                         "icon": "/media/rspectre/Storage/workspace/streamdeck/images/chevron-right.png"
                     },
                     "5": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/formula_1/ver.png",
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/formula_1/driver-headshots/2023/VER.png",
                         "text": "VER",
                         "command": "python control_driver_feeds.py change-driver --driver_abbreviation VER"
                     },
@@ -675,32 +675,32 @@
                         "command": "python control_driver_feeds.py target-window --driver_window 5"
                     },
                     "9": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/formula_1/lec.png",
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/formula_1/driver-headshots/2023/LEC.png",
                         "text": "LEC",
                         "command": "python control_driver_feeds.py change-driver --driver_abbreviation LEC"
                     },
                     "10": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/formula_1/per.png",
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/formula_1/driver-headshots/2023/PER.png",
                         "text": "PER",
                         "command": "python control_driver_feeds.py change-driver --driver_abbreviation PER"
                     },
                     "11": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/formula_1/ham.png",
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/formula_1/driver-headshots/2023/HAM.png",
                         "text": "HAM",
                         "command": "python control_driver_feeds.py change-driver --driver_abbreviation HAM"
                     },
                     "12": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/formula_1/rus.png",
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/formula_1/driver-headshots/2023/RUS.png",
                         "text": "RUS",
                         "command": "python control_driver_feeds.py change-driver --driver_abbreviation RUS"
                     },
                     "13": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/formula_1/nor.png",
-                        "text": "NOR",
-                        "command": "python control_driver_feeds.py change-driver --driver_abbreviation NOR"
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/formula_1/driver-headshots/2023/ALO.png",
+                        "text": "ALO",
+                        "command": "python control_driver_feeds.py change-driver --driver_abbreviation ALO"
                     },
                     "14": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/formula_1/sai.png",
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/formula_1/driver-headshots/2023/SAI.png",
                         "text": "SAI",
                         "command": "python control_driver_feeds.py change-driver --driver_abbreviation SAI"
                     }
@@ -715,17 +715,17 @@
                         "icon": "/media/rspectre/Storage/workspace/streamdeck/images/chevron-left.png"
                     },
                     "1": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/formula_1/ric.png",
-                        "text": "RIC",
-                        "command": "python control_driver_feeds.py change-driver --driver_abbreviation RIC"
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/formula_1/driver-headshots/2023/STR.png",
+                        "text": "STR",
+                        "command": "python control_driver_feeds.py change-driver --driver_abbreviation STR"
                     },
                     "2": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/formula_1/alo.png",
-                        "text": "ALO",
-                        "command": "python control_driver_feeds.py change-driver --driver_abbreviation ALO"
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/formula_1/driver-headshots/2023/GAS.png",
+                        "text": "GAS",
+                        "command": "python control_driver_feeds.py change-driver --driver_abbreviation GAS"
                     },
                     "3": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/formula_1/oco.png",
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/formula_1/driver-headshots/2023/OCO.png",
                         "text": "OCO",
                         "command": "python control_driver_feeds.py change-driver --driver_abbreviation OCO"
                     },
@@ -738,52 +738,52 @@
                         "icon": "/media/rspectre/Storage/workspace/streamdeck/images/chevron-right.png"
                     },
                     "5": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/formula_1/bot.png",
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/formula_1/driver-headshots/2023/BOT.png",
                         "text": "BOT",
                         "command": "python control_driver_feeds.py change-driver --driver_abbreviation BOT"
                     },
                     "6": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/formula_1/vet.png",
-                        "text": "VET",
-                        "command": "python control_driver_feeds.py change-driver --driver_abbreviation VET"
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/formula_1/driver-headshots/2023/NOR.png",
+                        "text": "NOR",
+                        "command": "python control_driver_feeds.py change-driver --driver_abbreviation NOR"
                     },
                     "7": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/formula_1/mag.png",
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/formula_1/driver-headshots/2023/MAG.png",
                         "text": "MAG",
                         "command": "python control_driver_feeds.py change-driver --driver_abbreviation MAG"
                     },
                     "8": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/formula_1/gas.png",
-                        "text": "GAS",
-                        "command": "python control_driver_feeds.py change-driver --driver_abbreviation GAS"
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/formula_1/driver-headshots/2023/DEV.png",
+                        "text": "DEV",
+                        "command": "python control_driver_feeds.py change-driver --driver_abbreviation DEV"
                     },
                     "9": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/formula_1/lat.png",
-                        "text": "LAT",
-                        "command": "python control_driver_feeds.py change-driver --driver_abbreviation LAT"
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/formula_1/driver-headshots/2023/SAR.png",
+                        "text": "SAR",
+                        "command": "python control_driver_feeds.py change-driver --driver_abbreviation SAR"
                     },
                     "10": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/formula_1/zho.png",
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/formula_1/driver-headshots/2023/ZHO.png",
                         "text": "ZHO",
                         "command": "python control_driver_feeds.py change-driver --driver_abbreviation ZHO"
                     },
                     "11": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/formula_1/str.png",
-                        "text": "STR",
-                        "command": "python control_driver_feeds.py change-driver --driver_abbreviation STR"
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/formula_1/driver-headshots/2023/PIA.png",
+                        "text": "PIA",
+                        "command": "python control_driver_feeds.py change-driver --driver_abbreviation PIA"
                     },
                     "12": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/formula_1/msc.png",
-                        "text": "MSC",
-                        "command": "python control_driver_feeds.py change-driver --driver_abbreviation MSC"
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/formula_1/driver-headshots/2023/HUL.png",
+                        "text": "HUL",
+                        "command": "python control_driver_feeds.py change-driver --driver_abbreviation HUL"
                     },
                     "13": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/formula_1/tsu.png",
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/formula_1/driver-headshots/2023/TSU.png",
                         "text": "TSU",
                         "command": "python control_driver_feeds.py change-driver --driver_abbreviation TSU"
                     },
                     "14": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/formula_1/alb.png",
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/formula_1/driver-headshots/2023/ALB.png",
                         "text": "ALB",
                         "command": "python control_driver_feeds.py change-driver --driver_abbreviation ALB"
                     }
