@@ -1,976 +1,161 @@
 {
     "streamdeck_ui_version": 1,
     "state": {
-        "AL14J2C08719": {
-            "buttons": {
-                "0": {
-                    "0": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/microphone-slash.png",
-                        "text": "Mic",
-                        "command": "./mute_mics.sh",
-                        "keys": "",
-                        "write": "",
-                        "switch_page": 0
-                    },
-                    "1": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/windows.png",
-                        "text": "Split Screen",
-                        "command": "./press_obs_shortcut.sh ctrl+alt+n",
-                        "keys": "",
-                        "write": ""
-                    },
-                    "2": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/gamepad.png",
-                        "text": "Game",
-                        "command": "./press_obs_shortcut.sh ctrl+shift+g",
-                        "keys": "",
-                        "write": ""
-                    },
-                    "3": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/file-video-o.png",
-                        "text": "Video",
-                        "command": "./press_obs_shortcut.sh ctrl+shift+l",
-                        "keys": "",
-                        "write": ""
-                    },
-                    "4": {
-                        "write": "",
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/chevron-right.png",
-                        "switch_page": 2,
-                        "command": ""
-                    },
-                    "5": {
-                        "command": "./press_obs_shortcut.sh ctrl+shift+F1",
-                        "keys": "",
-                        "write": "",
-                        "text": "T-Left",
-                        "icon": "/home/rspectre/Storage/workspace/streamdeck/images/window-restore.png"
-                    },
-                    "6": {
-                        "command": "./press_obs_shortcut.sh ctrl+shift+F2",
-                        "keys": "",
-                        "write": "",
-                        "text": "T-Right",
-                        "icon": "/home/rspectre/Storage/workspace/streamdeck/images/window-restore.png"
-                    },
-                    "7": {
-                        "command": "./press_obs_shortcut.sh ctrl+shift+F3",
-                        "keys": "",
-                        "text": "Game Board",
-                        "icon": "/home/rspectre/Storage/workspace/streamdeck/images/window-maximize.png",
-                        "write": ""
-                    },
-                    "8": {
-                        "command": "./press_obs_shortcut.sh ctrl+shift+f",
-                        "keys": "",
-                        "text": "Face",
-                        "icon": "/home/rspectre/Storage/workspace/streamdeck/images/user-circle.png",
-                        "write": "",
-                        "switch_page": 0
-                    },
-                    "9": {
-                        "command": "./press_obs_shortcut.sh ctrl+shift+F5",
-                        "keys": "",
-                        "text": "Ada Cam",
-                        "icon": "/home/rspectre/Storage/workspace/streamdeck/images/optin-monster.png",
-                        "write": ""
-                    },
-                    "10": {
-                        "command": "./press_obs_shortcut.sh ctrl+shift+F6",
-                        "write": "",
-                        "icon": "/home/rspectre/Storage/workspace/streamdeck/images/window-restore.png",
-                        "keys": "",
-                        "switch_page": 0,
-                        "text": "B-Left"
-                    },
-                    "11": {
-                        "command": "./press_obs_shortcut.sh ctrl+shift+F7",
-                        "keys": "",
-                        "write": "",
-                        "text": "B-Right",
-                        "icon": "/home/rspectre/Storage/workspace/streamdeck/images/window-restore.png"
-                    },
-                    "12": {
-                        "command": "./press_obs_shortcut.sh ctrl+shift+i",
-                        "keys": "",
-                        "text": "PiP",
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/file-video-o.png",
-                        "write": ""
-                    },
-                    "13": {
-                        "command": "./press_obs_shortcut.sh ctrl+shift+F12",
-                        "keys": "",
-                        "text": "Chroma Key",
-                        "icon": "/home/rspectre/Storage/workspace/streamdeck/images/user.png",
-                        "write": ""
-                    },
-                    "14": {
-                        "command": "./press_obs_shortcut.sh ctrl+shift+l",
-                        "keys": "",
-                        "write": "",
-                        "text": "Office",
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/desktop.png"
-                    }
-                },
-                "1": {
-                    "0": {
-                        "write": "",
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/chevron-left.png",
-                        "switch_page": 1,
-                        "command": ""
-                    },
-                    "1": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/space-shuttle.png",
-                        "command": "./press_obs_shortcut.sh ctrl+alt+p",
-                        "text": "UFO"
-                    },
-                    "2": {
-                        "command": "./press_obs_shortcut.sh ctrl+alt+k",
-                        "keys": "",
-                        "write": "",
-                        "text": "Math",
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/calculator.png",
-                        "switch_page": 0
-                    },
-                    "3": {
-                        "command": "./press_obs_shortcut.sh ctrl+alt+j",
-                        "keys": "",
-                        "write": "",
-                        "text": "Rd One Fight",
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/gamepad.png",
-                        "switch_page": 0
-                    },
-                    "4": {
-                        "write": "",
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/chevron-right.png",
-                        "switch_page": 3,
-                        "command": ""
-                    },
-                    "5": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fire.png",
-                        "text": "Wasted",
-                        "command": "./press_obs_shortcut.sh ctrl+alt+x"
-                    },
-                    "6": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/black-tie.png",
-                        "command": "./press_obs_shortcut.sh ctrl+alt+z",
-                        "text": "To Be Fair"
-                    },
-                    "7": {
-                        "command": "./press_obs_shortcut.sh ctrl+alt+q",
-                        "keys": "",
-                        "write": "",
-                        "text": "Sad",
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/thumbs-down.png",
-                        "switch_page": 0
-                    },
-                    "8": {
-                        "command": "./press_obs_shortcut.sh ctrl+alt+y",
-                        "keys": "",
-                        "write": "",
-                        "text": "Winner",
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/certificate.png",
-                        "switch_page": 0
-                    },
-                    "9": {
-                        "command": "./press_obs_shortcut.sh ctrl+alt+u",
-                        "keys": "",
-                        "write": "",
-                        "text": "Vibing",
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/optin-monster.png",
-                        "switch_page": 0
-                    },
-                    "10": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/keyboard-o.png",
-                        "text": "Key Cat",
-                        "command": "./press_obs_shortcut.sh ctrl+alt+l"
-                    },
-                    "11": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/bug.png",
-                        "text": "Crickets",
-                        "command": "./press_obs_shortcut.sh ctrl+alt+f"
-                    },
-                    "12": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/thumbs-up.png",
-                        "text": "Laughs",
-                        "command": "./press_obs_shortcut.sh ctrl+alt+b"
-                    },
-                    "13": {
-                        "command": "./press_obs_shortcut.sh ctrl+alt+i",
-                        "keys": "",
-                        "write": "",
-                        "text": "Shredder",
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/envelope-o.png",
-                        "switch_page": 0
-                    },
-                    "14": {
-                        "command": "./press_obs_shortcut.sh ctrl+alt+semicolon",
-                        "keys": "",
-                        "write": ";",
-                        "text": "Virus",
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/bug.png",
-                        "switch_page": 0
-                    }
-                },
-                "2": {
-                    "0": {
-                        "write": "",
-                        "command": "",
-                        "switch_page": 2,
-                        "keys": "",
-                        "text": "",
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/chevron-left.png"
-                    },
-                    "1": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/refresh.png",
-                        "command": "./press_hack_party_shortcut.sh F5"
-                    },
-                    "2": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/vcard.png",
-                        "text": "Next",
-                        "keys": "ctrl+page_down"
-                    },
-                    "3": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/check.png",
-                        "text": "1",
-                        "command": "./press_hack_party_shortcut.sh alt+a"
-                    },
-                    "4": {
-                        "write": "",
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/chevron-right.png",
-                        "switch_page": 4,
-                        "command": ""
-                    },
-                    "5": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/backward.png",
-                        "text": "Backspace",
-                        "command": "./press_hack_party_shortcut.sh BackSpace"
-                    },
-                    "6": {
-                        "write": "",
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/arrow-up.png",
-                        "command": "./press_hack_party_shortcut.sh Up",
-                        "keys": "",
-                        "switch_page": 0
-                    },
-                    "7": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/check-square.png",
-                        "text": "Enter",
-                        "command": "./press_hack_party_shortcut.sh alt+z"
-                    },
-                    "8": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/check.png",
-                        "text": "2",
-                        "command": "./press_hack_party_shortcut.sh alt+b"
-                    },
-                    "9": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/check.png",
-                        "text": "4",
-                        "command": "./press_hack_party_shortcut.sh alt+d"
-                    },
-                    "10": {
-                        "write": "",
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/arrow-left.png",
-                        "command": "./press_hack_party_shortcut.sh Left",
-                        "keys": ""
-                    },
-                    "11": {
-                        "write": "",
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/arrow-down.png",
-                        "command": "./press_hack_party_shortcut.sh Down",
-                        "keys": ""
-                    },
-                    "12": {
-                        "write": "",
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/arrow-right.png",
-                        "command": "./press_hack_party_shortcut.sh Right",
-                        "keys": ""
-                    },
-                    "13": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/check.png",
-                        "text": "3",
-                        "command": "./press_hack_party_shortcut.sh alt+c"
-                    },
-                    "14": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/check.png",
-                        "text": "5",
-                        "command": "./press_hack_party_shortcut.sh alt+e"
-                    }
-                },
-                "3": {
-                    "0": {
-                        "write": "",
-                        "command": "",
-                        "switch_page": 3,
-                        "keys": "",
-                        "text": "",
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/chevron-left.png"
-                    },
-                    "1": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/keyboard-o.png",
-                        "text": "7",
-                        "command": "./press_hack_party_shortcut.sh KP_7"
-                    },
-                    "2": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/keyboard-o.png",
-                        "text": "8",
-                        "command": "./press_hack_party_shortcut.sh KP_8"
-                    },
-                    "3": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/keyboard-o.png",
-                        "text": "9",
-                        "command": "./press_hack_party_shortcut.sh KP_9"
-                    },
-                    "4": {
-                        "write": "",
-                        "command": "",
-                        "switch_page": 5,
-                        "keys": "",
-                        "text": "",
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/chevron-right.png"
-                    },
-                    "5": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/dot-circle-o.png",
-                        "text": "Decimal",
-                        "command": "./press_hack_party_shortcut.sh period "
-                    },
-                    "6": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/keyboard-o.png",
-                        "text": "4",
-                        "command": "./press_hack_party_shortcut.sh KP_4"
-                    },
-                    "7": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/keyboard-o.png",
-                        "text": "5",
-                        "command": "./press_hack_party_shortcut.sh KP_5"
-                    },
-                    "8": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/keyboard-o.png",
-                        "text": "6",
-                        "command": "./press_hack_party_shortcut.sh KP_6"
-                    },
-                    "9": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/check-square-o.png",
-                        "command": "./press_hack_party_shortcut.sh alt+i",
-                        "text": "Input"
-                    },
-                    "10": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/keyboard-o.png",
-                        "text": "0",
-                        "command": "./press_hack_party_shortcut.sh KP_0"
-                    },
-                    "11": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/keyboard-o.png",
-                        "text": "1",
-                        "command": "./press_hack_party_shortcut.sh KP_1"
-                    },
-                    "12": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/keyboard-o.png",
-                        "text": "2",
-                        "command": "./press_hack_party_shortcut.sh KP_2"
-                    },
-                    "13": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/keyboard-o.png",
-                        "text": "3",
-                        "command": "./press_hack_party_shortcut.sh KP_3"
-                    },
-                    "14": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/check-square.png",
-                        "text": "Enter",
-                        "command": "./press_hack_party_shortcut.sh Return"
-                    }
-                },
-                "4": {
-                    "0": {
-                        "write": "",
-                        "command": "",
-                        "switch_page": 4,
-                        "keys": "",
-                        "text": "",
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/chevron-left.png"
-                    },
-                    "1": {
-                        "write": "",
-                        "switch_page": 0,
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/image.png",
-                        "text": "Mars",
-                        "command": "./press_obs_shortcut.sh ctrl+alt+m",
-                        "keys": ""
-                    },
-                    "2": {
-                        "write": "",
-                        "switch_page": 0,
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/image.png",
-                        "text": "'Merica",
-                        "command": "./press_obs_shortcut.sh ctrl+alt+a",
-                        "keys": ""
-                    },
-                    "3": {
-                        "write": "",
-                        "switch_page": 0,
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/image.png",
-                        "text": "Space Golf",
-                        "command": "./press_obs_shortcut.sh ctrl+alt+g",
-                        "keys": ""
-                    },
-                    "4": {
-                        "write": "",
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/chevron-right.png",
-                        "switch_page": 6,
-                        "command": ""
-                    },
-                    "5": {
-                        "write": "",
-                        "switch_page": 0,
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/image.png",
-                        "text": "Code Grid",
-                        "command": "./press_obs_shortcut.sh ctrl+alt+v",
-                        "keys": ""
-                    },
-                    "6": {
-                        "write": "",
-                        "switch_page": 0,
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/image.png",
-                        "text": "Space HUD",
-                        "command": "./press_obs_shortcut.sh ctrl+alt+c",
-                        "keys": ""
-                    },
-                    "7": {
-                        "write": "",
-                        "switch_page": 0,
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/image.png",
-                        "text": "Medical HUD",
-                        "command": "./press_obs_shortcut.sh ctrl+alt+w",
-                        "keys": ""
-                    },
-                    "8": {
-                        "write": "",
-                        "switch_page": 0,
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/image.png",
-                        "text": "Topical",
-                        "command": "./press_obs_shortcut.sh ctrl+alt+h",
-                        "keys": ""
-                    },
-                    "9": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/image.png",
-                        "text": "Spooky",
-                        "command": "./press_obs_shortcut.sh ctrl+alt+s",
-                        "keys": ""
-                    },
-                    "10": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/image.png",
-                        "command": "./press_obs_shortcut.sh ctrl+alt+r",
-                        "keys": "",
-                        "text": "Record Store"
-                    },
-                    "11": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/image.png",
-                        "text": "Comic Book",
-                        "command": "./press_obs_shortcut.sh ctrl+alt+apostrophe"
-                    },
-                    "12": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/image.png",
-                        "text": "Pitfall",
-                        "command": "./press_obs_shortcut.sh ctrl+alt+slash"
-                    },
-                    "13": {
-                        "command": "./press_obs_shortcut.sh ctrl+alt+period",
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/image.png",
-                        "text": "BotW"
-                    },
-                    "14": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/image.png",
-                        "text": "Score",
-                        "command": "./press_obs_shortcut.sh ctrl+alt+bracketright",
-                        "text_vertical_align": ""
-                    }
-                },
-                "5": {
-                    "0": {
-                        "write": "",
-                        "command": "",
-                        "switch_page": 5,
-                        "keys": "",
-                        "text": "",
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/chevron-left.png"
-                    },
-                    "1": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/lightbulb-o.png",
-                        "command": "python control_lights.py toggle"
-                    },
-                    "2": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/lightbulb-o.png",
-                        "text": "Key",
-                        "command": "python control_lights.py toggle --light Key",
-                        "write": "",
-                        "switch_page": 0
-                    },
-                    "3": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/lightbulb-o.png",
-                        "text": "Fill",
-                        "command": "python control_lights.py toggle --light Fill"
-                    },
-                    "4": {
-                        "write": "",
-                        "command": "",
-                        "switch_page": 7,
-                        "keys": "",
-                        "text": "",
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/chevron-right.png"
-                    },
-                    "5": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/plus-circle.png",
-                        "command": "python control_lights.py brighten"
-                    },
-                    "6": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/minus-circle.png",
-                        "command": "python control_lights.py dim"
-                    },
-                    "7": {},
-                    "8": {},
-                    "9": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/headphones.png",
-                        "command": "./toggle_audio.sh",
-                        "text": "Audio Mode"
-                    },
-                    "10": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/thermometer-0.png",
-                        "command": "python control_lights.py cool"
-                    },
-                    "11": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/thermometer-3.png",
-                        "command": "python control_lights.py warm"
-                    },
-                    "12": {},
-                    "13": {},
-                    "14": {
-                        "command": "./launch_stream.sh",
-                        "keys": "",
-                        "write": "",
-                        "text": "Stream",
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/desktop.png"
-                    }
-                },
-                "6": {
-                    "0": {
-                        "write": "",
-                        "command": "",
-                        "switch_page": 6,
-                        "keys": "",
-                        "text": "",
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/chevron-left.png"
-                    },
-                    "1": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/formula_1/f1mv-us.png",
-                        "command": "./launch_f1tv.sh",
-                        "text": ""
-                    },
-                    "2": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/refresh.png",
-                        "command": "mvf1-cli players sync"
-                    },
-                    "3": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/microphone.png",
-                        "command": "python control_driver_feeds.py toggle-driver-radio"
-                    },
-                    "4": {
-                        "write": "",
-                        "command": "",
-                        "switch_page": 8,
-                        "keys": "",
-                        "text": "",
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/chevron-right.png"
-                    },
-                    "5": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/angle-left.png",
-                        "command": "./mvf1_command_with_sync.sh player --title INTERNATIONAL seek --relative -2"
-                    },
-                    "6": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/pause.png",
-                        "command": "mvf1-cli players pause"
-                    },
-                    "7": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/external-link.png",
-                        "command": "python control_driver_feeds.py maximize-driver --driver_window 0"
-                    },
-                    "8": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/external-link.png",
-                        "command": "python control_driver_feeds.py maximize-driver --driver_window 1"
-                    },
-                    "9": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/external-link.png",
-                        "command": "python control_driver_feeds.py maximize-driver --driver_window 2"
-                    },
-                    "10": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/angle-double-left.png",
-                        "command": "./mvf1_command_with_sync.sh  player --title INTERNATIONAL seek --relative -10"
-                    },
-                    "11": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/angle-double-right.png",
-                        "command": "./mvf1_command_with_sync.sh  player --title INTERNATIONAL seek --relative 10"
-                    },
-                    "12": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/external-link.png",
-                        "command": "python control_driver_feeds.py maximize-driver --driver_window 3"
-                    },
-                    "13": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/external-link.png",
-                        "command": "python control_driver_feeds.py maximize-driver --driver_window 4"
-                    },
-                    "14": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/external-link.png",
-                        "command": "python control_driver_feeds.py maximize-driver --driver_window 5"
-                    }
-                },
-                "7": {
-                    "0": {
-                        "write": "",
-                        "command": "",
-                        "switch_page": 7,
-                        "keys": "",
-                        "text": "",
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/chevron-left.png"
-                    },
-                    "1": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/window-restore.png",
-                        "text": "",
-                        "command": "python control_driver_feeds.py target-window --driver_window 0"
-                    },
-                    "2": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/window-restore.png",
-                        "text": "",
-                        "command": "python control_driver_feeds.py target-window --driver_window 1"
-                    },
-                    "3": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/window-restore.png",
-                        "text": "",
-                        "command": "python control_driver_feeds.py target-window --driver_window 2"
-                    },
-                    "4": {
-                        "write": "",
-                        "command": "",
-                        "switch_page": 9,
-                        "keys": "",
-                        "text": "",
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/chevron-right.png"
-                    },
-                    "5": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/formula_1/driver-headshots/2023/VER.png",
-                        "text": "VER",
-                        "command": "python control_driver_feeds.py change-driver --driver_abbreviation VER"
-                    },
-                    "6": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/window-restore.png",
-                        "text": "",
-                        "command": "python control_driver_feeds.py target-window --driver_window 3"
-                    },
-                    "7": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/window-restore.png",
-                        "text": "",
-                        "command": "python control_driver_feeds.py target-window --driver_window 4"
-                    },
-                    "8": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/window-restore.png",
-                        "text": "",
-                        "command": "python control_driver_feeds.py target-window --driver_window 5"
-                    },
-                    "9": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/formula_1/driver-headshots/2023/LEC.png",
-                        "text": "LEC",
-                        "command": "python control_driver_feeds.py change-driver --driver_abbreviation LEC"
-                    },
-                    "10": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/formula_1/driver-headshots/2023/PER.png",
-                        "text": "PER",
-                        "command": "python control_driver_feeds.py change-driver --driver_abbreviation PER"
-                    },
-                    "11": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/formula_1/driver-headshots/2023/HAM.png",
-                        "text": "HAM",
-                        "command": "python control_driver_feeds.py change-driver --driver_abbreviation HAM"
-                    },
-                    "12": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/formula_1/driver-headshots/2023/RUS.png",
-                        "text": "RUS",
-                        "command": "python control_driver_feeds.py change-driver --driver_abbreviation RUS"
-                    },
-                    "13": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/formula_1/driver-headshots/2023/ALO.png",
-                        "text": "ALO",
-                        "command": "python control_driver_feeds.py change-driver --driver_abbreviation ALO"
-                    },
-                    "14": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/formula_1/driver-headshots/2023/SAI.png",
-                        "text": "SAI",
-                        "command": "python control_driver_feeds.py change-driver --driver_abbreviation SAI"
-                    }
-                },
-                "8": {
-                    "0": {
-                        "write": "",
-                        "command": "",
-                        "switch_page": 8,
-                        "keys": "",
-                        "text": "",
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/chevron-left.png"
-                    },
-                    "1": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/formula_1/driver-headshots/2023/STR.png",
-                        "text": "STR",
-                        "command": "python control_driver_feeds.py change-driver --driver_abbreviation STR"
-                    },
-                    "2": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/formula_1/driver-headshots/2023/GAS.png",
-                        "text": "GAS",
-                        "command": "python control_driver_feeds.py change-driver --driver_abbreviation GAS"
-                    },
-                    "3": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/formula_1/driver-headshots/2023/OCO.png",
-                        "text": "OCO",
-                        "command": "python control_driver_feeds.py change-driver --driver_abbreviation OCO"
-                    },
-                    "4": {
-                        "write": "",
-                        "command": "",
-                        "switch_page": 10,
-                        "keys": "",
-                        "text": "",
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/chevron-right.png"
-                    },
-                    "5": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/formula_1/driver-headshots/2023/BOT.png",
-                        "text": "BOT",
-                        "command": "python control_driver_feeds.py change-driver --driver_abbreviation BOT"
-                    },
-                    "6": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/formula_1/driver-headshots/2023/NOR.png",
-                        "text": "NOR",
-                        "command": "python control_driver_feeds.py change-driver --driver_abbreviation NOR"
-                    },
-                    "7": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/formula_1/driver-headshots/2023/MAG.png",
-                        "text": "MAG",
-                        "command": "python control_driver_feeds.py change-driver --driver_abbreviation MAG"
-                    },
-                    "8": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/formula_1/driver-headshots/2023/DEV.png",
-                        "text": "DEV",
-                        "command": "python control_driver_feeds.py change-driver --driver_abbreviation DEV"
-                    },
-                    "9": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/formula_1/driver-headshots/2023/SAR.png",
-                        "text": "SAR",
-                        "command": "python control_driver_feeds.py change-driver --driver_abbreviation SAR"
-                    },
-                    "10": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/formula_1/driver-headshots/2023/ZHO.png",
-                        "text": "ZHO",
-                        "command": "python control_driver_feeds.py change-driver --driver_abbreviation ZHO"
-                    },
-                    "11": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/formula_1/driver-headshots/2023/PIA.png",
-                        "text": "PIA",
-                        "command": "python control_driver_feeds.py change-driver --driver_abbreviation PIA"
-                    },
-                    "12": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/formula_1/driver-headshots/2023/HUL.png",
-                        "text": "HUL",
-                        "command": "python control_driver_feeds.py change-driver --driver_abbreviation HUL"
-                    },
-                    "13": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/formula_1/driver-headshots/2023/TSU.png",
-                        "text": "TSU",
-                        "command": "python control_driver_feeds.py change-driver --driver_abbreviation TSU"
-                    },
-                    "14": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/formula_1/driver-headshots/2023/ALB.png",
-                        "text": "ALB",
-                        "command": "python control_driver_feeds.py change-driver --driver_abbreviation ALB"
-                    }
-                },
-                "9": {
-                    "0": {
-                        "write": "",
-                        "command": "",
-                        "switch_page": 9,
-                        "keys": "",
-                        "text": "",
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/chevron-left.png"
-                    },
-                    "1": {},
-                    "2": {},
-                    "3": {},
-                    "4": {},
-                    "5": {},
-                    "6": {},
-                    "7": {},
-                    "8": {},
-                    "9": {},
-                    "10": {},
-                    "11": {},
-                    "12": {},
-                    "13": {},
-                    "14": {}
-                }
-            },
-            "brightness": 84,
-            "page": 0
-        },
         "CL37L2A01125": {
             "buttons": {
                 "0": {
                     "0": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/microphone-slash.png",
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/microphone-lines-slash.png",
                         "text": "Mic",
                         "command": "./mute_mics.sh"
                     },
                     "1": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/windows.png",
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/solar-panel.png",
                         "text": "Split Screen",
                         "command": "./press_obs_shortcut.sh ctrl+alt+n"
                     },
                     "2": {
                         "command": "./press_obs_shortcut.sh ctrl+shift+F3",
                         "text": "Game Board",
-                        "icon": "/home/rspectre/Storage/workspace/streamdeck/images/window-maximize.png"
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/chess-board.png"
                     },
                     "3": {
                         "command": "./press_obs_shortcut.sh ctrl+shift+f",
                         "text": "Face",
-                        "icon": "/home/rspectre/Storage/workspace/streamdeck/images/user-circle.png"
+                        "icon": "/home/rspectre/Storage/workspace/streamdeck/images/fontawesome/user.png"
                     },
                     "4": {
-                        "command": "./press_obs_shortcut.sh ctrl+shift+i",
-                        "text": "PiP",
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/file-video-o.png"
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/gamepad.png",
+                        "text": "Game",
+                        "command": "./press_obs_shortcut.sh ctrl+shift+g"
                     },
                     "5": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/file-video-o.png",
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/video-file.png",
                         "text": "Video",
                         "command": "./press_obs_shortcut.sh ctrl+shift+l"
                     },
                     "6": {
                         "command": "./press_obs_shortcut.sh ctrl+shift+l",
                         "text": "Office",
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/desktop.png"
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/desktop.png"
                     },
                     "7": {
                         "switch_page": 2,
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/chevron-right.png"
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/angle-right.png"
                     },
                     "8": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/headphones.png",
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/headphones-simple.png",
                         "command": "./toggle_audio.sh",
                         "text": "Audio Mode"
                     },
                     "9": {
                         "command": "./launch_stream.sh",
                         "text": "Stream",
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/desktop.png"
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/Standard-Clarity-Icons/Normal/App-OBS.png"
                     },
                     "10": {
                         "command": "./press_obs_shortcut.sh ctrl+shift+F5",
                         "text": "Ada Cam",
-                        "icon": "/home/rspectre/Storage/workspace/streamdeck/images/optin-monster.png"
+                        "icon": "/home/rspectre/Storage/workspace/streamdeck/images/fontawesome/dog.png"
                     },
                     "11": {
                         "command": "./press_obs_shortcut.sh ctrl+shift+F12",
                         "text": "Chroma Key",
-                        "icon": "/home/rspectre/Storage/workspace/streamdeck/images/user.png"
+                        "icon": "/home/rspectre/Storage/workspace/streamdeck/images/fontawesome/circle-user.png"
                     },
                     "12": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/gamepad.png",
-                        "text": "Game",
-                        "command": "./press_obs_shortcut.sh ctrl+shift+g"
+                        "command": "./press_obs_shortcut.sh ctrl+shift+i",
+                        "text": "PiP",
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/window-restore.png"
                     },
                     "13": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/lightbulb-o.png",
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/lightbulb.png",
                         "command": "python control_lights.py toggle"
                     },
                     "14": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/lightbulb-o.png",
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/lightbulb.png",
                         "text": "Key",
                         "command": "python control_lights.py toggle --light Key"
                     },
                     "15": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/lightbulb-o.png",
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/lightbulb.png",
                         "text": "Fill",
                         "command": "python control_lights.py toggle --light Fill"
                     },
                     "16": {
                         "command": "./press_obs_shortcut.sh ctrl+shift+F1",
                         "text": "T-Left",
-                        "icon": "/home/rspectre/Storage/workspace/streamdeck/images/window-restore.png"
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/images.png"
                     },
                     "17": {
                         "command": "./press_obs_shortcut.sh ctrl+shift+F2",
                         "text": "T-Right",
-                        "icon": "/home/rspectre/Storage/workspace/streamdeck/images/window-restore.png"
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/images.png"
                     },
                     "18": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/image.png",
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/flag.png",
                         "text": "'Merica",
                         "command": "./press_obs_shortcut.sh ctrl+alt+a"
                     },
                     "19": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/image.png",
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/shuttle-space.png",
                         "text": "Space HUD",
                         "command": "./press_obs_shortcut.sh ctrl+alt+c"
                     },
                     "20": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/image.png",
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/record-vinyl.png",
                         "command": "./press_obs_shortcut.sh ctrl+alt+r",
                         "text": "Record Store"
                     },
                     "21": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/image.png",
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/newspaper.png",
                         "text": "Topical",
                         "command": "./press_obs_shortcut.sh ctrl+alt+h"
                     },
                     "22": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/plus-circle.png",
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/circle-plus.png",
                         "command": "python control_lights.py brighten"
                     },
                     "23": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/minus-circle.png",
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/circle-minus.png",
                         "command": "python control_lights.py dim"
                     },
                     "24": {
                         "command": "./press_obs_shortcut.sh ctrl+shift+F6",
-                        "icon": "/home/rspectre/Storage/workspace/streamdeck/images/window-restore.png",
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/images.png",
                         "text": "B-Left"
                     },
                     "25": {
                         "command": "./press_obs_shortcut.sh ctrl+shift+F7",
                         "text": "B-Right",
-                        "icon": "/home/rspectre/Storage/workspace/streamdeck/images/window-restore.png"
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/images.png"
                     },
                     "26": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/image.png",
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/book.png",
                         "text": "Comic Book",
                         "command": "./press_obs_shortcut.sh ctrl+alt+apostrophe"
                     },
                     "27": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/image.png",
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/gamepad.png",
                         "text": "Pitfall",
                         "command": "./press_obs_shortcut.sh ctrl+alt+slash"
                     },
                     "28": {
                         "command": "./press_obs_shortcut.sh ctrl+alt+period",
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/image.png",
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/brands/studio-vinari.png",
                         "text": "BotW"
                     },
                     "29": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/image.png",
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/clipboard-list.png",
                         "text": "Score",
                         "command": "./press_obs_shortcut.sh ctrl+alt+bracketright"
                     },
                     "30": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/thermometer-0.png",
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/temperature-arrow-down.png",
                         "command": "python control_lights.py cool"
                     },
                     "31": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/thermometer-3.png",
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/temperature-arrow-up.png",
                         "command": "python control_lights.py warm"
                     }
                 },
@@ -978,251 +163,278 @@
                     "0": {
                         "command": "",
                         "switch_page": 1,
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/chevron-left.png"
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/angle-left.png"
                     },
                     "1": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/space-shuttle.png",
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/spaghetti-monster-flying.png",
                         "command": "./press_obs_shortcut.sh ctrl+alt+p",
                         "text": "UFO"
                     },
                     "2": {
                         "command": "./press_obs_shortcut.sh ctrl+alt+k",
                         "text": "Math",
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/calculator.png"
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/calculator.png"
                     },
                     "3": {
                         "command": "./press_obs_shortcut.sh ctrl+alt+j",
                         "text": "Rd One Fight",
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/gamepad.png"
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/gamepad.png"
                     },
                     "4": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fire.png",
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/fire-burner.png",
                         "text": "Wasted",
                         "command": "./press_obs_shortcut.sh ctrl+alt+x"
                     },
                     "5": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/black-tie.png",
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/user-tie.png",
                         "command": "./press_obs_shortcut.sh ctrl+alt+z",
                         "text": "To Be Fair"
                     },
                     "6": {
                         "command": "./press_obs_shortcut.sh ctrl+alt+i",
                         "text": "Shredder",
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/envelope-o.png"
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/square-envelope.png"
                     },
                     "7": {
                         "switch_page": 3,
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/chevron-right.png"
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/angle-right.png"
                     },
                     "8": {
                         "command": "./press_obs_shortcut.sh ctrl+alt+y",
                         "text": "Winner",
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/certificate.png"
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/ranking-star.png"
                     },
                     "9": {
                         "command": "./press_obs_shortcut.sh ctrl+alt+u",
                         "text": "Vibing",
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/optin-monster.png"
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/cat.png"
                     },
                     "10": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/keyboard-o.png",
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/keyboard.png",
                         "text": "Key Cat",
                         "command": "./press_obs_shortcut.sh ctrl+alt+l"
                     },
                     "11": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/bug.png",
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/bugs.png",
                         "text": "Crickets",
                         "command": "./press_obs_shortcut.sh ctrl+alt+f"
                     },
                     "12": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/thumbs-up.png",
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/face-laugh-squint.png",
                         "text": "Laughs",
                         "command": "./press_obs_shortcut.sh ctrl+alt+b"
                     },
                     "13": {
                         "command": "./press_obs_shortcut.sh ctrl+alt+q",
                         "text": "Sad",
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/thumbs-down.png"
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/thumbs-down.png"
                     },
                     "14": {
                         "command": "./press_obs_shortcut.sh ctrl+alt+semicolon",
                         "text": "Virus",
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/bug.png"
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/virus-covid.png"
                     },
                     "15": {
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/hand-sparkles.png",
+                        "text": "Cena",
+                        "command": "./press_obs_shortcut.sh ctrl+alt+backslash"
                     },
                     "16": {
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/bullhorn.png",
+                        "text": "Rap Horn",
+                        "command": "play -v 0.1 /media/rspectre/Storage/Video/Sound\\ Effects/airhorn.mp3"
                     },
                     "17": {
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/not-equal.png",
+                        "text": "Wrong",
+                        "command": "play -v 0.2 /media/rspectre/Storage/Video/Sound\\ Effects/wrong.mp3"
                     },
-                    "18": {
-                    },
-                    "19": {
-                    },
-                    "20": {
-                    },
-                    "21": {
-                    },
-                    "22": {
-                    },
+                    "18": {},
+                    "19": {},
+                    "20": {},
+                    "21": {},
+                    "22": {},
                     "23": {
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/face-sad-cry.png",
+                        "text": "Noooo",
+                        "command": "./press_obs_shortcut.sh ctrl+alt+minus"
                     },
                     "24": {
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/gun.png",
+                        "text": "Gangsta",
+                        "command": "play -v 0.1 /media/rspectre/Storage/Video/Sound\\ Effects/gangsta_interlude.wav"
                     },
                     "25": {
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/face-laugh.png",
+                        "text": "Romcom",
+                        "command": "play -v 0.1 /media/rspectre/Storage/Video/Sound\\ Effects/interlude_romcom.wav"
                     },
                     "26": {
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/rock-hand.png",
+                        "text": "Rock",
+                        "command": ".play -v 0.1 /media/rspectre/Storage/Video/Sound\\ Effects/interlude_rock.wav"
                     },
                     "27": {
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/cross.png",
+                        "text": "Jeebus",
+                        "command": "play -v 0.2 /media/rspectre/Storage/Video/Sound\\ Effects/interlude_jesus.mp3"
                     },
                     "28": {
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/person-skating.png",
+                        "text": "Youth!",
+                        "command": "play -v 0.2 /media/rspectre/Storage/Video/Sound\\ Effects/interlude_youth_pastor.wav"
                     },
                     "29": {
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/wand-magic-sparkles.png",
+                        "text": "Magic",
+                        "command": "play -v 0.2 /media/rspectre/Storage/Video/Sound\\ Effects/interlude_magic.wav"
                     },
                     "30": {
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/baby.png",
+                        "text": "Badonkadonk",
+                        "command": "play -v 0.2 /media/rspectre/Storage/Video/Sound\\ Effects/interlude_badonkadonk.wav"
                     },
                     "31": {
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/bone.png",
+                        "text": "Jurassic",
+                        "command": "play -v 0.4 /media/rspectre/Storage/Video/Sound\\ Effects/interlude_jurassic.mp3"
                     }
                 },
                 "2": {
                     "0": {
                         "switch_page": 2,
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/chevron-left.png"
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/angle-left.png"
                     },
                     "1": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/check.png",
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/user-check.png",
                         "text": "1",
                         "command": "./press_hack_party_shortcut.sh alt+a"
                     },
                     "2": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/check.png",
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/user-check.png",
                         "text": "2",
                         "command": "./press_hack_party_shortcut.sh alt+b"
                     },
                     "3": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/check.png",
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/user-check.png",
                         "text": "3",
                         "command": "./press_hack_party_shortcut.sh alt+c"
                     },
                     "4": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/check.png",
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/user-check.png",
                         "text": "4",
                         "command": "./press_hack_party_shortcut.sh alt+d"
                     },
                     "5": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/check.png",
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/user-check.png",
                         "text": "5",
                         "command": "./press_hack_party_shortcut.sh alt+e"
                     },
                     "6": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/check.png",
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/user-check.png",
                         "text": "6",
                         "command": "./press_hack_party_shortcut.sh alt+f"
                     },
                     "7": {
                         "switch_page": 4,
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/chevron-right.png"
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/angle-right.png"
                     },
-                    "8": {
-                    },
+                    "8": {},
                     "9": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/refresh.png",
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/repeat.png",
                         "command": "./press_hack_party_shortcut.sh F5"
                     },
-                    "10": {
-                    },
-                    "11": {
-                    },
+                    "10": {},
+                    "11": {},
                     "12": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/keyboard-o.png",
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/keyboard.png",
                         "text": "7",
                         "command": "./press_hack_party_shortcut.sh KP_7"
                     },
                     "13": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/keyboard-o.png",
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/keyboard.png",
                         "text": "8",
                         "command": "./press_hack_party_shortcut.sh KP_8"
                     },
                     "14": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/keyboard-o.png",
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/keyboard.png",
                         "text": "9",
                         "command": "./press_hack_party_shortcut.sh KP_9"
                     },
-                    "15": {
-                    },
+                    "15": {},
                     "16": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/backward.png",
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/delete-left.png",
                         "text": "Backspace",
                         "command": "./press_hack_party_shortcut.sh BackSpace"
                     },
                     "17": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/arrow-up.png",
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/arrow-up.png",
                         "command": "./press_hack_party_shortcut.sh Up"
                     },
                     "18": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/check-square.png",
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/rectangle-x-mark.png",
                         "text": "Enter",
                         "command": "./press_hack_party_shortcut.sh alt+z"
                     },
                     "19": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/dot-circle-o.png",
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/percent.png",
                         "text": "Decimal",
                         "command": "./press_hack_party_shortcut.sh period "
                     },
                     "20": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/keyboard-o.png",
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/keyboard.png",
                         "text": "4",
                         "command": "./press_hack_party_shortcut.sh KP_4"
                     },
                     "21": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/keyboard-o.png",
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/keyboard.png",
                         "text": "5",
                         "command": "./press_hack_party_shortcut.sh KP_5"
                     },
                     "22": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/keyboard-o.png",
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/keyboard.png",
                         "text": "6",
                         "command": "./press_hack_party_shortcut.sh KP_6"
                     },
                     "23": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/check-square-o.png",
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/inbox.png",
                         "command": "./press_hack_party_shortcut.sh alt+i",
                         "text": "Input"
                     },
                     "24": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/arrow-left.png",
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/arrow-left.png",
                         "command": "./press_hack_party_shortcut.sh Left"
                     },
                     "25": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/arrow-down.png",
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/arrow-down.png",
                         "command": "./press_hack_party_shortcut.sh Down"
                     },
                     "26": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/arrow-right.png",
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/arrow-right.png",
                         "command": "./press_hack_party_shortcut.sh Right"
                     },
                     "27": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/keyboard-o.png",
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/keyboard.png",
                         "text": "0",
                         "command": "./press_hack_party_shortcut.sh KP_0"
                     },
                     "28": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/keyboard-o.png",
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/keyboard.png",
                         "text": "1",
                         "command": "./press_hack_party_shortcut.sh KP_1"
                     },
                     "29": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/keyboard-o.png",
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/keyboard.png",
                         "text": "2",
                         "command": "./press_hack_party_shortcut.sh KP_2"
                     },
                     "30": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/keyboard-o.png",
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/keyboard.png",
                         "text": "3",
                         "command": "./press_hack_party_shortcut.sh KP_3"
                     },
                     "31": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/check-square.png",
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/rectangle-x-mark.png",
                         "text": "Enter",
                         "command": "./press_hack_party_shortcut.sh Return"
                     }
@@ -1234,150 +446,146 @@
                         "switch_page": 3,
                         "keys": "",
                         "text": "",
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/chevron-left.png"
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/angle-left.png"
                     },
                     "1": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/formula_1/f1mv-us.png",
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/mvf1_rounded.png",
                         "command": "./launch_f1tv.sh"
                     },
                     "2": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/refresh.png",
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/clock-rotate-left.png",
                         "command": "mvf1-cli players sync"
                     },
                     "3": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/microphone.png",
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/microphone-lines.png",
                         "command": "python control_driver_feeds.py toggle-driver-radio"
                     },
                     "4": {
                         "icon": "/media/rspectre/Storage/workspace/streamdeck/images/formula_1/driver-headshots/2023/VER.png",
                         "text": "VER",
-                        "command": "python control_driver_feeds.py change-driver --driver_abbreviation VER"
+                        "command": "python control_driver_feeds.py driver --driver_abbreviation VER"
                     },
                     "5": {
                         "icon": "/media/rspectre/Storage/workspace/streamdeck/images/formula_1/driver-headshots/2023/PER.png",
                         "text": "PER",
-                        "command": "python control_driver_feeds.py change-driver --driver_abbreviation PER"
+                        "command": "python control_driver_feeds.py driver --driver_abbreviation PER"
                     },
                     "6": {
                         "icon": "/media/rspectre/Storage/workspace/streamdeck/images/formula_1/driver-headshots/2023/ALO.png",
                         "text": "ALO",
-                        "command": "python control_driver_feeds.py change-driver --driver_abbreviation ALO"
+                        "command": "python control_driver_feeds.py driver --driver_abbreviation ALO"
                     },
                     "7": {
-                        "write": "",
-                        "command": "",
                         "switch_page": 5,
-                        "keys": "",
-                        "text": "",
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/chevron-right.png"
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/angle-right.png"
                     },
                     "8": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/angle-double-left.png",
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/angles-left.png",
                         "command": "./mvf1_command_with_sync.sh  player --title INTERNATIONAL seek --relative -30"
                     },
                     "9": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/angle-left.png",
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/angle-left.png",
                         "command": "./mvf1_command_with_sync.sh player --title INTERNATIONAL seek --relative -3"
                     },
                     "10": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/angle-left.png",
-                        "command": "./mvf1_command_with_sync.sh player --title INTERNATIONAL seek --relative -3"
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/angle-right.png",
+                        "command": "./mvf1_command_with_sync.sh player --title INTERNATIONAL seek --relative 3"
                     },
                     "11": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/angle-double-right.png",
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/angles-right.png",
                         "command": "./mvf1_command_with_sync.sh  player --title INTERNATIONAL seek --relative 30"
                     },
                     "12": {
                         "icon": "/media/rspectre/Storage/workspace/streamdeck/images/formula_1/driver-headshots/2023/LEC.png",
                         "text": "LEC",
-                        "command": "python control_driver_feeds.py change-driver --driver_abbreviation LEC"
+                        "command": "python control_driver_feeds.py driver --driver_abbreviation LEC"
                     },
                     "13": {
                         "icon": "/media/rspectre/Storage/workspace/streamdeck/images/formula_1/driver-headshots/2023/SAI.png",
                         "text": "SAI",
-                        "command": "python control_driver_feeds.py change-driver --driver_abbreviation SAI"
+                        "command": "python control_driver_feeds.py driver --driver_abbreviation SAI"
                     },
                     "14": {
                         "icon": "/media/rspectre/Storage/workspace/streamdeck/images/formula_1/driver-headshots/2023/HAM.png",
                         "text": "HAM",
-                        "command": "python control_driver_feeds.py change-driver --driver_abbreviation HAM"
+                        "command": "python control_driver_feeds.py driver --driver_abbreviation HAM"
                     },
                     "15": {
                         "icon": "/media/rspectre/Storage/workspace/streamdeck/images/formula_1/driver-headshots/2023/RUS.png",
                         "text": "RUS",
-                        "command": "python control_driver_feeds.py change-driver --driver_abbreviation RUS"
+                        "command": "python control_driver_feeds.py driver --driver_abbreviation RUS"
                     },
                     "16": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/pause.png",
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/pause.png",
                         "command": "mvf1-cli players pause"
                     },
                     "17": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/external-link.png",
-                        "command": "python control_driver_feeds.py maximize-driver --driver_window 0"
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/backward.png",
+                        "command": "./mvf1_command_with_sync.sh  player --title INTERNATIONAL seek --relative -300"
                     },
                     "18": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/external-link.png",
-                        "command": "python control_driver_feeds.py maximize-driver --driver_window 1"
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/forward.png",
+                        "command": "./mvf1_command_with_sync.sh  player --title INTERNATIONAL seek --relative 300"
                     },
                     "19": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/external-link.png",
-                        "command": "python control_driver_feeds.py maximize-driver --driver_window 2"
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/recycle.png",
+                        "command": "python control_driver_feeds.py rotate-drivers"
                     },
                     "20": {
                         "icon": "/media/rspectre/Storage/workspace/streamdeck/images/formula_1/driver-headshots/2023/OCO.png",
                         "text": "OCO",
-                        "command": "python control_driver_feeds.py change-driver --driver_abbreviation OCO"
+                        "command": "python control_driver_feeds.py driver --driver_abbreviation OCO"
                     },
                     "21": {
                         "icon": "/media/rspectre/Storage/workspace/streamdeck/images/formula_1/driver-headshots/2023/GAS.png",
                         "text": "GAS",
-                        "command": "python control_driver_feeds.py change-driver --driver_abbreviation GAS"
+                        "command": "python control_driver_feeds.py driver --driver_abbreviation GAS"
                     },
                     "22": {
                         "icon": "/media/rspectre/Storage/workspace/streamdeck/images/formula_1/driver-headshots/2023/BOT.png",
                         "text": "BOT",
-                        "command": "python control_driver_feeds.py change-driver --driver_abbreviation BOT"
+                        "command": "python control_driver_feeds.py driver --driver_abbreviation BOT"
                     },
                     "23": {
                         "icon": "/media/rspectre/Storage/workspace/streamdeck/images/formula_1/driver-headshots/2023/ZHO.png",
                         "text": "ZHO",
-                        "command": "python control_driver_feeds.py change-driver --driver_abbreviation ZHO"
+                        "command": "python control_driver_feeds.py driver --driver_abbreviation ZHO"
                     },
                     "24": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fast-backward.png",
-                        "command": "./mvf1_command_with_sync.sh  player --title INTERNATIONAL seek --relative -300"
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/stopwatch.png",
+                        "command": "mvf1-cli players toggle-speedometers"
                     },
                     "25": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/external-link.png",
-                        "command": "python control_driver_feeds.py maximize-driver --driver_window 3"
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/microphone-lines-slash.png",
+                        "command": "mvf1-cli player --title INTERNATIONAL mute"
                     },
                     "26": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/external-link.png",
-                        "command": "python control_driver_feeds.py maximize-driver --driver_window 4"
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/forward-fast.png",
+                        "command": "./mvf1_command_with_sync.sh player --title INTERNATIONAL seek --relative 10000"
                     },
                     "27": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/external-link.png",
-                        "command": "python control_driver_feeds.py maximize-driver --driver_window 5"
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/user-group.png",
+                        "command": "python control_driver_feeds.py set-target"
                     },
                     "28": {
                         "icon": "/media/rspectre/Storage/workspace/streamdeck/images/formula_1/driver-headshots/2023/STR.png",
                         "text": "STR",
-                        "command": "python control_driver_feeds.py change-driver --driver_abbreviation STR"
+                        "command": "python control_driver_feeds.py driver --driver_abbreviation STR"
                     },
                     "29": {
                         "icon": "/media/rspectre/Storage/workspace/streamdeck/images/formula_1/driver-headshots/2023/NOR.png",
                         "text": "NOR",
-                        "command": "python control_driver_feeds.py change-driver --driver_abbreviation NOR"
+                        "command": "python control_driver_feeds.py driver --driver_abbreviation NOR"
                     },
                     "30": {
                         "icon": "/media/rspectre/Storage/workspace/streamdeck/images/formula_1/driver-headshots/2023/ALB.png",
                         "text": "ALB",
-                        "command": "python control_driver_feeds.py change-driver --driver_abbreviation ALB"
+                        "command": "python control_driver_feeds.py driver --driver_abbreviation ALB"
                     },
                     "31": {
                         "icon": "/media/rspectre/Storage/workspace/streamdeck/images/formula_1/driver-headshots/2023/TSU.png",
                         "text": "TSU",
-                        "command": "python control_driver_feeds.py change-driver --driver_abbreviation TSU"
+                        "command": "python control_driver_feeds.py driver --driver_abbreviation TSU"
                     }
                 },
                 "4": {
@@ -1387,33 +595,17 @@
                         "switch_page": 4,
                         "keys": "",
                         "text": "",
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/chevron-left.png"
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/angle-left.png"
                     },
                     "1": {
                         "icon": "/media/rspectre/Storage/workspace/streamdeck/images/formula_1/driver-headshots/2023/DEV.png",
                         "text": "DEV",
-                        "command": "python control_driver_feeds.py change-driver --driver_abbreviation DEV"
+                        "command": "python control_driver_feeds.py driver --driver_abbreviation DEV"
                     },
-                    "2": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/formula_1/driver-headshots/2023/SAR.png",
-                        "text": "SAR",
-                        "command": "python control_driver_feeds.py change-driver --driver_abbreviation SAR"
-                    },
-                    "3": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/formula_1/driver-headshots/2023/PIA.png",
-                        "text": "PIA",
-                        "command": "python control_driver_feeds.py change-driver --driver_abbreviation PIA"
-                    },
-                    "4": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/formula_1/driver-headshots/2023/MAG.png",
-                        "text": "MAG",
-                        "command": "python control_driver_feeds.py change-driver --driver_abbreviation MAG"
-                    },
-                    "5": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/formula_1/driver-headshots/2023/HUL.png",
-                        "text": "HUL",
-                        "command": "python control_driver_feeds.py change-driver --driver_abbreviation HUL"
-                    },
+                    "2": {},
+                    "3": {},
+                    "4": {},
+                    "5": {},
                     "6": {},
                     "7": {
                         "write": "",
@@ -1421,18 +613,34 @@
                         "switch_page": 6,
                         "keys": "",
                         "text": "",
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/chevron-right.png"
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/angle-right.png"
                     },
-                    "8": {},
-                    "9": {},
+                    "8": {
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/formula_1/driver-headshots/2023/SAR.png",
+                        "text": "SAR",
+                        "command": "python control_driver_feeds.py driver --driver_abbreviation SAR"
+                    },
+                    "9": {
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/formula_1/driver-headshots/2023/PIA.png",
+                        "text": "PIA",
+                        "command": "python control_driver_feeds.py driver --driver_abbreviation PIA"
+                    },
                     "10": {},
                     "11": {},
                     "12": {},
                     "13": {},
                     "14": {},
                     "15": {},
-                    "16": {},
-                    "17": {},
+                    "16": {
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/formula_1/driver-headshots/2023/MAG.png",
+                        "text": "MAG",
+                        "command": "python control_driver_feeds.py driver --driver_abbreviation MAG"
+                    },
+                    "17": {
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/formula_1/driver-headshots/2023/HUL.png",
+                        "text": "HUL",
+                        "command": "python control_driver_feeds.py driver --driver_abbreviation HUL"
+                    },
                     "18": {},
                     "19": {},
                     "20": {},
@@ -1455,7 +663,7 @@
                         "switch_page": 5,
                         "keys": "",
                         "text": "",
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/chevron-left.png"
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/angle-left.png"
                     },
                     "1": {},
                     "2": {},
@@ -1469,7 +677,7 @@
                         "switch_page": 7,
                         "keys": "",
                         "text": "",
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/chevron-right.png"
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/angle-right.png"
                     },
                     "8": {},
                     "9": {},
@@ -1503,7 +711,7 @@
                         "switch_page": 6,
                         "keys": "",
                         "text": "",
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/chevron-left.png"
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/angle-left.png"
                     },
                     "1": {},
                     "2": {},
@@ -1517,7 +725,7 @@
                         "switch_page": 8,
                         "keys": "",
                         "text": "",
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/chevron-right.png"
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/angle-right.png"
                     },
                     "8": {},
                     "9": {},
@@ -1551,7 +759,7 @@
                         "switch_page": 7,
                         "keys": "",
                         "text": "",
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/chevron-left.png"
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/angle-left.png"
                     },
                     "1": {},
                     "2": {},
@@ -1565,7 +773,7 @@
                         "switch_page": 9,
                         "keys": "",
                         "text": "",
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/chevron-right.png"
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/angle-right.png"
                     },
                     "8": {},
                     "9": {},
@@ -1599,7 +807,7 @@
                         "switch_page": 8,
                         "keys": "",
                         "text": "",
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/chevron-left.png"
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/angle-left.png"
                     },
                     "1": {},
                     "2": {},
@@ -1613,7 +821,7 @@
                         "switch_page": 10,
                         "keys": "",
                         "text": "",
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/chevron-right.png"
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/angle-right.png"
                     },
                     "8": {},
                     "9": {},
@@ -1647,7 +855,7 @@
                         "switch_page": 9,
                         "keys": "",
                         "text": "",
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/chevron-left.png"
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/angle-left.png"
                     },
                     "1": {},
                     "2": {},
@@ -1681,7 +889,8 @@
                     "30": {},
                     "31": {}
                 }
-            }
+            },
+            "page": 1
         }
     }
 }

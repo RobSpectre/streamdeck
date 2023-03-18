@@ -234,15 +234,31 @@
                         "text": "Virus",
                         "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/virus-covid.png"
                     },
-                    "15": {},
-                    "16": {},
-                    "17": {},
+                    "15": {
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/hand-sparkles.png",
+                        "text": "Cena",
+                        "command": "./press_obs_shortcut.sh ctrl+alt+backslash"
+                    },
+                    "16": {
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/bullhorn.png",
+                        "text": "Rap Horn",
+                        "command": "play -v 0.1 /media/rspectre/Storage/Video/Sound\\ Effects/airhorn.mp3"
+                    },
+                    "17": {
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/not-equal.png",
+                        "text": "Wrong",
+                        "command": "play -v 0.2 /media/rspectre/Storage/Video/Sound\\ Effects/wrong.mp3"
+                    },
                     "18": {},
                     "19": {},
                     "20": {},
                     "21": {},
                     "22": {},
-                    "23": {},
+                    "23": {
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/face-sad-cry.png",
+                        "text": "Noooo",
+                        "command": "./press_obs_shortcut.sh ctrl+alt+minus"
+                    },
                     "24": {},
                     "25": {},
                     "26": {},
@@ -441,7 +457,7 @@
                     },
                     "10": {
                         "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/angle-right.png",
-                        "command": "./mvf1_command_with_sync.sh player --title INTERNATIONAL seek --relative -3"
+                        "command": "./mvf1_command_with_sync.sh player --title INTERNATIONAL seek --relative 3"
                     },
                     "11": {
                         "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/angles-right.png",
@@ -472,11 +488,11 @@
                         "command": "mvf1-cli players pause"
                     },
                     "17": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/backward-fast.png",
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/backward.png",
                         "command": "./mvf1_command_with_sync.sh  player --title INTERNATIONAL seek --relative -300"
                     },
                     "18": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/forward-fast.png",
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/forward.png",
                         "command": "./mvf1_command_with_sync.sh  player --title INTERNATIONAL seek --relative 300"
                     },
                     "19": {
@@ -505,14 +521,14 @@
                     },
                     "24": {
                         "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/stopwatch.png",
-                        "command": "./mvf1_command_with_sync.sh  player --title INTERNATIONAL seek --relative -300"
+                        "command": "mvf1-cli players toggle-speedometers"
                     },
                     "25": {
                         "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/microphone-lines-slash.png",
-                        "command": "mvf1-cli players mute"
+                        "command": "mvf1-cli player --title INTERNATIONAL mute"
                     },
                     "26": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/clock.png",
+                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/forward-fast.png",
                         "command": "./mvf1_command_with_sync.sh player --title INTERNATIONAL seek --relative 10000"
                     },
                     "27": {
@@ -842,7 +858,7 @@
                     "31": {}
                 }
             },
-            "page": 3
+            "page": 1
         }
     }
 }
