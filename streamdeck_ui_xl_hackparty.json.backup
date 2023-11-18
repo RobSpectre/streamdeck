@@ -348,10 +348,7 @@
                         "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/repeat.png",
                         "command": "./press_hack_party_shortcut.sh F5"
                     },
-                    "10": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/arrow-down.png",
-                        "keys": "down"
-                    },
+                    "10": {},
                     "11": {},
                     "12": {
                         "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/keyboard.png",
@@ -617,9 +614,7 @@
                     "3": {},
                     "4": {},
                     "5": {},
-                    "6": {
-                        "write": "sherlock\n"
-                    },
+                    "6": {},
                     "7": {
                         "write": "",
                         "command": "",
@@ -678,10 +673,7 @@
                         "text": "",
                         "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/angle-left.png"
                     },
-                    "1": {
-                        "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/arrows-rotate.png",
-                        "command": "bash -c \"pkill -9 streamdeck && ~/.virtualenvs/streamdeck/bin/streamdeck\""
-                    },
+                    "1": {},
                     "2": {},
                     "3": {},
                     "4": {},
@@ -906,7 +898,7 @@
                     "31": {}
                 }
             },
-            "page": 3
+            "page": 4
         }
     }
 }

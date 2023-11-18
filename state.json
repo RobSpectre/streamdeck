@@ -1,5 +1,1 @@
-{ 
-"command": null,
-"target_window": "RUS",
-"history": []
-}
+{"command": null, "target_window": "OCO", "history": [{"driver_abbreviation": "PER", "x": 10000, "y": 0, "width": 767, "height": 433}, {"driver_abbreviation": "VER", "x": 10753, "y": 0, "width": 767, "height": 433}, {"driver_abbreviation": "LEC", "x": 9232, "y": 431, "width": 767, "height": 433}, {"driver_abbreviation": "OCO", "x": 9231, "y": 1726, "width": 767, "height": 433}, {"driver_abbreviation": "OCO", "x": 9231, "y": 1726, "width": 767, "height": 433}]}

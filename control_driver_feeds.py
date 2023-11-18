@@ -13,15 +13,15 @@ with open('state.json') as f:
 remote = MultiViewerForF1()
 
 window_bounds = [
-    {'x': 6144, 'y': 0, 'width': 1027, 'height': 580, 'occupied': False},
-    {'x': 7166, 'y': 0, 'width': 1027, 'height': 580, 'occupied': False},
-    {'x': 8192, 'y': 0, 'width': 1024, 'height': 579, 'occupied': False},
-    {'x': 6144, 'y': 573, 'width': 1024, 'height': 579, 'occupied': False},
-    {'x': 7168, 'y': 573, 'width': 1024, 'height': 579, 'occupied': False},
-    {'x': 8192, 'y': 573, 'width': 1024, 'height': 579, 'occupied': False},
-    {'x': 6144, 'y': 1147, 'width': 1025, 'height': 579, 'occupied': False},
-    {'x': 7168, 'y': 1147, 'width': 1025, 'height': 579, 'occupied': False},
-    {'x': 8191, 'y': 1147, 'width': 1025, 'height': 579, 'occupied': False}
+    {'x': 7680, 'y': 0, 'width': 1027, 'height': 580, 'occupied': False},
+    {'x': 9217, 'y': 0, 'width': 1027, 'height': 580, 'occupied': False},
+    {'x': 10753, 'y': 0, 'width': 1024, 'height': 579, 'occupied': False},
+    {'x': 7680, 'y': 573, 'width': 1024, 'height': 579, 'occupied': False},
+    {'x': 9217, 'y': 573, 'width': 1024, 'height': 579, 'occupied': False},
+    {'x': 10753, 'y': 573, 'width': 1024, 'height': 579, 'occupied': False},
+    {'x': 7680, 'y': 1147, 'width': 1025, 'height': 579, 'occupied': False},
+    {'x': 9217, 'y': 1147, 'width': 1025, 'height': 579, 'occupied': False},
+    {'x': 10753, 'y': 1147, 'width': 1025, 'height': 579, 'occupied': False}
 ]
 
 players = remote.players
