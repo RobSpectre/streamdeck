@@ -2,7 +2,7 @@
 if pgrep MultiViewer > /dev/null
 then
     mvf1-cli players close
-    xdotool search --onlyvisible --all --name 'MultiViewer for F1' windowactivate
+    xdotool search --all --name 'MultiViewer' windowactivate
     xdotool key ctrl+w
     xdotool search --name 'workspace/streamdeck' windowactivate
     xdotool key ctrl+Page_Down

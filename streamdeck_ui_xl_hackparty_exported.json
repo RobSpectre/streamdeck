@@ -28,8 +28,8 @@
                         "state": 0,
                         "states": {
                             "0": {
-                                "text": "PiP",
-                                "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/window-restore.png",
+                                "text": "Split Screen",
+                                "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/solar-panel.png",
                                 "keys": "",
                                 "write": "",
                                 "command": "./press_obs_shortcut.sh ctrl+alt+n",
@@ -49,11 +49,11 @@
                         "state": 0,
                         "states": {
                             "0": {
-                                "text": "Portrait",
-                                "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/image-portrait.png",
+                                "text": "Game Board",
+                                "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/chess-board.png",
                                 "keys": "",
                                 "write": "",
-                                "command": "./press_obs_shortcut.sh ctrl+shift+f",
+                                "command": "./press_obs_shortcut.sh ctrl+shift+F3",
                                 "brightness_change": 0,
                                 "switch_page": 0,
                                 "switch_state": 0,
@@ -71,10 +71,10 @@
                         "states": {
                             "0": {
                                 "text": "Face",
-                                "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/face-laugh-beam.png",
+                                "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/user.png",
                                 "keys": "",
                                 "write": "",
-                                "command": "./press_obs_shortcut.sh ctrl+shift+i",
+                                "command": "./press_obs_shortcut.sh ctrl+shift+f",
                                 "brightness_change": 0,
                                 "switch_page": 0,
                                 "switch_state": 0,
@@ -196,11 +196,11 @@
                         "state": 0,
                         "states": {
                             "0": {
-                                "text": "BRB",
-                                "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/bed.png",
+                                "text": "Stream",
+                                "icon": "/media/rspectre/Storage/workspace/streamdeck/images/Standard-Clarity-Icons/Normal/App-OBS.png",
                                 "keys": "",
                                 "write": "",
-                                "command": "./press_obs_shortcut.sh ctrl+shift+F5",
+                                "command": "./launch_stream.sh",
                                 "brightness_change": 0,
                                 "switch_page": 0,
                                 "switch_state": 0,
@@ -221,7 +221,7 @@
                                 "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/dog.png",
                                 "keys": "",
                                 "write": "",
-                                "command": "./press_obs_shortcut.sh ctrl+shift+F4",
+                                "command": "./press_obs_shortcut.sh ctrl+shift+F5",
                                 "brightness_change": 0,
                                 "switch_page": 0,
                                 "switch_state": 0,
@@ -259,36 +259,20 @@
                         "state": 0,
                         "states": {
                             "0": {
-                                "text": "Blur",
-                                "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/cloud.png",
+                                "text": "PiP",
+                                "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/window-restore.png",
                                 "keys": "",
                                 "write": "",
-                                "command": "./press_obs_shortcut.sh ctrl+shift+1",
+                                "command": "./press_obs_shortcut.sh ctrl+shift+i",
                                 "brightness_change": 0,
                                 "switch_page": 0,
-                                "switch_state": 2,
+                                "switch_state": 0,
                                 "text_vertical_align": "",
                                 "text_horizontal_align": "",
                                 "font": "",
                                 "font_color": "",
                                 "font_size": 0,
                                 "background_color": ""
-                            },
-                            "1": {
-                                "text": "Stop Blur",
-                                "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/cloud.png",
-                                "keys": "",
-                                "write": "",
-                                "command": "./press_obs_shortcut.sh ctrl+shift+2",
-                                "brightness_change": 0,
-                                "switch_page": 0,
-                                "switch_state": 1,
-                                "text_vertical_align": "",
-                                "text_horizontal_align": "",
-                                "font": "",
-                                "font_color": "",
-                                "font_size": 0,
-                                "background_color": "#ffffff"
                             }
                         }
                     },
@@ -4088,11 +4072,11 @@
                         "state": 0,
                         "states": {
                             "0": {
-                                "text": "Mic",
-                                "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/microphone-lines-slash.png",
+                                "text": "",
+                                "icon": "",
                                 "keys": "",
                                 "write": "",
-                                "command": "./mute_mics.sh",
+                                "command": "",
                                 "brightness_change": 0,
                                 "switch_page": 0,
                                 "switch_state": 0,
@@ -4109,11 +4093,11 @@
                         "state": 0,
                         "states": {
                             "0": {
-                                "text": "Face",
-                                "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/user.png",
+                                "text": "",
+                                "icon": "",
                                 "keys": "",
                                 "write": "",
-                                "command": "./press_obs_shortcut.sh ctrl+shift+f",
+                                "command": "",
                                 "brightness_change": 0,
                                 "switch_page": 0,
                                 "switch_state": 0,
@@ -4130,11 +4114,11 @@
                         "state": 0,
                         "states": {
                             "0": {
-                                "text": "Game",
-                                "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/gamepad.png",
+                                "text": "",
+                                "icon": "",
                                 "keys": "",
                                 "write": "",
-                                "command": "./press_obs_shortcut.sh ctrl+shift+g",
+                                "command": "",
                                 "brightness_change": 0,
                                 "switch_page": 0,
                                 "switch_state": 0,
@@ -4151,11 +4135,11 @@
                         "state": 0,
                         "states": {
                             "0": {
-                                "text": "Video",
-                                "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/video-file.png",
+                                "text": "",
+                                "icon": "",
                                 "keys": "",
                                 "write": "",
-                                "command": "./press_obs_shortcut.sh ctrl+shift+l",
+                                "command": "",
                                 "brightness_change": 0,
                                 "switch_page": 0,
                                 "switch_state": 0,
@@ -4172,11 +4156,11 @@
                         "state": 0,
                         "states": {
                             "0": {
-                                "text": "Game Board",
-                                "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/chess-board.png",
+                                "text": "",
+                                "icon": "",
                                 "keys": "",
                                 "write": "",
-                                "command": "./press_obs_shortcut.sh ctrl+shift+F3",
+                                "command": "",
                                 "brightness_change": 0,
                                 "switch_page": 0,
                                 "switch_state": 0,
@@ -4193,11 +4177,11 @@
                         "state": 0,
                         "states": {
                             "0": {
-                                "text": "Key",
-                                "icon": "/media/rspectre/Storage/workspace/streamdeck/images/fontawesome/lightbulb.png",
+                                "text": "",
+                                "icon": "",
                                 "keys": "",
                                 "write": "",
-                                "command": "python control_lights.py toggle --light Key",
+                                "command": "",
                                 "brightness_change": 0,
                                 "switch_page": 0,
                                 "switch_state": 0,
@@ -6760,81 +6744,7 @@
                 }
             },
             "display_timeout": 0,
-            "brightness": 86,
-            "brightness_dimmed": 49,
-            "rotation": 0,
-            "page": 1
-        },
-        "A00YA5362L663L": {
-            "buttons": {
-                "0": {
-                    "0": {
-                        "state": 0,
-                        "states": {
-                            "0": {
-                                "text": "",
-                                "icon": "",
-                                "keys": "",
-                                "write": "",
-                                "command": "",
-                                "brightness_change": 0,
-                                "switch_page": 0,
-                                "switch_state": 0,
-                                "text_vertical_align": "",
-                                "text_horizontal_align": "",
-                                "font": "",
-                                "font_color": "",
-                                "font_size": 0,
-                                "background_color": ""
-                            }
-                        }
-                    },
-                    "1": {
-                        "state": 0,
-                        "states": {
-                            "0": {
-                                "text": "",
-                                "icon": "",
-                                "keys": "",
-                                "write": "",
-                                "command": "",
-                                "brightness_change": 0,
-                                "switch_page": 0,
-                                "switch_state": 0,
-                                "text_vertical_align": "",
-                                "text_horizontal_align": "",
-                                "font": "",
-                                "font_color": "",
-                                "font_size": 0,
-                                "background_color": ""
-                            }
-                        }
-                    },
-                    "2": {
-                        "state": 0,
-                        "states": {
-                            "0": {
-                                "text": "",
-                                "icon": "",
-                                "keys": "",
-                                "write": "",
-                                "command": "",
-                                "brightness_change": 0,
-                                "switch_page": 0,
-                                "switch_state": 0,
-                                "text_vertical_align": "",
-                                "text_horizontal_align": "",
-                                "font": "",
-                                "font_color": "",
-                                "font_size": 0,
-                                "background_color": ""
-                            }
-                        }
-                    }
-                }
-            },
-            "display_timeout": 1800,
-            "brightness": 100,
+            "brightness": 0,
             "brightness_dimmed": 0,
             "rotation": 0,
             "page": 0
