@@ -25,3 +25,17 @@ running
 
 package-lock.json
 *.log
+
+# Python helper environment and migration bytecode
+.venv/
+__pycache__/
+.obs-background.lock
+.obs-blur.lock
+.audio-control-state.json
+.audio-control-state.tmp
+opendeck-labels.lock
+opendeck-labels.tmp
+
+# Mutable mixer and Formula 1 state (defaults stay versioned)
+mixer_in_desktop.txt
+state.json

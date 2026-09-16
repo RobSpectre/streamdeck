@@ -7,7 +7,9 @@ import time
 
 from mvf1 import MultiViewerForF1
 
-with open('state.json') as f:
+from pathlib import Path
+
+with open('state.json' if Path('state.json').exists() else 'state_default.json') as f:
     state = json.load(f)
 
 remote = MultiViewerForF1()

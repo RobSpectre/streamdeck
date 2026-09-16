@@ -1,4 +1,5 @@
 #!/bin/bash
+set -euo pipefail
 if [ -f mixer_in_desktop.txt ]
 then
     xdotool mousemove 2231 977 

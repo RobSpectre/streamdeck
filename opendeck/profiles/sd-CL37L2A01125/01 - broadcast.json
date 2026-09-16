@@ -1,0 +1,2570 @@
+{
+  "keys": [
+    {
+      "action": {
+        "name": "Live broadcast control",
+        "uuid": "party.hack.status.control",
+        "plugin": "party.hack.status.sdPlugin",
+        "states": [
+          {
+            "image": "images/hackparty/887a01052cf866e723a02804fe5d9556f2f78e322863fe3fcde33c5ada9aa039.svg",
+            "text": "Mic SAFE",
+            "show": true,
+            "colour": "#b8c4d4",
+            "background_colour": "#10141b",
+            "alignment": "bottom",
+            "family": "DejaVu Sans",
+            "size": 11
+          },
+          {
+            "image": "images/hackparty/ca04aec1c7ee7216d3446c14080f0c00411bb0c38c23271a4bebc6fa0bc0b282.svg",
+            "text": "Mic HOT",
+            "show": true,
+            "colour": "#ffd9d9",
+            "background_colour": "#26090d",
+            "alignment": "bottom",
+            "family": "DejaVu Sans",
+            "size": 11
+          },
+          {
+            "image": "images/hackparty/887a01052cf866e723a02804fe5d9556f2f78e322863fe3fcde33c5ada9aa039.svg",
+            "text": "Mic MUTED",
+            "show": true,
+            "colour": "#b8c4d4",
+            "background_colour": "#10141b",
+            "alignment": "bottom",
+            "family": "DejaVu Sans",
+            "size": 11
+          }
+        ],
+        "icon": "plugins/party.hack.status.sdPlugin/icon.png",
+        "controllers": [
+          "Keypad"
+        ],
+        "disable_automatic_states": true
+      },
+      "context": "Keypad.0.0",
+      "states": [
+        {
+          "image": "images/hackparty/887a01052cf866e723a02804fe5d9556f2f78e322863fe3fcde33c5ada9aa039.svg",
+          "text": "Mic SAFE",
+          "show": true,
+          "colour": "#b8c4d4",
+          "background_colour": "#10141b",
+          "alignment": "bottom",
+          "family": "DejaVu Sans",
+          "size": 11
+        },
+        {
+          "image": "images/hackparty/ca04aec1c7ee7216d3446c14080f0c00411bb0c38c23271a4bebc6fa0bc0b282.svg",
+          "text": "Mic HOT",
+          "show": true,
+          "colour": "#ffd9d9",
+          "background_colour": "#26090d",
+          "alignment": "bottom",
+          "family": "DejaVu Sans",
+          "size": 11
+        },
+        {
+          "image": "images/hackparty/887a01052cf866e723a02804fe5d9556f2f78e322863fe3fcde33c5ada9aa039.svg",
+          "text": "Mic MUTED",
+          "show": true,
+          "colour": "#b8c4d4",
+          "background_colour": "#10141b",
+          "alignment": "bottom",
+          "family": "DejaVu Sans",
+          "size": 11
+        }
+      ],
+      "current_state": 0,
+      "settings": {
+        "kind": "mic_mute",
+        "id": "mic_mute",
+        "_label_id": "98ce8a4f-ce1e-430b-ad23-89651ad54814",
+        "_label_defaults": [
+          "Mic SAFE",
+          "Mic HOT",
+          "Mic MUTED"
+        ],
+        "_label_mode": "per_state"
+      },
+      "children": null
+    },
+    {
+      "action": {
+        "name": "Live broadcast control",
+        "uuid": "party.hack.status.control",
+        "plugin": "party.hack.status.sdPlugin",
+        "states": [
+          {
+            "image": "images/hackparty/1a9a98212aedcf6d21f16499daaa4b1695787d1365cc7b3b6b1324bee584f3ad.svg",
+            "text": "PiP",
+            "show": true,
+            "colour": "#b8c4d4",
+            "background_colour": "#10141b",
+            "alignment": "bottom",
+            "family": "DejaVu Sans",
+            "size": 11
+          },
+          {
+            "image": "images/hackparty/f26d66304a4898ada8acf71ae1d0bbf0a7ac070f407f258a7f27ac5f88d067dc.svg",
+            "text": "PiP",
+            "show": true,
+            "colour": "#ffe7a3",
+            "background_colour": "#201604",
+            "alignment": "bottom",
+            "family": "DejaVu Sans",
+            "size": 11
+          },
+          {
+            "image": "images/hackparty/49059632422d0fd378c773f33c07a7f6c3f60d9434c946ea5908d0f95f2d4c76.svg",
+            "text": "PiP",
+            "show": true,
+            "colour": "#b8c4d4",
+            "background_colour": "#10141b",
+            "alignment": "bottom",
+            "family": "DejaVu Sans",
+            "size": 11
+          }
+        ],
+        "icon": "plugins/party.hack.status.sdPlugin/icon.png",
+        "controllers": [
+          "Keypad"
+        ],
+        "disable_automatic_states": true
+      },
+      "context": "Keypad.1.0",
+      "states": [
+        {
+          "image": "images/hackparty/1a9a98212aedcf6d21f16499daaa4b1695787d1365cc7b3b6b1324bee584f3ad.svg",
+          "text": "PiP",
+          "show": true,
+          "colour": "#b8c4d4",
+          "background_colour": "#10141b",
+          "alignment": "bottom",
+          "family": "DejaVu Sans",
+          "size": 11
+        },
+        {
+          "image": "images/hackparty/f26d66304a4898ada8acf71ae1d0bbf0a7ac070f407f258a7f27ac5f88d067dc.svg",
+          "text": "PiP",
+          "show": true,
+          "colour": "#ffe7a3",
+          "background_colour": "#201604",
+          "alignment": "bottom",
+          "family": "DejaVu Sans",
+          "size": 11
+        },
+        {
+          "image": "images/hackparty/49059632422d0fd378c773f33c07a7f6c3f60d9434c946ea5908d0f95f2d4c76.svg",
+          "text": "PiP",
+          "show": true,
+          "colour": "#b8c4d4",
+          "background_colour": "#10141b",
+          "alignment": "bottom",
+          "family": "DejaVu Sans",
+          "size": 11
+        }
+      ],
+      "current_state": 2,
+      "settings": {
+        "kind": "scene",
+        "scene": "Desktop Picture-in-Picture",
+        "id": "PiP",
+        "_label_id": "54979634-63ca-4bb6-ac69-5c96604de398",
+        "_label_defaults": [
+          "PiP",
+          "PiP",
+          "PiP"
+        ],
+        "_label_mode": "shared"
+      },
+      "children": null
+    },
+    {
+      "action": {
+        "name": "Live broadcast control",
+        "uuid": "party.hack.status.control",
+        "plugin": "party.hack.status.sdPlugin",
+        "states": [
+          {
+            "image": "images/hackparty/5b21d06509a2db01ed9cf23e1e3e09228394b20775d77cc7b17ad1ab65cc2222.svg",
+            "text": "Portrait",
+            "show": true,
+            "colour": "#b8c4d4",
+            "background_colour": "#10141b",
+            "alignment": "bottom",
+            "family": "DejaVu Sans",
+            "size": 11
+          },
+          {
+            "image": "images/hackparty/9910cda313eb887e590c18134282dc3b57139d1846e86fe3a31f2a4c61bdb7f8.svg",
+            "text": "Portrait",
+            "show": true,
+            "colour": "#ffe7a3",
+            "background_colour": "#201604",
+            "alignment": "bottom",
+            "family": "DejaVu Sans",
+            "size": 11
+          },
+          {
+            "image": "images/hackparty/fb6a26f46cf48bd1b461bcfe471edf25d2e8950a939068ef882b20cfb7034941.svg",
+            "text": "Portrait",
+            "show": true,
+            "colour": "#b8c4d4",
+            "background_colour": "#10141b",
+            "alignment": "bottom",
+            "family": "DejaVu Sans",
+            "size": 11
+          }
+        ],
+        "icon": "plugins/party.hack.status.sdPlugin/icon.png",
+        "controllers": [
+          "Keypad"
+        ],
+        "disable_automatic_states": true
+      },
+      "context": "Keypad.2.0",
+      "states": [
+        {
+          "image": "images/hackparty/5b21d06509a2db01ed9cf23e1e3e09228394b20775d77cc7b17ad1ab65cc2222.svg",
+          "text": "Portrait",
+          "show": true,
+          "colour": "#b8c4d4",
+          "background_colour": "#10141b",
+          "alignment": "bottom",
+          "family": "DejaVu Sans",
+          "size": 11
+        },
+        {
+          "image": "images/hackparty/9910cda313eb887e590c18134282dc3b57139d1846e86fe3a31f2a4c61bdb7f8.svg",
+          "text": "Portrait",
+          "show": true,
+          "colour": "#ffe7a3",
+          "background_colour": "#201604",
+          "alignment": "bottom",
+          "family": "DejaVu Sans",
+          "size": 11
+        },
+        {
+          "image": "images/hackparty/fb6a26f46cf48bd1b461bcfe471edf25d2e8950a939068ef882b20cfb7034941.svg",
+          "text": "Portrait",
+          "show": true,
+          "colour": "#b8c4d4",
+          "background_colour": "#10141b",
+          "alignment": "bottom",
+          "family": "DejaVu Sans",
+          "size": 11
+        }
+      ],
+      "current_state": 2,
+      "settings": {
+        "kind": "scene",
+        "scene": "Portrait",
+        "id": "Portrait",
+        "_label_id": "70db135e-6b35-497d-9f9d-67ce49e02f0f",
+        "_label_defaults": [
+          "Portrait",
+          "Portrait",
+          "Portrait"
+        ],
+        "_label_mode": "shared"
+      },
+      "children": null
+    },
+    {
+      "action": {
+        "name": "Live broadcast control",
+        "uuid": "party.hack.status.control",
+        "plugin": "party.hack.status.sdPlugin",
+        "states": [
+          {
+            "image": "images/hackparty/b487aadaf25dbb687887be2a9d24145c81f4c51b3d65d5a789fae6a5ea18e4c7.svg",
+            "text": "Face",
+            "show": true,
+            "colour": "#b8c4d4",
+            "background_colour": "#10141b",
+            "alignment": "bottom",
+            "family": "DejaVu Sans",
+            "size": 11
+          },
+          {
+            "image": "images/hackparty/7b05ff051c68bbb4dcffe8c4c89ac80ced04ea7496ba3a0cd22bf453ea21ecc4.svg",
+            "text": "Face",
+            "show": true,
+            "colour": "#ffe7a3",
+            "background_colour": "#201604",
+            "alignment": "bottom",
+            "family": "DejaVu Sans",
+            "size": 11
+          },
+          {
+            "image": "images/hackparty/49301560465d4b2256cb49fd6ca6f3cb0088aaf039fd3a46279ce17c0d5a134e.svg",
+            "text": "Face",
+            "show": true,
+            "colour": "#b8c4d4",
+            "background_colour": "#10141b",
+            "alignment": "bottom",
+            "family": "DejaVu Sans",
+            "size": 11
+          }
+        ],
+        "icon": "plugins/party.hack.status.sdPlugin/icon.png",
+        "controllers": [
+          "Keypad"
+        ],
+        "disable_automatic_states": true
+      },
+      "context": "Keypad.3.0",
+      "states": [
+        {
+          "image": "images/hackparty/b487aadaf25dbb687887be2a9d24145c81f4c51b3d65d5a789fae6a5ea18e4c7.svg",
+          "text": "Face",
+          "show": true,
+          "colour": "#b8c4d4",
+          "background_colour": "#10141b",
+          "alignment": "bottom",
+          "family": "DejaVu Sans",
+          "size": 11
+        },
+        {
+          "image": "images/hackparty/7b05ff051c68bbb4dcffe8c4c89ac80ced04ea7496ba3a0cd22bf453ea21ecc4.svg",
+          "text": "Face",
+          "show": true,
+          "colour": "#ffe7a3",
+          "background_colour": "#201604",
+          "alignment": "bottom",
+          "family": "DejaVu Sans",
+          "size": 11
+        },
+        {
+          "image": "images/hackparty/49301560465d4b2256cb49fd6ca6f3cb0088aaf039fd3a46279ce17c0d5a134e.svg",
+          "text": "Face",
+          "show": true,
+          "colour": "#b8c4d4",
+          "background_colour": "#10141b",
+          "alignment": "bottom",
+          "family": "DejaVu Sans",
+          "size": 11
+        }
+      ],
+      "current_state": 2,
+      "settings": {
+        "kind": "item",
+        "scene": "SelectedFeed",
+        "source": "Face Camera",
+        "id": "Face",
+        "_label_id": "0888cdcf-494b-40b5-a90c-cca4cc9dcaa9",
+        "_label_defaults": [
+          "Face",
+          "Face",
+          "Face"
+        ],
+        "_label_mode": "shared"
+      },
+      "children": null
+    },
+    {
+      "action": {
+        "name": "Live broadcast control",
+        "uuid": "party.hack.status.control",
+        "plugin": "party.hack.status.sdPlugin",
+        "states": [
+          {
+            "image": "images/hackparty/7f17dcc1656a5236b75cce0eaa956e6d9b6b141cc0a90a31954faa1f5f94bc2e.svg",
+            "text": "Game",
+            "show": true,
+            "colour": "#b8c4d4",
+            "background_colour": "#10141b",
+            "alignment": "bottom",
+            "family": "DejaVu Sans",
+            "size": 11
+          },
+          {
+            "image": "images/hackparty/c05aef9b5fe1a9e2d5551d13ed47f17c0c91c968a47c2afb0c6fd457f8e27637.svg",
+            "text": "Game",
+            "show": true,
+            "colour": "#ffe7a3",
+            "background_colour": "#201604",
+            "alignment": "bottom",
+            "family": "DejaVu Sans",
+            "size": 11
+          },
+          {
+            "image": "images/hackparty/8f657013a2a8fc11524be5e48cb1458a28ce0edbca3093646db602667cf3cb4e.svg",
+            "text": "Game",
+            "show": true,
+            "colour": "#b8c4d4",
+            "background_colour": "#10141b",
+            "alignment": "bottom",
+            "family": "DejaVu Sans",
+            "size": 11
+          }
+        ],
+        "icon": "plugins/party.hack.status.sdPlugin/icon.png",
+        "controllers": [
+          "Keypad"
+        ],
+        "disable_automatic_states": true
+      },
+      "context": "Keypad.4.0",
+      "states": [
+        {
+          "image": "images/hackparty/7f17dcc1656a5236b75cce0eaa956e6d9b6b141cc0a90a31954faa1f5f94bc2e.svg",
+          "text": "Game",
+          "show": true,
+          "colour": "#b8c4d4",
+          "background_colour": "#10141b",
+          "alignment": "bottom",
+          "family": "DejaVu Sans",
+          "size": 11
+        },
+        {
+          "image": "images/hackparty/c05aef9b5fe1a9e2d5551d13ed47f17c0c91c968a47c2afb0c6fd457f8e27637.svg",
+          "text": "Game",
+          "show": true,
+          "colour": "#ffe7a3",
+          "background_colour": "#201604",
+          "alignment": "bottom",
+          "family": "DejaVu Sans",
+          "size": 11
+        },
+        {
+          "image": "images/hackparty/8f657013a2a8fc11524be5e48cb1458a28ce0edbca3093646db602667cf3cb4e.svg",
+          "text": "Game",
+          "show": true,
+          "colour": "#b8c4d4",
+          "background_colour": "#10141b",
+          "alignment": "bottom",
+          "family": "DejaVu Sans",
+          "size": 11
+        }
+      ],
+      "current_state": 2,
+      "settings": {
+        "kind": "item",
+        "scene": "Background",
+        "source": "Desktop Screen",
+        "id": "Game",
+        "_label_id": "a048d9cb-948d-4112-ad63-0671d25d378c",
+        "_label_defaults": [
+          "Game",
+          "Game",
+          "Game"
+        ],
+        "_label_mode": "shared"
+      },
+      "children": null
+    },
+    {
+      "action": {
+        "name": "Live broadcast control",
+        "uuid": "party.hack.status.control",
+        "plugin": "party.hack.status.sdPlugin",
+        "states": [
+          {
+            "image": "images/hackparty/941719822b485765cf9f390a94cf72c5b3fab99e4cd67ef6de13bf62e5b17dcb.svg",
+            "text": "Video",
+            "show": true,
+            "colour": "#b8c4d4",
+            "background_colour": "#10141b",
+            "alignment": "bottom",
+            "family": "DejaVu Sans",
+            "size": 11
+          },
+          {
+            "image": "images/hackparty/0d859cc3416c4db9874baffe7951089eecf0a540834be14fa9409db490544aca.svg",
+            "text": "Video",
+            "show": true,
+            "colour": "#ffe7a3",
+            "background_colour": "#201604",
+            "alignment": "bottom",
+            "family": "DejaVu Sans",
+            "size": 11
+          },
+          {
+            "image": "images/hackparty/db6b025969ebf4930107fe4d0098f1d0269c69e79946c3a3112153619ae3112c.svg",
+            "text": "Video",
+            "show": true,
+            "colour": "#b8c4d4",
+            "background_colour": "#10141b",
+            "alignment": "bottom",
+            "family": "DejaVu Sans",
+            "size": 11
+          }
+        ],
+        "icon": "plugins/party.hack.status.sdPlugin/icon.png",
+        "controllers": [
+          "Keypad"
+        ],
+        "disable_automatic_states": true
+      },
+      "context": "Keypad.5.0",
+      "states": [
+        {
+          "image": "images/hackparty/941719822b485765cf9f390a94cf72c5b3fab99e4cd67ef6de13bf62e5b17dcb.svg",
+          "text": "Video",
+          "show": true,
+          "colour": "#b8c4d4",
+          "background_colour": "#10141b",
+          "alignment": "bottom",
+          "family": "DejaVu Sans",
+          "size": 11
+        },
+        {
+          "image": "images/hackparty/0d859cc3416c4db9874baffe7951089eecf0a540834be14fa9409db490544aca.svg",
+          "text": "Video",
+          "show": true,
+          "colour": "#ffe7a3",
+          "background_colour": "#201604",
+          "alignment": "bottom",
+          "family": "DejaVu Sans",
+          "size": 11
+        },
+        {
+          "image": "images/hackparty/db6b025969ebf4930107fe4d0098f1d0269c69e79946c3a3112153619ae3112c.svg",
+          "text": "Video",
+          "show": true,
+          "colour": "#b8c4d4",
+          "background_colour": "#10141b",
+          "alignment": "bottom",
+          "family": "DejaVu Sans",
+          "size": 11
+        }
+      ],
+      "current_state": 2,
+      "settings": {
+        "kind": "item",
+        "scene": "Background",
+        "source": "Loops",
+        "id": "Video",
+        "_label_id": "2d901299-a322-4e28-a37b-ee49cfccfd9f",
+        "_label_defaults": [
+          "Video",
+          "Video",
+          "Video"
+        ],
+        "_label_mode": "shared"
+      },
+      "children": null
+    },
+    {
+      "action": {
+        "name": "Live broadcast control",
+        "uuid": "party.hack.status.control",
+        "plugin": "party.hack.status.sdPlugin",
+        "states": [
+          {
+            "image": "images/hackparty/605662a8b6b166feff19ee991c13b99b90744204e2e746bd9decb207da0321bc.svg",
+            "text": "Office",
+            "show": true,
+            "colour": "#b8c4d4",
+            "background_colour": "#10141b",
+            "alignment": "bottom",
+            "family": "DejaVu Sans",
+            "size": 11
+          },
+          {
+            "image": "images/hackparty/001ea75ccb7fe36f55cb775b31a7e0b7d4768750a434835ef3681113a00c56c2.svg",
+            "text": "Office",
+            "show": true,
+            "colour": "#ffe7a3",
+            "background_colour": "#201604",
+            "alignment": "bottom",
+            "family": "DejaVu Sans",
+            "size": 11
+          },
+          {
+            "image": "images/hackparty/0decafcff174ea536bac1d932607f06480c4c2e9702993c73e0542a9b9142716.svg",
+            "text": "Office",
+            "show": true,
+            "colour": "#b8c4d4",
+            "background_colour": "#10141b",
+            "alignment": "bottom",
+            "family": "DejaVu Sans",
+            "size": 11
+          }
+        ],
+        "icon": "plugins/party.hack.status.sdPlugin/icon.png",
+        "controllers": [
+          "Keypad"
+        ],
+        "disable_automatic_states": true
+      },
+      "context": "Keypad.6.0",
+      "states": [
+        {
+          "image": "images/hackparty/605662a8b6b166feff19ee991c13b99b90744204e2e746bd9decb207da0321bc.svg",
+          "text": "Office",
+          "show": true,
+          "colour": "#b8c4d4",
+          "background_colour": "#10141b",
+          "alignment": "bottom",
+          "family": "DejaVu Sans",
+          "size": 11
+        },
+        {
+          "image": "images/hackparty/001ea75ccb7fe36f55cb775b31a7e0b7d4768750a434835ef3681113a00c56c2.svg",
+          "text": "Office",
+          "show": true,
+          "colour": "#ffe7a3",
+          "background_colour": "#201604",
+          "alignment": "bottom",
+          "family": "DejaVu Sans",
+          "size": 11
+        },
+        {
+          "image": "images/hackparty/0decafcff174ea536bac1d932607f06480c4c2e9702993c73e0542a9b9142716.svg",
+          "text": "Office",
+          "show": true,
+          "colour": "#b8c4d4",
+          "background_colour": "#10141b",
+          "alignment": "bottom",
+          "family": "DejaVu Sans",
+          "size": 11
+        }
+      ],
+      "current_state": 2,
+      "settings": {
+        "kind": "item",
+        "scene": "Background",
+        "source": "Office",
+        "id": "Office",
+        "_label_id": "ba2fb605-a403-4877-900d-970ef6064754",
+        "_label_defaults": [
+          "Office",
+          "Office",
+          "Office"
+        ],
+        "_label_mode": "shared"
+      },
+      "children": null
+    },
+    {
+      "action": {
+        "name": "Switch Profile",
+        "uuid": "com.amansprojects.starterpack.switchprofile",
+        "plugin": "com.amansprojects.starterpack.sdPlugin",
+        "icon": "plugins/com.amansprojects.starterpack.sdPlugin/icons/switchProfile.png",
+        "property_inspector": "plugins/com.amansprojects.starterpack.sdPlugin/propertyInspector/switchProfile.html",
+        "states": [
+          {
+            "image": ""
+          }
+        ],
+        "controllers": [
+          "Keypad"
+        ],
+        "supported_in_multi_actions": true,
+        "disable_automatic_states": false
+      },
+      "context": "Keypad.7.0",
+      "states": [
+        {
+          "image": "images/hackparty/87e2565de94489601e00d24346a3dd930850f1e043cff809167b6e72b9dc94f1.png",
+          "text": "",
+          "show": true,
+          "colour": "#FFFFFF",
+          "background_colour": "#000000",
+          "alignment": "bottom",
+          "family": "DejaVu Sans",
+          "size": 11
+        }
+      ],
+      "current_state": 0,
+      "settings": {
+        "device": "sd-CL37L2A01125",
+        "profile": "02 - soundboard",
+        "_label_id": "8784d34c-8235-453e-8596-e7bebafe53d3",
+        "_label_defaults": [
+          ""
+        ],
+        "_label_mode": "shared"
+      },
+      "children": null
+    },
+    {
+      "action": {
+        "name": "Live broadcast control",
+        "uuid": "party.hack.status.control",
+        "plugin": "party.hack.status.sdPlugin",
+        "states": [
+          {
+            "image": "images/hackparty/4e78fafbf7d000523826d83508117d4ed9239e34769a6bfb41494a36c7cc642f.svg",
+            "text": "Desktop",
+            "show": true,
+            "colour": "#b8c4d4",
+            "background_colour": "#10141b",
+            "alignment": "bottom",
+            "family": "DejaVu Sans",
+            "size": 11
+          },
+          {
+            "image": "images/hackparty/1a2652b85888674ff6da5677491cbb3964ea3e3ac2ec883ef37c377e0041f515.svg",
+            "text": "Broadcast\nMIC HOT",
+            "show": true,
+            "colour": "#ffd9d9",
+            "background_colour": "#26090d",
+            "alignment": "bottom",
+            "family": "DejaVu Sans",
+            "size": 11
+          },
+          {
+            "image": "images/hackparty/4e78fafbf7d000523826d83508117d4ed9239e34769a6bfb41494a36c7cc642f.svg",
+            "text": "Broadcast\nMUTED",
+            "show": true,
+            "colour": "#b8c4d4",
+            "background_colour": "#10141b",
+            "alignment": "bottom",
+            "family": "DejaVu Sans",
+            "size": 11
+          }
+        ],
+        "icon": "plugins/party.hack.status.sdPlugin/icon.png",
+        "controllers": [
+          "Keypad"
+        ],
+        "disable_automatic_states": true
+      },
+      "context": "Keypad.8.0",
+      "states": [
+        {
+          "image": "images/hackparty/4e78fafbf7d000523826d83508117d4ed9239e34769a6bfb41494a36c7cc642f.svg",
+          "text": "Desktop",
+          "show": true,
+          "colour": "#b8c4d4",
+          "background_colour": "#10141b",
+          "alignment": "bottom",
+          "family": "DejaVu Sans",
+          "size": 11
+        },
+        {
+          "image": "images/hackparty/1a2652b85888674ff6da5677491cbb3964ea3e3ac2ec883ef37c377e0041f515.svg",
+          "text": "Broadcast\nMIC HOT",
+          "show": true,
+          "colour": "#ffd9d9",
+          "background_colour": "#26090d",
+          "alignment": "bottom",
+          "family": "DejaVu Sans",
+          "size": 11
+        },
+        {
+          "image": "images/hackparty/4e78fafbf7d000523826d83508117d4ed9239e34769a6bfb41494a36c7cc642f.svg",
+          "text": "Broadcast\nMUTED",
+          "show": true,
+          "colour": "#b8c4d4",
+          "background_colour": "#10141b",
+          "alignment": "bottom",
+          "family": "DejaVu Sans",
+          "size": 11
+        }
+      ],
+      "current_state": 0,
+      "settings": {
+        "kind": "audio_mode",
+        "id": "audio_mode",
+        "_label_id": "d2e442d9-94ce-4cbe-a26b-ac6647f591d5",
+        "_label_defaults": [
+          "Desktop",
+          "Broadcast\nMIC HOT",
+          "Broadcast\nMUTED"
+        ],
+        "_label_mode": "per_state"
+      },
+      "children": null
+    },
+    {
+      "action": {
+        "name": "Live broadcast control",
+        "uuid": "party.hack.status.control",
+        "plugin": "party.hack.status.sdPlugin",
+        "states": [
+          {
+            "image": "images/hackparty/0dcd25223da140872a148ded426c2838b82648a82f346435856f2cb758a1c632.svg",
+            "text": "BRB",
+            "show": true,
+            "colour": "#b8c4d4",
+            "background_colour": "#10141b",
+            "alignment": "bottom",
+            "family": "DejaVu Sans",
+            "size": 11
+          },
+          {
+            "image": "images/hackparty/9459bf5675112ba154796061d77839e524c41c3e16ca1de33fa83f662321af08.svg",
+            "text": "BRB",
+            "show": true,
+            "colour": "#ffe7a3",
+            "background_colour": "#201604",
+            "alignment": "bottom",
+            "family": "DejaVu Sans",
+            "size": 11
+          },
+          {
+            "image": "images/hackparty/c72c8be7276d54906f208702fc4d72b469049ded7a5a35e4759ee6c5f08251e7.svg",
+            "text": "BRB",
+            "show": true,
+            "colour": "#b8c4d4",
+            "background_colour": "#10141b",
+            "alignment": "bottom",
+            "family": "DejaVu Sans",
+            "size": 11
+          }
+        ],
+        "icon": "plugins/party.hack.status.sdPlugin/icon.png",
+        "controllers": [
+          "Keypad"
+        ],
+        "disable_automatic_states": true
+      },
+      "context": "Keypad.9.0",
+      "states": [
+        {
+          "image": "images/hackparty/0dcd25223da140872a148ded426c2838b82648a82f346435856f2cb758a1c632.svg",
+          "text": "BRB",
+          "show": true,
+          "colour": "#b8c4d4",
+          "background_colour": "#10141b",
+          "alignment": "bottom",
+          "family": "DejaVu Sans",
+          "size": 11
+        },
+        {
+          "image": "images/hackparty/9459bf5675112ba154796061d77839e524c41c3e16ca1de33fa83f662321af08.svg",
+          "text": "BRB",
+          "show": true,
+          "colour": "#ffe7a3",
+          "background_colour": "#201604",
+          "alignment": "bottom",
+          "family": "DejaVu Sans",
+          "size": 11
+        },
+        {
+          "image": "images/hackparty/c72c8be7276d54906f208702fc4d72b469049ded7a5a35e4759ee6c5f08251e7.svg",
+          "text": "BRB",
+          "show": true,
+          "colour": "#b8c4d4",
+          "background_colour": "#10141b",
+          "alignment": "bottom",
+          "family": "DejaVu Sans",
+          "size": 11
+        }
+      ],
+      "current_state": 2,
+      "settings": {
+        "kind": "scene",
+        "scene": "Be Right Back",
+        "id": "BRB",
+        "_label_id": "1a0c4395-e4a4-48fd-9e26-d6447e6d2f22",
+        "_label_defaults": [
+          "BRB",
+          "BRB",
+          "BRB"
+        ],
+        "_label_mode": "shared"
+      },
+      "children": null
+    },
+    {
+      "action": {
+        "name": "Live broadcast control",
+        "uuid": "party.hack.status.control",
+        "plugin": "party.hack.status.sdPlugin",
+        "states": [
+          {
+            "image": "images/hackparty/96cf28a49fad2d7679d5274d0ff758f4ada5141c388490be869c2f3907a9edfe.svg",
+            "text": "Ada Cam",
+            "show": true,
+            "colour": "#b8c4d4",
+            "background_colour": "#10141b",
+            "alignment": "bottom",
+            "family": "DejaVu Sans",
+            "size": 11
+          },
+          {
+            "image": "images/hackparty/845c89b176a08c0873f4fd37295ea5d886edced685fc10ee01d64da194708aa7.svg",
+            "text": "Ada Cam",
+            "show": true,
+            "colour": "#ffe7a3",
+            "background_colour": "#201604",
+            "alignment": "bottom",
+            "family": "DejaVu Sans",
+            "size": 11
+          },
+          {
+            "image": "images/hackparty/a6fbcd9e3258d11773e5573ce719dfe79d555af3ff60d053504008550b9902e4.svg",
+            "text": "Ada Cam",
+            "show": true,
+            "colour": "#b8c4d4",
+            "background_colour": "#10141b",
+            "alignment": "bottom",
+            "family": "DejaVu Sans",
+            "size": 11
+          }
+        ],
+        "icon": "plugins/party.hack.status.sdPlugin/icon.png",
+        "controllers": [
+          "Keypad"
+        ],
+        "disable_automatic_states": true
+      },
+      "context": "Keypad.10.0",
+      "states": [
+        {
+          "image": "images/hackparty/96cf28a49fad2d7679d5274d0ff758f4ada5141c388490be869c2f3907a9edfe.svg",
+          "text": "Ada Cam",
+          "show": true,
+          "colour": "#b8c4d4",
+          "background_colour": "#10141b",
+          "alignment": "bottom",
+          "family": "DejaVu Sans",
+          "size": 11
+        },
+        {
+          "image": "images/hackparty/845c89b176a08c0873f4fd37295ea5d886edced685fc10ee01d64da194708aa7.svg",
+          "text": "Ada Cam",
+          "show": true,
+          "colour": "#ffe7a3",
+          "background_colour": "#201604",
+          "alignment": "bottom",
+          "family": "DejaVu Sans",
+          "size": 11
+        },
+        {
+          "image": "images/hackparty/a6fbcd9e3258d11773e5573ce719dfe79d555af3ff60d053504008550b9902e4.svg",
+          "text": "Ada Cam",
+          "show": true,
+          "colour": "#b8c4d4",
+          "background_colour": "#10141b",
+          "alignment": "bottom",
+          "family": "DejaVu Sans",
+          "size": 11
+        }
+      ],
+      "current_state": 2,
+      "settings": {
+        "kind": "item",
+        "scene": "SelectedFeed",
+        "source": "Ada Camera",
+        "id": "Ada Cam",
+        "_label_id": "555cf4cb-1cc3-4d96-9197-43089f1b883b",
+        "_label_defaults": [
+          "Ada Cam",
+          "Ada Cam",
+          "Ada Cam"
+        ],
+        "_label_mode": "shared"
+      },
+      "children": null
+    },
+    {
+      "action": {
+        "name": "Live broadcast control",
+        "uuid": "party.hack.status.control",
+        "plugin": "party.hack.status.sdPlugin",
+        "states": [
+          {
+            "image": "images/hackparty/0a9b0570fbfad5e5be556712936a82e3838042ecf75d5a74172a57162a6b0abc.svg",
+            "text": "Chroma Key",
+            "show": true,
+            "colour": "#b8c4d4",
+            "background_colour": "#10141b",
+            "alignment": "bottom",
+            "family": "DejaVu Sans",
+            "size": 11
+          },
+          {
+            "image": "images/hackparty/3551f7f0492a3fd6a7d0ea0842d7349352933bad631cad6216eadd5410b57eff.svg",
+            "text": "Chroma Key",
+            "show": true,
+            "colour": "#ffe7a3",
+            "background_colour": "#201604",
+            "alignment": "bottom",
+            "family": "DejaVu Sans",
+            "size": 11
+          },
+          {
+            "image": "images/hackparty/ffbc605b59e28c87acda3a0eef097a751f3ccf717557b2132c2cbfb334bc7e5f.svg",
+            "text": "Chroma Key",
+            "show": true,
+            "colour": "#b8c4d4",
+            "background_colour": "#10141b",
+            "alignment": "bottom",
+            "family": "DejaVu Sans",
+            "size": 11
+          }
+        ],
+        "icon": "plugins/party.hack.status.sdPlugin/icon.png",
+        "controllers": [
+          "Keypad"
+        ],
+        "disable_automatic_states": true
+      },
+      "context": "Keypad.11.0",
+      "states": [
+        {
+          "image": "images/hackparty/0a9b0570fbfad5e5be556712936a82e3838042ecf75d5a74172a57162a6b0abc.svg",
+          "text": "Chroma Key",
+          "show": true,
+          "colour": "#b8c4d4",
+          "background_colour": "#10141b",
+          "alignment": "bottom",
+          "family": "DejaVu Sans",
+          "size": 11
+        },
+        {
+          "image": "images/hackparty/3551f7f0492a3fd6a7d0ea0842d7349352933bad631cad6216eadd5410b57eff.svg",
+          "text": "Chroma Key",
+          "show": true,
+          "colour": "#ffe7a3",
+          "background_colour": "#201604",
+          "alignment": "bottom",
+          "family": "DejaVu Sans",
+          "size": 11
+        },
+        {
+          "image": "images/hackparty/ffbc605b59e28c87acda3a0eef097a751f3ccf717557b2132c2cbfb334bc7e5f.svg",
+          "text": "Chroma Key",
+          "show": true,
+          "colour": "#b8c4d4",
+          "background_colour": "#10141b",
+          "alignment": "bottom",
+          "family": "DejaVu Sans",
+          "size": 11
+        }
+      ],
+      "current_state": 2,
+      "settings": {
+        "kind": "item",
+        "scene": "Face Camera",
+        "source": "Face Camera with Chromakey",
+        "complement": "Face Camera without Chromakey",
+        "id": "Chroma Key",
+        "_label_id": "4df2f543-5311-405c-b840-6c495972f455",
+        "_label_defaults": [
+          "Chroma Key",
+          "Chroma Key",
+          "Chroma Key"
+        ],
+        "_label_mode": "shared"
+      },
+      "children": null
+    },
+    {
+      "action": {
+        "name": "Toggle Action",
+        "uuid": "opendeck.toggleaction",
+        "plugin": "opendeck",
+        "icon": "opendeck/toggle-action.png",
+        "property_inspector": "",
+        "states": [
+          {
+            "image": ""
+          }
+        ],
+        "controllers": [
+          "Keypad"
+        ],
+        "supported_in_multi_actions": false,
+        "disable_automatic_states": false
+      },
+      "context": "Keypad.12.0",
+      "states": [
+        {
+          "image": "images/hackparty/a0f1fc5e53539390934af9bdc2113a43a932311a693049b89eaf5d0343a27171.svg",
+          "text": "Blur OFF",
+          "show": true,
+          "colour": "#b8c4d4",
+          "background_colour": "#10141b",
+          "alignment": "bottom",
+          "family": "DejaVu Sans",
+          "size": 11
+        },
+        {
+          "image": "images/hackparty/241df19e3650d92f460da877ea76683c9764dc0728d7761d73892dc1c6a48331.svg",
+          "text": "Blur ON",
+          "show": true,
+          "colour": "#ffe7a3",
+          "background_colour": "#201604",
+          "alignment": "bottom",
+          "family": "DejaVu Sans",
+          "size": 11
+        }
+      ],
+      "current_state": 0,
+      "settings": {
+        "_label_id": "ffb0ac2d-f232-476f-92a0-d804317fd397",
+        "_label_defaults": [
+          "Blur OFF",
+          "Blur ON"
+        ],
+        "_label_mode": "per_state"
+      },
+      "children": [
+        {
+          "action": {
+            "name": "Run Command",
+            "uuid": "com.amansprojects.starterpack.runcommand",
+            "plugin": "com.amansprojects.starterpack.sdPlugin",
+            "icon": "plugins/com.amansprojects.starterpack.sdPlugin/icons/runCommand.png",
+            "property_inspector": "plugins/com.amansprojects.starterpack.sdPlugin/propertyInspector/runCommand.html",
+            "states": [
+              {
+                "image": ""
+              }
+            ],
+            "controllers": [
+              "Keypad"
+            ],
+            "supported_in_multi_actions": true,
+            "disable_automatic_states": false
+          },
+          "context": "Keypad.12.1",
+          "states": [
+            {
+              "image": "images/hackparty/a0f1fc5e53539390934af9bdc2113a43a932311a693049b89eaf5d0343a27171.svg",
+              "text": "Blur OFF",
+              "show": true,
+              "colour": "#b8c4d4",
+              "background_colour": "#10141b",
+              "alignment": "bottom",
+              "family": "DejaVu Sans",
+              "size": 11
+            }
+          ],
+          "current_state": 0,
+          "settings": {
+            "down": "cd /media/rspectre/Storage/workspace/streamdeck || exit\nexport PATH=/media/rspectre/Storage/workspace/streamdeck/.venv/bin:\"$PATH\"\n( python control_obs_blur.py on\n)",
+            "show": false
+          },
+          "children": null
+        },
+        {
+          "action": {
+            "name": "Run Command",
+            "uuid": "com.amansprojects.starterpack.runcommand",
+            "plugin": "com.amansprojects.starterpack.sdPlugin",
+            "icon": "plugins/com.amansprojects.starterpack.sdPlugin/icons/runCommand.png",
+            "property_inspector": "plugins/com.amansprojects.starterpack.sdPlugin/propertyInspector/runCommand.html",
+            "states": [
+              {
+                "image": ""
+              }
+            ],
+            "controllers": [
+              "Keypad"
+            ],
+            "supported_in_multi_actions": true,
+            "disable_automatic_states": false
+          },
+          "context": "Keypad.12.2",
+          "states": [
+            {
+              "image": "images/hackparty/241df19e3650d92f460da877ea76683c9764dc0728d7761d73892dc1c6a48331.svg",
+              "text": "Blur ON",
+              "show": true,
+              "colour": "#ffe7a3",
+              "background_colour": "#201604",
+              "alignment": "bottom",
+              "family": "DejaVu Sans",
+              "size": 11
+            }
+          ],
+          "current_state": 0,
+          "settings": {
+            "down": "cd /media/rspectre/Storage/workspace/streamdeck || exit\nexport PATH=/media/rspectre/Storage/workspace/streamdeck/.venv/bin:\"$PATH\"\n( python control_obs_blur.py off\n)",
+            "show": false
+          },
+          "children": null
+        }
+      ]
+    },
+    {
+      "action": {
+        "name": "Run Command",
+        "uuid": "com.amansprojects.starterpack.runcommand",
+        "plugin": "com.amansprojects.starterpack.sdPlugin",
+        "icon": "plugins/com.amansprojects.starterpack.sdPlugin/icons/runCommand.png",
+        "property_inspector": "plugins/com.amansprojects.starterpack.sdPlugin/propertyInspector/runCommand.html",
+        "states": [
+          {
+            "image": ""
+          }
+        ],
+        "controllers": [
+          "Keypad"
+        ],
+        "supported_in_multi_actions": true,
+        "disable_automatic_states": false
+      },
+      "context": "Keypad.13.0",
+      "states": [
+        {
+          "image": "images/hackparty/9a6a77c6d74a7156870327451a411afc16259be190b1e80a48317a3be52ecbdf.png",
+          "text": "",
+          "show": true,
+          "colour": "#FFFFFF",
+          "background_colour": "#000000",
+          "alignment": "bottom",
+          "family": "DejaVu Sans",
+          "size": 11
+        }
+      ],
+      "current_state": 0,
+      "settings": {
+        "down": "cd /media/rspectre/Storage/workspace/streamdeck || exit\nexport PATH=/media/rspectre/Storage/workspace/streamdeck/.venv/bin:\"$PATH\"\n( python control_lights.py toggle\n)",
+        "show": false,
+        "_label_id": "f0060dc7-247a-4880-a475-340bc22e18ac",
+        "_label_defaults": [
+          ""
+        ],
+        "_label_mode": "shared"
+      },
+      "children": null
+    },
+    {
+      "action": {
+        "name": "Live broadcast control",
+        "uuid": "party.hack.status.control",
+        "plugin": "party.hack.status.sdPlugin",
+        "states": [
+          {
+            "image": "images/hackparty/4e59d1c84f78e7429601290dbb42539b2963f08f6191f49225b5135890da58cb.svg",
+            "text": "Key",
+            "show": true,
+            "colour": "#b8c4d4",
+            "background_colour": "#10141b",
+            "alignment": "bottom",
+            "family": "DejaVu Sans",
+            "size": 11
+          },
+          {
+            "image": "images/hackparty/7bc41e7c6e7f3ee9a05bba9596d7e1c296d92baa6f53be272697b65466005f29.svg",
+            "text": "Key",
+            "show": true,
+            "colour": "#ffe7a3",
+            "background_colour": "#201604",
+            "alignment": "bottom",
+            "family": "DejaVu Sans",
+            "size": 11
+          },
+          {
+            "image": "images/hackparty/97aa48e3321e1eba5013368e02786f36f20e201639b49b3d4889ea150bf8e060.svg",
+            "text": "Key",
+            "show": true,
+            "colour": "#b8c4d4",
+            "background_colour": "#10141b",
+            "alignment": "bottom",
+            "family": "DejaVu Sans",
+            "size": 11
+          }
+        ],
+        "icon": "plugins/party.hack.status.sdPlugin/icon.png",
+        "controllers": [
+          "Keypad"
+        ],
+        "disable_automatic_states": true
+      },
+      "context": "Keypad.14.0",
+      "states": [
+        {
+          "image": "images/hackparty/4e59d1c84f78e7429601290dbb42539b2963f08f6191f49225b5135890da58cb.svg",
+          "text": "Key",
+          "show": true,
+          "colour": "#b8c4d4",
+          "background_colour": "#10141b",
+          "alignment": "bottom",
+          "family": "DejaVu Sans",
+          "size": 11
+        },
+        {
+          "image": "images/hackparty/7bc41e7c6e7f3ee9a05bba9596d7e1c296d92baa6f53be272697b65466005f29.svg",
+          "text": "Key",
+          "show": true,
+          "colour": "#ffe7a3",
+          "background_colour": "#201604",
+          "alignment": "bottom",
+          "family": "DejaVu Sans",
+          "size": 11
+        },
+        {
+          "image": "images/hackparty/97aa48e3321e1eba5013368e02786f36f20e201639b49b3d4889ea150bf8e060.svg",
+          "text": "Key",
+          "show": true,
+          "colour": "#b8c4d4",
+          "background_colour": "#10141b",
+          "alignment": "bottom",
+          "family": "DejaVu Sans",
+          "size": 11
+        }
+      ],
+      "current_state": 2,
+      "settings": {
+        "kind": "light",
+        "light": "Key",
+        "id": "Key",
+        "_label_id": "ff4001a9-eae6-4ce4-8dd3-7983c8143f5c",
+        "_label_defaults": [
+          "Key",
+          "Key",
+          "Key"
+        ],
+        "_label_mode": "shared"
+      },
+      "children": null
+    },
+    {
+      "action": {
+        "name": "Live broadcast control",
+        "uuid": "party.hack.status.control",
+        "plugin": "party.hack.status.sdPlugin",
+        "states": [
+          {
+            "image": "images/hackparty/4e59d1c84f78e7429601290dbb42539b2963f08f6191f49225b5135890da58cb.svg",
+            "text": "Fill",
+            "show": true,
+            "colour": "#b8c4d4",
+            "background_colour": "#10141b",
+            "alignment": "bottom",
+            "family": "DejaVu Sans",
+            "size": 11
+          },
+          {
+            "image": "images/hackparty/7bc41e7c6e7f3ee9a05bba9596d7e1c296d92baa6f53be272697b65466005f29.svg",
+            "text": "Fill",
+            "show": true,
+            "colour": "#ffe7a3",
+            "background_colour": "#201604",
+            "alignment": "bottom",
+            "family": "DejaVu Sans",
+            "size": 11
+          },
+          {
+            "image": "images/hackparty/97aa48e3321e1eba5013368e02786f36f20e201639b49b3d4889ea150bf8e060.svg",
+            "text": "Fill",
+            "show": true,
+            "colour": "#b8c4d4",
+            "background_colour": "#10141b",
+            "alignment": "bottom",
+            "family": "DejaVu Sans",
+            "size": 11
+          }
+        ],
+        "icon": "plugins/party.hack.status.sdPlugin/icon.png",
+        "controllers": [
+          "Keypad"
+        ],
+        "disable_automatic_states": true
+      },
+      "context": "Keypad.15.0",
+      "states": [
+        {
+          "image": "images/hackparty/4e59d1c84f78e7429601290dbb42539b2963f08f6191f49225b5135890da58cb.svg",
+          "text": "Fill",
+          "show": true,
+          "colour": "#b8c4d4",
+          "background_colour": "#10141b",
+          "alignment": "bottom",
+          "family": "DejaVu Sans",
+          "size": 11
+        },
+        {
+          "image": "images/hackparty/7bc41e7c6e7f3ee9a05bba9596d7e1c296d92baa6f53be272697b65466005f29.svg",
+          "text": "Fill",
+          "show": true,
+          "colour": "#ffe7a3",
+          "background_colour": "#201604",
+          "alignment": "bottom",
+          "family": "DejaVu Sans",
+          "size": 11
+        },
+        {
+          "image": "images/hackparty/97aa48e3321e1eba5013368e02786f36f20e201639b49b3d4889ea150bf8e060.svg",
+          "text": "Fill",
+          "show": true,
+          "colour": "#b8c4d4",
+          "background_colour": "#10141b",
+          "alignment": "bottom",
+          "family": "DejaVu Sans",
+          "size": 11
+        }
+      ],
+      "current_state": 2,
+      "settings": {
+        "kind": "light",
+        "light": "Fill",
+        "id": "Fill",
+        "_label_id": "a272aa32-cccd-4d57-b381-bde04cc8e501",
+        "_label_defaults": [
+          "Fill",
+          "Fill",
+          "Fill"
+        ],
+        "_label_mode": "shared"
+      },
+      "children": null
+    },
+    {
+      "action": {
+        "name": "Live broadcast control",
+        "uuid": "party.hack.status.control",
+        "plugin": "party.hack.status.sdPlugin",
+        "states": [
+          {
+            "image": "images/hackparty/1205a7345377fcb294079a3cc69ca20ffee4a225e8f5bd330408478454a67588.svg",
+            "text": "T-Left",
+            "show": true,
+            "colour": "#b8c4d4",
+            "background_colour": "#10141b",
+            "alignment": "bottom",
+            "family": "DejaVu Sans",
+            "size": 11
+          },
+          {
+            "image": "images/hackparty/b99dd9d379be98c6acf5e0bece6c9e5bfc37bac201d5391f4c0cdafd73bb4b0f.svg",
+            "text": "T-Left",
+            "show": true,
+            "colour": "#ffe7a3",
+            "background_colour": "#201604",
+            "alignment": "bottom",
+            "family": "DejaVu Sans",
+            "size": 11
+          },
+          {
+            "image": "images/hackparty/d4a2b8ab600ec169aeb665e11ca68df8820e64691b2c580dd4af8fec7093db19.svg",
+            "text": "T-Left",
+            "show": true,
+            "colour": "#b8c4d4",
+            "background_colour": "#10141b",
+            "alignment": "bottom",
+            "family": "DejaVu Sans",
+            "size": 11
+          }
+        ],
+        "icon": "plugins/party.hack.status.sdPlugin/icon.png",
+        "controllers": [
+          "Keypad"
+        ],
+        "disable_automatic_states": true
+      },
+      "context": "Keypad.16.0",
+      "states": [
+        {
+          "image": "images/hackparty/1205a7345377fcb294079a3cc69ca20ffee4a225e8f5bd330408478454a67588.svg",
+          "text": "T-Left",
+          "show": true,
+          "colour": "#b8c4d4",
+          "background_colour": "#10141b",
+          "alignment": "bottom",
+          "family": "DejaVu Sans",
+          "size": 11
+        },
+        {
+          "image": "images/hackparty/b99dd9d379be98c6acf5e0bece6c9e5bfc37bac201d5391f4c0cdafd73bb4b0f.svg",
+          "text": "T-Left",
+          "show": true,
+          "colour": "#ffe7a3",
+          "background_colour": "#201604",
+          "alignment": "bottom",
+          "family": "DejaVu Sans",
+          "size": 11
+        },
+        {
+          "image": "images/hackparty/d4a2b8ab600ec169aeb665e11ca68df8820e64691b2c580dd4af8fec7093db19.svg",
+          "text": "T-Left",
+          "show": true,
+          "colour": "#b8c4d4",
+          "background_colour": "#10141b",
+          "alignment": "bottom",
+          "family": "DejaVu Sans",
+          "size": 11
+        }
+      ],
+      "current_state": 2,
+      "settings": {
+        "kind": "scene",
+        "scene": "Desktop with Top Left",
+        "id": "T-Left",
+        "_label_id": "72317a2b-a439-4436-8c8e-281517d2f519",
+        "_label_defaults": [
+          "T-Left",
+          "T-Left",
+          "T-Left"
+        ],
+        "_label_mode": "shared"
+      },
+      "children": null
+    },
+    {
+      "action": {
+        "name": "Live broadcast control",
+        "uuid": "party.hack.status.control",
+        "plugin": "party.hack.status.sdPlugin",
+        "states": [
+          {
+            "image": "images/hackparty/1205a7345377fcb294079a3cc69ca20ffee4a225e8f5bd330408478454a67588.svg",
+            "text": "T-Right",
+            "show": true,
+            "colour": "#b8c4d4",
+            "background_colour": "#10141b",
+            "alignment": "bottom",
+            "family": "DejaVu Sans",
+            "size": 11
+          },
+          {
+            "image": "images/hackparty/b99dd9d379be98c6acf5e0bece6c9e5bfc37bac201d5391f4c0cdafd73bb4b0f.svg",
+            "text": "T-Right",
+            "show": true,
+            "colour": "#ffe7a3",
+            "background_colour": "#201604",
+            "alignment": "bottom",
+            "family": "DejaVu Sans",
+            "size": 11
+          },
+          {
+            "image": "images/hackparty/d4a2b8ab600ec169aeb665e11ca68df8820e64691b2c580dd4af8fec7093db19.svg",
+            "text": "T-Right",
+            "show": true,
+            "colour": "#b8c4d4",
+            "background_colour": "#10141b",
+            "alignment": "bottom",
+            "family": "DejaVu Sans",
+            "size": 11
+          }
+        ],
+        "icon": "plugins/party.hack.status.sdPlugin/icon.png",
+        "controllers": [
+          "Keypad"
+        ],
+        "disable_automatic_states": true
+      },
+      "context": "Keypad.17.0",
+      "states": [
+        {
+          "image": "images/hackparty/1205a7345377fcb294079a3cc69ca20ffee4a225e8f5bd330408478454a67588.svg",
+          "text": "T-Right",
+          "show": true,
+          "colour": "#b8c4d4",
+          "background_colour": "#10141b",
+          "alignment": "bottom",
+          "family": "DejaVu Sans",
+          "size": 11
+        },
+        {
+          "image": "images/hackparty/b99dd9d379be98c6acf5e0bece6c9e5bfc37bac201d5391f4c0cdafd73bb4b0f.svg",
+          "text": "T-Right",
+          "show": true,
+          "colour": "#ffe7a3",
+          "background_colour": "#201604",
+          "alignment": "bottom",
+          "family": "DejaVu Sans",
+          "size": 11
+        },
+        {
+          "image": "images/hackparty/d4a2b8ab600ec169aeb665e11ca68df8820e64691b2c580dd4af8fec7093db19.svg",
+          "text": "T-Right",
+          "show": true,
+          "colour": "#b8c4d4",
+          "background_colour": "#10141b",
+          "alignment": "bottom",
+          "family": "DejaVu Sans",
+          "size": 11
+        }
+      ],
+      "current_state": 2,
+      "settings": {
+        "kind": "scene",
+        "scene": "Desktop with Top Right",
+        "id": "T-Right",
+        "_label_id": "c39c62db-c421-464f-aa88-7895e892ef1d",
+        "_label_defaults": [
+          "T-Right",
+          "T-Right",
+          "T-Right"
+        ],
+        "_label_mode": "shared"
+      },
+      "children": null
+    },
+    {
+      "action": {
+        "name": "Run Command",
+        "uuid": "com.amansprojects.starterpack.runcommand",
+        "plugin": "com.amansprojects.starterpack.sdPlugin",
+        "icon": "plugins/com.amansprojects.starterpack.sdPlugin/icons/runCommand.png",
+        "property_inspector": "plugins/com.amansprojects.starterpack.sdPlugin/propertyInspector/runCommand.html",
+        "states": [
+          {
+            "image": ""
+          }
+        ],
+        "controllers": [
+          "Keypad"
+        ],
+        "supported_in_multi_actions": true,
+        "disable_automatic_states": false
+      },
+      "context": "Keypad.18.0",
+      "states": [
+        {
+          "image": "images/hackparty/a52108a676ed7c2d46b5de1c0d2777376642d5f6f8cb2d441256361659a3a78d.png",
+          "text": "Rap Horn",
+          "show": true,
+          "colour": "#FFFFFF",
+          "background_colour": "#000000",
+          "alignment": "bottom",
+          "family": "DejaVu Sans",
+          "size": 11
+        }
+      ],
+      "current_state": 0,
+      "settings": {
+        "down": "cd /media/rspectre/Storage/workspace/streamdeck || exit\nexport PATH=/media/rspectre/Storage/workspace/streamdeck/.venv/bin:\"$PATH\"\n( play -v 0.1 /media/rspectre/Storage/Video/Sound\\ Effects/airhorn.mp3\n)",
+        "show": false,
+        "_label_id": "0fe7f7fe-1360-4f7a-ae78-930bc66a1941",
+        "_label_defaults": [
+          "Rap Horn"
+        ],
+        "_label_mode": "shared"
+      },
+      "children": null
+    },
+    {
+      "action": {
+        "name": "Live broadcast control",
+        "uuid": "party.hack.status.control",
+        "plugin": "party.hack.status.sdPlugin",
+        "states": [
+          {
+            "image": "images/hackparty/6eeb861e30c5d4009d8a6f237bdce0d4efcf8b4b019ca22bd90798e626fb0416.svg",
+            "text": "Winner",
+            "show": true,
+            "colour": "#b8c4d4",
+            "background_colour": "#10141b",
+            "alignment": "bottom",
+            "family": "DejaVu Sans",
+            "size": 11
+          },
+          {
+            "image": "images/hackparty/75611966fe309f0bc3eaa4d6908f249709784ee9977c7d6e07d28c18285aada6.svg",
+            "text": "Winner",
+            "show": true,
+            "colour": "#ffe7a3",
+            "background_colour": "#201604",
+            "alignment": "bottom",
+            "family": "DejaVu Sans",
+            "size": 11
+          },
+          {
+            "image": "images/hackparty/34b5a950f250b0b34f1de56234370099c8b2f45d2c48c48badeeb13165d00067.svg",
+            "text": "Winner",
+            "show": true,
+            "colour": "#b8c4d4",
+            "background_colour": "#10141b",
+            "alignment": "bottom",
+            "family": "DejaVu Sans",
+            "size": 11
+          }
+        ],
+        "icon": "plugins/party.hack.status.sdPlugin/icon.png",
+        "controllers": [
+          "Keypad"
+        ],
+        "disable_automatic_states": true
+      },
+      "context": "Keypad.19.0",
+      "states": [
+        {
+          "image": "images/hackparty/6eeb861e30c5d4009d8a6f237bdce0d4efcf8b4b019ca22bd90798e626fb0416.svg",
+          "text": "Winner",
+          "show": true,
+          "colour": "#b8c4d4",
+          "background_colour": "#10141b",
+          "alignment": "bottom",
+          "family": "DejaVu Sans",
+          "size": 11
+        },
+        {
+          "image": "images/hackparty/75611966fe309f0bc3eaa4d6908f249709784ee9977c7d6e07d28c18285aada6.svg",
+          "text": "Winner",
+          "show": true,
+          "colour": "#ffe7a3",
+          "background_colour": "#201604",
+          "alignment": "bottom",
+          "family": "DejaVu Sans",
+          "size": 11
+        },
+        {
+          "image": "images/hackparty/34b5a950f250b0b34f1de56234370099c8b2f45d2c48c48badeeb13165d00067.svg",
+          "text": "Winner",
+          "show": true,
+          "colour": "#b8c4d4",
+          "background_colour": "#10141b",
+          "alignment": "bottom",
+          "family": "DejaVu Sans",
+          "size": 11
+        }
+      ],
+      "current_state": 2,
+      "settings": {
+        "id": "effect:Winner",
+        "kind": "effect",
+        "targets": [
+          {
+            "scene": "Sound Effects",
+            "source": "Mario Win"
+          },
+          {
+            "scene": "Scene Overlays",
+            "source": "Confetti"
+          }
+        ],
+        "_label_id": "60dc89a3-9bc5-4400-84cb-f0b838517e5e",
+        "_label_defaults": [
+          "Winner",
+          "Winner",
+          "Winner"
+        ],
+        "_label_mode": "shared"
+      },
+      "children": null
+    },
+    {
+      "action": {
+        "name": "Run Command",
+        "uuid": "com.amansprojects.starterpack.runcommand",
+        "plugin": "com.amansprojects.starterpack.sdPlugin",
+        "icon": "plugins/com.amansprojects.starterpack.sdPlugin/icons/runCommand.png",
+        "property_inspector": "plugins/com.amansprojects.starterpack.sdPlugin/propertyInspector/runCommand.html",
+        "states": [
+          {
+            "image": ""
+          }
+        ],
+        "controllers": [
+          "Keypad"
+        ],
+        "supported_in_multi_actions": true,
+        "disable_automatic_states": false
+      },
+      "context": "Keypad.20.0",
+      "states": [
+        {
+          "image": "images/hackparty/13d7ce7e77b0c732e8dace77c87c3eaeed48a35cf4f855d8042162560783fc7d.png",
+          "text": "Save Replay",
+          "show": true,
+          "colour": "#FFFFFF",
+          "background_colour": "#000000",
+          "alignment": "bottom",
+          "family": "DejaVu Sans",
+          "size": 11
+        }
+      ],
+      "current_state": 0,
+      "settings": {
+        "down": "cd /media/rspectre/Storage/workspace/streamdeck || exit\nexport PATH=/media/rspectre/Storage/workspace/streamdeck/.venv/bin:\"$PATH\"\n( ./press_obs_shortcut.sh ctrl+equal\n)",
+        "show": false,
+        "_label_id": "1c4e5588-ac1d-4ceb-b445-cdc185d2d741",
+        "_label_defaults": [
+          "Save Replay"
+        ],
+        "_label_mode": "shared"
+      },
+      "children": null
+    },
+    {
+      "action": {
+        "name": "Run Command",
+        "uuid": "com.amansprojects.starterpack.runcommand",
+        "plugin": "com.amansprojects.starterpack.sdPlugin",
+        "icon": "plugins/com.amansprojects.starterpack.sdPlugin/icons/runCommand.png",
+        "property_inspector": "plugins/com.amansprojects.starterpack.sdPlugin/propertyInspector/runCommand.html",
+        "states": [
+          {
+            "image": ""
+          }
+        ],
+        "controllers": [
+          "Keypad"
+        ],
+        "supported_in_multi_actions": true,
+        "disable_automatic_states": false
+      },
+      "context": "Keypad.21.0",
+      "states": [
+        {
+          "image": "images/hackparty/366ac63f2d32aeb041f182ffe5e890a455c6e45c0c8347b9fce95c34148401cb.png",
+          "text": "Play Replay",
+          "show": true,
+          "colour": "#FFFFFF",
+          "background_colour": "#000000",
+          "alignment": "bottom",
+          "family": "DejaVu Sans",
+          "size": 11
+        }
+      ],
+      "current_state": 0,
+      "settings": {
+        "down": "cd /media/rspectre/Storage/workspace/streamdeck || exit\nexport PATH=/media/rspectre/Storage/workspace/streamdeck/.venv/bin:\"$PATH\"\n( ./press_obs_shortcut.sh ctrl+alt+h\n)",
+        "show": false,
+        "_label_id": "057ad85a-0582-4fed-9716-5ba97dfff66c",
+        "_label_defaults": [
+          "Play Replay"
+        ],
+        "_label_mode": "shared"
+      },
+      "children": null
+    },
+    {
+      "action": {
+        "name": "Run Command",
+        "uuid": "com.amansprojects.starterpack.runcommand",
+        "plugin": "com.amansprojects.starterpack.sdPlugin",
+        "icon": "plugins/com.amansprojects.starterpack.sdPlugin/icons/runCommand.png",
+        "property_inspector": "plugins/com.amansprojects.starterpack.sdPlugin/propertyInspector/runCommand.html",
+        "states": [
+          {
+            "image": ""
+          }
+        ],
+        "controllers": [
+          "Keypad"
+        ],
+        "supported_in_multi_actions": true,
+        "disable_automatic_states": false
+      },
+      "context": "Keypad.22.0",
+      "states": [
+        {
+          "image": "images/hackparty/436d389aa4835e1fd59e7d5cb35623ca7ff60b0ee8e5d6e0ee26678f8f1571e3.png",
+          "text": "",
+          "show": true,
+          "colour": "#FFFFFF",
+          "background_colour": "#000000",
+          "alignment": "bottom",
+          "family": "DejaVu Sans",
+          "size": 11
+        }
+      ],
+      "current_state": 0,
+      "settings": {
+        "down": "cd /media/rspectre/Storage/workspace/streamdeck || exit\nexport PATH=/media/rspectre/Storage/workspace/streamdeck/.venv/bin:\"$PATH\"\n( python control_lights.py brighten\n)",
+        "show": false,
+        "_label_id": "33e570cc-0707-4206-8ea5-220e5d21fc52",
+        "_label_defaults": [
+          ""
+        ],
+        "_label_mode": "shared"
+      },
+      "children": null
+    },
+    {
+      "action": {
+        "name": "Run Command",
+        "uuid": "com.amansprojects.starterpack.runcommand",
+        "plugin": "com.amansprojects.starterpack.sdPlugin",
+        "icon": "plugins/com.amansprojects.starterpack.sdPlugin/icons/runCommand.png",
+        "property_inspector": "plugins/com.amansprojects.starterpack.sdPlugin/propertyInspector/runCommand.html",
+        "states": [
+          {
+            "image": ""
+          }
+        ],
+        "controllers": [
+          "Keypad"
+        ],
+        "supported_in_multi_actions": true,
+        "disable_automatic_states": false
+      },
+      "context": "Keypad.23.0",
+      "states": [
+        {
+          "image": "images/hackparty/b81de5b89f587b525633f1ad2e200127a3937f3a3f8263c4c9e9f46eb8555818.png",
+          "text": "",
+          "show": true,
+          "colour": "#FFFFFF",
+          "background_colour": "#000000",
+          "alignment": "bottom",
+          "family": "DejaVu Sans",
+          "size": 11
+        }
+      ],
+      "current_state": 0,
+      "settings": {
+        "down": "cd /media/rspectre/Storage/workspace/streamdeck || exit\nexport PATH=/media/rspectre/Storage/workspace/streamdeck/.venv/bin:\"$PATH\"\n( python control_lights.py dim\n)",
+        "show": false,
+        "_label_id": "3e551717-dafc-4a65-ae6c-293e16ead49a",
+        "_label_defaults": [
+          ""
+        ],
+        "_label_mode": "shared"
+      },
+      "children": null
+    },
+    {
+      "action": {
+        "name": "Live broadcast control",
+        "uuid": "party.hack.status.control",
+        "plugin": "party.hack.status.sdPlugin",
+        "states": [
+          {
+            "image": "images/hackparty/1205a7345377fcb294079a3cc69ca20ffee4a225e8f5bd330408478454a67588.svg",
+            "text": "B-Left",
+            "show": true,
+            "colour": "#b8c4d4",
+            "background_colour": "#10141b",
+            "alignment": "bottom",
+            "family": "DejaVu Sans",
+            "size": 11
+          },
+          {
+            "image": "images/hackparty/b99dd9d379be98c6acf5e0bece6c9e5bfc37bac201d5391f4c0cdafd73bb4b0f.svg",
+            "text": "B-Left",
+            "show": true,
+            "colour": "#ffe7a3",
+            "background_colour": "#201604",
+            "alignment": "bottom",
+            "family": "DejaVu Sans",
+            "size": 11
+          },
+          {
+            "image": "images/hackparty/d4a2b8ab600ec169aeb665e11ca68df8820e64691b2c580dd4af8fec7093db19.svg",
+            "text": "B-Left",
+            "show": true,
+            "colour": "#b8c4d4",
+            "background_colour": "#10141b",
+            "alignment": "bottom",
+            "family": "DejaVu Sans",
+            "size": 11
+          }
+        ],
+        "icon": "plugins/party.hack.status.sdPlugin/icon.png",
+        "controllers": [
+          "Keypad"
+        ],
+        "disable_automatic_states": true
+      },
+      "context": "Keypad.24.0",
+      "states": [
+        {
+          "image": "images/hackparty/1205a7345377fcb294079a3cc69ca20ffee4a225e8f5bd330408478454a67588.svg",
+          "text": "B-Left",
+          "show": true,
+          "colour": "#b8c4d4",
+          "background_colour": "#10141b",
+          "alignment": "bottom",
+          "family": "DejaVu Sans",
+          "size": 11
+        },
+        {
+          "image": "images/hackparty/b99dd9d379be98c6acf5e0bece6c9e5bfc37bac201d5391f4c0cdafd73bb4b0f.svg",
+          "text": "B-Left",
+          "show": true,
+          "colour": "#ffe7a3",
+          "background_colour": "#201604",
+          "alignment": "bottom",
+          "family": "DejaVu Sans",
+          "size": 11
+        },
+        {
+          "image": "images/hackparty/d4a2b8ab600ec169aeb665e11ca68df8820e64691b2c580dd4af8fec7093db19.svg",
+          "text": "B-Left",
+          "show": true,
+          "colour": "#b8c4d4",
+          "background_colour": "#10141b",
+          "alignment": "bottom",
+          "family": "DejaVu Sans",
+          "size": 11
+        }
+      ],
+      "current_state": 2,
+      "settings": {
+        "kind": "scene",
+        "scene": "Desktop with Lower Left",
+        "id": "B-Left",
+        "_label_id": "29d689d9-be12-4e30-98a1-05d50a8f1e7f",
+        "_label_defaults": [
+          "B-Left",
+          "B-Left",
+          "B-Left"
+        ],
+        "_label_mode": "shared"
+      },
+      "children": null
+    },
+    {
+      "action": {
+        "name": "Live broadcast control",
+        "uuid": "party.hack.status.control",
+        "plugin": "party.hack.status.sdPlugin",
+        "states": [
+          {
+            "image": "images/hackparty/1205a7345377fcb294079a3cc69ca20ffee4a225e8f5bd330408478454a67588.svg",
+            "text": "B-Right",
+            "show": true,
+            "colour": "#b8c4d4",
+            "background_colour": "#10141b",
+            "alignment": "bottom",
+            "family": "DejaVu Sans",
+            "size": 11
+          },
+          {
+            "image": "images/hackparty/b99dd9d379be98c6acf5e0bece6c9e5bfc37bac201d5391f4c0cdafd73bb4b0f.svg",
+            "text": "B-Right",
+            "show": true,
+            "colour": "#ffe7a3",
+            "background_colour": "#201604",
+            "alignment": "bottom",
+            "family": "DejaVu Sans",
+            "size": 11
+          },
+          {
+            "image": "images/hackparty/d4a2b8ab600ec169aeb665e11ca68df8820e64691b2c580dd4af8fec7093db19.svg",
+            "text": "B-Right",
+            "show": true,
+            "colour": "#b8c4d4",
+            "background_colour": "#10141b",
+            "alignment": "bottom",
+            "family": "DejaVu Sans",
+            "size": 11
+          }
+        ],
+        "icon": "plugins/party.hack.status.sdPlugin/icon.png",
+        "controllers": [
+          "Keypad"
+        ],
+        "disable_automatic_states": true
+      },
+      "context": "Keypad.25.0",
+      "states": [
+        {
+          "image": "images/hackparty/1205a7345377fcb294079a3cc69ca20ffee4a225e8f5bd330408478454a67588.svg",
+          "text": "B-Right",
+          "show": true,
+          "colour": "#b8c4d4",
+          "background_colour": "#10141b",
+          "alignment": "bottom",
+          "family": "DejaVu Sans",
+          "size": 11
+        },
+        {
+          "image": "images/hackparty/b99dd9d379be98c6acf5e0bece6c9e5bfc37bac201d5391f4c0cdafd73bb4b0f.svg",
+          "text": "B-Right",
+          "show": true,
+          "colour": "#ffe7a3",
+          "background_colour": "#201604",
+          "alignment": "bottom",
+          "family": "DejaVu Sans",
+          "size": 11
+        },
+        {
+          "image": "images/hackparty/d4a2b8ab600ec169aeb665e11ca68df8820e64691b2c580dd4af8fec7093db19.svg",
+          "text": "B-Right",
+          "show": true,
+          "colour": "#b8c4d4",
+          "background_colour": "#10141b",
+          "alignment": "bottom",
+          "family": "DejaVu Sans",
+          "size": 11
+        }
+      ],
+      "current_state": 2,
+      "settings": {
+        "kind": "scene",
+        "scene": "Desktop with Lower Right",
+        "id": "B-Right",
+        "_label_id": "52c0e890-7a8c-4048-8040-92428ba4e70f",
+        "_label_defaults": [
+          "B-Right",
+          "B-Right",
+          "B-Right"
+        ],
+        "_label_mode": "shared"
+      },
+      "children": null
+    },
+    {
+      "action": {
+        "name": "Live broadcast control",
+        "uuid": "party.hack.status.control",
+        "plugin": "party.hack.status.sdPlugin",
+        "states": [
+          {
+            "image": "images/hackparty/846e562dd26045eaa4755c0ab66b8628054c9b1aed8ad74f1f4178ec548c2b50.svg",
+            "text": "Vibing",
+            "show": true,
+            "colour": "#b8c4d4",
+            "background_colour": "#10141b",
+            "alignment": "bottom",
+            "family": "DejaVu Sans",
+            "size": 11
+          },
+          {
+            "image": "images/hackparty/7e9988cc9c64cce5701ceeab3ae2f379f56ac35bfa9da89b04770a3f1cf54a71.svg",
+            "text": "Vibing",
+            "show": true,
+            "colour": "#ffe7a3",
+            "background_colour": "#201604",
+            "alignment": "bottom",
+            "family": "DejaVu Sans",
+            "size": 11
+          },
+          {
+            "image": "images/hackparty/7ac0fb78ed9052b40324567bde3640f2aa2c671833d2dbd31735daba550bc7b8.svg",
+            "text": "Vibing",
+            "show": true,
+            "colour": "#b8c4d4",
+            "background_colour": "#10141b",
+            "alignment": "bottom",
+            "family": "DejaVu Sans",
+            "size": 11
+          }
+        ],
+        "icon": "plugins/party.hack.status.sdPlugin/icon.png",
+        "controllers": [
+          "Keypad"
+        ],
+        "disable_automatic_states": true
+      },
+      "context": "Keypad.26.0",
+      "states": [
+        {
+          "image": "images/hackparty/846e562dd26045eaa4755c0ab66b8628054c9b1aed8ad74f1f4178ec548c2b50.svg",
+          "text": "Vibing",
+          "show": true,
+          "colour": "#b8c4d4",
+          "background_colour": "#10141b",
+          "alignment": "bottom",
+          "family": "DejaVu Sans",
+          "size": 11
+        },
+        {
+          "image": "images/hackparty/7e9988cc9c64cce5701ceeab3ae2f379f56ac35bfa9da89b04770a3f1cf54a71.svg",
+          "text": "Vibing",
+          "show": true,
+          "colour": "#ffe7a3",
+          "background_colour": "#201604",
+          "alignment": "bottom",
+          "family": "DejaVu Sans",
+          "size": 11
+        },
+        {
+          "image": "images/hackparty/7ac0fb78ed9052b40324567bde3640f2aa2c671833d2dbd31735daba550bc7b8.svg",
+          "text": "Vibing",
+          "show": true,
+          "colour": "#b8c4d4",
+          "background_colour": "#10141b",
+          "alignment": "bottom",
+          "family": "DejaVu Sans",
+          "size": 11
+        }
+      ],
+      "current_state": 2,
+      "settings": {
+        "id": "effect:Vibing",
+        "kind": "effect",
+        "targets": [
+          {
+            "scene": "Scene Overlays",
+            "source": "Vibing Cat"
+          }
+        ],
+        "_label_id": "a9958e4e-e836-4074-b60c-5f5cf6540827",
+        "_label_defaults": [
+          "Vibing",
+          "Vibing",
+          "Vibing"
+        ],
+        "_label_mode": "shared"
+      },
+      "children": null
+    },
+    {
+      "action": {
+        "name": "Live broadcast control",
+        "uuid": "party.hack.status.control",
+        "plugin": "party.hack.status.sdPlugin",
+        "states": [
+          {
+            "image": "images/hackparty/139686bc3c87b699a5bcb24cb48cbb93edf5d07970bd26b6670e9476a436ef4b.svg",
+            "text": "Crickets",
+            "show": true,
+            "colour": "#b8c4d4",
+            "background_colour": "#10141b",
+            "alignment": "bottom",
+            "family": "DejaVu Sans",
+            "size": 11
+          },
+          {
+            "image": "images/hackparty/e47cd9fa8a76e0d97b6a08d0dd170dc5909d1bc4697403591192421b793670ce.svg",
+            "text": "Crickets",
+            "show": true,
+            "colour": "#ffe7a3",
+            "background_colour": "#201604",
+            "alignment": "bottom",
+            "family": "DejaVu Sans",
+            "size": 11
+          },
+          {
+            "image": "images/hackparty/7b835e77715d350ed1bedddc34e626b416236745a559711d6fe7c0fce347f7bf.svg",
+            "text": "Crickets",
+            "show": true,
+            "colour": "#b8c4d4",
+            "background_colour": "#10141b",
+            "alignment": "bottom",
+            "family": "DejaVu Sans",
+            "size": 11
+          }
+        ],
+        "icon": "plugins/party.hack.status.sdPlugin/icon.png",
+        "controllers": [
+          "Keypad"
+        ],
+        "disable_automatic_states": true
+      },
+      "context": "Keypad.27.0",
+      "states": [
+        {
+          "image": "images/hackparty/139686bc3c87b699a5bcb24cb48cbb93edf5d07970bd26b6670e9476a436ef4b.svg",
+          "text": "Crickets",
+          "show": true,
+          "colour": "#b8c4d4",
+          "background_colour": "#10141b",
+          "alignment": "bottom",
+          "family": "DejaVu Sans",
+          "size": 11
+        },
+        {
+          "image": "images/hackparty/e47cd9fa8a76e0d97b6a08d0dd170dc5909d1bc4697403591192421b793670ce.svg",
+          "text": "Crickets",
+          "show": true,
+          "colour": "#ffe7a3",
+          "background_colour": "#201604",
+          "alignment": "bottom",
+          "family": "DejaVu Sans",
+          "size": 11
+        },
+        {
+          "image": "images/hackparty/7b835e77715d350ed1bedddc34e626b416236745a559711d6fe7c0fce347f7bf.svg",
+          "text": "Crickets",
+          "show": true,
+          "colour": "#b8c4d4",
+          "background_colour": "#10141b",
+          "alignment": "bottom",
+          "family": "DejaVu Sans",
+          "size": 11
+        }
+      ],
+      "current_state": 2,
+      "settings": {
+        "id": "effect:Crickets",
+        "kind": "effect",
+        "targets": [
+          {
+            "scene": "Sound Effects",
+            "source": "Crickets"
+          },
+          {
+            "scene": "Scene Overlays",
+            "source": "Fireflies"
+          }
+        ],
+        "_label_id": "4b7939f3-cde5-4691-95a5-8fc2ca342e8f",
+        "_label_defaults": [
+          "Crickets",
+          "Crickets",
+          "Crickets"
+        ],
+        "_label_mode": "shared"
+      },
+      "children": null
+    },
+    {
+      "action": {
+        "name": "Live broadcast control",
+        "uuid": "party.hack.status.control",
+        "plugin": "party.hack.status.sdPlugin",
+        "states": [
+          {
+            "image": "images/hackparty/eff01a5bbfa4212833e6fbec285784fbbec30a74466e0cf2631c784602b347fb.svg",
+            "text": "Laughs",
+            "show": true,
+            "colour": "#b8c4d4",
+            "background_colour": "#10141b",
+            "alignment": "bottom",
+            "family": "DejaVu Sans",
+            "size": 11
+          },
+          {
+            "image": "images/hackparty/bc2f333650efe1339c617fd72d9b53af8c2373eef0e8206eaa30e425c097e498.svg",
+            "text": "Laughs",
+            "show": true,
+            "colour": "#ffe7a3",
+            "background_colour": "#201604",
+            "alignment": "bottom",
+            "family": "DejaVu Sans",
+            "size": 11
+          },
+          {
+            "image": "images/hackparty/509cc23dbbdaf9c42433186649f458d5a4a419f12f6ae1af9999b25af395d644.svg",
+            "text": "Laughs",
+            "show": true,
+            "colour": "#b8c4d4",
+            "background_colour": "#10141b",
+            "alignment": "bottom",
+            "family": "DejaVu Sans",
+            "size": 11
+          }
+        ],
+        "icon": "plugins/party.hack.status.sdPlugin/icon.png",
+        "controllers": [
+          "Keypad"
+        ],
+        "disable_automatic_states": true
+      },
+      "context": "Keypad.28.0",
+      "states": [
+        {
+          "image": "images/hackparty/eff01a5bbfa4212833e6fbec285784fbbec30a74466e0cf2631c784602b347fb.svg",
+          "text": "Laughs",
+          "show": true,
+          "colour": "#b8c4d4",
+          "background_colour": "#10141b",
+          "alignment": "bottom",
+          "family": "DejaVu Sans",
+          "size": 11
+        },
+        {
+          "image": "images/hackparty/bc2f333650efe1339c617fd72d9b53af8c2373eef0e8206eaa30e425c097e498.svg",
+          "text": "Laughs",
+          "show": true,
+          "colour": "#ffe7a3",
+          "background_colour": "#201604",
+          "alignment": "bottom",
+          "family": "DejaVu Sans",
+          "size": 11
+        },
+        {
+          "image": "images/hackparty/509cc23dbbdaf9c42433186649f458d5a4a419f12f6ae1af9999b25af395d644.svg",
+          "text": "Laughs",
+          "show": true,
+          "colour": "#b8c4d4",
+          "background_colour": "#10141b",
+          "alignment": "bottom",
+          "family": "DejaVu Sans",
+          "size": 11
+        }
+      ],
+      "current_state": 2,
+      "settings": {
+        "id": "effect:Laughs",
+        "kind": "effect",
+        "targets": [
+          {
+            "scene": "Sound Effects",
+            "source": "Laughing"
+          },
+          {
+            "scene": "Scene Overlays",
+            "source": "Laughs"
+          }
+        ],
+        "_label_id": "7849e651-a2bb-4d13-a8b7-18727f101ab0",
+        "_label_defaults": [
+          "Laughs",
+          "Laughs",
+          "Laughs"
+        ],
+        "_label_mode": "shared"
+      },
+      "children": null
+    },
+    {
+      "action": {
+        "name": "Live broadcast control",
+        "uuid": "party.hack.status.control",
+        "plugin": "party.hack.status.sdPlugin",
+        "states": [
+          {
+            "image": "images/hackparty/8895ed7de4d095b9cc420b550e393cdae9d235d80488a18dd0e96ca7f319382e.svg",
+            "text": "Sad",
+            "show": true,
+            "colour": "#b8c4d4",
+            "background_colour": "#10141b",
+            "alignment": "bottom",
+            "family": "DejaVu Sans",
+            "size": 11
+          },
+          {
+            "image": "images/hackparty/d889a9af23ce395cb3ae5726196c8e1f6dafcc7a2f63ecda17201edac72c9b97.svg",
+            "text": "Sad",
+            "show": true,
+            "colour": "#ffe7a3",
+            "background_colour": "#201604",
+            "alignment": "bottom",
+            "family": "DejaVu Sans",
+            "size": 11
+          },
+          {
+            "image": "images/hackparty/3a4790f0b51abf2adcb5c194f18b267cb098575ed03168c65e28f052a104b057.svg",
+            "text": "Sad",
+            "show": true,
+            "colour": "#b8c4d4",
+            "background_colour": "#10141b",
+            "alignment": "bottom",
+            "family": "DejaVu Sans",
+            "size": 11
+          }
+        ],
+        "icon": "plugins/party.hack.status.sdPlugin/icon.png",
+        "controllers": [
+          "Keypad"
+        ],
+        "disable_automatic_states": true
+      },
+      "context": "Keypad.29.0",
+      "states": [
+        {
+          "image": "images/hackparty/8895ed7de4d095b9cc420b550e393cdae9d235d80488a18dd0e96ca7f319382e.svg",
+          "text": "Sad",
+          "show": true,
+          "colour": "#b8c4d4",
+          "background_colour": "#10141b",
+          "alignment": "bottom",
+          "family": "DejaVu Sans",
+          "size": 11
+        },
+        {
+          "image": "images/hackparty/d889a9af23ce395cb3ae5726196c8e1f6dafcc7a2f63ecda17201edac72c9b97.svg",
+          "text": "Sad",
+          "show": true,
+          "colour": "#ffe7a3",
+          "background_colour": "#201604",
+          "alignment": "bottom",
+          "family": "DejaVu Sans",
+          "size": 11
+        },
+        {
+          "image": "images/hackparty/3a4790f0b51abf2adcb5c194f18b267cb098575ed03168c65e28f052a104b057.svg",
+          "text": "Sad",
+          "show": true,
+          "colour": "#b8c4d4",
+          "background_colour": "#10141b",
+          "alignment": "bottom",
+          "family": "DejaVu Sans",
+          "size": 11
+        }
+      ],
+      "current_state": 2,
+      "settings": {
+        "id": "effect:Sad",
+        "kind": "effect",
+        "targets": [
+          {
+            "scene": "Sound Effects",
+            "source": "Booing"
+          },
+          {
+            "scene": "Scene Overlays",
+            "source": "Sad + Angry Facebook"
+          }
+        ],
+        "_label_id": "bb6d7a46-a5cd-4b21-9c8b-3ef43ea0eb2a",
+        "_label_defaults": [
+          "Sad",
+          "Sad",
+          "Sad"
+        ],
+        "_label_mode": "shared"
+      },
+      "children": null
+    },
+    {
+      "action": {
+        "name": "Run Command",
+        "uuid": "com.amansprojects.starterpack.runcommand",
+        "plugin": "com.amansprojects.starterpack.sdPlugin",
+        "icon": "plugins/com.amansprojects.starterpack.sdPlugin/icons/runCommand.png",
+        "property_inspector": "plugins/com.amansprojects.starterpack.sdPlugin/propertyInspector/runCommand.html",
+        "states": [
+          {
+            "image": ""
+          }
+        ],
+        "controllers": [
+          "Keypad"
+        ],
+        "supported_in_multi_actions": true,
+        "disable_automatic_states": false
+      },
+      "context": "Keypad.30.0",
+      "states": [
+        {
+          "image": "images/hackparty/cf831876abd037d3c60bdd02d124479926c26780a3f4f339969d1dc2f6263853.png",
+          "text": "",
+          "show": true,
+          "colour": "#FFFFFF",
+          "background_colour": "#000000",
+          "alignment": "bottom",
+          "family": "DejaVu Sans",
+          "size": 11
+        }
+      ],
+      "current_state": 0,
+      "settings": {
+        "down": "cd /media/rspectre/Storage/workspace/streamdeck || exit\nexport PATH=/media/rspectre/Storage/workspace/streamdeck/.venv/bin:\"$PATH\"\n( python control_lights.py cool\n)",
+        "show": false,
+        "_label_id": "c11b3a49-8123-4dd9-a85b-0e30a7965f63",
+        "_label_defaults": [
+          ""
+        ],
+        "_label_mode": "shared"
+      },
+      "children": null
+    },
+    {
+      "action": {
+        "name": "Run Command",
+        "uuid": "com.amansprojects.starterpack.runcommand",
+        "plugin": "com.amansprojects.starterpack.sdPlugin",
+        "icon": "plugins/com.amansprojects.starterpack.sdPlugin/icons/runCommand.png",
+        "property_inspector": "plugins/com.amansprojects.starterpack.sdPlugin/propertyInspector/runCommand.html",
+        "states": [
+          {
+            "image": ""
+          }
+        ],
+        "controllers": [
+          "Keypad"
+        ],
+        "supported_in_multi_actions": true,
+        "disable_automatic_states": false
+      },
+      "context": "Keypad.31.0",
+      "states": [
+        {
+          "image": "images/hackparty/e287d77ba6ff3f23d306d280e7c6598ab3e76928f7148fd1f6e28286a1a0d8e6.png",
+          "text": "",
+          "show": true,
+          "colour": "#FFFFFF",
+          "background_colour": "#000000",
+          "alignment": "bottom",
+          "family": "DejaVu Sans",
+          "size": 11
+        }
+      ],
+      "current_state": 0,
+      "settings": {
+        "down": "cd /media/rspectre/Storage/workspace/streamdeck || exit\nexport PATH=/media/rspectre/Storage/workspace/streamdeck/.venv/bin:\"$PATH\"\n( python control_lights.py warm\n)",
+        "show": false,
+        "_label_id": "7cd1c6b2-3230-4ebf-95ef-16d3185d8166",
+        "_label_defaults": [
+          ""
+        ],
+        "_label_mode": "shared"
+      },
+      "children": null
+    }
+  ],
+  "sliders": [],
+  "infobars": []
+}

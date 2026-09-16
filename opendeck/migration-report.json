@@ -1,0 +1,133 @@
+{
+  "sources": {
+    "opendeck-layout.json": {
+      "sd-CL37L2A01125": {
+        "device_settings": {
+          "page": 1,
+          "page_names": {
+            "0": "broadcast",
+            "1": "soundboard",
+            "2": "Background Selection",
+            "3": "Formula 1",
+            "4": "Formula 1 Page 2",
+            "5": "Page 6",
+            "6": "Page 7",
+            "7": "Page 8",
+            "8": "Page 9",
+            "9": "Page 10"
+          }
+        },
+        "profiles": [
+          "01 - broadcast",
+          "02 - soundboard",
+          "03 - Background Selection",
+          "04 - Formula 1",
+          "05 - Formula 1 Page 2",
+          "06 - Page 6",
+          "07 - Page 7",
+          "08 - Page 8",
+          "09 - Page 9",
+          "10 - Page 10"
+        ]
+      },
+      "sd-A00YA5362L663L": {
+        "device_settings": {
+          "page": 0,
+          "page_names": {
+            "0": "Mini"
+          }
+        },
+        "profiles": [
+          "01 - Mini"
+        ]
+      }
+    }
+  },
+  "warnings": [],
+  "upstream_commit": "7cc07942ef4a0d4d04d3011fac3f82626a211cfb",
+  "retired_profiles": [
+    "sd-A00YA5362L663L/streamdeck_ui_xl_hackparty-json-page-01.json",
+    "sd-A00YA5362L663L/streamdeck_ui_xl_hackparty-json-page-02.json",
+    "sd-A00YA5362L663L/streamdeck_ui_xl_hackparty-json-page-03.json",
+    "sd-A00YA5362L663L/streamdeck_ui_xl_hackparty-json-page-04.json",
+    "sd-A00YA5362L663L/streamdeck_ui_xl_hackparty-json-page-05.json",
+    "sd-A00YA5362L663L/streamdeck_ui_xl_hackparty-json-page-06.json",
+    "sd-A00YA5362L663L/streamdeck_ui_xl_hackparty-json-page-07.json",
+    "sd-A00YA5362L663L/streamdeck_ui_xl_hackparty-json-page-08.json",
+    "sd-A00YA5362L663L/streamdeck_ui_xl_hackparty-json-page-09.json",
+    "sd-A00YA5362L663L/streamdeck_ui_xl_hackparty-json-page-10.json",
+    "sd-AL14J2C08719/streamdeck_ui_hackparty-json-page-01.json",
+    "sd-AL14J2C08719/streamdeck_ui_hackparty-json-page-02.json",
+    "sd-AL14J2C08719/streamdeck_ui_hackparty-json-page-03.json",
+    "sd-AL14J2C08719/streamdeck_ui_hackparty-json-page-04.json",
+    "sd-AL14J2C08719/streamdeck_ui_hackparty-json-page-05.json",
+    "sd-AL14J2C08719/streamdeck_ui_hackparty-json-page-06.json",
+    "sd-AL14J2C08719/streamdeck_ui_hackparty-json-page-07.json",
+    "sd-AL14J2C08719/streamdeck_ui_hackparty-json-page-08.json",
+    "sd-AL14J2C08719/streamdeck_ui_hackparty-json-page-09.json",
+    "sd-AL14J2C08719/streamdeck_ui_hackparty-json-page-10.json",
+    "sd-AL14J2C08719/streamdeck_ui_hackparty_2022-json-page-01.json",
+    "sd-AL14J2C08719/streamdeck_ui_hackparty_2022-json-page-02.json",
+    "sd-AL14J2C08719/streamdeck_ui_hackparty_2022-json-page-03.json",
+    "sd-AL14J2C08719/streamdeck_ui_hackparty_2022-json-page-04.json",
+    "sd-AL14J2C08719/streamdeck_ui_hackparty_2022-json-page-05.json",
+    "sd-AL14J2C08719/streamdeck_ui_hackparty_2022-json-page-06.json",
+    "sd-AL14J2C08719/streamdeck_ui_hackparty_2022-json-page-07.json",
+    "sd-AL14J2C08719/streamdeck_ui_hackparty_2022-json-page-08.json",
+    "sd-AL14J2C08719/streamdeck_ui_hackparty_2022-json-page-09.json",
+    "sd-AL14J2C08719/streamdeck_ui_hackparty_2022-json-page-10.json",
+    "sd-CL37L2A01125/03 - Formula 1.json",
+    "sd-CL37L2A01125/04 - Formula 1 Page 2.json",
+    "sd-CL37L2A01125/05 - Page 5.json",
+    "sd-CL37L2A01125/streamdeck_ui_xl_hackparty-json-backup-page-01.json",
+    "sd-CL37L2A01125/streamdeck_ui_xl_hackparty-json-backup-page-02.json",
+    "sd-CL37L2A01125/streamdeck_ui_xl_hackparty-json-backup-page-03.json",
+    "sd-CL37L2A01125/streamdeck_ui_xl_hackparty-json-backup-page-04.json",
+    "sd-CL37L2A01125/streamdeck_ui_xl_hackparty-json-backup-page-05.json",
+    "sd-CL37L2A01125/streamdeck_ui_xl_hackparty-json-backup-page-06.json",
+    "sd-CL37L2A01125/streamdeck_ui_xl_hackparty-json-backup-page-07.json",
+    "sd-CL37L2A01125/streamdeck_ui_xl_hackparty-json-backup-page-08.json",
+    "sd-CL37L2A01125/streamdeck_ui_xl_hackparty-json-backup-page-09.json",
+    "sd-CL37L2A01125/streamdeck_ui_xl_hackparty-json-backup-page-10.json",
+    "sd-CL37L2A01125/streamdeck_ui_xl_hackparty-json-page-01.json",
+    "sd-CL37L2A01125/streamdeck_ui_xl_hackparty-json-page-02.json",
+    "sd-CL37L2A01125/streamdeck_ui_xl_hackparty-json-page-03.json",
+    "sd-CL37L2A01125/streamdeck_ui_xl_hackparty-json-page-04.json",
+    "sd-CL37L2A01125/streamdeck_ui_xl_hackparty-json-page-05.json",
+    "sd-CL37L2A01125/streamdeck_ui_xl_hackparty-json-page-06.json",
+    "sd-CL37L2A01125/streamdeck_ui_xl_hackparty-json-page-07.json",
+    "sd-CL37L2A01125/streamdeck_ui_xl_hackparty-json-page-08.json",
+    "sd-CL37L2A01125/streamdeck_ui_xl_hackparty-json-page-09.json",
+    "sd-CL37L2A01125/streamdeck_ui_xl_hackparty-json-page-10.json",
+    "sd-CL37L2A01125/streamdeck_ui_xl_hackparty_dual-json-page-01.json",
+    "sd-CL37L2A01125/streamdeck_ui_xl_hackparty_dual-json-page-02.json",
+    "sd-CL37L2A01125/streamdeck_ui_xl_hackparty_dual-json-page-03.json",
+    "sd-CL37L2A01125/streamdeck_ui_xl_hackparty_dual-json-page-04.json",
+    "sd-CL37L2A01125/streamdeck_ui_xl_hackparty_dual-json-page-05.json",
+    "sd-CL37L2A01125/streamdeck_ui_xl_hackparty_dual-json-page-06.json",
+    "sd-CL37L2A01125/streamdeck_ui_xl_hackparty_dual-json-page-07.json",
+    "sd-CL37L2A01125/streamdeck_ui_xl_hackparty_dual-json-page-08.json",
+    "sd-CL37L2A01125/streamdeck_ui_xl_hackparty_dual-json-page-09.json",
+    "sd-CL37L2A01125/streamdeck_ui_xl_hackparty_dual-json-page-10.json",
+    "sd-CL37L2A01125/streamdeck_ui_xl_hackparty_exported-json-page-01.json",
+    "sd-CL37L2A01125/streamdeck_ui_xl_hackparty_exported-json-page-02.json",
+    "sd-CL37L2A01125/streamdeck_ui_xl_hackparty_exported-json-page-03.json",
+    "sd-CL37L2A01125/streamdeck_ui_xl_hackparty_exported-json-page-04.json",
+    "sd-CL37L2A01125/streamdeck_ui_xl_hackparty_exported-json-page-05.json",
+    "sd-CL37L2A01125/streamdeck_ui_xl_hackparty_exported-json-page-06.json",
+    "sd-CL37L2A01125/streamdeck_ui_xl_hackparty_exported-json-page-07.json",
+    "sd-CL37L2A01125/streamdeck_ui_xl_hackparty_exported-json-page-08.json",
+    "sd-CL37L2A01125/streamdeck_ui_xl_hackparty_exported-json-page-09.json",
+    "sd-CL37L2A01125/streamdeck_ui_xl_hackparty_exported-json-page-10.json",
+    "sd-CL37L2A01125/test-json-page-01.json",
+    "sd-CL37L2A01125/test-json-page-02.json",
+    "sd-CL37L2A01125/test-json-page-03.json",
+    "sd-CL37L2A01125/test-json-page-04.json",
+    "sd-CL37L2A01125/test-json-page-05.json",
+    "sd-CL37L2A01125/test-json-page-06.json",
+    "sd-CL37L2A01125/test-json-page-07.json",
+    "sd-CL37L2A01125/test-json-page-08.json",
+    "sd-CL37L2A01125/test-json-page-09.json",
+    "sd-CL37L2A01125/test-json-page-10.json"
+  ]
+}

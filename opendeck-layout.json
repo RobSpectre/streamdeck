@@ -1,0 +1,6308 @@
+{
+  "devices": {
+    "CL37L2A01125": {
+      "buttons": {
+        "0": {
+          "0": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "Mic",
+                "icon": "images/controls/audio-0-desktop.svg",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            },
+            "live_control": {
+              "kind": "mic_mute",
+              "id": "mic_mute"
+            },
+            "status_labels": [
+              "Mic SAFE",
+              "Mic HOT",
+              "Mic MUTED"
+            ],
+            "status_icons": [
+              "images/controls/audio-0-desktop.svg",
+              "images/controls/audio-0-hot.svg",
+              "images/controls/audio-0-muted.svg"
+            ],
+            "label_id": "98ce8a4f-ce1e-430b-ad23-89651ad54814"
+          },
+          "1": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "PiP",
+                "icon": "images/controls/button-1-off.svg",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            },
+            "live_control": {
+              "kind": "scene",
+              "scene": "Desktop Picture-in-Picture",
+              "id": "PiP"
+            },
+            "status_icons": [
+              "images/controls/button-1-off.svg",
+              "images/controls/button-1-on.svg",
+              "images/controls/button-1-unknown.svg"
+            ],
+            "label_id": "54979634-63ca-4bb6-ac69-5c96604de398"
+          },
+          "2": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "Portrait",
+                "icon": "images/controls/button-2-off.svg",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            },
+            "live_control": {
+              "kind": "scene",
+              "scene": "Portrait",
+              "id": "Portrait"
+            },
+            "status_icons": [
+              "images/controls/button-2-off.svg",
+              "images/controls/button-2-on.svg",
+              "images/controls/button-2-unknown.svg"
+            ],
+            "label_id": "70db135e-6b35-497d-9f9d-67ce49e02f0f"
+          },
+          "3": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "Face",
+                "icon": "images/controls/button-3-off.svg",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            },
+            "live_control": {
+              "kind": "item",
+              "scene": "SelectedFeed",
+              "source": "Face Camera",
+              "id": "Face"
+            },
+            "status_icons": [
+              "images/controls/button-3-off.svg",
+              "images/controls/button-3-on.svg",
+              "images/controls/button-3-unknown.svg"
+            ],
+            "label_id": "0888cdcf-494b-40b5-a90c-cca4cc9dcaa9"
+          },
+          "4": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "Game",
+                "icon": "images/controls/button-4-off.svg",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            },
+            "live_control": {
+              "kind": "item",
+              "scene": "Background",
+              "source": "Desktop Screen",
+              "id": "Game"
+            },
+            "status_icons": [
+              "images/controls/button-4-off.svg",
+              "images/controls/button-4-on.svg",
+              "images/controls/button-4-unknown.svg"
+            ],
+            "label_id": "a048d9cb-948d-4112-ad63-0671d25d378c"
+          },
+          "5": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "Video",
+                "icon": "images/controls/button-5-off.svg",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            },
+            "live_control": {
+              "kind": "item",
+              "scene": "Background",
+              "source": "Loops",
+              "id": "Video"
+            },
+            "status_icons": [
+              "images/controls/button-5-off.svg",
+              "images/controls/button-5-on.svg",
+              "images/controls/button-5-unknown.svg"
+            ],
+            "label_id": "2d901299-a322-4e28-a37b-ee49cfccfd9f"
+          },
+          "6": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "Office",
+                "icon": "images/controls/button-6-off.svg",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            },
+            "live_control": {
+              "kind": "item",
+              "scene": "Background",
+              "source": "Office",
+              "id": "Office"
+            },
+            "status_icons": [
+              "images/controls/button-6-off.svg",
+              "images/controls/button-6-on.svg",
+              "images/controls/button-6-unknown.svg"
+            ],
+            "label_id": "ba2fb605-a403-4877-900d-970ef6064754"
+          },
+          "7": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "images/fontawesome/angle-right.png",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 2,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            },
+            "label_id": "8784d34c-8235-453e-8596-e7bebafe53d3"
+          },
+          "8": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "Audio Mode",
+                "icon": "images/controls/audio-8-desktop.svg",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            },
+            "live_control": {
+              "kind": "audio_mode",
+              "id": "audio_mode"
+            },
+            "status_labels": [
+              "Desktop",
+              "Broadcast\nMIC HOT",
+              "Broadcast\nMUTED"
+            ],
+            "status_icons": [
+              "images/controls/audio-8-desktop.svg",
+              "images/controls/audio-8-hot.svg",
+              "images/controls/audio-8-muted.svg"
+            ],
+            "label_id": "d2e442d9-94ce-4cbe-a26b-ac6647f591d5"
+          },
+          "9": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "BRB",
+                "icon": "images/controls/button-9-off.svg",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            },
+            "live_control": {
+              "kind": "scene",
+              "scene": "Be Right Back",
+              "id": "BRB"
+            },
+            "status_icons": [
+              "images/controls/button-9-off.svg",
+              "images/controls/button-9-on.svg",
+              "images/controls/button-9-unknown.svg"
+            ],
+            "label_id": "1a0c4395-e4a4-48fd-9e26-d6447e6d2f22"
+          },
+          "10": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "Ada Cam",
+                "icon": "images/controls/button-10-off.svg",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            },
+            "live_control": {
+              "kind": "item",
+              "scene": "SelectedFeed",
+              "source": "Ada Camera",
+              "id": "Ada Cam"
+            },
+            "status_icons": [
+              "images/controls/button-10-off.svg",
+              "images/controls/button-10-on.svg",
+              "images/controls/button-10-unknown.svg"
+            ],
+            "label_id": "555cf4cb-1cc3-4d96-9197-43089f1b883b"
+          },
+          "11": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "Chroma Key",
+                "icon": "images/controls/button-11-off.svg",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            },
+            "live_control": {
+              "kind": "item",
+              "scene": "Face Camera",
+              "source": "Face Camera with Chromakey",
+              "complement": "Face Camera without Chromakey",
+              "id": "Chroma Key"
+            },
+            "status_icons": [
+              "images/controls/button-11-off.svg",
+              "images/controls/button-11-on.svg",
+              "images/controls/button-11-unknown.svg"
+            ],
+            "label_id": "4df2f543-5311-405c-b840-6c495972f455"
+          },
+          "12": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "Blur OFF",
+                "icon": "images/controls/blur-off.svg",
+                "keys": "",
+                "write": "",
+                "command": "python control_obs_blur.py on",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 2,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "#b8c4d4",
+                "font_size": 0,
+                "background_color": "#10141b"
+              },
+              "1": {
+                "text": "Blur ON",
+                "icon": "images/controls/blur-on.svg",
+                "keys": "",
+                "write": "",
+                "command": "python control_obs_blur.py off",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 1,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "#ffe7a3",
+                "font_size": 0,
+                "background_color": "#201604"
+              }
+            },
+            "label_id": "ffb0ac2d-f232-476f-92a0-d804317fd397"
+          },
+          "13": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "images/fontawesome/lightbulb.png",
+                "keys": "",
+                "write": "",
+                "command": "python control_lights.py toggle",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            },
+            "label_id": "f0060dc7-247a-4880-a475-340bc22e18ac"
+          },
+          "14": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "Key",
+                "icon": "images/controls/button-14-off.svg",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            },
+            "live_control": {
+              "kind": "light",
+              "light": "Key",
+              "id": "Key"
+            },
+            "status_icons": [
+              "images/controls/button-14-off.svg",
+              "images/controls/button-14-on.svg",
+              "images/controls/button-14-unknown.svg"
+            ],
+            "label_id": "ff4001a9-eae6-4ce4-8dd3-7983c8143f5c"
+          },
+          "15": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "Fill",
+                "icon": "images/controls/button-15-off.svg",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            },
+            "live_control": {
+              "kind": "light",
+              "light": "Fill",
+              "id": "Fill"
+            },
+            "status_icons": [
+              "images/controls/button-15-off.svg",
+              "images/controls/button-15-on.svg",
+              "images/controls/button-15-unknown.svg"
+            ],
+            "label_id": "a272aa32-cccd-4d57-b381-bde04cc8e501"
+          },
+          "16": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "T-Left",
+                "icon": "images/controls/button-16-off.svg",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            },
+            "live_control": {
+              "kind": "scene",
+              "scene": "Desktop with Top Left",
+              "id": "T-Left"
+            },
+            "status_icons": [
+              "images/controls/button-16-off.svg",
+              "images/controls/button-16-on.svg",
+              "images/controls/button-16-unknown.svg"
+            ],
+            "label_id": "72317a2b-a439-4436-8c8e-281517d2f519"
+          },
+          "17": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "T-Right",
+                "icon": "images/controls/button-17-off.svg",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            },
+            "live_control": {
+              "kind": "scene",
+              "scene": "Desktop with Top Right",
+              "id": "T-Right"
+            },
+            "status_icons": [
+              "images/controls/button-17-off.svg",
+              "images/controls/button-17-on.svg",
+              "images/controls/button-17-unknown.svg"
+            ],
+            "label_id": "c39c62db-c421-464f-aa88-7895e892ef1d"
+          },
+          "18": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "Rap Horn",
+                "icon": "images/fontawesome/bullhorn.png",
+                "keys": "",
+                "write": "",
+                "command": "play -v 0.1 /media/rspectre/Storage/Video/Sound\\ Effects/airhorn.mp3",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            },
+            "label_id": "0fe7f7fe-1360-4f7a-ae78-930bc66a1941"
+          },
+          "19": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "Winner",
+                "icon": "images/controls/effect-winner-off.svg",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            },
+            "live_control": {
+              "id": "effect:Winner",
+              "kind": "effect",
+              "targets": [
+                {
+                  "scene": "Sound Effects",
+                  "source": "Mario Win"
+                },
+                {
+                  "scene": "Scene Overlays",
+                  "source": "Confetti"
+                }
+              ]
+            },
+            "status_icons": [
+              "images/controls/effect-winner-off.svg",
+              "images/controls/effect-winner-on.svg",
+              "images/controls/effect-winner-unknown.svg"
+            ],
+            "label_id": "60dc89a3-9bc5-4400-84cb-f0b838517e5e"
+          },
+          "20": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "Save Replay",
+                "icon": "images/fontawesome/retro-camera.png",
+                "keys": "",
+                "write": "",
+                "command": "./press_obs_shortcut.sh ctrl+equal",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            },
+            "label_id": "1c4e5588-ac1d-4ceb-b445-cdc185d2d741"
+          },
+          "21": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "Play Replay",
+                "icon": "images/fontawesome/play.png",
+                "keys": "",
+                "write": "",
+                "command": "./press_obs_shortcut.sh ctrl+alt+h",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            },
+            "label_id": "057ad85a-0582-4fed-9716-5ba97dfff66c"
+          },
+          "22": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "images/fontawesome/circle-plus.png",
+                "keys": "",
+                "write": "",
+                "command": "python control_lights.py brighten",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            },
+            "label_id": "33e570cc-0707-4206-8ea5-220e5d21fc52"
+          },
+          "23": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "images/fontawesome/circle-minus.png",
+                "keys": "",
+                "write": "",
+                "command": "python control_lights.py dim",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            },
+            "label_id": "3e551717-dafc-4a65-ae6c-293e16ead49a"
+          },
+          "24": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "B-Left",
+                "icon": "images/controls/button-24-off.svg",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            },
+            "live_control": {
+              "kind": "scene",
+              "scene": "Desktop with Lower Left",
+              "id": "B-Left"
+            },
+            "status_icons": [
+              "images/controls/button-24-off.svg",
+              "images/controls/button-24-on.svg",
+              "images/controls/button-24-unknown.svg"
+            ],
+            "label_id": "29d689d9-be12-4e30-98a1-05d50a8f1e7f"
+          },
+          "25": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "B-Right",
+                "icon": "images/controls/button-25-off.svg",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            },
+            "live_control": {
+              "kind": "scene",
+              "scene": "Desktop with Lower Right",
+              "id": "B-Right"
+            },
+            "status_icons": [
+              "images/controls/button-25-off.svg",
+              "images/controls/button-25-on.svg",
+              "images/controls/button-25-unknown.svg"
+            ],
+            "label_id": "52c0e890-7a8c-4048-8040-92428ba4e70f"
+          },
+          "26": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "Vibing",
+                "icon": "images/controls/effect-vibing-off.svg",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            },
+            "live_control": {
+              "id": "effect:Vibing",
+              "kind": "effect",
+              "targets": [
+                {
+                  "scene": "Scene Overlays",
+                  "source": "Vibing Cat"
+                }
+              ]
+            },
+            "status_icons": [
+              "images/controls/effect-vibing-off.svg",
+              "images/controls/effect-vibing-on.svg",
+              "images/controls/effect-vibing-unknown.svg"
+            ],
+            "label_id": "a9958e4e-e836-4074-b60c-5f5cf6540827"
+          },
+          "27": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "Crickets",
+                "icon": "images/controls/effect-crickets-off.svg",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            },
+            "live_control": {
+              "id": "effect:Crickets",
+              "kind": "effect",
+              "targets": [
+                {
+                  "scene": "Sound Effects",
+                  "source": "Crickets"
+                },
+                {
+                  "scene": "Scene Overlays",
+                  "source": "Fireflies"
+                }
+              ]
+            },
+            "status_icons": [
+              "images/controls/effect-crickets-off.svg",
+              "images/controls/effect-crickets-on.svg",
+              "images/controls/effect-crickets-unknown.svg"
+            ],
+            "label_id": "4b7939f3-cde5-4691-95a5-8fc2ca342e8f"
+          },
+          "28": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "Laughs",
+                "icon": "images/controls/effect-laughs-off.svg",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            },
+            "live_control": {
+              "id": "effect:Laughs",
+              "kind": "effect",
+              "targets": [
+                {
+                  "scene": "Sound Effects",
+                  "source": "Laughing"
+                },
+                {
+                  "scene": "Scene Overlays",
+                  "source": "Laughs"
+                }
+              ]
+            },
+            "status_icons": [
+              "images/controls/effect-laughs-off.svg",
+              "images/controls/effect-laughs-on.svg",
+              "images/controls/effect-laughs-unknown.svg"
+            ],
+            "label_id": "7849e651-a2bb-4d13-a8b7-18727f101ab0"
+          },
+          "29": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "Sad",
+                "icon": "images/controls/effect-sad-off.svg",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            },
+            "live_control": {
+              "id": "effect:Sad",
+              "kind": "effect",
+              "targets": [
+                {
+                  "scene": "Sound Effects",
+                  "source": "Booing"
+                },
+                {
+                  "scene": "Scene Overlays",
+                  "source": "Sad + Angry Facebook"
+                }
+              ]
+            },
+            "status_icons": [
+              "images/controls/effect-sad-off.svg",
+              "images/controls/effect-sad-on.svg",
+              "images/controls/effect-sad-unknown.svg"
+            ],
+            "label_id": "bb6d7a46-a5cd-4b21-9c8b-3ef43ea0eb2a"
+          },
+          "30": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "images/fontawesome/temperature-arrow-down.png",
+                "keys": "",
+                "write": "",
+                "command": "python control_lights.py cool",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            },
+            "label_id": "c11b3a49-8123-4dd9-a85b-0e30a7965f63"
+          },
+          "31": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "images/fontawesome/temperature-arrow-up.png",
+                "keys": "",
+                "write": "",
+                "command": "python control_lights.py warm",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            },
+            "label_id": "7cd1c6b2-3230-4ebf-95ef-16d3185d8166"
+          }
+        },
+        "1": {
+          "0": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "images/fontawesome/angle-left.png",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 1,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            },
+            "label_id": "88bcc3ed-c5c2-4f68-8954-45812ef496a5"
+          },
+          "1": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "UFO",
+                "icon": "images/controls/effect-ufo-off.svg",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            },
+            "live_control": {
+              "id": "effect:UFO",
+              "kind": "effect",
+              "targets": [
+                {
+                  "scene": "Sound Effects",
+                  "source": "X Files Sound"
+                },
+                {
+                  "scene": "Scene Overlays",
+                  "source": "UFO"
+                }
+              ]
+            },
+            "status_icons": [
+              "images/controls/effect-ufo-off.svg",
+              "images/controls/effect-ufo-on.svg",
+              "images/controls/effect-ufo-unknown.svg"
+            ],
+            "label_id": "5f1e3fc6-e329-4591-bb66-368b005678b4"
+          },
+          "2": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "Math",
+                "icon": "images/controls/effect-math-off.svg",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            },
+            "live_control": {
+              "id": "effect:Math",
+              "kind": "effect",
+              "targets": [
+                {
+                  "scene": "Sound Effects",
+                  "source": "Hurr Hurr Derp"
+                },
+                {
+                  "scene": "Scene Overlays",
+                  "source": "Math Is Hard"
+                }
+              ]
+            },
+            "status_icons": [
+              "images/controls/effect-math-off.svg",
+              "images/controls/effect-math-on.svg",
+              "images/controls/effect-math-unknown.svg"
+            ],
+            "label_id": "3944881d-4cf7-4dcd-9bf8-43efde76a5bc"
+          },
+          "3": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "Rd One Fight",
+                "icon": "images/controls/effect-rd-one-fight-off.svg",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            },
+            "live_control": {
+              "id": "effect:Rd One Fight",
+              "kind": "effect",
+              "targets": [
+                {
+                  "scene": "Scene Overlays",
+                  "source": "Round One Fight"
+                }
+              ]
+            },
+            "status_icons": [
+              "images/controls/effect-rd-one-fight-off.svg",
+              "images/controls/effect-rd-one-fight-on.svg",
+              "images/controls/effect-rd-one-fight-unknown.svg"
+            ],
+            "label_id": "41e8195a-ade1-4b32-a2c2-c183916f74f9"
+          },
+          "4": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "Wasted",
+                "icon": "images/controls/effect-wasted-off.svg",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            },
+            "live_control": {
+              "id": "effect:Wasted",
+              "kind": "effect",
+              "targets": [
+                {
+                  "scene": "Scene Overlays",
+                  "source": "OHHHHHH"
+                }
+              ]
+            },
+            "status_icons": [
+              "images/controls/effect-wasted-off.svg",
+              "images/controls/effect-wasted-on.svg",
+              "images/controls/effect-wasted-unknown.svg"
+            ],
+            "label_id": "89de92d4-fad4-45ec-8aaa-0e54a1a6c6d3"
+          },
+          "5": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "To Be Fair",
+                "icon": "images/controls/effect-to-be-fair-off.svg",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            },
+            "live_control": {
+              "id": "effect:To Be Fair",
+              "kind": "effect",
+              "targets": [
+                {
+                  "scene": "Scene Overlays",
+                  "source": "To Be Fair"
+                }
+              ]
+            },
+            "status_icons": [
+              "images/controls/effect-to-be-fair-off.svg",
+              "images/controls/effect-to-be-fair-on.svg",
+              "images/controls/effect-to-be-fair-unknown.svg"
+            ],
+            "label_id": "94196abb-5755-4de9-903b-e9e34e3ecd1f"
+          },
+          "6": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "Shredder",
+                "icon": "images/controls/effect-shredder-off.svg",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            },
+            "live_control": {
+              "id": "effect:Shredder",
+              "kind": "effect",
+              "targets": [
+                {
+                  "scene": "Scene Overlays",
+                  "source": "Secret Document Paper Shredder"
+                }
+              ]
+            },
+            "status_icons": [
+              "images/controls/effect-shredder-off.svg",
+              "images/controls/effect-shredder-on.svg",
+              "images/controls/effect-shredder-unknown.svg"
+            ],
+            "label_id": "5e1e33fe-cc2e-47e3-8669-885f18b784ae"
+          },
+          "7": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "images/fontawesome/angle-right.png",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 3,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            },
+            "label_id": "c9513642-f737-4efa-aacf-d8d3bbd7335f"
+          },
+          "8": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "Winner",
+                "icon": "images/controls/effect-winner-off.svg",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            },
+            "live_control": {
+              "id": "effect:Winner",
+              "kind": "effect",
+              "targets": [
+                {
+                  "scene": "Sound Effects",
+                  "source": "Mario Win"
+                },
+                {
+                  "scene": "Scene Overlays",
+                  "source": "Confetti"
+                }
+              ]
+            },
+            "status_icons": [
+              "images/controls/effect-winner-off.svg",
+              "images/controls/effect-winner-on.svg",
+              "images/controls/effect-winner-unknown.svg"
+            ],
+            "label_id": "28f88cd2-f20f-4d4f-b7c0-452806701591"
+          },
+          "9": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "Vibing",
+                "icon": "images/controls/effect-vibing-off.svg",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            },
+            "live_control": {
+              "id": "effect:Vibing",
+              "kind": "effect",
+              "targets": [
+                {
+                  "scene": "Scene Overlays",
+                  "source": "Vibing Cat"
+                }
+              ]
+            },
+            "status_icons": [
+              "images/controls/effect-vibing-off.svg",
+              "images/controls/effect-vibing-on.svg",
+              "images/controls/effect-vibing-unknown.svg"
+            ],
+            "label_id": "cc7a29be-ab6e-4fd1-8b1d-ada22607c8d7"
+          },
+          "10": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "Key Cat",
+                "icon": "images/controls/effect-key-cat-off.svg",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            },
+            "live_control": {
+              "id": "effect:Key Cat",
+              "kind": "effect",
+              "targets": [
+                {
+                  "scene": "Scene Overlays",
+                  "source": "Keyboard Cat"
+                }
+              ]
+            },
+            "status_icons": [
+              "images/controls/effect-key-cat-off.svg",
+              "images/controls/effect-key-cat-on.svg",
+              "images/controls/effect-key-cat-unknown.svg"
+            ],
+            "label_id": "7f9ca588-ba91-4fbb-93a6-a584f4b0fcb3"
+          },
+          "11": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "Crickets",
+                "icon": "images/controls/effect-crickets-off.svg",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            },
+            "live_control": {
+              "id": "effect:Crickets",
+              "kind": "effect",
+              "targets": [
+                {
+                  "scene": "Sound Effects",
+                  "source": "Crickets"
+                },
+                {
+                  "scene": "Scene Overlays",
+                  "source": "Fireflies"
+                }
+              ]
+            },
+            "status_icons": [
+              "images/controls/effect-crickets-off.svg",
+              "images/controls/effect-crickets-on.svg",
+              "images/controls/effect-crickets-unknown.svg"
+            ],
+            "label_id": "bf5bea34-cdcf-42b7-b99b-feed44f48751"
+          },
+          "12": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "Laughs",
+                "icon": "images/controls/effect-laughs-off.svg",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            },
+            "live_control": {
+              "id": "effect:Laughs",
+              "kind": "effect",
+              "targets": [
+                {
+                  "scene": "Sound Effects",
+                  "source": "Laughing"
+                },
+                {
+                  "scene": "Scene Overlays",
+                  "source": "Laughs"
+                }
+              ]
+            },
+            "status_icons": [
+              "images/controls/effect-laughs-off.svg",
+              "images/controls/effect-laughs-on.svg",
+              "images/controls/effect-laughs-unknown.svg"
+            ],
+            "label_id": "19953ece-d7c3-459d-b274-15e2f3942e5c"
+          },
+          "13": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "Sad",
+                "icon": "images/controls/effect-sad-off.svg",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            },
+            "live_control": {
+              "id": "effect:Sad",
+              "kind": "effect",
+              "targets": [
+                {
+                  "scene": "Sound Effects",
+                  "source": "Booing"
+                },
+                {
+                  "scene": "Scene Overlays",
+                  "source": "Sad + Angry Facebook"
+                }
+              ]
+            },
+            "status_icons": [
+              "images/controls/effect-sad-off.svg",
+              "images/controls/effect-sad-on.svg",
+              "images/controls/effect-sad-unknown.svg"
+            ],
+            "label_id": "e29e1e4e-c67b-4395-88f0-059cb0796d8e"
+          },
+          "14": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "Virus",
+                "icon": "images/controls/effect-virus-off.svg",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            },
+            "live_control": {
+              "id": "effect:Virus",
+              "kind": "effect",
+              "targets": [
+                {
+                  "scene": "Sound Effects",
+                  "source": "Down with the Sickness"
+                },
+                {
+                  "scene": "Scene Overlays",
+                  "source": "Viruses"
+                }
+              ]
+            },
+            "status_icons": [
+              "images/controls/effect-virus-off.svg",
+              "images/controls/effect-virus-on.svg",
+              "images/controls/effect-virus-unknown.svg"
+            ],
+            "label_id": "9cab9258-75fa-4f12-aed8-2296ffd6d16a"
+          },
+          "15": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "Cena",
+                "icon": "images/controls/effect-cena-off.svg",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            },
+            "live_control": {
+              "id": "effect:Cena",
+              "kind": "effect",
+              "targets": [
+                {
+                  "scene": "Scene Overlays",
+                  "source": "Cena"
+                }
+              ]
+            },
+            "status_icons": [
+              "images/controls/effect-cena-off.svg",
+              "images/controls/effect-cena-on.svg",
+              "images/controls/effect-cena-unknown.svg"
+            ],
+            "label_id": "47d09b04-6f46-420e-a635-17a700c725da"
+          },
+          "16": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "Rap Horn",
+                "icon": "images/fontawesome/bullhorn.png",
+                "keys": "",
+                "write": "",
+                "command": "play -v 0.1 /media/rspectre/Storage/Video/Sound\\ Effects/airhorn.mp3",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            },
+            "label_id": "1f8a2bc9-69a7-4f82-8323-afa961716c7f"
+          },
+          "17": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "Wrong",
+                "icon": "images/fontawesome/not-equal.png",
+                "keys": "",
+                "write": "",
+                "command": "play -v 0.2 /media/rspectre/Storage/Video/Sound\\ Effects/wrong.mp3",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            },
+            "label_id": "38633dbb-a694-4aa2-b98c-aef62844ee27"
+          },
+          "18": {
+            "state": 0,
+            "states": {
+              "0": {}
+            }
+          },
+          "19": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            }
+          },
+          "20": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            }
+          },
+          "21": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            }
+          },
+          "22": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            }
+          },
+          "23": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "Noooo",
+                "icon": "images/controls/effect-noooo-off.svg",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            },
+            "live_control": {
+              "id": "effect:Noooo",
+              "kind": "effect",
+              "targets": [
+                {
+                  "scene": "Scene Overlays",
+                  "source": "Noooooo"
+                }
+              ]
+            },
+            "status_icons": [
+              "images/controls/effect-noooo-off.svg",
+              "images/controls/effect-noooo-on.svg",
+              "images/controls/effect-noooo-unknown.svg"
+            ],
+            "label_id": "5964c0ba-1f21-4163-922c-6a89c7e3fe32"
+          },
+          "24": {
+            "state": 0,
+            "states": {
+              "0": {}
+            }
+          },
+          "25": {
+            "state": 0,
+            "states": {
+              "0": {}
+            }
+          },
+          "26": {
+            "state": 0,
+            "states": {
+              "0": {}
+            }
+          },
+          "27": {
+            "state": 0,
+            "states": {
+              "0": {}
+            }
+          },
+          "28": {
+            "state": 0,
+            "states": {
+              "0": {}
+            }
+          },
+          "29": {
+            "state": 0,
+            "states": {
+              "0": {}
+            }
+          },
+          "30": {
+            "state": 0,
+            "states": {
+              "0": {}
+            }
+          },
+          "31": {
+            "state": 0,
+            "states": {
+              "0": {}
+            }
+          }
+        },
+        "2": {
+          "0": {
+            "state": 0,
+            "states": {
+              "0": {
+                "icon": "images/fontawesome/angle-left.png",
+                "switch_page": 2
+              }
+            },
+            "label_id": "721fa358-5409-4571-9c01-75523431ca9e"
+          },
+          "1": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "Space Golf",
+                "icon": "images/controls/background-1-off.svg",
+                "command": ""
+              }
+            },
+            "live_control": {
+              "id": "background:Space Golf",
+              "kind": "background",
+              "scene": "Loops",
+              "source": "Space Golf"
+            },
+            "status_icons": [
+              "images/controls/background-1-off.svg",
+              "images/controls/background-1-on.svg",
+              "images/controls/background-1-unknown.svg"
+            ],
+            "label_id": "f86c2bdf-fb07-4e5b-8df3-81e1bc6fe9b9"
+          },
+          "2": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "Mars",
+                "icon": "images/controls/background-2-off.svg",
+                "command": ""
+              }
+            },
+            "live_control": {
+              "id": "background:Mars",
+              "kind": "background",
+              "scene": "Loops",
+              "source": "Mars"
+            },
+            "status_icons": [
+              "images/controls/background-2-off.svg",
+              "images/controls/background-2-on.svg",
+              "images/controls/background-2-unknown.svg"
+            ],
+            "label_id": "c583b8a5-f9ce-426c-8d87-93ad516df674"
+          },
+          "3": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "Medical HUD",
+                "icon": "images/controls/background-3-off.svg",
+                "command": ""
+              }
+            },
+            "live_control": {
+              "id": "background:Medical HUD with Visualizer",
+              "kind": "background",
+              "scene": "Loops",
+              "source": "Medical HUD with Visualizer"
+            },
+            "status_icons": [
+              "images/controls/background-3-off.svg",
+              "images/controls/background-3-on.svg",
+              "images/controls/background-3-unknown.svg"
+            ],
+            "label_id": "274c52b9-fd98-43e7-b209-ecc6a8dec229"
+          },
+          "4": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "Code HUD",
+                "icon": "images/controls/background-4-off.svg",
+                "command": ""
+              }
+            },
+            "live_control": {
+              "id": "background:Code HUD with Visualizer",
+              "kind": "background",
+              "scene": "Loops",
+              "source": "Code HUD with Visualizer"
+            },
+            "status_icons": [
+              "images/controls/background-4-off.svg",
+              "images/controls/background-4-on.svg",
+              "images/controls/background-4-unknown.svg"
+            ],
+            "label_id": "10c476f7-280d-4d06-9767-ffc1342972c0"
+          },
+          "5": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "Space HUD",
+                "icon": "images/controls/background-5-off.svg",
+                "command": ""
+              }
+            },
+            "live_control": {
+              "id": "background:Space HUD with Visualizer",
+              "kind": "background",
+              "scene": "Loops",
+              "source": "Space HUD with Visualizer"
+            },
+            "status_icons": [
+              "images/controls/background-5-off.svg",
+              "images/controls/background-5-on.svg",
+              "images/controls/background-5-unknown.svg"
+            ],
+            "label_id": "7995052a-c77b-488a-bda4-1beaf72f23d7"
+          },
+          "6": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "Seasonal",
+                "icon": "images/controls/background-6-off.svg",
+                "command": ""
+              }
+            },
+            "live_control": {
+              "id": "background:Seasonal",
+              "kind": "background",
+              "scene": "Loops",
+              "source": "Seasonal"
+            },
+            "status_icons": [
+              "images/controls/background-6-off.svg",
+              "images/controls/background-6-on.svg",
+              "images/controls/background-6-unknown.svg"
+            ],
+            "label_id": "4960aeb5-d352-4cb8-bb67-b75b30906231"
+          },
+          "7": {
+            "state": 0,
+            "states": {
+              "0": {
+                "icon": "images/fontawesome/angle-right.png",
+                "switch_page": 4
+              }
+            },
+            "label_id": "2081a5a4-8d0b-40cb-82b9-9599f3c182a4"
+          },
+          "8": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "Record Store",
+                "icon": "images/controls/background-8-off.svg",
+                "command": ""
+              }
+            },
+            "live_control": {
+              "id": "background:Record Store",
+              "kind": "background",
+              "scene": "Loops",
+              "source": "Record Store"
+            },
+            "status_icons": [
+              "images/controls/background-8-off.svg",
+              "images/controls/background-8-on.svg",
+              "images/controls/background-8-unknown.svg"
+            ],
+            "label_id": "93505bab-8050-4a8e-a275-105d7876a094"
+          },
+          "9": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "Spooky",
+                "icon": "images/controls/background-9-off.svg",
+                "command": ""
+              }
+            },
+            "live_control": {
+              "id": "background:Spooky",
+              "kind": "background",
+              "scene": "Loops",
+              "source": "Spooky"
+            },
+            "status_icons": [
+              "images/controls/background-9-off.svg",
+              "images/controls/background-9-on.svg",
+              "images/controls/background-9-unknown.svg"
+            ],
+            "label_id": "78f1b36f-2a0c-46b9-a4c9-ea6ae715c5c0"
+          },
+          "10": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "Comic Book",
+                "icon": "images/controls/background-10-off.svg",
+                "command": ""
+              }
+            },
+            "live_control": {
+              "id": "background:Comic Book with Visualizers",
+              "kind": "background",
+              "scene": "Loops",
+              "source": "Comic Book with Visualizers"
+            },
+            "status_icons": [
+              "images/controls/background-10-off.svg",
+              "images/controls/background-10-on.svg",
+              "images/controls/background-10-unknown.svg"
+            ],
+            "label_id": "b9081c98-e222-45e8-8106-4e39015c625e"
+          },
+          "11": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "Pitfall",
+                "icon": "images/controls/background-11-off.svg",
+                "command": ""
+              }
+            },
+            "live_control": {
+              "id": "background:Vintage TV with Pitfall",
+              "kind": "background",
+              "scene": "Loops",
+              "source": "Vintage TV with Pitfall"
+            },
+            "status_icons": [
+              "images/controls/background-11-off.svg",
+              "images/controls/background-11-on.svg",
+              "images/controls/background-11-unknown.svg"
+            ],
+            "label_id": "a7457035-aa8d-48f0-97fd-f6434bd2996f"
+          },
+          "12": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "Breath of\nthe Wild",
+                "icon": "images/controls/background-12-off.svg",
+                "command": ""
+              }
+            },
+            "live_control": {
+              "id": "background:Breath of the Wild",
+              "kind": "background",
+              "scene": "Loops",
+              "source": "Breath of the Wild"
+            },
+            "status_icons": [
+              "images/controls/background-12-off.svg",
+              "images/controls/background-12-on.svg",
+              "images/controls/background-12-unknown.svg"
+            ],
+            "label_id": "6fbdfb43-9788-424e-80ce-0da581634ad2"
+          },
+          "13": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "Subtitles",
+                "icon": "images/controls/background-13-off.svg",
+                "command": ""
+              }
+            },
+            "live_control": {
+              "id": "background:Closed Captioning",
+              "kind": "background",
+              "scene": "Loops",
+              "source": "Closed Captioning"
+            },
+            "status_icons": [
+              "images/controls/background-13-off.svg",
+              "images/controls/background-13-on.svg",
+              "images/controls/background-13-unknown.svg"
+            ],
+            "label_id": "ee94ff0f-6670-49b4-be14-2c5bae8f9b05"
+          },
+          "14": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "'Merica",
+                "icon": "images/controls/background-14-off.svg",
+                "command": ""
+              }
+            },
+            "live_control": {
+              "id": "background:'Merica",
+              "kind": "background",
+              "scene": "Loops",
+              "source": "'Merica"
+            },
+            "status_icons": [
+              "images/controls/background-14-off.svg",
+              "images/controls/background-14-on.svg",
+              "images/controls/background-14-unknown.svg"
+            ],
+            "label_id": "d3760282-94a0-42f3-9ae1-0984f549ff5c"
+          },
+          "15": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "Spy Balloon",
+                "icon": "images/controls/background-15-off.svg",
+                "command": ""
+              }
+            },
+            "live_control": {
+              "id": "background:Spy Balloon",
+              "kind": "background",
+              "scene": "Loops",
+              "source": "Spy Balloon"
+            },
+            "status_icons": [
+              "images/controls/background-15-off.svg",
+              "images/controls/background-15-on.svg",
+              "images/controls/background-15-unknown.svg"
+            ],
+            "label_id": "a8a8fdd8-a00c-4ed9-9235-57d468ef6ea0"
+          },
+          "16": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "17 March",
+                "icon": "images/controls/background-16-off.svg",
+                "command": ""
+              }
+            },
+            "live_control": {
+              "id": "background:St. Patrick's Day",
+              "kind": "background",
+              "scene": "Loops",
+              "source": "St. Patrick's Day"
+            },
+            "status_icons": [
+              "images/controls/background-16-off.svg",
+              "images/controls/background-16-on.svg",
+              "images/controls/background-16-unknown.svg"
+            ],
+            "label_id": "08c19e58-972c-49a0-acfd-a3c29254cb5e"
+          },
+          "17": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "Highway",
+                "icon": "images/controls/background-17-off.svg",
+                "command": ""
+              }
+            },
+            "live_control": {
+              "id": "background:Space Highway",
+              "kind": "background",
+              "scene": "Loops",
+              "source": "Space Highway"
+            },
+            "status_icons": [
+              "images/controls/background-17-off.svg",
+              "images/controls/background-17-on.svg",
+              "images/controls/background-17-unknown.svg"
+            ],
+            "label_id": "cb132576-5833-4ec7-bc57-fbc06f9fac79"
+          },
+          "18": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "Stonks",
+                "icon": "images/controls/background-18-off.svg",
+                "command": ""
+              }
+            },
+            "live_control": {
+              "id": "background:Stock Dropping",
+              "kind": "background",
+              "scene": "Loops",
+              "source": "Stock Dropping"
+            },
+            "status_icons": [
+              "images/controls/background-18-off.svg",
+              "images/controls/background-18-on.svg",
+              "images/controls/background-18-unknown.svg"
+            ],
+            "label_id": "2702b1ce-9509-4455-9c76-dcbeaf2d9139"
+          },
+          "19": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "Pixel Art",
+                "icon": "images/controls/background-19-off.svg",
+                "command": ""
+              }
+            },
+            "live_control": {
+              "id": "background:Pixel Art",
+              "kind": "background",
+              "scene": "Loops",
+              "source": "Pixel Art"
+            },
+            "status_icons": [
+              "images/controls/background-19-off.svg",
+              "images/controls/background-19-on.svg",
+              "images/controls/background-19-unknown.svg"
+            ],
+            "label_id": "b238bf47-b1e2-46fb-8786-51cd8321ca2c"
+          },
+          "20": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "TB BRB",
+                "icon": "images/controls/background-20-off.svg",
+                "command": ""
+              }
+            },
+            "live_control": {
+              "id": "background:Token Bowl BRB Loop",
+              "kind": "background",
+              "scene": "Loops",
+              "source": "Token Bowl BRB Loop"
+            },
+            "status_icons": [
+              "images/controls/background-20-off.svg",
+              "images/controls/background-20-on.svg",
+              "images/controls/background-20-unknown.svg"
+            ],
+            "label_id": "919a9411-e3c7-47c0-b2c1-03c7087e8be9"
+          },
+          "21": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "Clarifai",
+                "icon": "images/controls/background-21-off.svg",
+                "command": ""
+              }
+            },
+            "live_control": {
+              "id": "background:Clarifai Background",
+              "kind": "background",
+              "scene": "Loops",
+              "source": "Clarifai Background"
+            },
+            "status_icons": [
+              "images/controls/background-21-off.svg",
+              "images/controls/background-21-on.svg",
+              "images/controls/background-21-unknown.svg"
+            ],
+            "label_id": "d9e1af4f-ed87-4aaf-ae34-c787f981e338"
+          },
+          "22": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "Nebius\nRob and Sujee",
+                "icon": "images/controls/background-22-off.svg",
+                "command": ""
+              }
+            },
+            "live_control": {
+              "id": "background:Build with Nebius with Rob and Sujee",
+              "kind": "background",
+              "scene": "Loops",
+              "source": "Build with Nebius with Rob and Sujee"
+            },
+            "status_icons": [
+              "images/controls/background-22-off.svg",
+              "images/controls/background-22-on.svg",
+              "images/controls/background-22-unknown.svg"
+            ],
+            "label_id": "b017d610-5749-4617-98cc-db5150a4f118"
+          },
+          "23": {
+            "state": 0,
+            "states": {
+              "0": {}
+            }
+          },
+          "24": {
+            "state": 0,
+            "states": {
+              "0": {}
+            }
+          },
+          "25": {
+            "state": 0,
+            "states": {
+              "0": {}
+            }
+          },
+          "26": {
+            "state": 0,
+            "states": {
+              "0": {}
+            }
+          },
+          "27": {
+            "state": 0,
+            "states": {
+              "0": {}
+            }
+          },
+          "28": {
+            "state": 0,
+            "states": {
+              "0": {}
+            }
+          },
+          "29": {
+            "state": 0,
+            "states": {
+              "0": {}
+            }
+          },
+          "30": {
+            "state": 0,
+            "states": {
+              "0": {}
+            }
+          },
+          "31": {
+            "state": 0,
+            "states": {
+              "0": {}
+            }
+          }
+        },
+        "3": {
+          "0": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "images/fontawesome/angle-left.png",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 3,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            },
+            "label_id": "a7dd9d0a-2e65-4f86-8da2-78094c79da3b"
+          },
+          "1": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "images/mvf1_rounded.png",
+                "keys": "",
+                "write": "",
+                "command": "./launch_f1tv.sh",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            },
+            "label_id": "ee4f25c7-700c-4113-b66b-6bdeb6a2e3bd"
+          },
+          "2": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "images/fontawesome/clock-rotate-left.png",
+                "keys": "",
+                "write": "",
+                "command": "mvf1-cli players sync",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            },
+            "label_id": "e5208aba-57de-4eec-a3fa-87d2a08d6961"
+          },
+          "3": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "images/fontawesome/microphone-lines.png",
+                "keys": "",
+                "write": "",
+                "command": "python control_driver_feeds.py toggle-driver-radio",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            },
+            "label_id": "8626a043-48d6-4a7e-b595-99eb6327dd92"
+          },
+          "4": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "VER",
+                "icon": "images/formula_1/2025/VER_bg.png",
+                "keys": "",
+                "write": "",
+                "command": "python control_driver_feeds.py driver --driver_abbreviation VER",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            },
+            "label_id": "d8d749bc-cd38-4fea-9eba-073965788f61"
+          },
+          "5": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "TSU",
+                "icon": "images/formula_1/2025/TSU_bg.png",
+                "keys": "",
+                "write": "",
+                "command": "python control_driver_feeds.py driver --driver_abbreviation TSU",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            },
+            "label_id": "2299f846-acda-4ffc-9cef-64be44144341"
+          },
+          "6": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "ALO",
+                "icon": "images/formula_1/2025/ALO_bg.png",
+                "keys": "",
+                "write": "",
+                "command": "python control_driver_feeds.py driver --driver_abbreviation ALO",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            },
+            "label_id": "0a11ea26-7ad4-4a37-8387-cf229eb4ce19"
+          },
+          "7": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "images/fontawesome/angle-right.png",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 5,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            },
+            "label_id": "6f7f39ce-c9bc-4895-ab7c-a029f35b7b4d"
+          },
+          "8": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "images/fontawesome/angles-left.png",
+                "keys": "",
+                "write": "",
+                "command": "./mvf1_command_with_sync.sh  player --title INTERNATIONAL seek --relative -30",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            },
+            "label_id": "5e3ef1dd-f115-48bb-8e1c-27bded27ca21"
+          },
+          "9": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "images/fontawesome/angle-left.png",
+                "keys": "",
+                "write": "",
+                "command": "./mvf1_command_with_sync.sh player --title INTERNATIONAL seek --relative -3",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            },
+            "label_id": "ea34b5b6-06c3-408d-a4bf-6a6c4d36181f"
+          },
+          "10": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "images/fontawesome/angle-right.png",
+                "keys": "",
+                "write": "",
+                "command": "./mvf1_command_with_sync.sh player --title INTERNATIONAL seek --relative 3",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            },
+            "label_id": "1547d102-0ac3-4232-a2c3-5db2df35f752"
+          },
+          "11": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "images/fontawesome/angles-right.png",
+                "keys": "",
+                "write": "",
+                "command": "./mvf1_command_with_sync.sh  player --title INTERNATIONAL seek --relative 30",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            },
+            "label_id": "c480c146-8b62-43bd-8866-d79215b6d906"
+          },
+          "12": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "LEC",
+                "icon": "images/formula_1/2025/LEC_bg.png",
+                "keys": "",
+                "write": "",
+                "command": "python control_driver_feeds.py driver --driver_abbreviation LEC",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            },
+            "label_id": "1f56bcd4-177d-4d68-bfab-6c4ee7b8ca51"
+          },
+          "13": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "HAM",
+                "icon": "images/formula_1/2025/HAM_bg.png",
+                "keys": "",
+                "write": "",
+                "command": "python control_driver_feeds.py driver --driver_abbreviation HAM",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            },
+            "label_id": "c61a9912-608c-4892-ab84-faf9be3fc5fe"
+          },
+          "14": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "SAI",
+                "icon": "images/formula_1/2025/SAI_bg.png",
+                "keys": "",
+                "write": "",
+                "command": "python control_driver_feeds.py driver --driver_abbreviation SAI",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            },
+            "label_id": "d24f559c-2e3e-4bf0-96e0-a2aa57736f05"
+          },
+          "15": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "ALB",
+                "icon": "images/formula_1/2025/ALB_bg.png",
+                "keys": "",
+                "write": "",
+                "command": "python control_driver_feeds.py driver --driver_abbreviation ALB",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            },
+            "label_id": "1a407c65-458c-47ad-bf1d-e87c8f2de737"
+          },
+          "16": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "images/fontawesome/pause.png",
+                "keys": "",
+                "write": "",
+                "command": "mvf1-cli players pause",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            },
+            "label_id": "f4a86db7-113a-4a3d-9ff8-ccf29a722d59"
+          },
+          "17": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "images/fontawesome/backward.png",
+                "keys": "",
+                "write": "",
+                "command": "./mvf1_command_with_sync.sh  player --title INTERNATIONAL seek --relative -300",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            },
+            "label_id": "bfecf2e4-a776-4594-a806-589ceb90bfc6"
+          },
+          "18": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "images/fontawesome/forward.png",
+                "keys": "",
+                "write": "",
+                "command": "./mvf1_command_with_sync.sh  player --title INTERNATIONAL seek --relative 300",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            },
+            "label_id": "0645d789-ff6b-499c-a908-781074efd3ff"
+          },
+          "19": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "images/fontawesome/recycle.png",
+                "keys": "",
+                "write": "",
+                "command": "python control_driver_feeds.py rotate-drivers",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            },
+            "label_id": "a17a7234-d1e1-4c3f-8b24-9aa841f81a32"
+          },
+          "20": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "RUS",
+                "icon": "images/formula_1/2025/RUS_bg.png",
+                "keys": "",
+                "write": "",
+                "command": "python control_driver_feeds.py driver --driver_abbreviation RUS",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            },
+            "label_id": "49569f80-0f83-4128-8e48-34cea323f241"
+          },
+          "21": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "ANT",
+                "icon": "images/formula_1/2025/ANT_bg.png",
+                "keys": "",
+                "write": "",
+                "command": "python control_driver_feeds.py driver --driver_abbreviation ANT",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            },
+            "label_id": "b49e8c84-6fd5-43ba-b61d-ec847d127faf"
+          },
+          "22": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "COL",
+                "icon": "images/formula_1/2025/COL_bg.png",
+                "keys": "",
+                "write": "",
+                "command": "python control_driver_feeds.py driver --driver_abbreviation COL",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            },
+            "label_id": "514d78b1-b8b1-4264-8f64-170f71c59b96"
+          },
+          "23": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "GAS",
+                "icon": "images/formula_1/2025/GAS_bg.png",
+                "keys": "",
+                "write": "",
+                "command": "python control_driver_feeds.py driver --driver_abbreviation GAS",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            },
+            "label_id": "1a0f379e-b22d-49e8-bef1-4d5761ad7d9e"
+          },
+          "24": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "images/fontawesome/stopwatch.png",
+                "keys": "",
+                "write": "",
+                "command": "mvf1-cli players toggle-speedometers",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            },
+            "label_id": "7799e973-73ee-416f-b430-3aae9f92435c"
+          },
+          "25": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "images/fontawesome/microphone-lines-slash.png",
+                "keys": "",
+                "write": "",
+                "command": "mvf1-cli player --title INTERNATIONAL mute",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            },
+            "label_id": "26bb2c64-b561-4a21-83e8-6fa278ceb282"
+          },
+          "26": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "images/fontawesome/forward-fast.png",
+                "keys": "",
+                "write": "",
+                "command": "./mvf1_command_with_sync.sh player --title INTERNATIONAL seek --relative 10000",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            },
+            "label_id": "c34a9b13-911e-442d-a7aa-a93bd53ec17f"
+          },
+          "27": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "images/fontawesome/user-group.png",
+                "keys": "",
+                "write": "",
+                "command": "python control_driver_feeds.py set-target",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            },
+            "label_id": "7b710743-f599-43ae-b360-a40ec778c52f"
+          },
+          "28": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "NOR",
+                "icon": "images/formula_1/2025/NOR_bg.png",
+                "keys": "",
+                "write": "",
+                "command": "python control_driver_feeds.py driver --driver_abbreviation NOR",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            },
+            "label_id": "95a04b7f-2bf1-47df-9d33-e8479a2e2943"
+          },
+          "29": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "PIA",
+                "icon": "images/formula_1/2025/PIA_bg.png",
+                "keys": "",
+                "write": "",
+                "command": "python control_driver_feeds.py driver --driver_abbreviation PIA",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            },
+            "label_id": "3fc27748-10e5-41c5-bc20-df2a65578487"
+          },
+          "30": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "OCO",
+                "icon": "images/formula_1/2025/OCO_bg.png",
+                "keys": "",
+                "write": "",
+                "command": "python control_driver_feeds.py driver --driver_abbreviation OCO",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            },
+            "label_id": "73e1a95a-fd64-474b-8bfe-00e4e260ae0e"
+          },
+          "31": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "BEA",
+                "icon": "images/formula_1/2025/BEA_bg.png",
+                "keys": "",
+                "write": "",
+                "command": "python control_driver_feeds.py driver --driver_abbreviation BEA",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            },
+            "label_id": "5f53bb87-bdaa-464a-b41b-3f27c18ac967"
+          }
+        },
+        "4": {
+          "0": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "images/fontawesome/angle-left.png",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 4,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            },
+            "label_id": "c6cec504-7c7a-41de-b193-f4f35d0d7845"
+          },
+          "1": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "STR",
+                "icon": "images/formula_1/2025/STR_bg.png",
+                "keys": "",
+                "write": "",
+                "command": "python control_driver_feeds.py driver --driver_abbreviation STR",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            },
+            "label_id": "97e8fe59-05ca-41cf-aa83-5f305db1e78b"
+          },
+          "2": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            }
+          },
+          "3": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            }
+          },
+          "4": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            }
+          },
+          "5": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            }
+          },
+          "6": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "",
+                "keys": "",
+                "write": "sherlock\n",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            },
+            "label_id": "664d1c49-f44e-4557-9aac-6ae4a25ce0e4"
+          },
+          "7": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "images/fontawesome/angle-right.png",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 6,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            },
+            "label_id": "b34fff02-e70e-4fc9-836b-42b2c22b58a0"
+          },
+          "8": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "BOR",
+                "icon": "images/formula_1/2025/BOR_bg.png",
+                "keys": "",
+                "write": "",
+                "command": "python control_driver_feeds.py driver --driver_abbreviation BOR",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            },
+            "label_id": "78f892a9-d24b-499c-ab30-7adb09ec9f30"
+          },
+          "9": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "HUL",
+                "icon": "images/formula_1/2025/HUL_bg.png",
+                "keys": "",
+                "write": "",
+                "command": "python control_driver_feeds.py driver --driver_abbreviation HUL",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            },
+            "label_id": "364e96ce-5c28-47ba-a02b-20049d8d07c7"
+          },
+          "10": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            }
+          },
+          "11": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            }
+          },
+          "12": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            }
+          },
+          "13": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            }
+          },
+          "14": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            }
+          },
+          "15": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            }
+          },
+          "16": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "LAW",
+                "icon": "images/formula_1/2025/LAW_bg.png",
+                "keys": "",
+                "write": "",
+                "command": "python control_driver_feeds.py driver --driver_abbreviation LAW",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            },
+            "label_id": "338adb50-9756-49ac-9d23-139a3e6b38c8"
+          },
+          "17": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "HAD",
+                "icon": "images/formula_1/2025/HAD_bg.png",
+                "keys": "",
+                "write": "",
+                "command": "python control_driver_feeds.py driver --driver_abbreviation HAD",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            },
+            "label_id": "86d10239-e607-4f70-86c1-b154b910c3a3"
+          },
+          "18": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            }
+          },
+          "19": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            }
+          },
+          "20": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            }
+          },
+          "21": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            }
+          },
+          "22": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            }
+          },
+          "23": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            }
+          },
+          "24": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            }
+          },
+          "25": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            }
+          },
+          "26": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            }
+          },
+          "27": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            }
+          },
+          "28": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            }
+          },
+          "29": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            }
+          },
+          "30": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            }
+          },
+          "31": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            }
+          }
+        },
+        "5": {
+          "0": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "images/fontawesome/angle-left.png",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 5,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            },
+            "label_id": "09094200-e151-405a-a871-95c355a9a1a2"
+          },
+          "1": {
+            "state": 0,
+            "states": {
+              "0": {}
+            }
+          },
+          "2": {
+            "state": 0,
+            "states": {
+              "0": {}
+            }
+          },
+          "3": {
+            "state": 0,
+            "states": {
+              "0": {}
+            }
+          },
+          "4": {
+            "state": 0,
+            "states": {
+              "0": {}
+            }
+          },
+          "5": {
+            "state": 0,
+            "states": {
+              "0": {}
+            }
+          },
+          "6": {
+            "state": 0,
+            "states": {
+              "0": {}
+            }
+          },
+          "7": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "images/fontawesome/angle-right.png",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 7,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            },
+            "label_id": "4d370947-9518-4a4f-aba0-0e0d9e3e4a20"
+          },
+          "8": {
+            "state": 0,
+            "states": {
+              "0": {}
+            }
+          },
+          "9": {
+            "state": 0,
+            "states": {
+              "0": {}
+            }
+          },
+          "10": {
+            "state": 0,
+            "states": {
+              "0": {}
+            }
+          },
+          "11": {
+            "state": 0,
+            "states": {
+              "0": {}
+            }
+          },
+          "12": {
+            "state": 0,
+            "states": {
+              "0": {}
+            }
+          },
+          "13": {
+            "state": 0,
+            "states": {
+              "0": {}
+            }
+          },
+          "14": {
+            "state": 0,
+            "states": {
+              "0": {}
+            }
+          },
+          "15": {
+            "state": 0,
+            "states": {
+              "0": {}
+            }
+          },
+          "16": {
+            "state": 0,
+            "states": {
+              "0": {}
+            }
+          },
+          "17": {
+            "state": 0,
+            "states": {
+              "0": {}
+            }
+          },
+          "18": {
+            "state": 0,
+            "states": {
+              "0": {}
+            }
+          },
+          "19": {
+            "state": 0,
+            "states": {
+              "0": {}
+            }
+          },
+          "20": {
+            "state": 0,
+            "states": {
+              "0": {}
+            }
+          },
+          "21": {
+            "state": 0,
+            "states": {
+              "0": {}
+            }
+          },
+          "22": {
+            "state": 0,
+            "states": {
+              "0": {}
+            }
+          },
+          "23": {
+            "state": 0,
+            "states": {
+              "0": {}
+            }
+          },
+          "24": {
+            "state": 0,
+            "states": {
+              "0": {}
+            }
+          },
+          "25": {
+            "state": 0,
+            "states": {
+              "0": {}
+            }
+          },
+          "26": {
+            "state": 0,
+            "states": {
+              "0": {}
+            }
+          },
+          "27": {
+            "state": 0,
+            "states": {
+              "0": {}
+            }
+          },
+          "28": {
+            "state": 0,
+            "states": {
+              "0": {}
+            }
+          },
+          "29": {
+            "state": 0,
+            "states": {
+              "0": {}
+            }
+          },
+          "30": {
+            "state": 0,
+            "states": {
+              "0": {}
+            }
+          },
+          "31": {
+            "state": 0,
+            "states": {
+              "0": {}
+            }
+          }
+        },
+        "6": {
+          "0": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "images/fontawesome/angle-left.png",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 6,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            },
+            "label_id": "a5ee16e0-7bba-4f9a-aa38-9e3278fe846f"
+          },
+          "1": {
+            "state": 0,
+            "states": {
+              "0": {}
+            }
+          },
+          "2": {
+            "state": 0,
+            "states": {
+              "0": {}
+            }
+          },
+          "3": {
+            "state": 0,
+            "states": {
+              "0": {}
+            }
+          },
+          "4": {
+            "state": 0,
+            "states": {
+              "0": {}
+            }
+          },
+          "5": {
+            "state": 0,
+            "states": {
+              "0": {}
+            }
+          },
+          "6": {
+            "state": 0,
+            "states": {
+              "0": {}
+            }
+          },
+          "7": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "images/fontawesome/angle-right.png",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 8,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            },
+            "label_id": "ab5ad2a4-1b97-4f4e-a9a0-7f1601ca33b5"
+          },
+          "8": {
+            "state": 0,
+            "states": {
+              "0": {}
+            }
+          },
+          "9": {
+            "state": 0,
+            "states": {
+              "0": {}
+            }
+          },
+          "10": {
+            "state": 0,
+            "states": {
+              "0": {}
+            }
+          },
+          "11": {
+            "state": 0,
+            "states": {
+              "0": {}
+            }
+          },
+          "12": {
+            "state": 0,
+            "states": {
+              "0": {}
+            }
+          },
+          "13": {
+            "state": 0,
+            "states": {
+              "0": {}
+            }
+          },
+          "14": {
+            "state": 0,
+            "states": {
+              "0": {}
+            }
+          },
+          "15": {
+            "state": 0,
+            "states": {
+              "0": {}
+            }
+          },
+          "16": {
+            "state": 0,
+            "states": {
+              "0": {}
+            }
+          },
+          "17": {
+            "state": 0,
+            "states": {
+              "0": {}
+            }
+          },
+          "18": {
+            "state": 0,
+            "states": {
+              "0": {}
+            }
+          },
+          "19": {
+            "state": 0,
+            "states": {
+              "0": {}
+            }
+          },
+          "20": {
+            "state": 0,
+            "states": {
+              "0": {}
+            }
+          },
+          "21": {
+            "state": 0,
+            "states": {
+              "0": {}
+            }
+          },
+          "22": {
+            "state": 0,
+            "states": {
+              "0": {}
+            }
+          },
+          "23": {
+            "state": 0,
+            "states": {
+              "0": {}
+            }
+          },
+          "24": {
+            "state": 0,
+            "states": {
+              "0": {}
+            }
+          },
+          "25": {
+            "state": 0,
+            "states": {
+              "0": {}
+            }
+          },
+          "26": {
+            "state": 0,
+            "states": {
+              "0": {}
+            }
+          },
+          "27": {
+            "state": 0,
+            "states": {
+              "0": {}
+            }
+          },
+          "28": {
+            "state": 0,
+            "states": {
+              "0": {}
+            }
+          },
+          "29": {
+            "state": 0,
+            "states": {
+              "0": {}
+            }
+          },
+          "30": {
+            "state": 0,
+            "states": {
+              "0": {}
+            }
+          },
+          "31": {
+            "state": 0,
+            "states": {
+              "0": {}
+            }
+          }
+        },
+        "7": {
+          "0": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "images/fontawesome/angle-left.png",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 7,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            },
+            "label_id": "3d850685-3a28-42dd-aa3d-ef76d636d522"
+          },
+          "1": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            }
+          },
+          "2": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            }
+          },
+          "3": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            }
+          },
+          "4": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            }
+          },
+          "5": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            }
+          },
+          "6": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            }
+          },
+          "7": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "images/fontawesome/angle-right.png",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 9,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            },
+            "label_id": "3fb555ca-ef29-4db9-9427-1b53ca1f1546"
+          },
+          "8": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            }
+          },
+          "9": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            }
+          },
+          "10": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            }
+          },
+          "11": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            }
+          },
+          "12": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            }
+          },
+          "13": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            }
+          },
+          "14": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            }
+          },
+          "15": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            }
+          },
+          "16": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            }
+          },
+          "17": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            }
+          },
+          "18": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            }
+          },
+          "19": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            }
+          },
+          "20": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            }
+          },
+          "21": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            }
+          },
+          "22": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            }
+          },
+          "23": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            }
+          },
+          "24": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            }
+          },
+          "25": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            }
+          },
+          "26": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            }
+          },
+          "27": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            }
+          },
+          "28": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            }
+          },
+          "29": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            }
+          },
+          "30": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            }
+          },
+          "31": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            }
+          }
+        },
+        "8": {
+          "0": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "images/fontawesome/angle-left.png",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 8,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            },
+            "label_id": "db9efbf2-3fe7-47f6-9b58-4b2bfe7daabe"
+          },
+          "1": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            }
+          },
+          "2": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            }
+          },
+          "3": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            }
+          },
+          "4": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            }
+          },
+          "5": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            }
+          },
+          "6": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            }
+          },
+          "7": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "images/fontawesome/angle-right.png",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 10,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            },
+            "label_id": "1cc978e8-27d9-49b1-bbd0-891cf64a2d58"
+          },
+          "8": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            }
+          },
+          "9": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            }
+          },
+          "10": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            }
+          },
+          "11": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            }
+          },
+          "12": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            }
+          },
+          "13": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            }
+          },
+          "14": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            }
+          },
+          "15": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            }
+          },
+          "16": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            }
+          },
+          "17": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            }
+          },
+          "18": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            }
+          },
+          "19": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            }
+          },
+          "20": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            }
+          },
+          "21": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            }
+          },
+          "22": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            }
+          },
+          "23": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            }
+          },
+          "24": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            }
+          },
+          "25": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            }
+          },
+          "26": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            }
+          },
+          "27": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            }
+          },
+          "28": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            }
+          },
+          "29": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            }
+          },
+          "30": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            }
+          },
+          "31": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            }
+          }
+        },
+        "9": {
+          "0": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "images/fontawesome/angle-left.png",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 9,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            },
+            "label_id": "888051e7-4f43-48cc-9f31-fda3e1700be1"
+          },
+          "1": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            }
+          },
+          "2": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            }
+          },
+          "3": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            }
+          },
+          "4": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            }
+          },
+          "5": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            }
+          },
+          "6": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            }
+          },
+          "7": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            }
+          },
+          "8": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            }
+          },
+          "9": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            }
+          },
+          "10": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            }
+          },
+          "11": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            }
+          },
+          "12": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            }
+          },
+          "13": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            }
+          },
+          "14": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            }
+          },
+          "15": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            }
+          },
+          "16": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            }
+          },
+          "17": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            }
+          },
+          "18": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            }
+          },
+          "19": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            }
+          },
+          "20": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            }
+          },
+          "21": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            }
+          },
+          "22": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            }
+          },
+          "23": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            }
+          },
+          "24": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            }
+          },
+          "25": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            }
+          },
+          "26": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            }
+          },
+          "27": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            }
+          },
+          "28": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            }
+          },
+          "29": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            }
+          },
+          "30": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            }
+          },
+          "31": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            }
+          }
+        }
+      },
+      "page": 1,
+      "page_names": {
+        "0": "broadcast",
+        "1": "soundboard",
+        "2": "Background Selection",
+        "3": "Formula 1",
+        "4": "Formula 1 Page 2",
+        "5": "Page 6",
+        "6": "Page 7",
+        "7": "Page 8",
+        "8": "Page 9",
+        "9": "Page 10"
+      }
+    },
+    "A00YA5362L663L": {
+      "buttons": {
+        "0": {
+          "0": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            }
+          },
+          "1": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            }
+          },
+          "2": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "",
+                "icon": "",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            }
+          }
+        }
+      },
+      "page": 0,
+      "page_names": {
+        "0": "Mini"
+      }
+    }
+  }
+}

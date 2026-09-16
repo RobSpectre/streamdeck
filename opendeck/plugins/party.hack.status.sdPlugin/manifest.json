@@ -1,0 +1,35 @@
+{
+  "Name": "Hackparty Live Status",
+  "Author": "hack.party",
+  "Version": "1.0.0",
+  "Description": "OBS and light controls with live active-state feedback",
+  "CodePathLin": "launch.sh",
+  "Icon": "icon",
+  "OS": [
+    {
+      "Platform": "linux"
+    }
+  ],
+  "Actions": [
+    {
+      "Name": "Live broadcast control",
+      "UUID": "party.hack.status.control",
+      "Icon": "icon",
+      "Controllers": [
+        "Keypad"
+      ],
+      "DisableAutomaticStates": true,
+      "States": [
+        {
+          "Image": "icon"
+        },
+        {
+          "Image": "icon"
+        },
+        {
+          "Image": "icon"
+        }
+      ]
+    }
+  ]
+}

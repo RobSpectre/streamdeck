@@ -1,0 +1,374 @@
+{
+  "keys": [
+    {
+      "action": {
+        "name": "Switch Profile",
+        "uuid": "com.amansprojects.starterpack.switchprofile",
+        "plugin": "com.amansprojects.starterpack.sdPlugin",
+        "icon": "plugins/com.amansprojects.starterpack.sdPlugin/icons/switchProfile.png",
+        "property_inspector": "plugins/com.amansprojects.starterpack.sdPlugin/propertyInspector/switchProfile.html",
+        "states": [
+          {
+            "image": ""
+          }
+        ],
+        "controllers": [
+          "Keypad"
+        ],
+        "supported_in_multi_actions": true,
+        "disable_automatic_states": false
+      },
+      "context": "Keypad.0.0",
+      "states": [
+        {
+          "image": "images/hackparty/2aa663757ff117b304eb8b7e082041e05e9c0c73a077f93ebb43fcf389439a2d.png",
+          "text": "",
+          "show": true,
+          "colour": "#FFFFFF",
+          "background_colour": "#000000",
+          "alignment": "bottom",
+          "family": "DejaVu Sans",
+          "size": 11
+        }
+      ],
+      "current_state": 0,
+      "settings": {
+        "device": "sd-CL37L2A01125",
+        "profile": "04 - Formula 1",
+        "_label_id": "c6cec504-7c7a-41de-b193-f4f35d0d7845",
+        "_label_defaults": [
+          ""
+        ],
+        "_label_mode": "shared"
+      },
+      "children": null
+    },
+    {
+      "action": {
+        "name": "Run Command",
+        "uuid": "com.amansprojects.starterpack.runcommand",
+        "plugin": "com.amansprojects.starterpack.sdPlugin",
+        "icon": "plugins/com.amansprojects.starterpack.sdPlugin/icons/runCommand.png",
+        "property_inspector": "plugins/com.amansprojects.starterpack.sdPlugin/propertyInspector/runCommand.html",
+        "states": [
+          {
+            "image": ""
+          }
+        ],
+        "controllers": [
+          "Keypad"
+        ],
+        "supported_in_multi_actions": true,
+        "disable_automatic_states": false
+      },
+      "context": "Keypad.1.0",
+      "states": [
+        {
+          "image": "images/hackparty/29750ea422953577ab9ffd8a627178c4fc9d7709899b717a6393b25e0a772aab.png",
+          "text": "STR",
+          "show": true,
+          "colour": "#FFFFFF",
+          "background_colour": "#000000",
+          "alignment": "bottom",
+          "family": "DejaVu Sans",
+          "size": 11
+        }
+      ],
+      "current_state": 0,
+      "settings": {
+        "down": "cd /media/rspectre/Storage/workspace/streamdeck || exit\nexport PATH=/media/rspectre/Storage/workspace/streamdeck/.venv/bin:\"$PATH\"\n( python control_driver_feeds.py driver --driver_abbreviation STR\n)",
+        "show": false,
+        "_label_id": "97e8fe59-05ca-41cf-aa83-5f305db1e78b",
+        "_label_defaults": [
+          "STR"
+        ],
+        "_label_mode": "shared"
+      },
+      "children": null
+    },
+    null,
+    null,
+    null,
+    null,
+    {
+      "action": {
+        "name": "Run Command",
+        "uuid": "com.amansprojects.starterpack.runcommand",
+        "plugin": "com.amansprojects.starterpack.sdPlugin",
+        "icon": "plugins/com.amansprojects.starterpack.sdPlugin/icons/runCommand.png",
+        "property_inspector": "plugins/com.amansprojects.starterpack.sdPlugin/propertyInspector/runCommand.html",
+        "states": [
+          {
+            "image": ""
+          }
+        ],
+        "controllers": [
+          "Keypad"
+        ],
+        "supported_in_multi_actions": true,
+        "disable_automatic_states": false
+      },
+      "context": "Keypad.6.0",
+      "states": [
+        {
+          "image": "",
+          "text": "",
+          "show": true,
+          "colour": "#FFFFFF",
+          "background_colour": "#000000",
+          "alignment": "bottom",
+          "family": "DejaVu Sans",
+          "size": 11
+        }
+      ],
+      "current_state": 0,
+      "settings": {
+        "down": "cd /media/rspectre/Storage/workspace/streamdeck || exit\nexport PATH=/media/rspectre/Storage/workspace/streamdeck/.venv/bin:\"$PATH\"\n( xdotool type --clearmodifiers -- 'sherlock\n'\n)",
+        "show": false,
+        "_label_id": "664d1c49-f44e-4557-9aac-6ae4a25ce0e4",
+        "_label_defaults": [
+          ""
+        ],
+        "_label_mode": "shared"
+      },
+      "children": null
+    },
+    {
+      "action": {
+        "name": "Switch Profile",
+        "uuid": "com.amansprojects.starterpack.switchprofile",
+        "plugin": "com.amansprojects.starterpack.sdPlugin",
+        "icon": "plugins/com.amansprojects.starterpack.sdPlugin/icons/switchProfile.png",
+        "property_inspector": "plugins/com.amansprojects.starterpack.sdPlugin/propertyInspector/switchProfile.html",
+        "states": [
+          {
+            "image": ""
+          }
+        ],
+        "controllers": [
+          "Keypad"
+        ],
+        "supported_in_multi_actions": true,
+        "disable_automatic_states": false
+      },
+      "context": "Keypad.7.0",
+      "states": [
+        {
+          "image": "images/hackparty/87e2565de94489601e00d24346a3dd930850f1e043cff809167b6e72b9dc94f1.png",
+          "text": "",
+          "show": true,
+          "colour": "#FFFFFF",
+          "background_colour": "#000000",
+          "alignment": "bottom",
+          "family": "DejaVu Sans",
+          "size": 11
+        }
+      ],
+      "current_state": 0,
+      "settings": {
+        "device": "sd-CL37L2A01125",
+        "profile": "06 - Page 6",
+        "_label_id": "b34fff02-e70e-4fc9-836b-42b2c22b58a0",
+        "_label_defaults": [
+          ""
+        ],
+        "_label_mode": "shared"
+      },
+      "children": null
+    },
+    {
+      "action": {
+        "name": "Run Command",
+        "uuid": "com.amansprojects.starterpack.runcommand",
+        "plugin": "com.amansprojects.starterpack.sdPlugin",
+        "icon": "plugins/com.amansprojects.starterpack.sdPlugin/icons/runCommand.png",
+        "property_inspector": "plugins/com.amansprojects.starterpack.sdPlugin/propertyInspector/runCommand.html",
+        "states": [
+          {
+            "image": ""
+          }
+        ],
+        "controllers": [
+          "Keypad"
+        ],
+        "supported_in_multi_actions": true,
+        "disable_automatic_states": false
+      },
+      "context": "Keypad.8.0",
+      "states": [
+        {
+          "image": "images/hackparty/b407bbd5431d726b89d1db6f9398144e81d3263e604ba5967d069cce871fc5c8.png",
+          "text": "BOR",
+          "show": true,
+          "colour": "#FFFFFF",
+          "background_colour": "#000000",
+          "alignment": "bottom",
+          "family": "DejaVu Sans",
+          "size": 11
+        }
+      ],
+      "current_state": 0,
+      "settings": {
+        "down": "cd /media/rspectre/Storage/workspace/streamdeck || exit\nexport PATH=/media/rspectre/Storage/workspace/streamdeck/.venv/bin:\"$PATH\"\n( python control_driver_feeds.py driver --driver_abbreviation BOR\n)",
+        "show": false,
+        "_label_id": "78f892a9-d24b-499c-ab30-7adb09ec9f30",
+        "_label_defaults": [
+          "BOR"
+        ],
+        "_label_mode": "shared"
+      },
+      "children": null
+    },
+    {
+      "action": {
+        "name": "Run Command",
+        "uuid": "com.amansprojects.starterpack.runcommand",
+        "plugin": "com.amansprojects.starterpack.sdPlugin",
+        "icon": "plugins/com.amansprojects.starterpack.sdPlugin/icons/runCommand.png",
+        "property_inspector": "plugins/com.amansprojects.starterpack.sdPlugin/propertyInspector/runCommand.html",
+        "states": [
+          {
+            "image": ""
+          }
+        ],
+        "controllers": [
+          "Keypad"
+        ],
+        "supported_in_multi_actions": true,
+        "disable_automatic_states": false
+      },
+      "context": "Keypad.9.0",
+      "states": [
+        {
+          "image": "images/hackparty/e4147697169730dff0137f7bc81131f156075cc261ce35d12c99908edc3c4d80.png",
+          "text": "HUL",
+          "show": true,
+          "colour": "#FFFFFF",
+          "background_colour": "#000000",
+          "alignment": "bottom",
+          "family": "DejaVu Sans",
+          "size": 11
+        }
+      ],
+      "current_state": 0,
+      "settings": {
+        "down": "cd /media/rspectre/Storage/workspace/streamdeck || exit\nexport PATH=/media/rspectre/Storage/workspace/streamdeck/.venv/bin:\"$PATH\"\n( python control_driver_feeds.py driver --driver_abbreviation HUL\n)",
+        "show": false,
+        "_label_id": "364e96ce-5c28-47ba-a02b-20049d8d07c7",
+        "_label_defaults": [
+          "HUL"
+        ],
+        "_label_mode": "shared"
+      },
+      "children": null
+    },
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    {
+      "action": {
+        "name": "Run Command",
+        "uuid": "com.amansprojects.starterpack.runcommand",
+        "plugin": "com.amansprojects.starterpack.sdPlugin",
+        "icon": "plugins/com.amansprojects.starterpack.sdPlugin/icons/runCommand.png",
+        "property_inspector": "plugins/com.amansprojects.starterpack.sdPlugin/propertyInspector/runCommand.html",
+        "states": [
+          {
+            "image": ""
+          }
+        ],
+        "controllers": [
+          "Keypad"
+        ],
+        "supported_in_multi_actions": true,
+        "disable_automatic_states": false
+      },
+      "context": "Keypad.16.0",
+      "states": [
+        {
+          "image": "images/hackparty/1c1d65fb17d8f58d3c1d1d848ec065de5bf6809e7435833c645fd92685fc8894.png",
+          "text": "LAW",
+          "show": true,
+          "colour": "#FFFFFF",
+          "background_colour": "#000000",
+          "alignment": "bottom",
+          "family": "DejaVu Sans",
+          "size": 11
+        }
+      ],
+      "current_state": 0,
+      "settings": {
+        "down": "cd /media/rspectre/Storage/workspace/streamdeck || exit\nexport PATH=/media/rspectre/Storage/workspace/streamdeck/.venv/bin:\"$PATH\"\n( python control_driver_feeds.py driver --driver_abbreviation LAW\n)",
+        "show": false,
+        "_label_id": "338adb50-9756-49ac-9d23-139a3e6b38c8",
+        "_label_defaults": [
+          "LAW"
+        ],
+        "_label_mode": "shared"
+      },
+      "children": null
+    },
+    {
+      "action": {
+        "name": "Run Command",
+        "uuid": "com.amansprojects.starterpack.runcommand",
+        "plugin": "com.amansprojects.starterpack.sdPlugin",
+        "icon": "plugins/com.amansprojects.starterpack.sdPlugin/icons/runCommand.png",
+        "property_inspector": "plugins/com.amansprojects.starterpack.sdPlugin/propertyInspector/runCommand.html",
+        "states": [
+          {
+            "image": ""
+          }
+        ],
+        "controllers": [
+          "Keypad"
+        ],
+        "supported_in_multi_actions": true,
+        "disable_automatic_states": false
+      },
+      "context": "Keypad.17.0",
+      "states": [
+        {
+          "image": "images/hackparty/dc84d391f3fe30929ee68c1900274084ed477f82d4e3c2117e6d682469170fbd.png",
+          "text": "HAD",
+          "show": true,
+          "colour": "#FFFFFF",
+          "background_colour": "#000000",
+          "alignment": "bottom",
+          "family": "DejaVu Sans",
+          "size": 11
+        }
+      ],
+      "current_state": 0,
+      "settings": {
+        "down": "cd /media/rspectre/Storage/workspace/streamdeck || exit\nexport PATH=/media/rspectre/Storage/workspace/streamdeck/.venv/bin:\"$PATH\"\n( python control_driver_feeds.py driver --driver_abbreviation HAD\n)",
+        "show": false,
+        "_label_id": "86d10239-e607-4f70-86c1-b154b910c3a3",
+        "_label_defaults": [
+          "HAD"
+        ],
+        "_label_mode": "shared"
+      },
+      "children": null
+    },
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  "sliders": [],
+  "infobars": []
+}
