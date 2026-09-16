@@ -2185,8 +2185,8 @@
         "plugin": "party.hack.status.sdPlugin",
         "states": [
           {
-            "image": "images/hackparty/139686bc3c87b699a5bcb24cb48cbb93edf5d07970bd26b6670e9476a436ef4b.svg",
-            "text": "Crickets",
+            "image": "images/hackparty/c87224edd10504e90ef6f43b46662580421f3fef39066345633be24ff592c4f3.svg",
+            "text": "Codex",
             "show": true,
             "colour": "#b8c4d4",
             "background_colour": "#10141b",
@@ -2195,8 +2195,8 @@
             "size": 11
           },
           {
-            "image": "images/hackparty/e47cd9fa8a76e0d97b6a08d0dd170dc5909d1bc4697403591192421b793670ce.svg",
-            "text": "Crickets",
+            "image": "images/hackparty/8da515647f79085968ee3946992b9265623a2d4877969378ee97504fc1e20039.svg",
+            "text": "Codex",
             "show": true,
             "colour": "#ffe7a3",
             "background_colour": "#201604",
@@ -2205,8 +2205,8 @@
             "size": 11
           },
           {
-            "image": "images/hackparty/7b835e77715d350ed1bedddc34e626b416236745a559711d6fe7c0fce347f7bf.svg",
-            "text": "Crickets",
+            "image": "images/hackparty/a09ae374ea7ba2cab07039d1f4b50d6a2504d37e63676f0ec50106c46cb2bdf8.svg",
+            "text": "Codex",
             "show": true,
             "colour": "#b8c4d4",
             "background_colour": "#10141b",
@@ -2224,8 +2224,8 @@
       "context": "Keypad.27.0",
       "states": [
         {
-          "image": "images/hackparty/139686bc3c87b699a5bcb24cb48cbb93edf5d07970bd26b6670e9476a436ef4b.svg",
-          "text": "Crickets",
+          "image": "images/hackparty/c87224edd10504e90ef6f43b46662580421f3fef39066345633be24ff592c4f3.svg",
+          "text": "Codex",
           "show": true,
           "colour": "#b8c4d4",
           "background_colour": "#10141b",
@@ -2234,8 +2234,8 @@
           "size": 11
         },
         {
-          "image": "images/hackparty/e47cd9fa8a76e0d97b6a08d0dd170dc5909d1bc4697403591192421b793670ce.svg",
-          "text": "Crickets",
+          "image": "images/hackparty/8da515647f79085968ee3946992b9265623a2d4877969378ee97504fc1e20039.svg",
+          "text": "Codex",
           "show": true,
           "colour": "#ffe7a3",
           "background_colour": "#201604",
@@ -2244,8 +2244,8 @@
           "size": 11
         },
         {
-          "image": "images/hackparty/7b835e77715d350ed1bedddc34e626b416236745a559711d6fe7c0fce347f7bf.svg",
-          "text": "Crickets",
+          "image": "images/hackparty/a09ae374ea7ba2cab07039d1f4b50d6a2504d37e63676f0ec50106c46cb2bdf8.svg",
+          "text": "Codex",
           "show": true,
           "colour": "#b8c4d4",
           "background_colour": "#10141b",
@@ -2256,23 +2256,15 @@
       ],
       "current_state": 2,
       "settings": {
-        "id": "effect:Crickets",
-        "kind": "effect",
-        "targets": [
-          {
-            "scene": "Sound Effects",
-            "source": "Crickets"
-          },
-          {
-            "scene": "Scene Overlays",
-            "source": "Fireflies"
-          }
-        ],
+        "kind": "item",
+        "scene": "Chryons",
+        "source": "Token Chyron - Codex",
+        "id": "chyron:codex",
         "_label_id": "4b7939f3-cde5-4691-95a5-8fc2ca342e8f",
         "_label_defaults": [
-          "Crickets",
-          "Crickets",
-          "Crickets"
+          "Codex",
+          "Codex",
+          "Codex"
         ],
         "_label_mode": "shared"
       },
@@ -2285,8 +2277,8 @@
         "plugin": "party.hack.status.sdPlugin",
         "states": [
           {
-            "image": "images/hackparty/eff01a5bbfa4212833e6fbec285784fbbec30a74466e0cf2631c784602b347fb.svg",
-            "text": "Laughs",
+            "image": "images/hackparty/f81f7c6b1657db00e23f9b1f2109576b2e42e65a35023a83435ef4b076343f32.svg",
+            "text": "Claude",
             "show": true,
             "colour": "#b8c4d4",
             "background_colour": "#10141b",
@@ -2295,8 +2287,8 @@
             "size": 11
           },
           {
-            "image": "images/hackparty/bc2f333650efe1339c617fd72d9b53af8c2373eef0e8206eaa30e425c097e498.svg",
-            "text": "Laughs",
+            "image": "images/hackparty/f9c8d2394dcd750df464301ee019cb9cdc3b30dc1e0253504edb8d15e3342238.svg",
+            "text": "Claude",
             "show": true,
             "colour": "#ffe7a3",
             "background_colour": "#201604",
@@ -2305,8 +2297,8 @@
             "size": 11
           },
           {
-            "image": "images/hackparty/509cc23dbbdaf9c42433186649f458d5a4a419f12f6ae1af9999b25af395d644.svg",
-            "text": "Laughs",
+            "image": "images/hackparty/06b240472213c0dea07f77e8ffed7aa6c22a7821e8433aa021679cdf5c88498a.svg",
+            "text": "Claude",
             "show": true,
             "colour": "#b8c4d4",
             "background_colour": "#10141b",
@@ -2324,8 +2316,8 @@
       "context": "Keypad.28.0",
       "states": [
         {
-          "image": "images/hackparty/eff01a5bbfa4212833e6fbec285784fbbec30a74466e0cf2631c784602b347fb.svg",
-          "text": "Laughs",
+          "image": "images/hackparty/f81f7c6b1657db00e23f9b1f2109576b2e42e65a35023a83435ef4b076343f32.svg",
+          "text": "Claude",
           "show": true,
           "colour": "#b8c4d4",
           "background_colour": "#10141b",
@@ -2334,8 +2326,8 @@
           "size": 11
         },
         {
-          "image": "images/hackparty/bc2f333650efe1339c617fd72d9b53af8c2373eef0e8206eaa30e425c097e498.svg",
-          "text": "Laughs",
+          "image": "images/hackparty/f9c8d2394dcd750df464301ee019cb9cdc3b30dc1e0253504edb8d15e3342238.svg",
+          "text": "Claude",
           "show": true,
           "colour": "#ffe7a3",
           "background_colour": "#201604",
@@ -2344,8 +2336,8 @@
           "size": 11
         },
         {
-          "image": "images/hackparty/509cc23dbbdaf9c42433186649f458d5a4a419f12f6ae1af9999b25af395d644.svg",
-          "text": "Laughs",
+          "image": "images/hackparty/06b240472213c0dea07f77e8ffed7aa6c22a7821e8433aa021679cdf5c88498a.svg",
+          "text": "Claude",
           "show": true,
           "colour": "#b8c4d4",
           "background_colour": "#10141b",
@@ -2356,23 +2348,15 @@
       ],
       "current_state": 2,
       "settings": {
-        "id": "effect:Laughs",
-        "kind": "effect",
-        "targets": [
-          {
-            "scene": "Sound Effects",
-            "source": "Laughing"
-          },
-          {
-            "scene": "Scene Overlays",
-            "source": "Laughs"
-          }
-        ],
+        "kind": "item",
+        "scene": "Chryons",
+        "source": "Token Chyron - Claude",
+        "id": "chyron:claude",
         "_label_id": "7849e651-a2bb-4d13-a8b7-18727f101ab0",
         "_label_defaults": [
-          "Laughs",
-          "Laughs",
-          "Laughs"
+          "Claude",
+          "Claude",
+          "Claude"
         ],
         "_label_mode": "shared"
       },
@@ -2385,8 +2369,8 @@
         "plugin": "party.hack.status.sdPlugin",
         "states": [
           {
-            "image": "images/hackparty/8895ed7de4d095b9cc420b550e393cdae9d235d80488a18dd0e96ca7f319382e.svg",
-            "text": "Sad",
+            "image": "images/hackparty/a246e3e68fc6a1c2c9fd4b537b078a5470fa0efd5b34a741851a159de56a61ce.svg",
+            "text": "Hermes",
             "show": true,
             "colour": "#b8c4d4",
             "background_colour": "#10141b",
@@ -2395,8 +2379,8 @@
             "size": 11
           },
           {
-            "image": "images/hackparty/d889a9af23ce395cb3ae5726196c8e1f6dafcc7a2f63ecda17201edac72c9b97.svg",
-            "text": "Sad",
+            "image": "images/hackparty/1a15529bfacd492f39f43b99fa86b97a9707b42008d6864b38fedb42f40af7c3.svg",
+            "text": "Hermes",
             "show": true,
             "colour": "#ffe7a3",
             "background_colour": "#201604",
@@ -2405,8 +2389,8 @@
             "size": 11
           },
           {
-            "image": "images/hackparty/3a4790f0b51abf2adcb5c194f18b267cb098575ed03168c65e28f052a104b057.svg",
-            "text": "Sad",
+            "image": "images/hackparty/eee4e969581fcbbc19315778c52150e18119805a386eec892003f5eaebfe5425.svg",
+            "text": "Hermes",
             "show": true,
             "colour": "#b8c4d4",
             "background_colour": "#10141b",
@@ -2424,8 +2408,8 @@
       "context": "Keypad.29.0",
       "states": [
         {
-          "image": "images/hackparty/8895ed7de4d095b9cc420b550e393cdae9d235d80488a18dd0e96ca7f319382e.svg",
-          "text": "Sad",
+          "image": "images/hackparty/a246e3e68fc6a1c2c9fd4b537b078a5470fa0efd5b34a741851a159de56a61ce.svg",
+          "text": "Hermes",
           "show": true,
           "colour": "#b8c4d4",
           "background_colour": "#10141b",
@@ -2434,8 +2418,8 @@
           "size": 11
         },
         {
-          "image": "images/hackparty/d889a9af23ce395cb3ae5726196c8e1f6dafcc7a2f63ecda17201edac72c9b97.svg",
-          "text": "Sad",
+          "image": "images/hackparty/1a15529bfacd492f39f43b99fa86b97a9707b42008d6864b38fedb42f40af7c3.svg",
+          "text": "Hermes",
           "show": true,
           "colour": "#ffe7a3",
           "background_colour": "#201604",
@@ -2444,8 +2428,8 @@
           "size": 11
         },
         {
-          "image": "images/hackparty/3a4790f0b51abf2adcb5c194f18b267cb098575ed03168c65e28f052a104b057.svg",
-          "text": "Sad",
+          "image": "images/hackparty/eee4e969581fcbbc19315778c52150e18119805a386eec892003f5eaebfe5425.svg",
+          "text": "Hermes",
           "show": true,
           "colour": "#b8c4d4",
           "background_colour": "#10141b",
@@ -2456,23 +2440,15 @@
       ],
       "current_state": 2,
       "settings": {
-        "id": "effect:Sad",
-        "kind": "effect",
-        "targets": [
-          {
-            "scene": "Sound Effects",
-            "source": "Booing"
-          },
-          {
-            "scene": "Scene Overlays",
-            "source": "Sad + Angry Facebook"
-          }
-        ],
+        "kind": "item",
+        "scene": "Chryons",
+        "source": "Token Chyron - Hermes",
+        "id": "chyron:hermes",
         "_label_id": "bb6d7a46-a5cd-4b21-9c8b-3ef43ea0eb2a",
         "_label_defaults": [
-          "Sad",
-          "Sad",
-          "Sad"
+          "Hermes",
+          "Hermes",
+          "Hermes"
         ],
         "_label_mode": "shared"
       },

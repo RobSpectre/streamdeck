@@ -109,11 +109,21 @@ class MigrationTests(unittest.TestCase):
             self.assertEqual(key['settings']['scene'], 'Loops')
         broadcast = json.loads((dev/'01 - broadcast.json').read_text())
         soundboard = json.loads((dev/'02 - soundboard.json').read_text())
-        for index, label in zip((18, 19, 26, 27, 28, 29), ('Rap Horn', 'Winner', 'Vibing', 'Crickets', 'Laughs', 'Sad')):
+        for index, label in zip((18, 19, 26), ('Rap Horn', 'Winner', 'Vibing')):
             copied = broadcast['keys'][index]
             original = next(k for k in soundboard['keys'] if k and k['states'][0]['text'] == label)
             self.assertEqual(copied['states'], original['states'])
             self.assertEqual({k:v for k,v in copied['settings'].items() if not k.startswith('_label_')}, {k:v for k,v in original['settings'].items() if not k.startswith('_label_')})
+        # Columns 27-29 used to be the Crickets/Laughs/Sad sound effects. They are
+        # chyron toggles now: the same `item` control the camera keys use, on the
+        # Chryons scene, so a press shows or hides that agent's chyron.
+        for index, agent in zip((27, 28, 29), ('codex', 'claude', 'hermes')):
+            key = broadcast['keys'][index]
+            self.assertEqual(key['settings']['kind'], 'item')
+            self.assertEqual(key['settings']['scene'], 'Chryons')
+            self.assertEqual(key['settings']['source'], f'Token Chyron - {agent.title()}')
+            self.assertEqual(key['states'][0]['text'], agent.title())
+            self.assertEqual(len(key['states']), 3)
 
     def test_live_control_states(self):
         path = self.output/'profiles/sd-CL37L2A01125/01 - broadcast.json'

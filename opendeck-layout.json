@@ -836,8 +836,8 @@
             "state": 0,
             "states": {
               "0": {
-                "text": "Crickets",
-                "icon": "images/controls/effect-crickets-off.svg",
+                "text": "Codex",
+                "icon": "images/controls/chyron-codex-off.svg",
                 "keys": "",
                 "write": "",
                 "command": "",
@@ -853,23 +853,15 @@
               }
             },
             "live_control": {
-              "id": "effect:Crickets",
-              "kind": "effect",
-              "targets": [
-                {
-                  "scene": "Sound Effects",
-                  "source": "Crickets"
-                },
-                {
-                  "scene": "Scene Overlays",
-                  "source": "Fireflies"
-                }
-              ]
+              "kind": "item",
+              "scene": "Chryons",
+              "source": "Token Chyron - Codex",
+              "id": "chyron:codex"
             },
             "status_icons": [
-              "images/controls/effect-crickets-off.svg",
-              "images/controls/effect-crickets-on.svg",
-              "images/controls/effect-crickets-unknown.svg"
+              "images/controls/chyron-codex-off.svg",
+              "images/controls/chyron-codex-on.svg",
+              "images/controls/chyron-codex-unknown.svg"
             ],
             "label_id": "4b7939f3-cde5-4691-95a5-8fc2ca342e8f"
           },
@@ -877,8 +869,8 @@
             "state": 0,
             "states": {
               "0": {
-                "text": "Laughs",
-                "icon": "images/controls/effect-laughs-off.svg",
+                "text": "Claude",
+                "icon": "images/controls/chyron-claude-off.svg",
                 "keys": "",
                 "write": "",
                 "command": "",
@@ -894,23 +886,15 @@
               }
             },
             "live_control": {
-              "id": "effect:Laughs",
-              "kind": "effect",
-              "targets": [
-                {
-                  "scene": "Sound Effects",
-                  "source": "Laughing"
-                },
-                {
-                  "scene": "Scene Overlays",
-                  "source": "Laughs"
-                }
-              ]
+              "kind": "item",
+              "scene": "Chryons",
+              "source": "Token Chyron - Claude",
+              "id": "chyron:claude"
             },
             "status_icons": [
-              "images/controls/effect-laughs-off.svg",
-              "images/controls/effect-laughs-on.svg",
-              "images/controls/effect-laughs-unknown.svg"
+              "images/controls/chyron-claude-off.svg",
+              "images/controls/chyron-claude-on.svg",
+              "images/controls/chyron-claude-unknown.svg"
             ],
             "label_id": "7849e651-a2bb-4d13-a8b7-18727f101ab0"
           },
@@ -918,8 +902,8 @@
             "state": 0,
             "states": {
               "0": {
-                "text": "Sad",
-                "icon": "images/controls/effect-sad-off.svg",
+                "text": "Hermes",
+                "icon": "images/controls/chyron-hermes-off.svg",
                 "keys": "",
                 "write": "",
                 "command": "",
@@ -935,23 +919,15 @@
               }
             },
             "live_control": {
-              "id": "effect:Sad",
-              "kind": "effect",
-              "targets": [
-                {
-                  "scene": "Sound Effects",
-                  "source": "Booing"
-                },
-                {
-                  "scene": "Scene Overlays",
-                  "source": "Sad + Angry Facebook"
-                }
-              ]
+              "kind": "item",
+              "scene": "Chryons",
+              "source": "Token Chyron - Hermes",
+              "id": "chyron:hermes"
             },
             "status_icons": [
-              "images/controls/effect-sad-off.svg",
-              "images/controls/effect-sad-on.svg",
-              "images/controls/effect-sad-unknown.svg"
+              "images/controls/chyron-hermes-off.svg",
+              "images/controls/chyron-hermes-on.svg",
+              "images/controls/chyron-hermes-unknown.svg"
             ],
             "label_id": "bb6d7a46-a5cd-4b21-9c8b-3ef43ea0eb2a"
           },
