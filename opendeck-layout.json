@@ -3763,38 +3763,117 @@
           "1": {
             "state": 0,
             "states": {
-              "0": {}
-            }
+              "0": {
+                "text": "TURN",
+                "icon": "images/controls/codex-telemetry-activity.png"
+              }
+            },
+            "live_control": {
+              "kind": "codex_telemetry",
+              "id": "codex:activity",
+              "metric": "activity"
+            },
+            "status_icons": [
+              "images/controls/codex-telemetry-activity.png",
+              "images/controls/codex-telemetry-activity.png",
+              "images/controls/codex-telemetry-activity.png"
+            ]
           },
           "2": {
             "state": 0,
             "states": {
-              "0": {}
-            }
+              "0": {
+                "text": "TOKENS / SEC",
+                "icon": "images/controls/codex-telemetry-speed.png"
+              }
+            },
+            "live_control": {
+              "kind": "codex_telemetry",
+              "id": "codex:speed",
+              "metric": "speed"
+            },
+            "status_icons": [
+              "images/controls/codex-telemetry-speed.png",
+              "images/controls/codex-telemetry-speed.png",
+              "images/controls/codex-telemetry-speed.png"
+            ]
           },
           "3": {
             "state": 0,
             "states": {
-              "0": {}
-            }
+              "0": {
+                "text": "CONTEXT LEFT",
+                "icon": "images/controls/codex-telemetry-context.png"
+              }
+            },
+            "live_control": {
+              "kind": "codex_telemetry",
+              "id": "codex:context",
+              "metric": "context"
+            },
+            "status_icons": [
+              "images/controls/codex-telemetry-context.png",
+              "images/controls/codex-telemetry-context.png",
+              "images/controls/codex-telemetry-context.png"
+            ],
+            "label_id": "77e6fbb9-91c1-4f7e-8f86-14836bcd7e52"
           },
           "4": {
             "state": 0,
             "states": {
-              "0": {}
-            }
+              "0": {
+                "text": "SESSION TOKENS",
+                "icon": "images/controls/codex-telemetry-session.png"
+              }
+            },
+            "live_control": {
+              "kind": "codex_telemetry",
+              "id": "codex:session",
+              "metric": "session"
+            },
+            "status_icons": [
+              "images/controls/codex-telemetry-session.png",
+              "images/controls/codex-telemetry-session.png",
+              "images/controls/codex-telemetry-session.png"
+            ]
           },
           "5": {
             "state": 0,
             "states": {
-              "0": {}
-            }
+              "0": {
+                "text": "30-DAY TOKENS",
+                "icon": "images/controls/codex-telemetry-month.png"
+              }
+            },
+            "live_control": {
+              "kind": "codex_telemetry",
+              "id": "codex:month",
+              "metric": "month"
+            },
+            "status_icons": [
+              "images/controls/codex-telemetry-month.png",
+              "images/controls/codex-telemetry-month.png",
+              "images/controls/codex-telemetry-month.png"
+            ]
           },
           "6": {
             "state": 0,
             "states": {
-              "0": {}
-            }
+              "0": {
+                "text": "QUOTA LEFT",
+                "icon": "images/controls/codex-telemetry-quota.png"
+              }
+            },
+            "live_control": {
+              "kind": "codex_telemetry",
+              "id": "codex:quota",
+              "metric": "quota"
+            },
+            "status_icons": [
+              "images/controls/codex-telemetry-quota.png",
+              "images/controls/codex-telemetry-quota.png",
+              "images/controls/codex-telemetry-quota.png"
+            ]
           },
           "7": {
             "state": 0,
@@ -3827,38 +3906,123 @@
           "9": {
             "state": 0,
             "states": {
-              "0": {}
-            }
+              "0": {
+                "text": "TURN",
+                "icon": "images/controls/claude-telemetry-activity.png"
+              }
+            },
+            "live_control": {
+              "kind": "agent_telemetry",
+              "id": "claude:activity",
+              "agent": "claude",
+              "metric": "activity"
+            },
+            "status_icons": [
+              "images/controls/claude-telemetry-activity.png",
+              "images/controls/claude-telemetry-activity.png",
+              "images/controls/claude-telemetry-activity.png"
+            ]
           },
           "10": {
             "state": 0,
             "states": {
-              "0": {}
-            }
+              "0": {
+                "text": "TOKENS / SEC",
+                "icon": "images/controls/claude-telemetry-speed.png"
+              }
+            },
+            "live_control": {
+              "kind": "agent_telemetry",
+              "id": "claude:speed",
+              "agent": "claude",
+              "metric": "speed"
+            },
+            "status_icons": [
+              "images/controls/claude-telemetry-speed.png",
+              "images/controls/claude-telemetry-speed.png",
+              "images/controls/claude-telemetry-speed.png"
+            ]
           },
           "11": {
             "state": 0,
             "states": {
-              "0": {}
-            }
+              "0": {
+                "text": "CONTEXT LEFT",
+                "icon": "images/controls/claude-telemetry-context.png"
+              }
+            },
+            "live_control": {
+              "kind": "agent_telemetry",
+              "id": "claude:context",
+              "agent": "claude",
+              "metric": "context"
+            },
+            "status_icons": [
+              "images/controls/claude-telemetry-context.png",
+              "images/controls/claude-telemetry-context.png",
+              "images/controls/claude-telemetry-context.png"
+            ],
+            "label_id": "cf5d9430-c602-4d64-8c56-d3c21563171a"
           },
           "12": {
             "state": 0,
             "states": {
-              "0": {}
-            }
+              "0": {
+                "text": "SESSION TOKENS",
+                "icon": "images/controls/claude-telemetry-session.png"
+              }
+            },
+            "live_control": {
+              "kind": "agent_telemetry",
+              "id": "claude:session",
+              "agent": "claude",
+              "metric": "session"
+            },
+            "status_icons": [
+              "images/controls/claude-telemetry-session.png",
+              "images/controls/claude-telemetry-session.png",
+              "images/controls/claude-telemetry-session.png"
+            ]
           },
           "13": {
             "state": 0,
             "states": {
-              "0": {}
-            }
+              "0": {
+                "text": "30-DAY TOKENS",
+                "icon": "images/controls/claude-telemetry-month.png"
+              }
+            },
+            "live_control": {
+              "kind": "agent_telemetry",
+              "id": "claude:month",
+              "agent": "claude",
+              "metric": "month"
+            },
+            "status_icons": [
+              "images/controls/claude-telemetry-month.png",
+              "images/controls/claude-telemetry-month.png",
+              "images/controls/claude-telemetry-month.png"
+            ]
           },
           "14": {
             "state": 0,
             "states": {
-              "0": {}
-            }
+              "0": {
+                "text": "QUOTA LEFT",
+                "icon": "images/controls/claude-telemetry-quota.png"
+              }
+            },
+            "live_control": {
+              "kind": "agent_telemetry",
+              "id": "claude:quota",
+              "agent": "claude",
+              "metric": "quota"
+            },
+            "status_icons": [
+              "images/controls/claude-telemetry-quota.png",
+              "images/controls/claude-telemetry-quota.png",
+              "images/controls/claude-telemetry-quota.png"
+            ]
           },
           "15": {
             "state": 0,
@@ -3869,44 +4033,159 @@
           "16": {
             "state": 0,
             "states": {
-              "0": {}
-            }
+              "0": {
+                "text": "Audio Mode",
+                "icon": "images/controls/audio-8-desktop.svg",
+                "keys": "",
+                "write": "",
+                "command": "",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            },
+            "live_control": {
+              "kind": "audio_mode",
+              "id": "audio_mode"
+            },
+            "status_labels": [
+              "Desktop",
+              "Broadcast\nMIC HOT",
+              "Broadcast\nMUTED"
+            ],
+            "status_icons": [
+              "images/controls/audio-8-desktop.svg",
+              "images/controls/audio-8-hot.svg",
+              "images/controls/audio-8-muted.svg"
+            ],
+            "label_id": "e2169293-2705-4e3d-ac95-7ef7b948ac0a"
           },
           "17": {
             "state": 0,
             "states": {
-              "0": {}
-            }
+              "0": {
+                "text": "TURN",
+                "icon": "images/controls/hermes-telemetry-activity.png"
+              }
+            },
+            "live_control": {
+              "kind": "agent_telemetry",
+              "id": "hermes:activity",
+              "agent": "hermes",
+              "metric": "activity"
+            },
+            "status_icons": [
+              "images/controls/hermes-telemetry-activity.png",
+              "images/controls/hermes-telemetry-activity.png",
+              "images/controls/hermes-telemetry-activity.png"
+            ]
           },
           "18": {
             "state": 0,
             "states": {
-              "0": {}
-            }
+              "0": {
+                "text": "TOKENS / SEC",
+                "icon": "images/controls/hermes-telemetry-speed.png"
+              }
+            },
+            "live_control": {
+              "kind": "agent_telemetry",
+              "id": "hermes:speed",
+              "agent": "hermes",
+              "metric": "speed"
+            },
+            "status_icons": [
+              "images/controls/hermes-telemetry-speed.png",
+              "images/controls/hermes-telemetry-speed.png",
+              "images/controls/hermes-telemetry-speed.png"
+            ]
           },
           "19": {
             "state": 0,
             "states": {
-              "0": {}
-            }
+              "0": {
+                "text": "CONTEXT LEFT",
+                "icon": "images/controls/hermes-telemetry-context.png"
+              }
+            },
+            "live_control": {
+              "kind": "agent_telemetry",
+              "id": "hermes:context",
+              "agent": "hermes",
+              "metric": "context"
+            },
+            "status_icons": [
+              "images/controls/hermes-telemetry-context.png",
+              "images/controls/hermes-telemetry-context.png",
+              "images/controls/hermes-telemetry-context.png"
+            ],
+            "label_id": "7d65a7ef-6f60-477a-b825-f6f7b6ed30c7"
           },
           "20": {
             "state": 0,
             "states": {
-              "0": {}
-            }
+              "0": {
+                "text": "SESSION TOKENS",
+                "icon": "images/controls/hermes-telemetry-session.png"
+              }
+            },
+            "live_control": {
+              "kind": "agent_telemetry",
+              "id": "hermes:session",
+              "agent": "hermes",
+              "metric": "session"
+            },
+            "status_icons": [
+              "images/controls/hermes-telemetry-session.png",
+              "images/controls/hermes-telemetry-session.png",
+              "images/controls/hermes-telemetry-session.png"
+            ]
           },
           "21": {
             "state": 0,
             "states": {
-              "0": {}
-            }
+              "0": {
+                "text": "30-DAY TOKENS",
+                "icon": "images/controls/hermes-telemetry-month.png"
+              }
+            },
+            "live_control": {
+              "kind": "agent_telemetry",
+              "id": "hermes:month",
+              "agent": "hermes",
+              "metric": "month"
+            },
+            "status_icons": [
+              "images/controls/hermes-telemetry-month.png",
+              "images/controls/hermes-telemetry-month.png",
+              "images/controls/hermes-telemetry-month.png"
+            ]
           },
           "22": {
             "state": 0,
             "states": {
-              "0": {}
-            }
+              "0": {
+                "text": "QUOTA LEFT",
+                "icon": "images/controls/hermes-telemetry-quota.png"
+              }
+            },
+            "live_control": {
+              "kind": "agent_telemetry",
+              "id": "hermes:quota",
+              "agent": "hermes",
+              "metric": "quota"
+            },
+            "status_icons": [
+              "images/controls/hermes-telemetry-quota.png",
+              "images/controls/hermes-telemetry-quota.png",
+              "images/controls/hermes-telemetry-quota.png"
+            ]
           },
           "23": {
             "state": 0,
@@ -3917,32 +4196,174 @@
           "24": {
             "state": 0,
             "states": {
-              "0": {}
-            }
+              "0": {
+                "text": "Deny",
+                "icon": "images/controls/codex-deny.svg",
+                "keys": "",
+                "write": "",
+                "command": "python3 tools/codex_pedal.py deny",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            },
+            "live_control": {
+              "kind": "codex_response",
+              "id": "codex:deny",
+              "decision": "deny"
+            },
+            "status_icons": [
+              "images/controls/codex-deny-off.svg",
+              "images/controls/codex-deny.svg",
+              "images/controls/codex-deny-off.svg"
+            ]
           },
           "25": {
             "state": 0,
             "states": {
-              "0": {}
-            }
+              "0": {
+                "text": "Approve",
+                "icon": "images/controls/codex-approve.svg",
+                "keys": "",
+                "write": "",
+                "command": "python3 tools/codex_pedal.py approve",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            },
+            "live_control": {
+              "kind": "codex_response",
+              "id": "codex:approve",
+              "decision": "approve"
+            },
+            "status_icons": [
+              "images/controls/codex-approve-off.svg",
+              "images/controls/codex-approve.svg",
+              "images/controls/codex-approve-off.svg"
+            ]
           },
           "26": {
             "state": 0,
             "states": {
-              "0": {}
-            }
+              "0": {
+                "text": "Auto Session",
+                "icon": "images/controls/agent-auto-off.svg",
+                "keys": "",
+                "write": "",
+                "command": "python3 tools/codex_pedal.py approve",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            },
+            "live_control": {
+              "kind": "agent_action",
+              "id": "agent-auto",
+              "decision": "auto"
+            },
+            "status_icons": [
+              "images/controls/agent-auto-off.svg",
+              "images/controls/agent-auto-ready.svg",
+              "images/controls/agent-auto-on.svg"
+            ],
+            "label_id": "65661049-dc0f-4179-adac-03c090771cb1",
+            "status_labels": [
+              "Auto Session",
+              "Auto Session",
+              "Auto ON"
+            ]
           },
           "27": {
             "state": 0,
             "states": {
-              "0": {}
-            }
+              "0": {
+                "text": "Allow Tool",
+                "icon": "images/controls/agent-allow-tool-off.svg",
+                "keys": "",
+                "write": "",
+                "command": "python3 tools/codex_pedal.py approve",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            },
+            "live_control": {
+              "kind": "agent_action",
+              "id": "agent-allow-tool",
+              "decision": "allow_tool"
+            },
+            "status_icons": [
+              "images/controls/agent-allow-tool-off.svg",
+              "images/controls/agent-allow-tool-ready.svg",
+              "images/controls/agent-allow-tool-on.svg"
+            ],
+            "label_id": "d5dfa291-f361-4c63-b4c1-cc52c9f02b6a",
+            "status_labels": [
+              "Allow Tool",
+              "Allow Tool",
+              "Allow Tool"
+            ]
           },
           "28": {
             "state": 0,
             "states": {
-              "0": {}
-            }
+              "0": {
+                "text": "Dictation",
+                "icon": "images/controls/codex-dictation-off.svg",
+                "keys": "",
+                "write": "",
+                "command": "python3 tools/codex_pedal.py approve",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            },
+            "live_control": {
+              "kind": "codex_dictation",
+              "id": "codex-dictation"
+            },
+            "status_icons": [
+              "images/controls/codex-dictation-off.svg",
+              "images/controls/codex-dictation-ready.svg",
+              "images/controls/codex-dictation-on.svg"
+            ],
+            "label_id": "bea7848c-ab96-4900-8072-33c7931817f6",
+            "status_labels": [
+              "Dictation",
+              "Dictation",
+              "Dictation"
+            ]
           },
           "29": {
             "state": 0,
@@ -6238,11 +6659,11 @@
             "state": 0,
             "states": {
               "0": {
-                "text": "",
-                "icon": "",
+                "text": "Deny",
+                "icon": "images/controls/codex-deny.svg",
                 "keys": "",
                 "write": "",
-                "command": "",
+                "command": "python3 tools/codex_pedal.py deny",
                 "brightness_change": 0,
                 "switch_page": 0,
                 "switch_state": 0,
@@ -6280,11 +6701,11 @@
             "state": 0,
             "states": {
               "0": {
-                "text": "",
-                "icon": "",
+                "text": "Approve",
+                "icon": "images/controls/codex-approve.svg",
                 "keys": "",
                 "write": "",
-                "command": "",
+                "command": "python3 tools/codex_pedal.py approve",
                 "brightness_change": 0,
                 "switch_page": 0,
                 "switch_state": 0,
@@ -6301,7 +6722,7 @@
       },
       "page": 0,
       "page_names": {
-        "0": "Mini"
+        "0": "Codex Pedal"
       }
     }
   }

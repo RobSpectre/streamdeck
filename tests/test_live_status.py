@@ -13,6 +13,20 @@ except ModuleNotFoundError:
 
 @unittest.skipIf(live is None, 'run with .venv/bin/python for live plugin tests')
 class StatusTests(unittest.TestCase):
+    def test_codex_buttons_only_respond_when_attention_is_active(self):
+        from unittest.mock import patch
+        c = live.Controls()
+        state = [0]
+        c.codex = SimpleNamespace(indicator=lambda: state[0])
+        settings = {'kind': 'codex_response', 'id': 'codex:approve', 'decision': 'approve'}
+        with patch.object(live, 'codex_respond') as respond:
+            c.activate(settings)
+            respond.assert_not_called()
+            state[0] = 1
+            self.assertEqual(c.snapshot([settings]), {'codex:approve': 1})
+            c.activate(settings)
+            respond.assert_called_once_with('approve', codex_ready=True)
+
     def test_scene_switch_is_selection_not_toggle(self):
         c=live.Controls()
         class OBS:

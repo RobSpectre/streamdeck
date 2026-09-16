@@ -4,6 +4,73 @@ Native OpenDeck profiles live in `opendeck/profiles/`. The sole configuration
 source is `opendeck-layout.json`: 10 XL pages and one three-button
 page. Retired streamdeck-ui snapshots and unused assets have been removed; their
 history remains available in Git.
+
+The Stream Deck Pedal uses the **Codex Pedal** profile: left declines with Escape,
+right approves with Enter, and center is unassigned. `tools/codex_pedal.py` checks
+for a pending Codex request and the focused Codex window before sending keys.
+Use these shortcuts with the intended prompt visible; general multiple-choice
+or free-text questions still follow their normal keyboard behavior. The same
+pedals also answer the focused Claude/Hermes CLI approval dialog described below.
+
+XL page six has the same Deny/Approve controls in the bottom row, columns 1 and 2.
+They stay dim gray until a followed local Codex task has a pending approval,
+question, or plan confirmation, then show the red X and green check at full
+brightness. Resolving the request dims them. Idle presses do nothing; responding
+still requires the intended Codex prompt to be focused. The live plugin reads
+Codex's local IPC state; it sends no answers until a key is pressed. App closure
+or a lost connection dims the keys. This internal versioned interface may need
+updating after Codex upgrades. Plain questions written only in chat text have no
+pending-request signal and do not illuminate the keys.
+
+Page six's top row keeps navigation at both ends and has six live telemetry
+keys between them: turn activity, average output tokens/sec, context remaining,
+session tokens, 30-day tokens, and quota remaining. The current
+session is the most recently updated followed local task, preferring an active
+task. Activity lights if any followed local task has an active turn (including
+tool execution and waiting for input). The speed is output tokens divided by
+elapsed turn time, including tools and waits; it retains the last turn's average
+while idle. This is not instantaneous model generation speed.
+
+Session and 30-day counts include input and output tokens, including cached
+input, without adding cached/reasoning subcounts twice. The rolling 30-day total
+comes from this computer's available Codex rollout records, including archived
+tasks, with repeated counters deduplicated. Other computers and deleted history
+are not included. History is scanned incrementally every two seconds.
+
+Quota is read directly from Codex once a minute without creating a task or
+redeeming a reset. It shows the most restrictive current core quota window.
+Quota data older than three minutes or past its deadline shows a dash until
+refreshed. Pillow renders the telemetry images;
+no dynamic text is saved as a user label override.
+
+Page six has matching rows for Claude Code CLI (row 2) and Hermes Agent CLI (row 3).
+Their session and 30-day displays read local Claude JSONL transcripts
+and Hermes' SQLite usage counters. Claude streaming messages are deduplicated by
+message ID, including cached input once. Hermes uses its per-model/task usage ledger, including uncached input, cache
+reads/writes, output, and auxiliary calls. Reasoning is already part of output.
+Legacy main sessions without ledger entries are included once. The monthly
+display is a lower bound, prefixed `≥`, if a ledger entry spans the cutoff;
+its aggregate counters cannot be split into exact daily usage. These local histories
+do not include remote web sessions. CLI hooks supply activity. Claude's speed is observed average output tokens/sec
+including tool and approval waits. Hermes mirrors the CLI status bar: output
+tokens summed over its rolling API history divided by the matching summed API
+latencies, rounded to whole tokens/sec. It does not use wall-clock turn time. Claude's statusline feed
+supplies quota after an API response when the account exposes rate
+limits. Hermes quota remains `N/A`: its configured provider has no allowance
+feed. Idle and offline sessions are distinguished; no CLI turn is launched just
+to populate a display.
+
+Install the CLI hooks with `python3 tools/install_cli_agent_integration.py`, then
+start new Claude Code and Hermes CLI sessions. The installer backs up both
+configurations and preserves Claude's previous statusline command. Interactive
+CLI tool permission requests open a labeled Zenity dialog with **Approve once**
+and **Deny**. Both XL keys illuminate while a request is pending. Pedal/XL input
+answers only the focused dialog whose process and unique request ID match.
+Other CLI questions still use their native interface. No approval keys are typed
+into terminals and no persistent permission grants are created. Unavailable
+dialogs fall back to native approvals; unanswered dialogs time out to denial.
+Hermes uses its plugin approval transport, without changing its core code or
+approval policy. Desktop/web agent sessions are outside this integration.
 Icons are bundled in `opendeck/images/hackparty/` and referenced relative to the
 OpenDeck configuration directory. OpenDeck blocks external image paths by default.
 
@@ -44,7 +111,7 @@ other settings if applying `opendeck/settings-recommended.json` manually.
 3. Background Selection — all 21 sources in OBS's Loops scene
 4. Formula 1
 5. Formula 1 Page 2
-6. Page 6 — paging buttons only
+6. Page 6 — Codex telemetry on top; Deny and Approve at bottom-left
 7. Page 7 — paging buttons only
 8. Page 8
 9. Page 9
@@ -213,3 +280,54 @@ Schema and behavior were checked against OpenDeck commit
 [disk profile schema](https://github.com/nekename/OpenDeck/blob/7cc07942ef4a0d4d04d3011fac3f82626a211cfb/src-tauri/src/store/simplified_profile.rs),
 and Starter Pack action implementations. Use a version compatible with that
 schema; older OpenDeck versions may differ.
+
+Context-left keys occupy column 4 in all three agent rows. Codex uses its latest
+request token count and reported model window; Claude uses its statusline remaining
+percentage. Hermes uses its own model-window resolver and latest request usage
+(estimated before the response). These are context capacity, not cumulative session
+usage or quota. Unavailable context data shows a dash. Restart Hermes after plugin
+updates to load new observers.
+
+Page six also copies Audio Mode into row 3, column 1, immediately above Deny.
+Bottom-row columns 3–5 are Auto Session, Allow Tool, and Codex Dictation.
+Approval actions stay dim until a supported request is pending. Auto Session
+turns amber while enabled; press it again to disable automatic approvals.
+Activation targets the focused CLI approval dialog, or a single pending Codex
+command/file approval with Codex focused. It never answers text questions.
+Codex auto mode covers command/file approvals for that task and clears when the
+connection or task subscription closes. Claude/Hermes auto mode is bound to the
+CLI process and session, and does not change their global permission settings.
+Allow Tool uses Codex's conversation-scoped approval and Hermes's session rule;
+Claude remembers only the exact tool name and input in that CLI session.
+Dictation lights when Codex is focused and sends its Ctrl+Shift+D command. The
+app handles recording and transcription; pressing the key does not submit text.
+Restart Hermes to load updated approval transport code. Claude hooks load the
+bridge on each invocation. No automatic mode is enabled by installing these keys.
+
+Telemetry key presses on all three rows:
+
+- Activity, Context Left, and Session Tokens focus the agent's existing window.
+- Tokens/sec opens account activity/usage in the default browser.
+- 30-Day Tokens opens provider billing in the default browser.
+- Quota Left keeps its display-only behavior.
+
+The account destinations are editable in `agent-navigation.json`. Codex uses
+ChatGPT subscription usage/account settings and Claude uses Claude subscription
+settings, matching the local account sign-ins. Hermes uses Token Factory's
+`/organization/usage` and `/organization/payments` pages. Browser login and account
+selection remain with the browser. Opening billing does not perform a purchase.
+CLI focus prefers the active/recent telemetry session. GNOME Terminal's inherited
+screen UUID selects the exact tab using its SearchProvider activation method;
+other terminals may use their inherited WINDOWID. A CLI opened before hooks were
+installed is also discoverable. A missing agent raises a key alert without
+launching another agent or focusing an unrelated application.
+
+Hermes native clarification panels also publish expiring question markers. They
+light the response keys and set the turn indicator to red WAITING. With a single
+pending CLI question and no focused Codex window, Approve confirms the current
+selection (or submits already typed free text); Deny cancels the question using
+Hermes' native cancellation result, which allows the agent to proceed using its
+judgment. Auto Session and Allow Tool never answer clarification questions.
+Selections, batch-question changes, and text edits invalidate queued responses.
+The plugin dispatches on Hermes' UI loop without sending global terminal keys.
+Restart Hermes after installing this plugin update to enable question monitoring.

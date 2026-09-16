@@ -1,0 +1,14 @@
+{
+  "codex": {
+    "activity": "https://chatgpt.com/codex/settings/usage",
+    "billing": "https://chatgpt.com/#settings/Account"
+  },
+  "claude": {
+    "activity": "https://claude.ai/settings/usage",
+    "billing": "https://claude.ai/settings/billing"
+  },
+  "hermes": {
+    "activity": "https://tokenfactory.nebius.com/organization/usage",
+    "billing": "https://tokenfactory.nebius.com/organization/payments"
+  }
+}

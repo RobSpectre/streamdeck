@@ -1,0 +1,12 @@
+[Unit]
+Description=Sounds for completed and failed Codex turns
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/python3 /media/rspectre/Storage/workspace/streamdeck/tools/codex_turn_sounds.py
+Restart=on-failure
+RestartSec=5
+Environment=PULSE_SERVER=unix:%t/pulse/native
+
+[Install]
+WantedBy=default.target

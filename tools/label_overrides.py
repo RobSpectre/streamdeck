@@ -37,6 +37,8 @@ def capture(profile, fallback=None):
         if not key:
             continue
         settings = key.get('settings', {})
+        if settings.get('kind') in ('codex_telemetry', 'agent_telemetry'):
+            continue
         if not settings.get('_label_id') and fallback and pos < len(fallback['keys']):
             fresh = fallback['keys'][pos]
             if fresh and fresh['action']['uuid'] == key['action']['uuid']:
@@ -80,6 +82,8 @@ class LabelSync:
         self.initial = set()
 
     def appear(self, context, settings):
+        if settings.get('kind') in ('codex_telemetry', 'agent_telemetry'):
+            return
         self.contexts[context] = settings
         self.initial.add(context)
         override = read(self.path)['labels'].get(settings.get('_label_id'), {})

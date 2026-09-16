@@ -5,6 +5,7 @@ import fcntl
 import json
 from pathlib import Path
 import queue
+import subprocess
 import sys
 import threading
 import time
@@ -14,6 +15,14 @@ sys.path.insert(0, str(ROOT))
 from control_obs_background import connect, select as select_background
 from audio_controls import AudioControls
 from tools.label_overrides import LabelSync
+from tools.codex_attention import CodexAttention
+from tools.codex_pedal import respond as codex_respond
+from tools.codex_pedal import codex_focused, dictate
+from tools.cli_agent_bridge import auto_enabled, disable_auto, respond_focused
+from tools.codex_telemetry import Telemetry, render as render_telemetry, animation_phase
+from tools.agent_telemetry import AgentTelemetry
+from tools.agent_navigation import activate as navigate_agent
+from tools.cli_agent_bridge import pending as cli_pending
 import requests
 import websocket
 
@@ -34,6 +43,9 @@ class Controls:
     def __init__(self):
         self.obs = None
         self.audio = AudioControls()
+        self.codex = None
+        self.telemetry = None
+        self.agents = None
         self.lights = json.loads((ROOT/'lights.json').read_text())
 
     def obs_client(self):
@@ -60,6 +72,20 @@ class Controls:
 
     def snapshot(self, settings):
         result = {}
+        if any(s['kind'] == 'agent_telemetry' for s in settings) and self.agents is None:
+            self.agents = AgentTelemetry()
+        codex_settings = [s for s in settings if s['kind'] in ('codex_response', 'codex_telemetry', 'agent_action')]
+        if codex_settings:
+            if self.codex is None:
+                self.codex = CodexAttention()
+            state = int(bool(self.codex.indicator() or cli_pending()))
+            result.update({s['id']: state for s in codex_settings})
+            for s in codex_settings:
+                if s['kind'] == 'agent_action':
+                    ready = len(self.codex.actionable()) == 1 or any(p.get('extended') and (s['decision'] != 'allow_tool' or p.get('allow_tool')) for p in cli_pending())
+                    result[s['id']] = 2 if s['decision'] == 'auto' and (self.codex.auto_thread or auto_enabled()) else int(ready)
+            if any(s['kind'] == 'codex_telemetry' for s in settings) and self.telemetry is None:
+                self.telemetry = Telemetry(self.codex)
         obs_settings = [s for s in settings if s['kind'] in ('scene', 'item', 'effect', 'background')]
         if obs_settings:
             try:
@@ -86,7 +112,9 @@ class Controls:
                 self.reset_obs()
                 result.update({s['id']: 2 for s in obs_settings})
         for s in settings:
-            if s['kind'] in ('audio_mode', 'mic_mute'):
+            if s['kind'] == 'codex_dictation':
+                result[s['id']] = int(bool(codex_focused()))
+            elif s['kind'] in ('audio_mode', 'mic_mute'):
                 result[s['id']] = self.audio.indicator()
             elif s['kind'] == 'light':
                 try:
@@ -96,6 +124,29 @@ class Controls:
         return result
 
     def activate(self, s):
+        if s['kind'] == 'codex_dictation':
+            dictate()
+            return
+        if s['kind'] == 'agent_action':
+            if s['decision'] == 'auto' and (auto_enabled() or self.codex and self.codex.auto_thread):
+                disable_auto()
+                if self.codex:
+                    self.codex.auto_thread = None
+                return
+            window = subprocess.check_output(['xdotool', 'getactivewindow'], text=True).strip()
+            identity = subprocess.check_output(['xprop', '-id', window, '_NET_WM_NAME', '_NET_WM_PID'], text=True)
+            if respond_focused(s['decision'], window, identity):
+                return
+            if self.codex and codex_focused() == window:
+                self.codex.extended_action(s['decision'])
+            return
+        if s['kind'] in ('codex_telemetry', 'agent_telemetry'):
+            navigate_agent('codex' if s['kind'] == 'codex_telemetry' else s['agent'], s['metric'])
+            return
+        if s['kind'] == 'codex_response':
+            if (self.codex and self.codex.indicator()) or cli_pending():
+                codex_respond(s['decision'], codex_ready=bool(self.codex and self.codex.indicator()))
+            return
         if s['kind'] in ('audio_mode', 'mic_mute'):
             self.audio.activate(s['kind'])
             return
@@ -154,8 +205,10 @@ def main():
     threading.Thread(target=receive, daemon=True).start()
     controls = Controls()
     labels = LabelSync(lambda event: ws.send(json.dumps(event)))
-    visible, last = {}, {}
+    visible, last, last_images = {}, {}, {}
     deadline = 0
+    next_poll = 0
+    states, sources = {}, {}
     try:
         while True:
             try:
@@ -169,11 +222,14 @@ def main():
                     if kind == 'willAppear':
                         labels.appear(context, event['payload']['settings'])
                     last.pop(context, None)
+                    last_images.pop(context, None)
                     deadline = 0
+                    next_poll = 0
                 elif kind == 'willDisappear':
                     labels.disappear(context)
                     visible.pop(context, None)
                     last.pop(context, None)
+                    last_images.pop(context, None)
                 elif kind == 'titleParametersDidChange':
                     labels.changed(context, event['payload'])
                 elif kind == 'keyDown' and context in visible:
@@ -184,15 +240,34 @@ def main():
                         controls.reset_obs()
                         ws.send(json.dumps({'event': 'showAlert', 'context': context}))
                     deadline = 0
+                    next_poll = 0
             except queue.Empty:
+                animated = False
                 if visible:
-                    states = controls.snapshot(list({s['id']:s for s in visible.values()}.values()))
+                    now = time.monotonic()
+                    if now >= next_poll:
+                        states = controls.snapshot(list({s['id']:s for s in visible.values()}.values()))
+                        sources = {'codex': controls.telemetry.values() if controls.telemetry else {}}
+                        if controls.agents:
+                            sources.update({agent: controls.agents.values(agent) for agent in ('claude', 'hermes')})
+                        next_poll = time.monotonic()+1
                     for context, settings in visible.items():
+                        if settings['kind'] in ('codex_telemetry', 'agent_telemetry'):
+                            source = sources.get('codex' if settings['kind'] == 'codex_telemetry' else settings['agent'], {})
+                            value = source.get(settings['metric'])
+                            phase = animation_phase(value, now) if value is not None else None
+                            animated = animated or phase is not None
+                            frame = (value, phase)
+                            if value is not None and last_images.get(context) != frame:
+                                ws.send(json.dumps({'event': 'setImage', 'context': context,
+                                                    'payload': {'image': render_telemetry(value, phase), 'target': 0}}))
+                                last_images[context] = frame
+                            continue
                         state = states.get(settings['id'], 2)
                         if last.get(context) != state:
                             ws.send(json.dumps({'event': 'setState', 'context': context, 'payload': {'state': state}}))
                             last[context] = state
-                deadline = time.monotonic()+1
+                deadline = time.monotonic()+(.125 if animated else 1)
     finally:
         controls.reset_obs()
         ws.close()

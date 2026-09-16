@@ -34,11 +34,11 @@
         "device_settings": {
           "page": 0,
           "page_names": {
-            "0": "Mini"
+            "0": "Codex Pedal"
           }
         },
         "profiles": [
-          "01 - Mini"
+          "01 - Codex Pedal"
         ]
       }
     }
@@ -46,6 +46,7 @@
   "warnings": [],
   "upstream_commit": "7cc07942ef4a0d4d04d3011fac3f82626a211cfb",
   "retired_profiles": [
+    "sd-A00YA5362L663L/01 - Mini.json",
     "sd-A00YA5362L663L/streamdeck_ui_xl_hackparty-json-page-01.json",
     "sd-A00YA5362L663L/streamdeck_ui_xl_hackparty-json-page-02.json",
     "sd-A00YA5362L663L/streamdeck_ui_xl_hackparty-json-page-03.json",

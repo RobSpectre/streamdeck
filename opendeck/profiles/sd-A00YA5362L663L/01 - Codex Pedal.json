@@ -1,0 +1,93 @@
+{
+  "keys": [
+    {
+      "action": {
+        "name": "Run Command",
+        "uuid": "com.amansprojects.starterpack.runcommand",
+        "plugin": "com.amansprojects.starterpack.sdPlugin",
+        "icon": "plugins/com.amansprojects.starterpack.sdPlugin/icons/runCommand.png",
+        "property_inspector": "plugins/com.amansprojects.starterpack.sdPlugin/propertyInspector/runCommand.html",
+        "states": [
+          {
+            "image": ""
+          }
+        ],
+        "controllers": [
+          "Keypad"
+        ],
+        "supported_in_multi_actions": true,
+        "disable_automatic_states": false
+      },
+      "context": "Keypad.0.0",
+      "states": [
+        {
+          "image": "images/hackparty/e3973020cf88b1171052b68abf1dd4921838ef613d02c61284f2f331abe14d33.svg",
+          "text": "Deny",
+          "show": true,
+          "colour": "#FFFFFF",
+          "background_colour": "#000000",
+          "alignment": "bottom",
+          "family": "DejaVu Sans",
+          "size": 11
+        }
+      ],
+      "current_state": 0,
+      "settings": {
+        "down": "cd /media/rspectre/Storage/workspace/streamdeck || exit\nexport PATH=/media/rspectre/Storage/workspace/streamdeck/.venv/bin:\"$PATH\"\n( python3 tools/codex_pedal.py deny\n)",
+        "show": false,
+        "_label_id": "A00YA5362L663L/0/0",
+        "_label_defaults": [
+          "Deny"
+        ],
+        "_label_mode": "shared"
+      },
+      "children": null
+    },
+    null,
+    {
+      "action": {
+        "name": "Run Command",
+        "uuid": "com.amansprojects.starterpack.runcommand",
+        "plugin": "com.amansprojects.starterpack.sdPlugin",
+        "icon": "plugins/com.amansprojects.starterpack.sdPlugin/icons/runCommand.png",
+        "property_inspector": "plugins/com.amansprojects.starterpack.sdPlugin/propertyInspector/runCommand.html",
+        "states": [
+          {
+            "image": ""
+          }
+        ],
+        "controllers": [
+          "Keypad"
+        ],
+        "supported_in_multi_actions": true,
+        "disable_automatic_states": false
+      },
+      "context": "Keypad.2.0",
+      "states": [
+        {
+          "image": "images/hackparty/e9d7a94e6b4899d623840b7895b40676ef079c81ecfced30696ff570d58c799a.svg",
+          "text": "Approve",
+          "show": true,
+          "colour": "#FFFFFF",
+          "background_colour": "#000000",
+          "alignment": "bottom",
+          "family": "DejaVu Sans",
+          "size": 11
+        }
+      ],
+      "current_state": 0,
+      "settings": {
+        "down": "cd /media/rspectre/Storage/workspace/streamdeck || exit\nexport PATH=/media/rspectre/Storage/workspace/streamdeck/.venv/bin:\"$PATH\"\n( python3 tools/codex_pedal.py approve\n)",
+        "show": false,
+        "_label_id": "A00YA5362L663L/0/2",
+        "_label_defaults": [
+          "Approve"
+        ],
+        "_label_mode": "shared"
+      },
+      "children": null
+    }
+  ],
+  "sliders": [],
+  "infobars": []
+}

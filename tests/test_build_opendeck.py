@@ -77,8 +77,22 @@ class MigrationTests(unittest.TestCase):
         for page in (6, 7):
             profile = json.loads((dev/f'{page:02} - Page {page}.json').read_text())
             occupied = [(i, k) for i,k in enumerate(profile['keys']) if k]
-            self.assertEqual([i for i,k in occupied], [0, 7])
-            self.assertTrue(all(k['action']['uuid'].endswith('.switchprofile') for i,k in occupied))
+            self.assertEqual([i for i,k in occupied], list(range(8))+list(range(9,15))+list(range(16,23))+list(range(24,29)) if page == 6 else [0, 7])
+            self.assertTrue(all(profile['keys'][i]['action']['uuid'].endswith('.switchprofile') for i in (0, 7)))
+            if page == 6:
+                for pos, decision in [(24, 'deny'), (25, 'approve')]:
+                    key = profile['keys'][pos]
+                    self.assertEqual(key['settings']['decision'], decision)
+                    self.assertEqual(key['settings']['kind'], 'codex_response')
+                    self.assertEqual(key['current_state'], 0)
+                    self.assertNotEqual(key['states'][0]['image'], key['states'][1]['image'])
+                for pos in range(1, 7):
+                    self.assertEqual(profile['keys'][pos]['settings']['kind'], 'codex_telemetry')
+                    self.assertFalse(profile['keys'][pos]['states'][0]['show'])
+                for name, start in [('claude', 9), ('hermes', 17)]:
+                    for pos in range(start, start+6):
+                        self.assertEqual(profile['keys'][pos]['settings']['agent'], name)
+                        self.assertFalse(profile['keys'][pos]['states'][0]['show'])
         self.assertEqual(len(list(dev.glob('*.json'))), 10)
 
     def test_all_backgrounds_and_broadcast_soundboard_copies(self):
