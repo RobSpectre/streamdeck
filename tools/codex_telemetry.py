@@ -141,8 +141,9 @@ class RolloutUsage:
 
 
 class Telemetry:
-    def __init__(self, attention):
+    def __init__(self, attention, presence=None):
         self.attention = attention
+        self.presence = presence
         self.lock = threading.Lock()
         self.monthly = None
         self.readers = {}
@@ -153,7 +154,10 @@ class Telemetry:
         threading.Thread(target=self.poll_quota, daemon=True).start()
 
     def scan(self):
+        delay = 0
         while True:
+            if self.presence and not self.presence.wait('codex', delay):
+                return
             try:
                 now = time.time()
                 with closing(sqlite3.connect((CODEX/'state_5.sqlite').as_uri()+'?mode=ro', uri=True)) as db:
@@ -173,21 +177,31 @@ class Telemetry:
             except (sqlite3.Error, OSError):
                 with self.lock:
                     self.monthly = None
-            time.sleep(2)
+            delay = 2
+            if not self.presence:
+                time.sleep(delay)
 
     def poll_quota(self):
+        delay = 0
         while True:
+            if self.presence and not self.presence.wait('codex', delay):
+                return
             try:
                 limits = read_quota()
                 with self.lock:
                     self.limits, self.quota_at = limits, time.time()
             except (OSError, ValueError, RuntimeError, TimeoutError):
                 pass
-            time.sleep(60)
+            delay = 60
+            if not self.presence:
+                time.sleep(delay)
 
     def values(self):
         now = time.time()
         connected, states = self.attention.snapshot()
+        offline = self.presence is not None and not self.presence.is_open('codex')
+        if offline:
+            connected, states = False, {}
         thread, current = max(states.items(), key=lambda item: (
             item[1].get('threadRuntimeStatus', {}).get('type') == 'active', item[1].get('updatedAt', 0)), default=(None, {}))
         active = any(s.get('threadRuntimeStatus', {}).get('type') == 'active' for s in states.values())
@@ -195,7 +209,7 @@ class Telemetry:
         with self.lock:
             monthly = self.monthly
             speed, fallback = self.thread_stats.get(thread, (None, None))
-            limits = self.limits if now-self.quota_at < 180 else {}
+            limits = self.limits if not offline and now-self.quota_at < 180 else {}
         tokens = (current.get('latestTokenUsageInfo') or {}).get('total', {}).get('totalTokens', fallback)
         quota, days, duration = quota_window(limits, now)
         usage = current.get('latestTokenUsageInfo') or {}
@@ -205,7 +219,7 @@ class Telemetry:
             'activity': ('', 'WAITING' if waiting else 'ACTIVE' if active else 'IDLE' if connected else 'OFFLINE', model_label(current.get('latestModel')), color),
             'speed': ('TOKENS / SEC', f'{speed:.1f}' if speed is not None else '—', 'TURN AVG · OUTPUT', color),
             'session': ('SESSION TOKENS', compact(tokens), 'CURRENT TASK', color),
-            'month': ('30-DAY TOKENS', compact(monthly), 'THIS COMPUTER', color),
+            'month': ('30-DAY TOKENS', compact(monthly), 'CACHED · LOCAL' if offline else 'THIS COMPUTER', color),
             'quota': ('QUOTA LEFT', f'{quota:.0f}%' if quota is not None else '—',
                       'WEEKLY' if duration == 10080 else 'LIMITING WINDOW', color),
             'context': ('CONTEXT LEFT', context, 'CURRENT TASK', color),

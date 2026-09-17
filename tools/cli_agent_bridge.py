@@ -76,7 +76,8 @@ def sessions(agent):
 
 def pending():
     return [v for p in (CACHE/'pending').glob('*.json')
-            if (v := read(p)) and v.get('expires', 0) > time.time() and alive(v.get('pid'))]
+            if (v := read(p)) and v.get('expires', 0) > time.time()
+            and alive(v.get('owner_pid', v.get('pid')))]
 
 
 def auto_enabled():
@@ -108,6 +109,7 @@ def approval_dialog(agent, details, timeout=300, session=None, owner=None, tool_
     marker = CACHE/'pending'/(request+'.json')
     response = CACHE/'decisions'/(request+'.json')
     atomic(marker, {'request': request, 'agent': agent, 'pid': proc.pid,
+                    'dialog_pid': proc.pid, 'owner_pid': owner or os.getpid(),
                     'title': title, 'expires': time.time()+timeout, 'scope': scope,
                     'extended': bool(session and owner), 'allow_tool': allow_tool})
     try:
@@ -149,7 +151,8 @@ def respond_focused(decision, window, properties):
             continue
         if decision == 'allow_tool' and not item.get('allow_tool', False):
             continue
-        if not pid or int(pid[1]) != item['pid'] or item['title'] not in properties:
+        dialog_pid = item.get('dialog_pid', item.get('pid'))
+        if not pid or int(pid[1]) != dialog_pid or item['title'] not in properties:
             continue
         if subprocess.check_output(['xdotool', 'getactivewindow'], text=True).strip() != window:
             return False

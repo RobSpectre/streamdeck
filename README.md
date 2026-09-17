@@ -98,7 +98,18 @@ provider billing. Hermes uses `session_model_usage`, not an account history
 endpoint. A Hermes `≥` total is a lower bound: an aggregate ledger row crossing
 the cutoff cannot be split into exact daily usage and is excluded from the sum.
 
-Codex history refreshes every 2 seconds, Claude/Hermes history every 5 seconds.
+Collectors run only while their agent is open and its telemetry keys are visible.
+A shared presence check runs every 5 seconds; reopening an agent or showing its
+keys wakes its collectors. Closing an agent clears live metrics and labels retained
+historical totals `CACHED · LOCAL`. A fresh plugin process has no cached totals
+until its first collection. Cached 30-day totals do not age until collection resumes.
+Already-running reads may finish before sleeping; transcript offsets remain in memory.
+Approval routing stays available independently of telemetry visibility.
+Codex presence requires a listening desktop IPC socket; CLI presence requires an
+interactive Claude or Hermes launcher. Codex quota helpers also sleep when closed
+or hidden. The standalone pedal retains its short on-demand connection behavior.
+
+While enabled, Codex history refreshes every 2 seconds, Claude/Hermes history every 5 seconds.
 Visible displays poll state about once a second. Codex quota is queried every
 60 seconds; quota older than 180 seconds or past its reset deadline is hidden.
 Claude quota also expires after 180 seconds. Missing data is `—`; CLI quota is

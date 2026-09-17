@@ -54,12 +54,14 @@ def hermes_usage(db, cutoff, session_id):
 
 
 class AgentTelemetry:
-    def __init__(self):
+    def __init__(self, presence=None):
+        self.presence = presence
         self.lock = threading.Lock()
         self.data = {'claude': {}, 'hermes': {}}
         self.files = {}
         self.speed_samples = {}
-        threading.Thread(target=self.scan, daemon=True).start()
+        for name in ('claude', 'hermes'):
+            threading.Thread(target=self.scan, args=(name,), daemon=True).start()
 
     def claude(self, now):
         for path in (Path.home()/'.claude/projects').glob('**/*.jsonl'):
@@ -122,28 +124,34 @@ class AgentTelemetry:
         return {'model': latest[3] if latest else None, 'session': session_total, 'output': latest[1] if latest else None,
                 'session_id': latest[2] if latest else None, 'month': monthly, 'month_lower_bound': bool(overlaps)}
 
-    def scan(self):
+    def scan(self, name):
+        delay = 0
         while True:
-            for name in ['claude', 'hermes']:
-                try:
-                    value = getattr(self, name)(time.time())
-                except (OSError, sqlite3.Error, ValueError):
-                    value = {}
-                with self.lock:
-                    self.data[name] = value
-            time.sleep(5)
+            if self.presence and not self.presence.wait(name, delay):
+                return
+            try:
+                value = getattr(self, name)(time.time())
+            except (OSError, sqlite3.Error, ValueError):
+                value = {}
+            with self.lock:
+                self.data[name] = value
+            delay = 5
+            if not self.presence:
+                time.sleep(delay)
 
     def values(self, name):
         with self.lock:
             data = self.data[name].copy()
         color = '#d97757' if name == 'claude' else '#0000f2'
         brand = 'CLAUDE' if name == 'claude' else 'HERMES'
-        live = sessions(name)
+        presence = getattr(self, 'presence', None)
+        offline = presence is not None and not presence.is_open(name)
+        live = [] if offline else sessions(name)
         current = max(live, key=lambda v: (v.get('active', False), v['updated']), default={})
         waiting = any(p['agent'] == name for p in pending())
         active = any(v.get('active') for v in live)
         activity = 'WAITING' if waiting else 'ACTIVE' if active else 'IDLE' if live else 'OFFLINE'
-        unlinked = name == 'hermes' and not live and hermes_cli_open()
+        unlinked = name == 'hermes' and not live and (presence.is_open(name) if presence else hermes_cli_open())
         if unlinked and not waiting:
             activity = 'OPEN'
         speed = None
@@ -176,8 +184,8 @@ class AgentTelemetry:
         return {
             'activity': ('', activity, model_label(current.get('model') or data.get('model')), color),
             'speed': ('TOKENS / SEC', (f'{speed:.0f}' if name == 'hermes' else f'{speed:.1f}') if speed is not None else '—', speed_detail, color),
-            'session': ('SESSION TOKENS', compact(data.get('session')), brand+' · LATEST LOCAL', color),
-            'month': ('30-DAY TOKENS', month, brand+' · LOCAL', color),
+            'session': ('SESSION TOKENS', compact(data.get('session')), 'CACHED · LOCAL' if offline else brand+' · LATEST LOCAL', color),
+            'month': ('30-DAY TOKENS', month, 'CACHED · LOCAL' if offline else brand+' · LOCAL', color),
             'quota': ('QUOTA LEFT', f'{quota:.0f}%' if quota is not None else 'N/A', brand+' · ALLOWANCE', color),
             'context': ('CONTEXT LEFT', context, brand+' · LAST REQUEST', color),
         }

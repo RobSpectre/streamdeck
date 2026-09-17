@@ -48,7 +48,12 @@ after key/settings events, and sends changed images/states only. Red telemetry
 frames update at 8 fps with 16 phases per two-second pulse. The 256-entry render
 cache includes the value tuple and phase. Separate collector threads scan Codex
 history every 2 seconds, CLI history every 5, and Codex quota every 60. Instantiated
-collectors remain background threads; hiding a page is not a shutdown mechanism.
+collectors remain background threads but sleep on the shared `agent_presence`
+condition when their agent is closed or its telemetry keys are hidden. Presence
+checks run every five seconds (one process scan and listening Unix socket table).
+In-flight reads may finish. History offsets survive sleep; retained totals are
+labeled cached while offline and do not age until the next collection. Approval
+IPC is independent of page visibility and waits for Codex presence before connecting.
 The generated launcher waits in two-second intervals for the repo venv/script.
 
 Vibecoding (page 3) is profile index 2; broadcast is index 0. XL serial `CL37L2A01125`; pedal `A00YA5362L663L`.

@@ -49,7 +49,8 @@ def apply_change(state, change):
 class CodexAttention:
     write_lock = threading.Lock()
 
-    def __init__(self):
+    def __init__(self, presence=None):
+        self.presence = presence
         self.lock = threading.Lock()
         self.states = {}
         self.connected = False
@@ -118,6 +119,8 @@ class CodexAttention:
 
     def run(self):
         while True:
+            if self.presence and not self.presence.wait('codex', visible=False):
+                return
             try:
                 with socket.socket(socket.AF_UNIX) as sock:
                     sock.connect(str(Path.home()/'.codex/ipc/ipc.sock'))

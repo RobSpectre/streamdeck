@@ -27,6 +27,25 @@ class StatusTests(unittest.TestCase):
             c.activate(settings)
             respond.assert_called_once_with('approve', codex_ready=True)
 
+    def test_hermes_approval_lights_all_supported_interaction_buttons(self):
+        from unittest.mock import patch
+        c = live.Controls()
+        c.codex = SimpleNamespace(indicator=lambda: 0, actionable=lambda: [], auto_thread=None)
+        settings = [
+            {'kind': 'codex_response', 'id': 'codex:deny', 'decision': 'deny'},
+            {'kind': 'codex_response', 'id': 'codex:approve', 'decision': 'approve'},
+            {'kind': 'agent_action', 'id': 'agent-auto', 'decision': 'auto'},
+            {'kind': 'agent_action', 'id': 'agent-allow-tool', 'decision': 'allow_tool'},
+        ]
+        pending = [{'agent': 'hermes', 'owner_pid': 123, 'dialog_pid': 456,
+                    'extended': True, 'allow_tool': True}]
+        with patch.object(live, 'cli_pending', return_value=pending), \
+                patch.object(live, 'auto_enabled', return_value={}):
+            self.assertEqual(c.snapshot(settings), {
+                'codex:deny': 1, 'codex:approve': 1,
+                'agent-auto': 1, 'agent-allow-tool': 1,
+            })
+
     def test_scene_switch_is_selection_not_toggle(self):
         c=live.Controls()
         class OBS:

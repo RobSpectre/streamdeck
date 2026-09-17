@@ -21,6 +21,7 @@ from tools.codex_pedal import codex_focused, dictate
 from tools.cli_agent_bridge import auto_enabled, disable_auto, respond_focused
 from tools.codex_telemetry import Telemetry, render as render_telemetry, animation_phase
 from tools.agent_telemetry import AgentTelemetry
+from tools.agent_presence import Presence
 from tools.agent_navigation import activate as navigate_agent
 from tools.cli_agent_bridge import pending as cli_pending
 import requests
@@ -46,6 +47,7 @@ class Controls:
         self.codex = None
         self.telemetry = None
         self.agents = None
+        self.presence = None
         self.lights = json.loads((ROOT/'lights.json').read_text())
 
     def obs_client(self):
@@ -73,19 +75,22 @@ class Controls:
     def snapshot(self, settings):
         result = {}
         if any(s['kind'] == 'agent_telemetry' for s in settings) and self.agents is None:
-            self.agents = AgentTelemetry()
+            self.agents = AgentTelemetry(self.presence)
         codex_settings = [s for s in settings if s['kind'] in ('codex_response', 'codex_telemetry', 'agent_action')]
         if codex_settings:
             if self.codex is None:
-                self.codex = CodexAttention()
-            state = int(bool(self.codex.indicator() or cli_pending()))
+                self.codex = CodexAttention(self.presence)
+            cli_requests = cli_pending()
+            state = int(bool(self.codex.indicator() or cli_requests))
             result.update({s['id']: state for s in codex_settings})
             for s in codex_settings:
                 if s['kind'] == 'agent_action':
-                    ready = len(self.codex.actionable()) == 1 or any(p.get('extended') and (s['decision'] != 'allow_tool' or p.get('allow_tool')) for p in cli_pending())
+                    ready = len(self.codex.actionable()) == 1 or any(
+                        p.get('extended') and (s['decision'] != 'allow_tool' or p.get('allow_tool'))
+                        for p in cli_requests)
                     result[s['id']] = 2 if s['decision'] == 'auto' and (self.codex.auto_thread or auto_enabled()) else int(ready)
             if any(s['kind'] == 'codex_telemetry' for s in settings) and self.telemetry is None:
-                self.telemetry = Telemetry(self.codex)
+                self.telemetry = Telemetry(self.codex, self.presence)
         obs_settings = [s for s in settings if s['kind'] in ('scene', 'item', 'effect', 'background')]
         if obs_settings:
             try:
@@ -210,6 +215,7 @@ def main():
             events.put(None)
     threading.Thread(target=receive, daemon=True).start()
     controls = Controls()
+    controls.presence = Presence()
     labels = LabelSync(lambda event: ws.send(json.dumps(event)))
     visible, last, last_images = {}, {}, {}
     deadline = 0
@@ -247,15 +253,20 @@ def main():
                         ws.send(json.dumps({'event': 'showAlert', 'context': context}))
                     deadline = 0
                     next_poll = 0
+                controls.presence.show({
+                    'codex' if s['kind'] == 'codex_telemetry' else s['agent']
+                    for s in visible.values() if s['kind'] in ('codex_telemetry', 'agent_telemetry')})
             except queue.Empty:
                 animated = False
                 if visible:
                     now = time.monotonic()
                     if now >= next_poll:
                         states = controls.snapshot(list({s['id']:s for s in visible.values()}.values()))
-                        sources = {'codex': controls.telemetry.values() if controls.telemetry else {}}
+                        shown = {s.get('agent', 'codex') for s in visible.values()
+                                 if s['kind'] in ('codex_telemetry', 'agent_telemetry')}
+                        sources = {'codex': controls.telemetry.values() if controls.telemetry and 'codex' in shown else {}}
                         if controls.agents:
-                            sources.update({agent: controls.agents.values(agent) for agent in ('claude', 'hermes')})
+                            sources.update({agent: controls.agents.values(agent) for agent in ('claude', 'hermes') if agent in shown})
                         next_poll = time.monotonic()+1
                     for context, settings in visible.items():
                         if settings['kind'] in ('codex_telemetry', 'agent_telemetry'):
@@ -275,6 +286,7 @@ def main():
                             last[context] = state
                 deadline = time.monotonic()+(.125 if animated else 1)
     finally:
+        controls.presence.close()
         controls.reset_obs()
         ws.close()
 

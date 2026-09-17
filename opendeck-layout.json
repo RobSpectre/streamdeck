@@ -2566,7 +2566,7 @@
               "id": "background:Space Golf",
               "kind": "background",
               "scene": "Loops",
-              "source": "Space Golf"
+              "source": "Space Golf with Visualizer"
             },
             "status_icons": [
               "images/controls/background-1-off.svg",

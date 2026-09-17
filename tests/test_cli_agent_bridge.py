@@ -29,6 +29,18 @@ class BridgeTests(unittest.TestCase):
             self.assertTrue(bridge.respond_focused('approve','456','_NET_WM_PID = 123\nHermes CLI approval · abc'))
             self.assertEqual(bridge.read(Path(folder)/'decisions/abc.json'),{'request':'abc','decision':'approve'})
 
+    def test_pending_uses_live_owner_but_focus_uses_dialog_pid(self):
+        request = {'request': 'abc', 'pid': 456, 'dialog_pid': 456, 'owner_pid': 123,
+                   'title': 'Hermes CLI approval · abc', 'expires': bridge.time.time()+30}
+        with tempfile.TemporaryDirectory() as folder, patch.object(bridge, 'CACHE', Path(folder)), \
+                patch.object(bridge, 'alive', side_effect=lambda pid: pid == 123), \
+                patch.object(bridge.subprocess, 'check_output', return_value='789'):
+            bridge.atomic(Path(folder)/'pending/abc.json', request)
+            self.assertEqual(bridge.pending(), [request])
+            with patch.object(bridge, 'alive', side_effect=lambda pid: pid in (123, 456)):
+                self.assertTrue(bridge.respond_focused(
+                    'approve', '789', '_NET_WM_PID = 456\nHermes CLI approval · abc'))
+
     def test_idle_and_dead_processes_do_not_claim_attention(self):
         with tempfile.TemporaryDirectory() as folder, patch.object(bridge,'CACHE',Path(folder)):
             bridge.publish('claude','session','start',pid=999999999)
