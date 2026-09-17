@@ -34,7 +34,7 @@
       "current_state": 0,
       "settings": {
         "device": "sd-CL37L2A01125",
-        "profile": "02 - soundboard",
+        "profile": "03 - Vibecoding",
         "_label_id": "721fa358-5409-4571-9c01-75523431ca9e",
         "_label_defaults": [
           ""
@@ -629,7 +629,7 @@
       "current_state": 0,
       "settings": {
         "device": "sd-CL37L2A01125",
-        "profile": "04 - Formula 1",
+        "profile": "05 - Formula 1",
         "_label_id": "2081a5a4-8d0b-40cb-82b9-9599f3c182a4",
         "_label_defaults": [
           ""

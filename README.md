@@ -42,7 +42,7 @@ Do not run these helpers with sudo: their home-directory data, desktop session
 bus, focus, and audio access belong to the desktop user. Different hardware
 serials require updating the layout's device mappings before generation.
 
-## Coding dashboard: XL page 6
+## Coding dashboard: Vibecoding (XL page 3)
 
 Columns are numbered left to right; rows top to bottom.
 
@@ -52,8 +52,10 @@ Columns are numbered left to right; rows top to bottom.
 | 2 | Claude Code CLI / orange `#d97757` | Same metrics |
 | 3 | Hermes Agent CLI / blue `#0000f2` | Same metrics |
 
-Top corners retain page navigation. Audio Mode is row 3, column 1. Bottom row
+Top corners navigate to soundboard and Background Selection. Audio Mode is row 3, column 1. Bottom row
 columns 1–5 are **Deny, Approve, Auto Session, Allow Tool, Codex Dictation**.
+Bottom-row columns 6–8 toggle the Codex, Claude, and Hermes OBS overlays,
+matching the copies on broadcast page 1.
 The pedal's **Codex Pedal** profile maps left to Deny, right to Approve, and
 leaves the middle pedal unassigned.
 
@@ -152,7 +154,7 @@ python3 tools/install_opendeck.py
 
 The installer backs up existing profiles, removes only the previously migrated
 profile filenames, and copies the current profiles **and icons**. Unrelated
-profiles remain. Restart OpenDeck afterward. The XL opens page 2 and the
+profiles remain. Restart OpenDeck afterward. The XL opens broadcast (page 1) and the
 three-button device opens page 1, matching the source file's selected pages.
 
 For Flatpak, use:
@@ -175,14 +177,17 @@ other settings if applying `opendeck/settings-recommended.json` manually.
 
 1. broadcast
 2. soundboard
-3. Background Selection — all 21 sources in OBS's Loops scene
-4. Formula 1
-5. Formula 1 Page 2
-6. Page 6 — Codex, Claude, and Hermes telemetry plus shared response controls
+3. Vibecoding — coding telemetry, response controls, overlays and media
+4. Background Selection — all 21 sources in OBS's Loops scene
+5. Formula 1
+6. Formula 1 Page 2
 7. Page 7 — paging buttons only
 8. Page 8
 9. Page 9
 10. Page 10
+
+Broadcast retains its original button positions. Previous/next arrows follow
+the reordered sequence.
 
 Names are saved in each device's `page_names` mapping under `devices` in the source configuration. All
 previous/next buttons follow this order. The six broadcast loop selectors have
@@ -464,3 +469,30 @@ OBS collection and mixer scenes separately. Moving machines also requires
 reviewing serial numbers, light IPs, window names/coordinates, audio-scene paths,
 Codex executable/database paths and Hermes paths; regenerating profiles alone
 is not a complete migration.
+
+### Spotify-first playback on Vibecoding
+
+Row 2, column 8 is **Play** (play/pause toggle); row 3, column 8 is **Next**
+(next song). Both prefer the **Spotify desktop app** when its MPRIS interface is open, even
+when paused. They send PlayPause/Next directly to that running Spotify process.
+When Spotify is closed, they operate the existing Suno tab in Chrome/Chromium
+through Linux AT-SPI accessibility. Spotify Web Player is not detected as the
+desktop app. If Spotify is open but cannot perform the action, the key alerts
+instead of unexpectedly controlling Suno. The helper selects the tab if necessary, verifies
+an HTTPS `suno.com`/`www.suno.com` document, and invokes the exact **Playbar**
+control. It does not send global media keys or click generic carousel Next buttons.
+Select a song in Suno first; these controls do not choose music or create a queue.
+
+System Python needs PyGObject and AT-SPI introspection (`python3-gi` and
+`gir1.2-atspi-2.0` on Debian/Ubuntu), with desktop accessibility available. No
+browser extension, debugging port, or persistent accessibility-setting change is
+required. A missing/ambiguous Suno tab, changed page, or unavailable control raises
+an OpenDeck alert. Keep one Suno tab open; tab discovery currently depends on Suno
+appearing in its title. The icons are action buttons, not playback-state monitors.
+
+To verify targeting without playing/skipping (this can select the Suno tab):
+
+```sh
+python3 tools/suno_media.py play --check
+python3 tools/suno_media.py next --check
+```

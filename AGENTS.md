@@ -51,10 +51,12 @@ history every 2 seconds, CLI history every 5, and Codex quota every 60. Instanti
 collectors remain background threads; hiding a page is not a shutdown mechanism.
 The generated launcher waits in two-second intervals for the repo venv/script.
 
-Page 6 is profile index 5. XL serial `CL37L2A01125`; pedal `A00YA5362L663L`.
+Vibecoding (page 3) is profile index 2; broadcast is index 0. XL serial `CL37L2A01125`; pedal `A00YA5362L663L`.
 Zero-based telemetry slots: Codex 1–6, Claude 9–14, Hermes 17–22. Each row is
-activity/speed/context/session/month/quota. Navigation is 0 and 7; Audio Mode 16;
-Deny/Approve/Auto Session/Allow Tool/Dictation 24–28. Pedal slots 0/2 deny/approve.
+activity/speed/context/session/month/quota. Vibecoding navigation is slots 0 (previous) and 7 (next). Broadcast keeps
+its original positions, including Mic at 0 and the warm-light control at 31. Audio Mode 16;
+Deny/Approve/Auto Session/Allow Tool/Dictation 24–28; Codex/Claude/Hermes
+overlay copies 29–31 share broadcast page 1 action and label identities. Pedal slots 0/2 deny/approve.
 Retain source button identities when moving keys so labels and action state follow.
 
 ## Codex telemetry: exact sources and semantics
@@ -274,3 +276,37 @@ a local `opendeck-layout.json.bak-*` may be present and should remain untracked.
 Commit generated assets when the layout changes, but not runtime state. Record
 source assumptions and limitations when changing an adapter; if a schema changes,
 prefer unavailable data to plausible but incorrect numbers.
+
+## Spotify-first / Suno playback adapter
+
+Vibecoding slots 15 and 23 are `suno_media` Play/Next. The live plugin gives them
+static ready state and launches `/usr/bin/python3 tools/suno_media.py <action>`
+with a 12-second timeout; failures use its existing showAlert handling. System
+Python is deliberate: the workstation's GI/AT-SPI packages are outside the venv.
+
+The helper finds Chrome/Chromium accessibility windows and PAGE_TAB entries with
+Suno in their name. Require exactly one candidate; select its native default
+action if necessary. Find one DOCUMENT_WEB whose URI has HTTPS and exact hostname
+suno.com or www.suno.com. Query PUSH_BUTTON controls by exact observed labels:
+`Playbar: Play button`, `Playbar: Pause button`, `Playbar: Next Song button`.
+Recheck tab selection and URL, require enabled state, then invoke only the default
+action (never showContextMenu). Labels/AT-SPI interfaces are upgrade-sensitive.
+
+Chrome cached children can be None despite populated windows. Set app cache mask
+to NONE and use the Collection interface rather than blindly descending children.
+Bound AT-SPI calls and let missing/ambiguous controls fail; never fall back to
+screen coordinates or global media keys. MPRIS was investigated but Chrome's
+session did not identify Suno or offer usable transport capabilities, so it is
+not the source of control. No persistent system accessibility change is needed.
+`--check` verifies the real tab/control without invoking playback but may select
+the tab. Tests cover origin spoofing, exact playbar labels, ambiguity rejection
+and default-action selection. Icons do not claim live playback state.
+
+Before Suno discovery, `spotify_control` lists desktop D-Bus names and matches
+`org.mpris.MediaPlayer2.spotify` or its dot-suffixed instances. Resolve its unique
+owner, read CanControl/CanPlay/CanPause/CanGoNext and PlaybackStatus, and call
+PlayPause or Next on that same owner with NO_AUTO_START. Open paused Spotify
+still wins. Only absence falls back to Suno; ambiguity, unsupported controls or
+errors alert without sending a second-player action. `--check` queries without
+playback. The Spotify web player is not identified by this desktop MPRIS rule.
+The helper runs fresh for each key press, so editing it needs no OpenDeck restart.

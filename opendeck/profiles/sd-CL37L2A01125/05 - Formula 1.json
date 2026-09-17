@@ -34,7 +34,7 @@
       "current_state": 0,
       "settings": {
         "device": "sd-CL37L2A01125",
-        "profile": "03 - Background Selection",
+        "profile": "04 - Background Selection",
         "_label_id": "a7dd9d0a-2e65-4f86-8da2-78094c79da3b",
         "_label_defaults": [
           ""
@@ -335,7 +335,7 @@
       "current_state": 0,
       "settings": {
         "device": "sd-CL37L2A01125",
-        "profile": "05 - Formula 1 Page 2",
+        "profile": "06 - Formula 1 Page 2",
         "_label_id": "6f7f39ce-c9bc-4895-ab7c-a029f35b7b4d",
         "_label_defaults": [
           ""

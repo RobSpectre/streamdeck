@@ -112,7 +112,9 @@ class Controls:
                 self.reset_obs()
                 result.update({s['id']: 2 for s in obs_settings})
         for s in settings:
-            if s['kind'] == 'codex_dictation':
+            if s['kind'] == 'suno_media':
+                result[s['id']] = 0
+            elif s['kind'] == 'codex_dictation':
                 result[s['id']] = int(bool(codex_focused()))
             elif s['kind'] in ('audio_mode', 'mic_mute'):
                 result[s['id']] = self.audio.indicator()
@@ -124,6 +126,10 @@ class Controls:
         return result
 
     def activate(self, s):
+        if s['kind'] == 'suno_media':
+            subprocess.run(['/usr/bin/python3', str(ROOT/'tools/suno_media.py'), s['action']],
+                           check=True, timeout=12)
+            return
         if s['kind'] == 'codex_dictation':
             dictate()
             return

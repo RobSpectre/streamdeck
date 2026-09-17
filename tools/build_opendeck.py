@@ -159,6 +159,8 @@ def build(output, root=ROOT, config_path=None):
                                 visual.update(text='', show=False)
                         result = instance('runcommand', int(pos), visuals, button['live_control'])
                         result['current_state'] = 0 if button['live_control']['kind'] in ('audio_mode', 'mic_mute', 'codex_response', 'codex_telemetry', 'agent_telemetry', 'agent_action', 'codex_dictation') else 2
+                        if button['live_control']['kind'] == 'suno_media':
+                            result['current_state'] = 0
                         result['action'] = dict(name='Live broadcast control', uuid=STATUS_ACTION,
                             plugin=STATUS_PLUGIN, states=copy.deepcopy(visuals),
                             icon=f'plugins/{STATUS_PLUGIN}/icon.png', controllers=['Keypad'],

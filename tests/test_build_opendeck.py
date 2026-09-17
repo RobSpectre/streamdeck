@@ -67,19 +67,20 @@ class MigrationTests(unittest.TestCase):
 
     def test_reorganized_navigation_and_empty_pages(self):
         dev = self.output/'profiles/sd-CL37L2A01125'
-        names = ['01 - broadcast', '02 - soundboard', '03 - Background Selection', '04 - Formula 1', '05 - Formula 1 Page 2']
+        names = ['01 - broadcast', '02 - soundboard', '04 - Background Selection', '05 - Formula 1', '06 - Formula 1 Page 2']
         for name in names:
             self.assertTrue((dev/(name+'.json')).is_file())
         soundboard = json.loads((dev/(names[1]+'.json')).read_text())
         formula = json.loads((dev/(names[3]+'.json')).read_text())
-        self.assertEqual(soundboard['keys'][7]['settings']['profile'], names[2])
+        self.assertEqual(soundboard['keys'][7]['settings']['profile'], '03 - Vibecoding')
         self.assertEqual(formula['keys'][0]['settings']['profile'], names[2])
-        for page in (6, 7):
-            profile = json.loads((dev/f'{page:02} - Page {page}.json').read_text())
+        for page in (3, 7):
+            name = '03 - Vibecoding' if page == 3 else f'{page:02} - Page {page}'
+            profile = json.loads((dev/(name+'.json')).read_text())
             occupied = [(i, k) for i,k in enumerate(profile['keys']) if k]
-            self.assertEqual([i for i,k in occupied], list(range(8))+list(range(9,15))+list(range(16,23))+list(range(24,29)) if page == 6 else [0, 7])
+            self.assertEqual([i for i,k in occupied], list(range(8))+list(range(9,32)) if page == 3 else [0, 7])
             self.assertTrue(all(profile['keys'][i]['action']['uuid'].endswith('.switchprofile') for i in (0, 7)))
-            if page == 6:
+            if page == 3:
                 for pos, decision in [(24, 'deny'), (25, 'approve')]:
                     key = profile['keys'][pos]
                     self.assertEqual(key['settings']['decision'], decision)
@@ -98,7 +99,7 @@ class MigrationTests(unittest.TestCase):
     def test_all_backgrounds_and_broadcast_soundboard_copies(self):
         import shlex
         dev = self.output/'profiles/sd-CL37L2A01125'
-        page = json.loads((dev/'03 - Background Selection.json').read_text())
+        page = json.loads((dev/'04 - Background Selection.json').read_text())
         catalog = json.loads((ROOT/'obs_backgrounds.json').read_text())['backgrounds']
         backgrounds = [k for k in page['keys'] if k and k['settings'].get('kind') == 'background']
         self.assertEqual(len(backgrounds), len(catalog))
@@ -156,7 +157,7 @@ class MigrationTests(unittest.TestCase):
     def test_current_selection_and_blur_toggle(self):
         dev = self.output/'profiles'/'sd-CL37L2A01125'
         selection = json.loads(dev.with_suffix('.json').read_text())
-        self.assertEqual(selection['selected_profile'], m.profile_name(ROOT/m.CURRENT, 1, 'CL37L2A01125'))
+        self.assertEqual(selection['selected_profile'], m.profile_name(ROOT/m.CURRENT, 0, 'CL37L2A01125'))
         blur = json.loads((dev/(m.profile_name(ROOT/m.CURRENT, 0, 'CL37L2A01125')+'.json')).read_text())['keys'][12]
         self.assertEqual(blur['action']['uuid'], 'opendeck.toggleaction')
         self.assertEqual([s['text'] for s in blur['states']], ['Blur OFF', 'Blur ON'])
