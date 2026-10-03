@@ -1,0 +1,112 @@
+{
+  "source": "Installed MultiViewer application",
+  "version": "2.8.4",
+  "archive": "/usr/lib/multiviewer/resources/app.asar",
+  "mapping": ".webpack/renderer/capture/index.js: eb driver headshots, explicit 2026 entries only",
+  "drivers": {
+    "ALB": {
+      "archive_asset": ".webpack/renderer/7ad6f24639126549d7e2f0e577f6de48.png",
+      "sha256": "2697ef78f63a22aa75cefdc61029cacdbc03b79a64831d3e38e32b5a43b9da2b"
+    },
+    "ALO": {
+      "archive_asset": ".webpack/renderer/a3801e71daea884876bfe5e83fe20e80.png",
+      "sha256": "4e00ebebf5f675493c6e02d961492051ae1f5d852dbbc1422fda987c96e1332a"
+    },
+    "ANT": {
+      "archive_asset": ".webpack/renderer/e49568d4f8fd6eac77c55ec416a3fb10.png",
+      "sha256": "351e62a2bd6fd8d2c3bd9939075728afa7091f50b9accb2a12d40e0b3da16554"
+    },
+    "BEA": {
+      "archive_asset": ".webpack/renderer/bcb5c1ac74cb6557a7f8f39ffbcc11a3.png",
+      "sha256": "507d1ea9c5f24082070469173f7133675429e307f5ab5335a86e9d509087cb51"
+    },
+    "BOR": {
+      "archive_asset": ".webpack/renderer/8c21f081ee6726e64627425c3ec7dc0e.png",
+      "sha256": "642e7a36793918a4b4619afc9c6b0570af4e3a5a841eea59d0491ed1a0a5cf71"
+    },
+    "BOT": {
+      "archive_asset": ".webpack/renderer/3e9ea3461c37664be3c2c1c44de4aaf6.png",
+      "sha256": "53d33547ed21ff4ba8dfb79903eb256c5d0115fb1b57831789c6c450d3b7eb45"
+    },
+    "COL": {
+      "archive_asset": ".webpack/renderer/fd5850a8c85dd81fb74507aca0111c24.png",
+      "sha256": "00c7a95f6844cd7e02d037f9996bab363614c67790805aabd7c9b70338d9ddee"
+    },
+    "GAS": {
+      "archive_asset": ".webpack/renderer/38e808d14563980382a15241a2b7fdc8.png",
+      "sha256": "19c89ce465723e7678c7c4a2cac4dbe1bba46bf0ec132110dc6043a94912641d"
+    },
+    "HAD": {
+      "archive_asset": ".webpack/renderer/002b7d094a97b4d5873ba0fd02e56c55.png",
+      "sha256": "bf35e363de359b045b5a941b4c49451744e09f4326658d5374d3849bad800ad2"
+    },
+    "HAM": {
+      "archive_asset": ".webpack/renderer/01fd25410493a8af3c3ddb16bcd55595.png",
+      "sha256": "0a040b6b99193a97e190b5d55dacc19bb843754f2ccb5221b2e019854985ac64"
+    },
+    "HUL": {
+      "archive_asset": ".webpack/renderer/0a2312278c06fc758bd53422d0188ba9.png",
+      "sha256": "a5593d199e78f3bbb6966f94a0e5dea9b2e27a6c0ce5aa78930f3be97f356d1d"
+    },
+    "LAW": {
+      "archive_asset": ".webpack/renderer/b366ebbe7fa3ec4d186705ac85318209.png",
+      "sha256": "faaaccb8370e849da5f63046ce1bed39489648a27c0eea8f0d80b35765eacd52"
+    },
+    "LEC": {
+      "archive_asset": ".webpack/renderer/fbbb2b634c8424826a0f7bfb50baf2c6.png",
+      "sha256": "ba55f5844613ca86fc7d9bd1505b283026908fb6d842d8c9bba485ccd67d6716"
+    },
+    "LIN": {
+      "archive_asset": ".webpack/renderer/306f330a7498cbab61df8cf904161d1c.png",
+      "sha256": "d87cc18cfe9f91388ced976b22085e06072a684f5024aa6c0870386b24829d87"
+    },
+    "NOR": {
+      "archive_asset": ".webpack/renderer/0cf804904e88fd7e2b8e3168d1a58ee0.png",
+      "sha256": "0d0826e9e01cebfbfe035ba7669667d6531098442b02c8686a21e3a1eda296dc"
+    },
+    "OCO": {
+      "archive_asset": ".webpack/renderer/48955de0bb3fdc3d4ad95696bf78192d.png",
+      "sha256": "c176b887208799645295039d23ad4ef7522006f86228b0942cd2ee02545a38db"
+    },
+    "PER": {
+      "archive_asset": ".webpack/renderer/0560c21c0312174b7620329cba9263c0.png",
+      "sha256": "2b5360bfea12970d38204e337141fdfd2bc396d02c560a0ab0fe0ffe7eca6dc0"
+    },
+    "PIA": {
+      "archive_asset": ".webpack/renderer/65151a7bd021fecbd2383fc891187cd0.png",
+      "sha256": "d879abc3214d87c29ce6b30c7f4b05e4afb1f6d08a04873a7aec69e585c99713"
+    },
+    "RUS": {
+      "archive_asset": ".webpack/renderer/29a68fd7b5ee887e100c7066fb48df3a.png",
+      "sha256": "bf2ba92783623a5c051567e7100e6a4754da5b6dbc772e828fea5b0ddb413508"
+    },
+    "SAI": {
+      "archive_asset": ".webpack/renderer/9743227a6774d4d75afaeeac738385e3.png",
+      "sha256": "8b8ce803bc2d654cb5d9cccdb39ff15fba544d3f8e828bc469c11bfa3a503960"
+    },
+    "STR": {
+      "archive_asset": ".webpack/renderer/c4e495eb5095466e291479260b75f0c0.png",
+      "sha256": "79a9d3daaa67b0fa29785962698e4ec2ee9e0e6b3dcf6a039deb80388b52ae6e"
+    },
+    "VER": {
+      "archive_asset": ".webpack/renderer/cd8660f79859a39bf5067e63bb35da33.png",
+      "sha256": "5d874c9a37825c1591226f4a3e52096cab3b7512df0567428a6424b2f43aaeac"
+    }
+  },
+  "requested_2025_portraits": {
+    "LAW_redbullracing_2025.png": {
+      "driver": "LAW",
+      "season": 2025,
+      "team": "redbullracing",
+      "archive_asset": ".webpack/renderer/3a36b24edc8991fd3c7d36951af3397f.png",
+      "sha256": "3e218907c1c84dee84376d7ebf3a9d44ff48bb2bac35384521a39e68fe85522b"
+    },
+    "TSU_racingbulls_2025.png": {
+      "driver": "TSU",
+      "season": 2025,
+      "team": "racingbulls",
+      "archive_asset": ".webpack/renderer/e63a6824c4c5f73c352a074a6218bf3d.png",
+      "sha256": "6ba4542b6316539738890cbc51c1a4396fa31be90d2a2fce324a1c246678c4a9"
+    }
+  }
+}

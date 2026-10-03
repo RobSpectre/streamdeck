@@ -3,6 +3,7 @@
 import argparse
 import copy
 import hashlib
+import io
 import json
 import re
 import shlex
@@ -11,6 +12,8 @@ from pathlib import Path
 import sys
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from tools.label_overrides import read as read_labels, capture as capture_labels, apply as apply_labels, merge as merge_labels
+
+from tools import track_status
 
 ROOT = Path(__file__).resolve().parents[1]
 PLUGIN = 'com.amansprojects.starterpack.sdPlugin'
@@ -52,6 +55,40 @@ def action(kind):
 def instance(kind, position, states, settings, children=None, index=0):
     return dict(action=action(kind), context=f'Keypad.{position}.{index}',
                 states=copy.deepcopy(states), current_state=0, settings=settings, children=children)
+
+
+def status_art(key, root, output, used_images, warnings):
+    """Bundle a key-sized copy of one track-status key's art for the status mark.
+
+    The app draws these keys from their own artwork, and the plugin's only way to
+    mark one is to replace its image; it needs a small copy of the art to draw
+    the status edge onto, at the size the key is drawn. The path is recorded in
+    the key's settings, which is how the plugin finds it at runtime.
+
+    Only this plugin's own keys are marked: the app drops an image write aimed at
+    anything else, so another action's key would only carry a wasted asset. The
+    keys whose art the plugin draws itself are marked by their own renderer.
+    """
+    icon = key['states'][0].get('image')
+    if key['action']['uuid'] != STATUS_ACTION or key['settings'].get('kind') in track_status.DRAWN or not icon:
+        return ''
+    source = Path(icon)
+    if not source.is_absolute():
+        source = root/source
+    try:
+        art = track_status.load_art(source)
+    except (OSError, ValueError) as error:
+        warnings.add(f'{source.name}: no key-sized art for the track status ({error})')
+        return ''
+    stream = io.BytesIO()
+    art.save(stream, format='PNG')
+    content = stream.getvalue()
+    relative = Path('images/hackparty')/(hashlib.sha256(content).hexdigest()+'.png')
+    used_images.add(relative)
+    destination = output/relative
+    destination.parent.mkdir(parents=True, exist_ok=True)
+    destination.write_bytes(content)
+    return relative.as_posix()
 
 
 def appearance(s, root, warnings):
@@ -144,21 +181,31 @@ def build(output, root=ROOT, config_path=None):
                     else:
                         result = converted[0]
                     if button.get('live_control'):
+                        if not button['live_control'].get('id'):
+                            # The live plugin keys its per-key state by this id, so a
+                            # key without one takes the streaming process down as soon
+                            # as its page is shown.
+                            raise ValueError(f'{device} {page}/{pos}: live_control key has no id')
+                        # A key with one visual - the Formula 1 keys, which carry a
+                        # command for the plugin to run - keeps the appearance it
+                        # is authored with. The multi-state kinds name an icon per
+                        # state and are drawn on the plugin's own card.
                         visuals = []
-                        for index, icon in enumerate(button['status_icons']):
+                        for index, icon in enumerate(button.get('status_icons') or [states[ordered[0]].get('icon', '')]):
                             visual = appearance({**states[ordered[0]], 'icon': icon}, root, warnings)
-                            visual.update(colour='#ffe7a3' if index == 1 else '#b8c4d4',
-                                          background_colour='#201604' if index == 1 else '#10141b')
-                            if button.get('status_labels'):
-                                visual['text'] = button['status_labels'][index]
-                                visual['colour'] = '#ffd9d9' if index == 1 else '#b8c4d4'
-                                visual['background_colour'] = '#26090d' if index == 1 else '#10141b'
+                            if button.get('status_icons'):
+                                visual.update(colour='#ffe7a3' if index == 1 else '#b8c4d4',
+                                              background_colour='#201604' if index == 1 else '#10141b')
+                                if button.get('status_labels'):
+                                    visual['text'] = button['status_labels'][index]
+                                    visual['colour'] = '#ffd9d9' if index == 1 else '#b8c4d4'
+                                    visual['background_colour'] = '#26090d' if index == 1 else '#10141b'
                             visuals.append(visual)
                         if button['live_control']['kind'] in ('codex_telemetry', 'agent_telemetry'):
                             for visual in visuals:
                                 visual.update(text='', show=False)
                         result = instance('runcommand', int(pos), visuals, button['live_control'])
-                        result['current_state'] = 0 if button['live_control']['kind'] in ('audio_mode', 'mic_mute', 'codex_response', 'codex_telemetry', 'agent_telemetry', 'agent_action', 'codex_dictation') else 2
+                        result['current_state'] = 0 if len(visuals) == 1 or button['live_control']['kind'] in ('audio_mode', 'mic_mute', 'codex_response', 'codex_telemetry', 'agent_telemetry', 'agent_action', 'codex_dictation', 'f1_battle') else 2
                         if button['live_control']['kind'] == 'suno_media':
                             result['current_state'] = 0
                         result['action'] = dict(name='Live broadcast control', uuid=STATUS_ACTION,
@@ -174,7 +221,26 @@ def build(output, root=ROOT, config_path=None):
                         result['settings']['_label_id'] = button.get('label_id', f'{serial}/{page}/{pos}')
                         result['settings']['_label_defaults'] = [s['text'] for s in result['states']]
                         result['settings']['_label_mode'] = 'shared' if len(set(result['settings']['_label_defaults'])) == 1 else 'per_state'
-                profile = {'keys': keys, 'sliders': [], 'infobars': []}
+                        if page in {str(p) for p in config.get('track_status_pages', [])}:
+                            # This page wears the race director's track status, so
+                            # the plugin needs the art of every key on it.
+                            art = status_art(result, root, output, used_images, warnings)
+                            if art:
+                                result['settings']['_track_status'] = art
+                profile = {'keys': keys, 'sliders': [None] * config.get('slider_count', 0), 'infobars': []}
+                for pos, settings in config.get('dials', {}).get(page, {}).items():
+                    position = int(pos)
+                    if not 0 <= position < len(profile['sliders']):
+                        raise ValueError('Dial position exceeds device slider count')
+                    dial = instance('runcommand', position,
+                                    [appearance({'text': settings['title']}, root, warnings)], settings)
+                    dial['context'] = f'Encoder.{position}.0'
+                    dial['action'] = dict(name='Broadcast dial',
+                        uuid='party.hack.status.dial',
+                        plugin=STATUS_PLUGIN, states=[{'image': ''}],
+                        icon=f'plugins/{STATUS_PLUGIN}/icon.png', controllers=['Encoder'],
+                        encoder={'layout': 'dial-meter.json'}, disable_automatic_states=True)
+                    profile['sliders'][position] = dial
                 if config_path:
                     installed = config_path/'profiles'/device/(profile_name(source, page, serial)+'.json')
                     if installed.exists():
@@ -199,7 +265,7 @@ def build(output, root=ROOT, config_path=None):
                 for item in keys:
                     bundle_images(item)
                 write(output/'profiles'/device/(profile_name(source, page, serial)+'.json'),
-                      {'keys': keys, 'sliders': [], 'infobars': []})
+                      profile)
     for path in (output/'images/hackparty').glob('*'):
         if path.is_file() and path.relative_to(output) not in used_images:
             path.unlink()
@@ -217,6 +283,21 @@ def build(output, root=ROOT, config_path=None):
         'Actions': [{'Name': 'Live broadcast control', 'UUID': STATUS_ACTION,
                      'Icon': 'icon', 'Controllers': ['Keypad'], 'DisableAutomaticStates': True,
                      'States': [{'Image': 'icon'}, {'Image': 'icon'}, {'Image': 'icon'}]}]})
+    manifest = json.loads((plugin_dir/'manifest.json').read_text())
+    manifest['Actions'].append({'Name': 'Broadcast dial', 'UUID': 'party.hack.status.dial',
+        'Icon': 'icon', 'Controllers': ['Encoder'], 'DisableAutomaticStates': True,
+        'Encoder': {'layout': 'dial-meter.json'}, 'States': [{'Image': 'icon'}]})
+    write(plugin_dir/'manifest.json', manifest)
+    write(plugin_dir/'dial-meter.json', {'id': 'broadcast-meter', 'items': [
+        {'key': 'background', 'type': 'pixmap', 'rect': [0, 0, 200, 100]},
+        {'key': 'title', 'zOrder': 1, 'type': 'text', 'rect': [10, 4, 180, 22],
+         'font': {'size': 16, 'weight': 600}, 'alignment': 'center'},
+        {'key': 'value', 'zOrder': 1, 'type': 'text', 'rect': [10, 28, 180, 30],
+         'font': {'size': 26, 'weight': 600}, 'alignment': 'center'},
+        {'key': 'indicator', 'zOrder': 1, 'type': 'bar', 'rect': [14, 62, 172, 10],
+         'value': 0, 'subtype': 4, 'border_w': 0},
+        {'key': 'detail', 'zOrder': 1, 'type': 'text', 'rect': [10, 78, 180, 18],
+         'font': {'size': 11, 'weight': 400}, 'alignment': 'center'}]})
     (plugin_dir/'icon.png').write_bytes((ROOT/'images/fontawesome/toggle-on.png').read_bytes())
     launcher = plugin_dir/'launch.sh'
     launcher.write_text(

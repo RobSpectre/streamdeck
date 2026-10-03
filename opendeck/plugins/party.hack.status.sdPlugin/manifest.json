@@ -30,6 +30,23 @@
           "Image": "icon"
         }
       ]
+    },
+    {
+      "Name": "Broadcast dial",
+      "UUID": "party.hack.status.dial",
+      "Icon": "icon",
+      "Controllers": [
+        "Encoder"
+      ],
+      "DisableAutomaticStates": true,
+      "Encoder": {
+        "layout": "dial-meter.json"
+      },
+      "States": [
+        {
+          "Image": "icon"
+        }
+      ]
     }
   ]
 }

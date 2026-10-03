@@ -11,6 +11,53 @@ m = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(m)
 
 
+class LiveControlIdTests(unittest.TestCase):
+    """A live_control key's id is the identity the plugin keys its state by.
+
+    The streaming process builds a per-key map from it the moment the page is
+    shown, so a key without one takes the process down rather than failing on
+    its own.
+    """
+
+    def build(self, control, temp, pages=('0',)):
+        source = Path(temp)/'synthetic.json'
+        source.write_text(json.dumps({'devices': {'TEST0000000001': {'page': 0, 'track_status_pages': list(pages),
+            'buttons': {'0': {
+            '0': {'state': 0, 'states': {'0': {'icon': 'images/formula_1/2026/VER.png',
+                                               'text': 'VER', 'alignment': 'bottom'}},
+                  'live_control': control}}}}}}))
+        output = Path(temp)/'out'
+        from unittest.mock import patch
+        with patch.object(m, 'SOURCES', [source]):
+            m.build(output)
+        return output
+
+    def test_a_live_control_key_without_an_id_is_refused(self):
+        with tempfile.TemporaryDirectory() as temp:
+            with self.assertRaises(ValueError) as error:
+                self.build({'kind': 'f1_key', 'command': 'true'}, temp)
+        self.assertIn('live_control key has no id', str(error.exception))
+
+    def test_a_named_key_carries_its_command_and_its_status_art(self):
+        with tempfile.TemporaryDirectory() as temp:
+            output = self.build({'id': 'f1-key:test', 'kind': 'f1_key', 'command': 'true'}, temp)
+            profile = json.loads((output/'profiles'/'sd-TEST0000000001'/'synthetic-json-page-01.json').read_text())
+            key = profile['keys'][0]
+            self.assertEqual(key['settings']['id'], 'f1-key:test')
+            self.assertEqual(key['settings']['command'], 'true')
+            self.assertEqual(len(key['states']), 1)
+            self.assertEqual(key['current_state'], 0)
+            self.assertTrue((output/key['settings']['_track_status']).is_file())
+
+    def test_a_page_without_the_track_status_keeps_no_art(self):
+        # Only the pages that wear the status carry the extra asset.
+        with tempfile.TemporaryDirectory() as temp:
+            output = self.build({'id': 'f1-key:test', 'kind': 'f1_key', 'command': 'true'}, temp, pages=())
+            with open(output/'profiles'/'sd-TEST0000000001'/'synthetic-json-page-01.json') as handle:
+                key = json.load(handle)['keys'][0]
+        self.assertNotIn('_track_status', key['settings'])
+
+
 class MigrationTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):

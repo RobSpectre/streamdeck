@@ -315,3 +315,153 @@ still wins. Only absence falls back to Suno; ambiguity, unsupported controls or
 errors alert without sending a second-player action. `--check` queries without
 playback. The Spotify web player is not identified by this desktop MPRIS rule.
 The helper runs fresh for each key press, so editing it needs no OpenDeck restart.
+
+## MultiViewer live-timing battles (+ XL)
+
+The live plugin now uses one page-scoped `BattleFeed` for SessionInfo,
+SessionStatus, TimingData, DriverList and TrackStatus. Visibility of an F1 key,
+marked art or the gap dial activates it; leaving the page clears cached targets
+and holds. A 0.2 s local TCP probe precedes timing reads; unavailable APIs and
+failed reads back off five seconds, with no timing detection. Race/Sprint
+(`Type=Race`) shows battles and gap dial; `Type=Qualifying` shows up to eight
+individual timed-lap candidates and blanks/disables the dial. Practice, unknown
+types, ended status and unavailable API blank both. Started/Finished status is
+accepted, preserving the final laps before Ends/Finalised. Session Key/Path/mode
+changes clear holds even when lap counts increase. Rendering/presses read only
+that shared cache; track status no longer has a separate plugin polling loop.
+
+Qualifying candidates require explicit false InPit/PitOut/Stopped/Retired and
+integer Status clear of native bits 2/4/16/32/512 (stopped/retired/pit/pit-out/
+out-lap); also reject Outlap and KnockedOut. DriverList.TeamName prioritizes
+Mercedes, Ferrari, Red Bull Racing and McLaren, then timing position within each
+group. Qualifying keys show current elapsed lap time in `m:ss.s`, truncated to
+tenths, sampled on the shared one-second poll. `NumberOfLapsTs` is the native
+start/finish crossing timestamp: relative milliseconds for replay patches,
+absolute UTC milliseconds for live patches. One additional shared GET to
+`/api/v2/live-timing/clock` supplies paused/speed/systemTime/trackTime/
+liveTimingStartTime; GraphQL's legacy clock omits speed. Extrapolate the anchor
+by wall-time delta times native speed only when unpaused, resolving lap-start
+domains against the native origin. Missing/nonfinite/negative/future values
+yield `—`, not a previous completed lap or a locally invented stopwatch.
+The latest contiguous current-lap mini-sector status controls timer colour:
+2048 yellow (not improved), 2049 green (personal best), 2051 purple (session best).
+Stop at the first zero/unreported segment, excluding later carried-over sectors;
+unknown/pit/stopped/retired codes and missing timer data are neutral. These are
+mini-sector judgements, not a whole-lap prediction. Keys identify timed-lap
+candidates, not a reconstructed native
+hot-lap verdict: 2.8.4's private telemetry classifier is not in the public API,
+and unflagged cool-down laps can remain. Never invent pace thresholds. Qualifying
+presses run `f1_keys.driver` asynchronously, exactly like the XL driver board and
+race battle keys, following the existing target/rotate and window/fullscreen
+behavior. The standalone `--show-onboard` helper is not the deck press path.
+
+The eight battle keys are `live_control` kind `f1_battle`, slots 0–7 in reading
+order (slot even = leading driver, odd = trailing). `tools/f1_battles.py` polls
+`liveTimingState { TimingData DriverList }` over MultiViewer's local GraphQL API
+once a second while those keys are visible; the poll loop renders each key from
+one shared cached read, and a press reads that same cache rather than refreshing,
+so a key always fullscreens the driver it was showing. Unchanged renders are not
+re-sent. Detected pairs are consecutive positions where the trailing car's
+`IntervalToPositionAhead` parses to a number within the dialled width (default
+`GAP_LIMIT` 2 s) and its `Catching` flag is set. `Catching` is the feed's own
+conservative notion of closing and is used in preference to a gap history this
+repo would have to invent; it fires for far fewer cars than the two-second window
+alone, so a nose-to-tail queue with nobody pulling away is legitimately empty.
+
+`battle_pairs()` returns every on-track consecutive-position pair with a readable
+gap, **ordered by the leading car's position** so the fight for the lead is the
+top row and the deck cannot reshuffle when a gap changes by a hundredth; `closing`
+on each entry is the judgement and the rest is a reading. `battles()` is the
+instantaneous subset, used by tests. The deck shows `closing` pairs plus the ones
+still standing: `BattleFeed.shown(pairs, lap)` keeps a pair for `HOLD_LAPS` (2)
+laps after the last lap it was closing on, held in `self.seen` as pair key ->
+lap and pruned to the current candidates each poll. Only the closing judgement is
+held; a pit stop, a retirement or a lost consecutive position removes the pair
+from the candidate list entirely, so it goes at once. `session_lap(timing)` is the
+**leader's** lap count (max `NumberOfLaps`), not either car's, so an overtake
+between the two does not restart the age; `pair_key()` is the sorted racing-number
+pair for the same reason. A lap that has gone backwards is a new session and
+nothing stands, and an unmeasurable lap switches the hold off instead of inventing
+a clock. A failed read empties the rows but keeps `seen`. Held rows are drawn with
+their live gap, so the number never lies about a fight that has ended.
+
+Width is operator state, not a constant: `gap_limit()`/`set_gap_limit()` read and
+write `~/.cache/opendeck-agents/f1-battles/gap-limit` (private 0700/0600, atomic
+replace, 0.5–5.0 s in whole tenths, default 2.0), and `BattleFeed` re-reads it on
+every refresh so a twist takes effect on the next poll. Reads never create the
+directory and never raise: an unreadable or out-of-range file falls back to the
+default, because the keys must keep drawing whatever happens to the cache. The
+value is per-workstation and deliberately outside the repository, so the portable
+preset inherits the default.
+
+`+1 LAP` and blank intervals are unknown, not zero, and a car in the pit,
+stopped or retired is not an on-track battle. The leader has no interval but
+must stay in the order or the fight for the lead is lost. A pair whose position
+numbers are not consecutive is never paired — that is what stops a car with a
+missing position joining two cars a lap apart. A feed that cannot be read shows
+`NO TIMING` (state 2) rather than stale battles.
+
+Key art is drawn by the module's own Pillow renderer from the existing
+`images/formula_1/2026/<TLA>.png` headshots cropped to `CROP`; a driver with no
+headshot asset (there is no `TSU.png`) keeps the plain card instead of a
+fabricated image. `headline(value)` picks the one number a key carries: the
+leading driver's key the position, the trailing driver's the gap, each at the
+largest bold size that fits, with the acronym above and the team colour as the
+outline. `gap_colour()` reads the displayed gap (2 dp), not
+the raw feed value, so the colour can never contradict the number: green at ≥1 s,
+yellow below 1 s, red below 0.5 s. Titles stay empty: the acronym is in the image,
+and `f1_battle` is excluded from label capture and the label sync like telemetry,
+so no rendered text is persisted as a title override. `LabelSync.changed` also
+refuses every `DYNAMIC_KINDS` title, since the app can report our own title back
+as an edit. Pressing makes the same call as the XL's driver selectors,
+`python control_driver_feeds.py driver --driver_abbreviation <TLA>`
+(`tools/f1_keys.py`), so a driver behaves the same whichever deck picked it and
+the `set-target`/`rotate-drivers` keys still steer it. `f1_battles.fullscreen()`
+and `onboard_players()` remain that module's own MultiViewer route, reached by its
+`--fullscreen TLA` CLI rather than by a key.
+
+The F1 page's rightmost + XL dial is `control` `f1_gap_limit`, handled in
+`tools/dial_controls.py` rather than the agent dials: `read` renders the same
+touch-strip shape as the audio meters (title, `2.0s`, bar spanning the dial's
+range, `BATTLE WIDTH`) and `rotate` returns `{id: feedback}` so the strip answers
+the twist immediately instead of waiting for a poll. It is not an audio target,
+so its taps and holds are inert.
+
+
+## Track status on the Formula 1 pages
+
+`tools/track_status.py` interprets the race director's status (`liveTimingState {
+TrackStatus }`): 1 all clear; 2 yellow flag, 4 safety car, 6 virtual safety car
+and 7 virtual safety car ending are the page's yellow; 5 is red. Any other code
+is no status rather than an invented one, and an unreadable feed is clear,
+because a finished session or a closed MultiViewer is not a race under a flag.
+The plugin obtains it from the shared page-scoped feed described above;
+`StatusFeed` remains available for standalone diagnostics and synthetic tests.
+
+A plugin may only write to a key its own action owns — OpenDeck drops a `setImage`
+whose target instance belongs to another plugin (`src-tauri/src/events/inbound/
+mod.rs`) — so nothing on the page could be marked while its keys were the app's
+run-command controls. Every F1 page key is therefore `live_control` kind `f1_key`
+now: the same command under this plugin, run by `tools/f1_keys.py` with the
+wrapper the app's run command action built for these keys (repository working
+directory, its `.venv/bin` ahead of PATH, fire and forget so a key cannot stall
+the poll loop). The one key the app still owns is the navigation key, because
+only the starter pack may switch profiles; it keeps its normal look.
+
+The builder writes a key-sized copy of each marked key's art into the bundle and
+records it in that key's `_track_status` setting. `load_art()` reads a square PNG
+directly, and for the two hand-made driver views the top square of the portrait
+embedded in the SVG, which is what the app shows. A status is drawn over the art
+as a `MARK` (10) pixel edge — `#ffd447` yellow, `#f26672` red — instead of a
+background: a flag lasts many laps and the deck still has to be read during one.
+Every marked key is drawn as soon as its page is shown, a clear track sending the
+art plain, because the app keeps the last image a key was sent: a deck restarted
+under a flag would otherwise hold a stale mark until the next one. Repeats are
+skipped by the same image cache as the rest of the page, and a status is only
+drawn once it is readable — an unreachable feed is clear, never a colour left
+over from the last session. The battle cards are marked by their own renderer,
+and `track_status.DRAWN` lists the kinds that are.
+
+Consequences of re-homing those keys: their commands are edited in the layout
+rather than as Run Command in the app's property inspector, and a press needs
+this plugin loaded. Their art, text and labels are unchanged.

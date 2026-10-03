@@ -7,6 +7,12 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 OVERRIDES = ROOT/'opendeck-labels.json'
 
+# Kinds whose titles are the plugin's own: telemetry text is inside the rendered
+# image, and a battle key shows whichever
+# drivers are fighting. The sync must not treat any of those titles as a user
+# edit, or the app reports our own title back and pins it in the override file.
+DYNAMIC_KINDS = ('codex_telemetry', 'agent_telemetry', 'f1_battle')
+
 
 def read(path=OVERRIDES):
     return json.loads(path.read_text()) if path.exists() else {'version': 1, 'labels': {}}
@@ -37,7 +43,7 @@ def capture(profile, fallback=None):
         if not key:
             continue
         settings = key.get('settings', {})
-        if settings.get('kind') in ('codex_telemetry', 'agent_telemetry'):
+        if settings.get('kind') in DYNAMIC_KINDS:
             continue
         if not settings.get('_label_id') and fallback and pos < len(fallback['keys']):
             fresh = fallback['keys'][pos]
@@ -82,7 +88,9 @@ class LabelSync:
         self.initial = set()
 
     def appear(self, context, settings):
-        if settings.get('kind') in ('codex_telemetry', 'agent_telemetry'):
+        if settings.get('kind') in DYNAMIC_KINDS:
+            # These keys write their own titles, so the sync must not read that
+            # back as a user edit and pin it in the override file.
             return
         self.contexts[context] = settings
         self.initial.add(context)
@@ -100,7 +108,7 @@ class LabelSync:
             return  # willAppear sends the old/current title; it is not a user edit.
         settings = self.contexts.get(context, payload.get('settings', {}))
         label_id = settings.get('_label_id')
-        if not label_id or settings.get('_label_mode') != 'shared' or 'title' not in payload:
+        if settings.get('kind') in DYNAMIC_KINDS or not label_id or settings.get('_label_mode') != 'shared' or 'title' not in payload:
             return
         title = payload['title']
         old = read(self.path)['labels'].get(label_id, {})

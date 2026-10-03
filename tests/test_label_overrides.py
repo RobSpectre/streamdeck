@@ -53,3 +53,19 @@ class LabelTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as directory:
             path=Path(directory)/'labels.json';merge({'one':{'shared':'First'}},path);merge({'two':{'shared':'Second'}},path)
             self.assertEqual(set(read(path)['labels']),{'one','two'})
+
+    def test_keys_that_write_their_own_titles_never_become_user_overrides(self):
+        # A battle key's title comes from the plugin, so an app-reported change to
+        # it is not a user edit and must not be pinned in the override file.
+        dynamic = {'keys':[{'action':{'uuid':'test'},
+                            'settings':{'_label_id':'f1-battle/0','_label_defaults':['','',''],'_label_mode':'shared',
+                                        'kind':'f1_battle'},
+                            'states':[{'text':''}]*3,'current_state':0}]}
+        self.assertEqual(capture(dynamic), {})
+        with tempfile.TemporaryDirectory() as directory:
+            path=Path(directory)/'labels.json';events=[];sync=LabelSync(events.append,path)
+            sync.appear('battle',dynamic['keys'][0]['settings'])
+            sync.changed('battle',{'title':'VER'})
+            sync.changed('battle',{'title':'','settings':dynamic['keys'][0]['settings']})
+            self.assertFalse(path.exists())
+            self.assertEqual(events,[])

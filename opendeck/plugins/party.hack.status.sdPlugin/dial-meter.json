@@ -1,0 +1,77 @@
+{
+  "id": "broadcast-meter",
+  "items": [
+    {
+      "key": "background",
+      "type": "pixmap",
+      "rect": [
+        0,
+        0,
+        200,
+        100
+      ]
+    },
+    {
+      "key": "title",
+      "zOrder": 1,
+      "type": "text",
+      "rect": [
+        10,
+        4,
+        180,
+        22
+      ],
+      "font": {
+        "size": 16,
+        "weight": 600
+      },
+      "alignment": "center"
+    },
+    {
+      "key": "value",
+      "zOrder": 1,
+      "type": "text",
+      "rect": [
+        10,
+        28,
+        180,
+        30
+      ],
+      "font": {
+        "size": 26,
+        "weight": 600
+      },
+      "alignment": "center"
+    },
+    {
+      "key": "indicator",
+      "zOrder": 1,
+      "type": "bar",
+      "rect": [
+        14,
+        62,
+        172,
+        10
+      ],
+      "value": 0,
+      "subtype": 4,
+      "border_w": 0
+    },
+    {
+      "key": "detail",
+      "zOrder": 1,
+      "type": "text",
+      "rect": [
+        10,
+        78,
+        180,
+        18
+      ],
+      "font": {
+        "size": 11,
+        "weight": 400
+      },
+      "alignment": "center"
+    }
+  ]
+}

@@ -15,6 +15,7 @@ sys.path.insert(0, str(ROOT))
 from control_obs_background import connect, select as select_background
 from audio_controls import AudioControls
 from tools.label_overrides import LabelSync
+from tools.dial_controls import Dials
 from tools.codex_attention import CodexAttention
 from tools.codex_pedal import respond as codex_respond
 from tools.codex_pedal import codex_focused, dictate
@@ -24,6 +25,10 @@ from tools.agent_telemetry import AgentTelemetry
 from tools.agent_presence import Presence
 from tools.agent_navigation import activate as navigate_agent
 from tools.cli_agent_bridge import pending as cli_pending
+from tools.f1_battles import BattleFeed, F1BattleError
+from tools.f1_battles import render as render_battle
+from tools import f1_keys
+from tools import track_status
 import requests
 import websocket
 
@@ -40,6 +45,21 @@ def resolve_targets(targets, scenes):
     return resolved
 
 
+def track_image(settings, status):
+    """The image to send for one track-status key, or None if it is not one.
+
+    A key is drawn from its own art with the status drawn over it, and a clear
+    track sends that art plain. It is sent as soon as the key's page is shown
+    rather than only after a status has been seen, because the app keeps the last
+    image a key was sent: a deck restarted under a flag would otherwise hold a
+    stale mark until the next one.
+    """
+    art = settings.get('_track_status')
+    if not art:
+        return None
+    return track_status.key_image(art, status)
+
+
 class Controls:
     def __init__(self):
         self.obs = None
@@ -48,7 +68,24 @@ class Controls:
         self.telemetry = None
         self.agents = None
         self.presence = None
+        self.f1 = None
         self.lights = json.loads((ROOT/'lights.json').read_text())
+
+    def battle_feed(self):
+        if self.f1 is None:
+            self.f1 = BattleFeed()
+        return self.f1
+
+    def f1_visibility(self, settings):
+        """Monitoring follows native visible page contexts, including the dial."""
+        shown = any(s.get('_track_status') or s.get('kind') in ('f1_key', 'f1_battle') or
+                    s.get('control') == 'f1_gap_limit' for s in settings)
+        if not shown and self.f1 is not None:
+            self.f1.pause()
+        return shown
+
+    def battle_dial_visible(self):
+        return self.f1 is not None and self.f1.available and self.f1.mode == 'race'
 
     def obs_client(self):
         if self.obs is None:
@@ -74,6 +111,12 @@ class Controls:
 
     def snapshot(self, settings):
         result = {}
+        if self.f1_visibility(settings):
+            self.battle_feed().value()
+        battle_keys = [s for s in settings if s['kind'] == 'f1_battle']
+        if battle_keys:
+            for s in battle_keys:
+                result[s['id']] = 0 if self.battle_feed().slot(s.get('slot', 0))[0] in ('battle', 'flying') else 1
         if any(s['kind'] == 'agent_telemetry' for s in settings) and self.agents is None:
             self.agents = AgentTelemetry(self.presence)
         codex_settings = [s for s in settings if s['kind'] in ('codex_response', 'codex_telemetry', 'agent_action')]
@@ -131,6 +174,19 @@ class Controls:
         return result
 
     def activate(self, s):
+        if s['kind'] == 'f1_battle':
+            # The key selects the driver it is showing, so the press reads the
+            # cached slot rather than refreshing into a different driver. It goes
+            # through the same call as the XL's driver selectors, so a driver
+            # behaves the same way whichever deck picked them.
+            value = self.battle_feed().slot(s.get('slot', 0))
+            if value[0] not in ('battle', 'flying'):
+                raise F1BattleError('No live driver on this key')
+            f1_keys.driver(value[1])
+            return
+        if s['kind'] == 'f1_key':
+            f1_keys.run(s.get('command', ''))
+            return
         if s['kind'] == 'suno_media':
             subprocess.run(['/usr/bin/python3', str(ROOT/'tools/suno_media.py'), s['action']],
                            check=True, timeout=12)
@@ -216,10 +272,13 @@ def main():
     threading.Thread(target=receive, daemon=True).start()
     controls = Controls()
     controls.presence = Presence()
+    dials = Dials(controls.obs_client, battle_visible=controls.battle_dial_visible)
+    dial_values = {}
     labels = LabelSync(lambda event: ws.send(json.dumps(event)))
     visible, last, last_images = {}, {}, {}
     deadline = 0
     next_poll = 0
+    f1_log = None
     states, sources = {}, {}
     try:
         while True:
@@ -244,6 +303,27 @@ def main():
                     last_images.pop(context, None)
                 elif kind == 'titleParametersDidChange':
                     labels.changed(context, event['payload'])
+                elif kind in ('dialRotate', 'touchTap') and context in visible:
+                    try:
+                        if visible[context].get('kind') != 'dial':
+                            raise ValueError('Not a dial context')
+                        if kind == 'touchTap':
+                            print(f"Touch tap received: {visible[context]['control']} hold={event['payload'].get('hold', False)}", flush=True)
+                            dials.tap(visible[context], event['payload'].get('hold', False))
+                        else:
+                            immediate = dials.rotate(visible[context], event['payload']['ticks'])
+                            if immediate:
+                                for dial_context, dial_settings in visible.items():
+                                    value = immediate.get(dial_settings.get('id'))
+                                    if value is not None and last_images.get(dial_context) != value:
+                                        ws.send(json.dumps({'event': 'setFeedback', 'context': dial_context, 'payload': value}))
+                                        last_images[dial_context] = value
+                    except Exception as error:
+                        print(f"Dial {visible[context].get('id')} failed: {type(error).__name__}", flush=True)
+                        controls.reset_obs()
+                        ws.send(json.dumps({'event': 'showAlert', 'context': context}))
+                    deadline = 0
+                    next_poll = 0
                 elif kind == 'keyDown' and context in visible:
                     try:
                         controls.activate(visible[context])
@@ -256,19 +336,33 @@ def main():
                 controls.presence.show({
                     'codex' if s['kind'] == 'codex_telemetry' else s['agent']
                     for s in visible.values() if s['kind'] in ('codex_telemetry', 'agent_telemetry')})
+                controls.f1_visibility(visible.values())
             except queue.Empty:
                 animated = False
                 if visible:
                     now = time.monotonic()
                     if now >= next_poll:
                         states = controls.snapshot(list({s['id']:s for s in visible.values()}.values()))
+                        if controls.f1 is not None:
+                            monitor = (controls.f1.available, controls.f1.mode)
+                            if f1_log != monitor:
+                                print(f'F1 monitor: api={monitor[0]} mode={monitor[1]}', flush=True)
+                                f1_log = monitor
+                        dial_values = dials.snapshot([s for s in visible.values() if s['kind'] == 'dial'])
                         shown = {s.get('agent', 'codex') for s in visible.values()
                                  if s['kind'] in ('codex_telemetry', 'agent_telemetry')}
                         sources = {'codex': controls.telemetry.values() if controls.telemetry and 'codex' in shown else {}}
                         if controls.agents:
                             sources.update({agent: controls.agents.values(agent) for agent in ('claude', 'hermes') if agent in shown})
                         next_poll = time.monotonic()+1
+                    race_status = controls.f1.track_status if controls.f1 else track_status.CLEAR
                     for context, settings in visible.items():
+                        if settings['kind'] == 'dial':
+                            value = dial_values.get(settings['id'])
+                            if value is not None and last_images.get(context) != value:
+                                ws.send(json.dumps({'event': 'setFeedback', 'context': context, 'payload': value}))
+                                last_images[context] = value
+                            continue
                         if settings['kind'] in ('codex_telemetry', 'agent_telemetry'):
                             source = sources.get('codex' if settings['kind'] == 'codex_telemetry' else settings['agent'], {})
                             value = source.get(settings['metric'])
@@ -279,6 +373,23 @@ def main():
                                 ws.send(json.dumps({'event': 'setImage', 'context': context,
                                                     'payload': {'image': render_telemetry(value, phase), 'target': 0}}))
                                 last_images[context] = frame
+                            continue
+                        if settings['kind'] == 'f1_battle':
+                            value = (controls.battle_feed().slot(settings.get('slot', 0)), race_status)
+                            if last_images.get(context) != value:
+                                ws.send(json.dumps({'event': 'setImage', 'context': context,
+                                                    'payload': {'image': render_battle(value[0], race_status),
+                                                                'target': 0}}))
+                                last_images[context] = value
+                            continue
+                        if settings.get('_track_status'):
+                            # The key's own art, with the race director's status
+                            # drawn on it while there is one.
+                            image = track_image(settings, race_status)
+                            if image is not None and last_images.get(context) != image:
+                                ws.send(json.dumps({'event': 'setImage', 'context': context,
+                                                    'payload': {'image': image, 'target': 0}}))
+                                last_images[context] = image
                             continue
                         state = states.get(settings['id'], 2)
                         if last.get(context) != state:
