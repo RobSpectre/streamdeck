@@ -12,7 +12,6 @@ from pathlib import Path
 import sys
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from tools.label_overrides import read as read_labels, capture as capture_labels, apply as apply_labels, merge as merge_labels
-
 from tools import track_status
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -129,6 +128,15 @@ def convert_state(s, source, device, page, position, root, warnings):
         target = str(int(s['switch_page'])-1)
         if target not in page:
             raise ValueError(f'Missing destination page {target}')
+        serial = device.removeprefix('sd-')
+        devices = json.loads(source.read_text())['devices']
+        peer = devices.get(serial, {}).get('navigation_peer')
+        if peer:
+            if peer == serial or target not in devices.get(peer, {}).get('buttons', {}):
+                raise ValueError(f'Invalid navigation peer destination {peer}/{target}')
+            # Switch the companion first, before the originating key disappears.
+            children.append(instance('switchprofile', position, visual,
+                                     {'device': 'sd-' + peer, 'profile': profile_name(source, target, peer)}))
         children.append(instance('switchprofile', position, visual,
                                  {'device': device, 'profile': profile_name(source, target, device.removeprefix('sd-'))}))
     if len(children) > 1:
@@ -138,7 +146,7 @@ def convert_state(s, source, device, page, position, root, warnings):
     return children[0] if children else instance('runcommand', position, visual, {})
 
 
-def build(output, root=ROOT, config_path=None):
+def build(output, root=ROOT, config_path=None, sources=None):
     report = {'sources': {}, 'warnings': [], 'upstream_commit': '7cc07942ef4a0d4d04d3011fac3f82626a211cfb'}
     # Remove only profiles listed in our previous generated report.
     previous = output/'migration-report.json'
@@ -155,7 +163,7 @@ def build(output, root=ROOT, config_path=None):
     warnings = set()
     selectors = {}
     used_images = set()
-    for source in sorted(SOURCES, key=lambda p: p.name == CURRENT):
+    for source in sorted(SOURCES if sources is None else sources, key=lambda p: p.name == CURRENT):
         data = json.loads(source.read_text())
         report['sources'][source.name] = {}
         for serial, config in data['devices'].items():
@@ -206,7 +214,7 @@ def build(output, root=ROOT, config_path=None):
                                 visual.update(text='', show=False)
                         result = instance('runcommand', int(pos), visuals, button['live_control'])
                         result['current_state'] = 0 if len(visuals) == 1 or button['live_control']['kind'] in ('audio_mode', 'mic_mute', 'codex_response', 'codex_telemetry', 'agent_telemetry', 'agent_action', 'codex_dictation', 'f1_battle') else 2
-                        if button['live_control']['kind'] == 'suno_media':
+                        if button['live_control']['kind'] in ('suno_media', 'dial_view'):
                             result['current_state'] = 0
                         result['action'] = dict(name='Live broadcast control', uuid=STATUS_ACTION,
                             plugin=STATUS_PLUGIN, states=copy.deepcopy(visuals),
@@ -232,20 +240,25 @@ def build(output, root=ROOT, config_path=None):
                     position = int(pos)
                     if not 0 <= position < len(profile['sliders']):
                         raise ValueError('Dial position exceeds device slider count')
+                    # OpenDeck's encoder renderer overrides setFeedback.title
+                    # with any nonempty state title. View-switching dials must
+                    # leave that override empty so Studio/TV feedback can win.
+                    title = '' if settings.get('television') else settings['title']
                     dial = instance('runcommand', position,
-                                    [appearance({'text': settings['title']}, root, warnings)], settings)
+                                    [appearance({'text': title}, root, warnings)], settings)
                     dial['context'] = f'Encoder.{position}.0'
-                    dial['action'] = dict(name='Broadcast dial',
-                        uuid='party.hack.status.dial',
+                    agent_dial = settings.get('control') == 'agent'
+                    dial['action'] = dict(name='Agent dial' if agent_dial else 'Broadcast dial',
+                        uuid='party.hack.status.agentdial' if agent_dial else 'party.hack.status.dial',
                         plugin=STATUS_PLUGIN, states=[{'image': ''}],
                         icon=f'plugins/{STATUS_PLUGIN}/icon.png', controllers=['Encoder'],
-                        encoder={'layout': 'dial-meter.json'}, disable_automatic_states=True)
+                        encoder={'layout': 'agent-selector.json' if agent_dial else 'dial-meter.json'}, disable_automatic_states=True)
                     profile['sliders'][position] = dial
                 if config_path:
                     installed = config_path/'profiles'/device/(profile_name(source, page, serial)+'.json')
                     if installed.exists():
                         merge_labels(capture_labels(json.loads(installed.read_text()), profile))
-                apply_labels(profile, read_labels()['labels'])
+                apply_labels(profile, {**read_labels()['labels'], **data.get('label_overrides', {})})
                 def bundle_images(item):
                     if item is None:
                         return
@@ -287,6 +300,11 @@ def build(output, root=ROOT, config_path=None):
     manifest['Actions'].append({'Name': 'Broadcast dial', 'UUID': 'party.hack.status.dial',
         'Icon': 'icon', 'Controllers': ['Encoder'], 'DisableAutomaticStates': True,
         'Encoder': {'layout': 'dial-meter.json'}, 'States': [{'Image': 'icon'}]})
+    manifest['Actions'].append({'Name': 'Agent dial', 'UUID': 'party.hack.status.agentdial',
+        'Icon': 'icon', 'Controllers': ['Encoder'], 'DisableAutomaticStates': True,
+        'Encoder': {'layout': 'agent-selector.json'}, 'States': [{'Image': 'icon'}]})
+    write(plugin_dir/'agent-selector.json', {'id': 'agent-selector', 'items': [
+        {'key': 'background', 'type': 'pixmap', 'rect': [0, 0, 200, 100]}]})
     write(plugin_dir/'manifest.json', manifest)
     write(plugin_dir/'dial-meter.json', {'id': 'broadcast-meter', 'items': [
         {'key': 'background', 'type': 'pixmap', 'rect': [0, 0, 200, 100]},
@@ -318,9 +336,11 @@ def build(output, root=ROOT, config_path=None):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--output', type=Path, default=ROOT/'opendeck')
+    parser.add_argument('--source', type=Path, help='Build an alternate layout, such as the saved XL travel configuration')
     parser.add_argument('--repo-root', type=Path, default=ROOT, help='Runtime location of scripts and icons')
     parser.add_argument('--config', type=Path, default=Path(os.environ.get('XDG_CONFIG_HOME', Path.home()/'.config'))/'opendeck', help='Import app-edited labels from this OpenDeck configuration')
     parser.add_argument('--no-import-labels', action='store_true', help='Skip reading installed profiles (saved overrides still apply)')
     args = parser.parse_args()
-    report = build(args.output.resolve(), args.repo_root.resolve(), None if args.no_import_labels else args.config.expanduser().resolve())
+    report = build(args.output.resolve(), args.repo_root.resolve(), None if args.no_import_labels else args.config.expanduser().resolve(),
+                   [args.source.resolve()] if args.source else None)
     print(f"Built {len(report['sources'])} layout; {len(report['warnings'])} missing icon paths (see migration-report.json).")

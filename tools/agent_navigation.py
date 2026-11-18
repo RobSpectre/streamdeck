@@ -5,7 +5,8 @@ import re
 import subprocess
 import time
 import uuid
-from tools.cli_agent_bridge import sessions
+from tools.agent_presence import hermes_cli
+from tools.cli_agent_bridge import desktop_session, sessions
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -41,17 +42,29 @@ def terminal_target(pid):
     return None
 
 
+def app_target(pid):
+    """A Claude desktop session has no terminal: focus the app window hosting it."""
+    process = Path('/proc')/str(pid)
+    if not desktop_session(process):
+        return None
+    parent = process.joinpath('stat').read_text().rsplit(')', 1)[1].split()[1]
+    for window, props in windows():
+        if re.search(r'_NET_WM_PID[^=]*=\s*'+parent+r'\b', props):
+            return ['xdotool', 'windowactivate', '--sync', window]
+    return None
+
+
 def cli_pids(agent):
     live = sorted(sessions(agent), key=lambda v: (v.get('active', False), v['updated']), reverse=True)
     pids = list(dict.fromkeys(v['pid'] for v in live))
     # A CLI opened before the hooks were installed still has a terminal to focus.
     for path in Path('/proc').glob('[0-9]*'):
         try:
-            args = path.joinpath('cmdline').read_bytes().split(b'\0')
+            args = path.joinpath('cmdline').read_bytes().decode().split('\0')
             stat = path.joinpath('stat').read_text().rsplit(')', 1)[1].split()
             if int(stat[4]) == 0:
                 continue
-            match = (agent == 'hermes' and str(Path.home()/'.hermes/hermes-agent/hermes').encode() in args[:2]) or (agent == 'claude' and path.joinpath('comm').read_text().strip() == 'claude')
+            match = (agent == 'hermes' and hermes_cli(path, args)) or (agent == 'claude' and path.joinpath('comm').read_text().strip() == 'claude')
             if match and int(path.name) not in pids:
                 pids.append(int(path.name))
         except (OSError, ValueError, IndexError):
@@ -68,7 +81,7 @@ def focus_agent(agent):
     elif agent in ('claude', 'hermes'):
         for pid in cli_pids(agent):
             try:
-                command = terminal_target(pid)
+                command = terminal_target(pid) or (app_target(pid) if agent == 'claude' else None)
                 if command:
                     subprocess.run(command, check=True, timeout=5, stdout=subprocess.DEVNULL)
                     return
@@ -78,7 +91,8 @@ def focus_agent(agent):
 
 
 def activate(agent, metric):
-    if metric in ('activity', 'context', 'session'):
+    # Context keys compact instead (tools/agent_compact.py).
+    if metric in ('activity', 'session'):
         focus_agent(agent)
     elif metric in ('speed', 'month'):
         links = json.loads((ROOT/'agent-navigation.json').read_text())

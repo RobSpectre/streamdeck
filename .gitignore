@@ -39,3 +39,7 @@ opendeck-labels.tmp
 # Mutable mixer and Formula 1 state (defaults stay versioned)
 mixer_in_desktop.txt
 state.json
+
+# Per-machine paths and portable exports
+portable-machine.json
+portable-dist/

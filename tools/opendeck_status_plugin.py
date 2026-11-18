@@ -1,21 +1,29 @@
 #!/usr/bin/env python3
 """OpenDeck plugin: OBS scene/source and Elgato light controls with live feedback."""
 import argparse
+import base64
 import fcntl
 import json
 from pathlib import Path
 import queue
+import sqlite3
 import subprocess
 import sys
 import threading
 import time
+from urllib.parse import parse_qs, urlparse
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
-from control_obs_background import connect, select as select_background
+from control_obs_background import connect, select as select_background, toggle_exclusive
 from audio_controls import AudioControls
 from tools.label_overrides import LabelSync
 from tools.dial_controls import Dials
+from tools import chyron_capsules
+from tools import hermes_config
+from tools.telemetry_graphs import GraphHistory
+from tools.agent_dials import AgentDials
+from tools.plusxl_touch import TouchReader, forwardable
 from tools.codex_attention import CodexAttention
 from tools.codex_pedal import respond as codex_respond
 from tools.codex_pedal import codex_focused, dictate
@@ -24,6 +32,7 @@ from tools.codex_telemetry import Telemetry, render as render_telemetry, animati
 from tools.agent_telemetry import AgentTelemetry
 from tools.agent_presence import Presence
 from tools.agent_navigation import activate as navigate_agent
+from tools.agent_compact import compact as compact_agent
 from tools.cli_agent_bridge import pending as cli_pending
 from tools.f1_battles import BattleFeed, F1BattleError
 from tools.f1_battles import render as render_battle
@@ -43,6 +52,23 @@ def resolve_targets(targets, scenes):
             raise ValueError(f"Missing or ambiguous effect source: {target['source']}")
         resolved.append((target['scene'], matching[0]))
     return resolved
+
+
+def theme_image(theme):
+    """The key art for one look, as the data URL the app takes, or None.
+
+    The tiles are drawn by the overlay repo (`scripts/make_deck_icons.py`, from the
+    look's own colours in its stylesheet) into this repo's images/controls, so the
+    plugin only has to find the file a theme's name points at - which is why it can
+    show a look it has never heard of, and why adding a look needs no plugin change
+    beyond a new file landing in that directory.
+    """
+    if not theme:
+        return None
+    path = ROOT/'images/controls'/f'theme-{theme}.png'
+    if not path.is_file():
+        return None
+    return 'data:image/png;base64,' + base64.b64encode(path.read_bytes()).decode()
 
 
 def track_image(settings, status):
@@ -69,7 +95,13 @@ class Controls:
         self.agents = None
         self.presence = None
         self.f1 = None
-        self.lights = json.loads((ROOT/'lights.json').read_text())
+        self.dials = None
+        self.lights = json.loads((ROOT/'lights.json').read_text()) if (ROOT/'lights.json').exists() else {}
+        # The look each theme key is on, filled by snapshot() and read by the poll
+        # loop to set that key's image and title. A side channel rather than part of
+        # snapshot's return value, which is a plain {id: state} every other kind and
+        # the tests rely on.
+        self.themes = {}
 
     def battle_feed(self):
         if self.f1 is None:
@@ -86,6 +118,17 @@ class Controls:
 
     def battle_dial_visible(self):
         return self.f1 is not None and self.f1.available and self.f1.mode == 'race'
+
+    def theme_of(self, source):
+        """The look the overlay is on, read out of the source URL OBS is holding.
+
+        The URL is the truth rather than a copy of it: the cycle writes it, the page
+        reads it, and a look set by hand shows up on the key too. One source is
+        enough - the pass that changes a theme changes all three together.
+        """
+        settings = self.obs_client().get_input_settings(source).input_settings
+        query = parse_qs(urlparse(settings.get('url') or '').query)
+        return (query.get('theme') or [''])[0]
 
     def obs_client(self):
         if self.obs is None:
@@ -134,7 +177,7 @@ class Controls:
                     result[s['id']] = 2 if s['decision'] == 'auto' and (self.codex.auto_thread or auto_enabled()) else int(ready)
             if any(s['kind'] == 'codex_telemetry' for s in settings) and self.telemetry is None:
                 self.telemetry = Telemetry(self.codex, self.presence)
-        obs_settings = [s for s in settings if s['kind'] in ('scene', 'item', 'effect', 'background')]
+        obs_settings = [s for s in settings if s['kind'] in ('scene', 'item', 'effect', 'background', 'theme', 'chyron_capsule')]
         if obs_settings:
             try:
                 c = self.obs_client()
@@ -147,6 +190,15 @@ class Controls:
                 for s in obs_settings:
                     if s['kind'] == 'scene':
                         result[s['id']] = int(current == s['scene'])
+                    elif s['kind'] == 'chyron_capsule':
+                        try:
+                            result[s['id']] = int(chyron_capsules.enabled(c, s))
+                        except (ValueError, KeyError):
+                            result[s['id']] = 2
+                    elif s['kind'] == 'theme':
+                        theme = self.theme_of(s['source'])
+                        self.themes[s['id']] = theme
+                        result[s['id']] = 1 if theme else 2
                     elif s['kind'] == 'effect':
                         try:
                             targets = resolve_targets(s['targets'], items)
@@ -160,7 +212,13 @@ class Controls:
                 self.reset_obs()
                 result.update({s['id']: 2 for s in obs_settings})
         for s in settings:
-            if s['kind'] == 'suno_media':
+            if s['kind'] == 'dial_view':
+                result[s['id']] = int(bool(self.dials and self.dials.audio_view == s['view']))
+            elif s['kind'] == 'hermes_config':
+                # Which profile a bare `hermes` launch will use: the key is the mode
+                # indicator, and pressing it is the same switch a hand-run makes.
+                result[s['id']] = hermes_config.state()
+            elif s['kind'] == 'suno_media':
                 result[s['id']] = 0
             elif s['kind'] == 'codex_dictation':
                 result[s['id']] = int(bool(codex_focused()))
@@ -174,6 +232,9 @@ class Controls:
         return result
 
     def activate(self, s):
+        if s['kind'] == 'dial_view':
+            self.dials.select_view(s['view'])
+            return
         if s['kind'] == 'f1_battle':
             # The key selects the driver it is showing, so the press reads the
             # cached slot rather than refreshing into a different driver. It goes
@@ -208,7 +269,11 @@ class Controls:
                 self.codex.extended_action(s['decision'])
             return
         if s['kind'] in ('codex_telemetry', 'agent_telemetry'):
-            navigate_agent('codex' if s['kind'] == 'codex_telemetry' else s['agent'], s['metric'])
+            agent = 'codex' if s['kind'] == 'codex_telemetry' else s['agent']
+            if s['metric'] == 'context':
+                compact_agent(agent, self.codex)
+            else:
+                navigate_agent(agent, s['metric'])
             return
         if s['kind'] == 'codex_response':
             if (self.codex and self.codex.indicator()) or cli_pending():
@@ -220,11 +285,29 @@ class Controls:
         if s['kind'] == 'light':
             self.light(s['light'], not self.light(s['light']))
             return
+        if s['kind'] == 'hermes_config':
+            hermes_config.toggle()
+            return
         c = self.obs_client()
         if c.get_scene_collection_list().current_scene_collection_name != 'hack.party':
             raise RuntimeError('Select the hack.party collection in OBS')
+        if s['kind'] == 'chyron_capsule':
+            chyron_capsules.toggle(c, s)
+            return
+        if s['kind'] == 'theme':
+            # The same script a hand-run uses, so the key and the terminal cannot
+            # drift: it cycles from the URLs OBS is holding and refreshes the sources.
+            # The app turns the raise into its own alert.
+            subprocess.run([sys.executable, s['script'], '--theme', 'next'],
+                           check=True, timeout=30)
+            return
         if s['kind'] == 'scene':
             c.set_current_program_scene(s['scene'])
+            return
+        if s.get('exclusive'):
+            with (ROOT/'.obs-background.lock').open('w') as lock:
+                fcntl.flock(lock, fcntl.LOCK_EX)
+                toggle_exclusive(c, s)
             return
         if s['kind'] == 'background':
             with (ROOT/'.obs-background.lock').open('w') as lock:
@@ -260,6 +343,7 @@ def main():
     ws.send(json.dumps({'event': args.registerEvent, 'uuid': args.pluginUUID}))
     ws.settimeout(None)
     events = queue.Queue()
+    touch_reader = TouchReader(events)
     def receive():
         try:
             while True:
@@ -272,14 +356,22 @@ def main():
     threading.Thread(target=receive, daemon=True).start()
     controls = Controls()
     controls.presence = Presence()
-    dials = Dials(controls.obs_client, battle_visible=controls.battle_dial_visible)
+    def dial_codex():
+        if controls.codex is None:
+            controls.codex = CodexAttention(controls.presence)
+        return controls.codex
+    dials = Dials(controls.obs_client, AgentDials(dial_codex), controls.battle_dial_visible)
+    controls.dials = dials
     dial_values = {}
     labels = LabelSync(lambda event: ws.send(json.dumps(event)))
     visible, last, last_images = {}, {}, {}
     deadline = 0
     next_poll = 0
-    f1_log = None
     states, sources = {}, {}
+    activity_log = {}
+    f1_log = None
+    graphs = None
+    graph_series = {}
     try:
         while True:
             try:
@@ -288,8 +380,14 @@ def main():
                     return
                 context = event.get('context')
                 kind = event.get('event')
+                if kind == 'plusXLTouch':
+                    if forwardable(event, visible, time.monotonic()):
+                        ws.send(json.dumps({'event': 'touchscreenPress', 'payload': event['payload']}))
+                    continue
                 if kind in ('willAppear', 'didReceiveSettings'):
                     visible[context] = event['payload']['settings']
+                    if kind == 'willAppear' and event['payload']['settings'].get('kind') == 'dial':
+                        print(f"Dial visible: {event['payload']['settings']['control']}", flush=True)
                     if kind == 'willAppear':
                         labels.appear(context, event['payload']['settings'])
                     last.pop(context, None)
@@ -303,11 +401,13 @@ def main():
                     last_images.pop(context, None)
                 elif kind == 'titleParametersDidChange':
                     labels.changed(context, event['payload'])
-                elif kind in ('dialRotate', 'touchTap') and context in visible:
+                elif kind in ('dialRotate', 'touchTap', 'dialDown') and context in visible:
                     try:
                         if visible[context].get('kind') != 'dial':
                             raise ValueError('Not a dial context')
-                        if kind == 'touchTap':
+                        if kind == 'dialDown':
+                            dials.press(visible[context])
+                        elif kind == 'touchTap':
                             print(f"Touch tap received: {visible[context]['control']} hold={event['payload'].get('hold', False)}", flush=True)
                             dials.tap(visible[context], event['payload'].get('hold', False))
                         else:
@@ -351,10 +451,31 @@ def main():
                         dial_values = dials.snapshot([s for s in visible.values() if s['kind'] == 'dial'])
                         shown = {s.get('agent', 'codex') for s in visible.values()
                                  if s['kind'] in ('codex_telemetry', 'agent_telemetry')}
-                        sources = {'codex': controls.telemetry.values() if controls.telemetry and 'codex' in shown else {}}
+                        samples = {agent: {} for agent in shown}
+                        sources = {'codex': controls.telemetry.values(samples['codex']) if controls.telemetry and 'codex' in shown else {}}
                         if controls.agents:
-                            sources.update({agent: controls.agents.values(agent) for agent in ('claude', 'hermes') if agent in shown})
+                            sources.update({agent: controls.agents.values(agent, samples[agent]) for agent in ('claude', 'hermes') if agent in shown})
+                        if shown:
+                            try:
+                                if graphs is None:
+                                    graphs = GraphHistory()
+                                wall_time = time.time()
+                                for agent in shown:
+                                    graphs.observe(agent, samples[agent], wall_time)
+                                graph_series = {(agent, metric): graphs.series(agent, metric, wall_time)
+                                                for agent in shown for metric in ('speed', 'context', 'session', 'month')}
+                            except (OSError, sqlite3.Error):
+                                graph_series = {}  # Cache failure must not blank live telemetry.
+                        for agent in shown:
+                            activity = sources.get(agent, {}).get('activity')
+                            status = (controls.presence.is_open(agent), activity[1] if activity else 'UNAVAILABLE')
+                            if activity_log.get(agent) != status:
+                                print(f'Agent status: {agent} present={status[0]} activity={status[1]}', flush=True)
+                                activity_log[agent] = status
                         next_poll = time.monotonic()+1
+                    # The Formula 1 page wears the race director's status, so it is
+                    # read once a second while any of its keys is up, or while a
+                    # battle card is (which carries the flag in its own art).
                     race_status = controls.f1.track_status if controls.f1 else track_status.CLEAR
                     for context, settings in visible.items():
                         if settings['kind'] == 'dial':
@@ -367,11 +488,15 @@ def main():
                             source = sources.get('codex' if settings['kind'] == 'codex_telemetry' else settings['agent'], {})
                             value = source.get(settings['metric'])
                             phase = animation_phase(value, now) if value is not None else None
+                            history = graph_series.get(('codex' if settings['kind'] == 'codex_telemetry' else settings['agent'], settings['metric']), ())
                             animated = animated or phase is not None
-                            frame = (value, phase)
+                            frame = (value, phase, history)
                             if value is not None and last_images.get(context) != frame:
                                 ws.send(json.dumps({'event': 'setImage', 'context': context,
-                                                    'payload': {'image': render_telemetry(value, phase), 'target': 0}}))
+                                                    'payload': {'image': render_telemetry(value, phase, history), 'target': 0}}))
+                                if settings['metric'] == 'quota' and (context not in last_images or last_images[context][0] != value):
+                                    agent = 'codex' if settings['kind'] == 'codex_telemetry' else settings['agent']
+                                    print(f'Quota image sent: {agent} value={value[1]} context={context}', flush=True)
                                 last_images[context] = frame
                             continue
                         if settings['kind'] == 'f1_battle':
@@ -391,12 +516,32 @@ def main():
                                                     'payload': {'image': image, 'target': 0}}))
                                 last_images[context] = image
                             continue
+                        if settings['kind'] == 'theme':
+                            # The look this key is on. The title is ours (the theme's
+                            # name), so the key is kept out of the label sync in
+                            # label_overrides - otherwise the app would report our own
+                            # title back as a user edit and pin it.
+                            theme = controls.themes.get(settings['id'])
+                            if last_images.get(context) != theme:
+                                image = theme_image(theme)
+                                if image:
+                                    ws.send(json.dumps({'event': 'setImage', 'context': context,
+                                                        'payload': {'image': image, 'target': 0}}))
+                                title = theme.capitalize() if theme else settings.get(
+                                    '_label_defaults', ['Theme'])[0]
+                                ws.send(json.dumps({'event': 'setTitle', 'context': context,
+                                                    'payload': {'title': title}}))
+                                last_images[context] = theme
+                            continue
                         state = states.get(settings['id'], 2)
                         if last.get(context) != state:
                             ws.send(json.dumps({'event': 'setState', 'context': context, 'payload': {'state': state}}))
                             last[context] = state
                 deadline = time.monotonic()+(.125 if animated else 1)
     finally:
+        if graphs is not None:
+            graphs.close()
+        touch_reader.close()
         controls.presence.close()
         controls.reset_obs()
         ws.close()

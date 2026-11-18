@@ -1,7 +1,7 @@
 """Read Codex desktop state and dispatch explicitly selected approval actions.
 
 This uses the desktop's internal versioned IPC protocol, not a public API.
-Only pending requests and runtime flags are retained from conversation snapshots.
+Only pending requests, compact telemetry and current model settings are retained.
 """
 import copy
 import json
@@ -16,7 +16,15 @@ REQUESTS = {'item/commandExecution/requestApproval', 'item/fileChange/requestApp
             'item/permissions/requestApproval', 'item/tool/requestUserInput',
             'item/tool/requestOptionPicker', 'mcpServer/elicitation/request',
             'item/plan/requestImplementation'}
-FIELDS = {'requests', 'threadRuntimeStatus', 'latestTokenUsageInfo', 'updatedAt', 'id', 'latestModel'}
+FIELDS = {'requests', 'threadRuntimeStatus', 'latestTokenUsageInfo', 'updatedAt', 'id', 'latestModel', 'latestReasoningEffort', 'latestCollaborationMode'}
+
+
+def compact_mode(value):
+    if not isinstance(value, dict):
+        return None
+    settings = value.get('settings') or {}
+    return {'mode': value.get('mode'), 'settings': {
+        k: settings[k] for k in ('model', 'reasoning_effort') if k in settings}}
 
 
 def needs_input(state):
@@ -27,12 +35,22 @@ def needs_input(state):
 
 def apply_change(state, change):
     if change['type'] == 'snapshot':
-        return {k: copy.deepcopy(v) for k, v in change['conversationState'].items() if k in FIELDS}
+        return {k: compact_mode(v) if k == 'latestCollaborationMode' else copy.deepcopy(v)
+                for k, v in change['conversationState'].items() if k in FIELDS}
     state = copy.deepcopy(state)
     for patch in change.get('patches', []):
         path = patch['path']
         if not path or path[0] not in FIELDS:
             continue
+        if path[0] == 'latestCollaborationMode':
+            if path[1:] not in ([], ['mode'], ['settings'], ['settings', 'model'], ['settings', 'reasoning_effort']):
+                continue
+            patch = copy.deepcopy(patch)
+            if patch['op'] != 'remove':
+                if len(path) == 1:
+                    patch['value'] = compact_mode(patch['value'])
+                elif path[1:] == ['settings']:
+                    patch['value'] = compact_mode({'settings': patch['value']})['settings']
         target = state
         for key in path[:-1]:
             target = target[key]
@@ -59,6 +77,7 @@ class CodexAttention:
         self.auto_thread = None
         self.sent_approvals = set()
         self.approval_messages = {}
+        self.setting_messages = {}
         threading.Thread(target=self.run, daemon=True).start()
 
     def indicator(self):
@@ -86,6 +105,42 @@ class CodexAttention:
                                         'decision': 'acceptForSession' if scoped else 'accept'}})
         self.sent_approvals.add(key)
         self.approval_messages[message_id] = key
+
+    def update_model_settings(self, thread, model, effort, expected):
+        """Version-2 follower request: next-turn settings on this task only."""
+        if not self.sock or thread not in self.owners:
+            raise RuntimeError('Codex task is not followed')
+        message_id = str(uuid.uuid4())
+        event, result = threading.Event(), {}
+        self.setting_messages[message_id] = (event, result)
+        try:
+            self.send(self.sock, {'type': 'request', 'requestId': message_id,
+                'targetClientId': self.owners[thread],
+                'method': 'thread-follower-update-thread-settings', 'version': 2,
+                'params': {'conversationId': thread, 'activeTurnId': None,
+                    'threadSettings': {'model': model, 'effort': effort},
+                    'condition': {'ifModelEquals': expected.get('latestModel'),
+                                  'ifEffortEquals': expected.get('latestReasoningEffort')}}})
+            if not event.wait(4) or not result.get('applied'):
+                raise RuntimeError('Codex did not confirm the settings change')
+        finally:
+            self.setting_messages.pop(message_id, None)
+
+    def compact_thread(self, thread):
+        """Version-1 follower request: the owner runs the compaction its own UI offers."""
+        if not self.sock or thread not in self.owners:
+            raise RuntimeError('Codex task is not followed')
+        message_id = str(uuid.uuid4())
+        event, result = threading.Event(), {}
+        self.setting_messages[message_id] = (event, result)
+        try:
+            self.send(self.sock, {'type': 'request', 'requestId': message_id,
+                'targetClientId': self.owners[thread], 'method': 'thread-follower-compact-thread',
+                'version': 1, 'params': {'conversationId': thread}})
+            if not event.wait(4) or not result.get('ok'):
+                raise RuntimeError('Codex did not start the compaction')
+        finally:
+            self.setting_messages.pop(message_id, None)
 
     def extended_action(self, decision):
         requests = self.actionable()
@@ -131,6 +186,13 @@ class CodexAttention:
                     revisions = {}
                     while True:
                         message = self.receive(sock)
+                        setting = self.setting_messages.get(message.get('requestId'))
+                        if setting and message.get('type') == 'response':
+                            event, result = setting
+                            payload = message.get('result', {})
+                            if isinstance(payload, dict):
+                                result.update(payload.get('result', payload))
+                            event.set()
                         if message.get('requestId') in self.approval_messages and message.get('type') == 'response':
                             key = self.approval_messages.pop(message['requestId'])
                             if message.get('resultType') == 'error':
@@ -161,9 +223,24 @@ class CodexAttention:
                                 self.send(sock, {'type': 'broadcast', 'method': method, 'version': 1,
                                                 'targetClientIds': [message['sourceClientId']], 'params': params})
                         elif method == 'thread-stream-state-changed' and params.get('hostId') == 'local':
-                            if message.get('version') != 11:
-                                raise ValueError('Codex state protocol changed')
+                            # Codex 26.1111.21308 sends v13 snapshots with the
+                            # same allowlisted fields; patches still pass the
+                            # baseRevision check below.
+                            if message.get('version') not in (11, 13):
+                                change = params.get('change') or {}
+                                if not isinstance(change, dict):
+                                    change = {}
+                                state = change.get('conversationState') or {}
+                                safe_fields = sorted(key for key in state if key in FIELDS) if isinstance(state, dict) else []
+                                raise ValueError(
+                                    'Codex state protocol changed '
+                                    f'(version={message.get("version")!r}, '
+                                    f'change={change.get("type")!r}, '
+                                    f'safe_fields={safe_fields!r})')
                             thread, change = params['conversationId'], params['change']
+                            if (message.get('version') == 13 and change.get('type') == 'snapshot'
+                                    and not isinstance(change.get('conversationState'), dict)):
+                                raise ValueError('Invalid Codex v13 state snapshot')
                             if change['type'] == 'patches' and change['baseRevision'] != revisions.get(thread):
                                 raise ValueError('Missed Codex state update; reconnecting')
                             with self.lock:
@@ -180,7 +257,7 @@ class CodexAttention:
                                     revisions.pop(thread, None)
                                     with self.lock:
                                         self.states.pop(thread, None)
-            except (OSError, ValueError, KeyError, TypeError, IndexError):
+            except (OSError, ValueError, KeyError, TypeError, IndexError) as error:
                 with self.lock:
                     self.connected = False
                     self.states.clear()
@@ -188,4 +265,8 @@ class CodexAttention:
                     self.auto_thread = None
                     self.sent_approvals.clear()
                     self.approval_messages.clear()
+                # Keep the IPC failure reason local and content-free. This
+                # adapter depends on a private desktop protocol, so silent
+                # reconnects otherwise leave telemetry stuck at OFFLINE.
+                print(f'Codex IPC disconnected: {type(error).__name__}: {error}', flush=True)
                 time.sleep(2)

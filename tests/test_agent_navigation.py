@@ -6,7 +6,7 @@ class NavigationTests(unittest.TestCase):
     def test_focus_keys_target_their_agent(self):
         with patch.object(nav, 'focus_agent') as focus:
             for agent in ('codex','claude','hermes'):
-                for metric in ('activity','context','session'):
+                for metric in ('activity','session'):
                     nav.activate(agent, metric)
                     focus.assert_called_with(agent)
 
@@ -24,6 +24,15 @@ class NavigationTests(unittest.TestCase):
             command=nav.terminal_target(123)
         self.assertEqual(command[-3:],['be09f2f2-abd9-46cf-8128-a2fd7a5f7582','[]','1000'])
         self.assertIn(':1.134',command)
+
+    def test_claude_desktop_session_focuses_only_its_own_app_window(self):
+        listing=[('0x1','WM_CLASS(STRING) = "com.anthropic.claude", "com.anthropic.Claude"\n_NET_WM_PID(CARDINAL) = 4200\n'),
+                 ('0x2','WM_CLASS(STRING) = "com.anthropic.claude", "com.anthropic.Claude"\n_NET_WM_PID(CARDINAL) = 42\n')]
+        with patch.object(nav.Path,'read_text',return_value='77 (claude) S 42 77 77 0 77'), patch.object(nav,'windows',return_value=listing):
+            with patch.object(nav,'desktop_session',return_value=False):
+                self.assertIsNone(nav.app_target(77))
+            with patch.object(nav,'desktop_session',return_value=True):
+                self.assertEqual(nav.app_target(77),['xdotool','windowactivate','--sync','0x2'])
 
     def test_codex_does_not_focus_an_unrelated_chatgpt_window(self):
         with patch.object(nav,'windows',return_value=[('1','WM_CLASS = "other", "Chatgpt"'),('2','WM_CLASS = "chatgpt (/home/user/.config/Codex)", "Chatgpt"')]),patch.object(nav.subprocess,'run') as run:

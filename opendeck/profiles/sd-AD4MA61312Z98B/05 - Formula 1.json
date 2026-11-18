@@ -1,0 +1,1665 @@
+{
+  "keys": [
+    {
+      "action": {
+        "name": "Multi Action",
+        "uuid": "opendeck.multiaction",
+        "plugin": "opendeck",
+        "icon": "opendeck/multi-action.png",
+        "property_inspector": "",
+        "states": [
+          {
+            "image": ""
+          }
+        ],
+        "controllers": [
+          "Keypad"
+        ],
+        "supported_in_multi_actions": false,
+        "disable_automatic_states": false
+      },
+      "context": "Keypad.0.0",
+      "states": [
+        {
+          "image": "images/hackparty/2aa663757ff117b304eb8b7e082041e05e9c0c73a077f93ebb43fcf389439a2d.png",
+          "text": "Back",
+          "show": true,
+          "colour": "#FFFFFF",
+          "background_colour": "#000000",
+          "alignment": "top",
+          "family": "DejaVu Sans",
+          "size": 11
+        }
+      ],
+      "current_state": 0,
+      "settings": {
+        "delays": [
+          0,
+          0
+        ],
+        "_label_id": "navigation/back/4",
+        "_label_defaults": [
+          "Back"
+        ],
+        "_label_mode": "shared"
+      },
+      "children": [
+        {
+          "action": {
+            "name": "Switch Profile",
+            "uuid": "com.amansprojects.starterpack.switchprofile",
+            "plugin": "com.amansprojects.starterpack.sdPlugin",
+            "icon": "plugins/com.amansprojects.starterpack.sdPlugin/icons/switchProfile.png",
+            "property_inspector": "plugins/com.amansprojects.starterpack.sdPlugin/propertyInspector/switchProfile.html",
+            "states": [
+              {
+                "image": ""
+              }
+            ],
+            "controllers": [
+              "Keypad"
+            ],
+            "supported_in_multi_actions": true,
+            "disable_automatic_states": false
+          },
+          "context": "Keypad.0.1",
+          "states": [
+            {
+              "image": "images/hackparty/2aa663757ff117b304eb8b7e082041e05e9c0c73a077f93ebb43fcf389439a2d.png",
+              "text": "Back",
+              "show": true,
+              "colour": "#FFFFFF",
+              "background_colour": "#000000",
+              "alignment": "top",
+              "family": "DejaVu Sans",
+              "size": 11
+            }
+          ],
+          "current_state": 0,
+          "settings": {
+            "device": "sd-CL37L2A01125",
+            "profile": "11 - Navigation"
+          },
+          "children": null
+        },
+        {
+          "action": {
+            "name": "Switch Profile",
+            "uuid": "com.amansprojects.starterpack.switchprofile",
+            "plugin": "com.amansprojects.starterpack.sdPlugin",
+            "icon": "plugins/com.amansprojects.starterpack.sdPlugin/icons/switchProfile.png",
+            "property_inspector": "plugins/com.amansprojects.starterpack.sdPlugin/propertyInspector/switchProfile.html",
+            "states": [
+              {
+                "image": ""
+              }
+            ],
+            "controllers": [
+              "Keypad"
+            ],
+            "supported_in_multi_actions": true,
+            "disable_automatic_states": false
+          },
+          "context": "Keypad.0.2",
+          "states": [
+            {
+              "image": "images/hackparty/2aa663757ff117b304eb8b7e082041e05e9c0c73a077f93ebb43fcf389439a2d.png",
+              "text": "Back",
+              "show": true,
+              "colour": "#FFFFFF",
+              "background_colour": "#000000",
+              "alignment": "top",
+              "family": "DejaVu Sans",
+              "size": 11
+            }
+          ],
+          "current_state": 0,
+          "settings": {
+            "device": "sd-AD4MA61312Z98B",
+            "profile": "11 - Navigation"
+          },
+          "children": null
+        }
+      ]
+    },
+    {
+      "action": {
+        "name": "Live broadcast control",
+        "uuid": "party.hack.status.control",
+        "plugin": "party.hack.status.sdPlugin",
+        "states": [
+          {
+            "image": "images/hackparty/e7b45299b483bf0ca879c6ef1970032b1afb9b327f85c9b506d2ebc7a659fc00.png",
+            "text": "",
+            "show": true,
+            "colour": "#FFFFFF",
+            "background_colour": "#000000",
+            "alignment": "top",
+            "family": "DejaVu Sans",
+            "size": 11
+          }
+        ],
+        "icon": "plugins/party.hack.status.sdPlugin/icon.png",
+        "controllers": [
+          "Keypad"
+        ],
+        "disable_automatic_states": true
+      },
+      "context": "Keypad.1.0",
+      "states": [
+        {
+          "image": "images/hackparty/e7b45299b483bf0ca879c6ef1970032b1afb9b327f85c9b506d2ebc7a659fc00.png",
+          "text": "",
+          "show": true,
+          "colour": "#FFFFFF",
+          "background_colour": "#000000",
+          "alignment": "top",
+          "family": "DejaVu Sans",
+          "size": 11
+        }
+      ],
+      "current_state": 0,
+      "settings": {
+        "id": "f1-key:launch",
+        "kind": "f1_key",
+        "command": "./launch_f1tv.sh",
+        "_label_id": "ee4f25c7-700c-4113-b66b-6bdeb6a2e3bd",
+        "_label_defaults": [
+          ""
+        ],
+        "_label_mode": "shared",
+        "_track_status": "images/hackparty/f059e35699a44ceb9ed81565e9c4f09a49207e100fc46ed6d73cc5e2d5fdf637.png"
+      },
+      "children": null
+    },
+    {
+      "action": {
+        "name": "Live broadcast control",
+        "uuid": "party.hack.status.control",
+        "plugin": "party.hack.status.sdPlugin",
+        "states": [
+          {
+            "image": "images/hackparty/f20f353f5b4a4a049ad92f89d333c831fb4eacf47a9a6cd73f99fa8b119853fc.png",
+            "text": "",
+            "show": true,
+            "colour": "#FFFFFF",
+            "background_colour": "#000000",
+            "alignment": "top",
+            "family": "DejaVu Sans",
+            "size": 11
+          }
+        ],
+        "icon": "plugins/party.hack.status.sdPlugin/icon.png",
+        "controllers": [
+          "Keypad"
+        ],
+        "disable_automatic_states": true
+      },
+      "context": "Keypad.2.0",
+      "states": [
+        {
+          "image": "images/hackparty/f20f353f5b4a4a049ad92f89d333c831fb4eacf47a9a6cd73f99fa8b119853fc.png",
+          "text": "",
+          "show": true,
+          "colour": "#FFFFFF",
+          "background_colour": "#000000",
+          "alignment": "top",
+          "family": "DejaVu Sans",
+          "size": 11
+        }
+      ],
+      "current_state": 0,
+      "settings": {
+        "id": "f1-key:sync-players",
+        "kind": "f1_key",
+        "command": "mvf1-cli players sync",
+        "_label_id": "e5208aba-57de-4eec-a3fa-87d2a08d6961",
+        "_label_defaults": [
+          ""
+        ],
+        "_label_mode": "shared",
+        "_track_status": "images/hackparty/f781b56c045c1cb9996f530469b8b09c5fb8f7970a777c707344978c15be78a5.png"
+      },
+      "children": null
+    },
+    {
+      "action": {
+        "name": "Live broadcast control",
+        "uuid": "party.hack.status.control",
+        "plugin": "party.hack.status.sdPlugin",
+        "states": [
+          {
+            "image": "images/hackparty/8da81d99d8f74c3c6d9fd3c9bbf924702edf6eb5e6081e5293352eb3b43b80e2.png",
+            "text": "",
+            "show": true,
+            "colour": "#FFFFFF",
+            "background_colour": "#000000",
+            "alignment": "top",
+            "family": "DejaVu Sans",
+            "size": 11
+          }
+        ],
+        "icon": "plugins/party.hack.status.sdPlugin/icon.png",
+        "controllers": [
+          "Keypad"
+        ],
+        "disable_automatic_states": true
+      },
+      "context": "Keypad.3.0",
+      "states": [
+        {
+          "image": "images/hackparty/8da81d99d8f74c3c6d9fd3c9bbf924702edf6eb5e6081e5293352eb3b43b80e2.png",
+          "text": "",
+          "show": true,
+          "colour": "#FFFFFF",
+          "background_colour": "#000000",
+          "alignment": "top",
+          "family": "DejaVu Sans",
+          "size": 11
+        }
+      ],
+      "current_state": 0,
+      "settings": {
+        "id": "f1-key:toggle-driver-radio",
+        "kind": "f1_key",
+        "command": "python control_driver_feeds.py toggle-driver-radio",
+        "_label_id": "8626a043-48d6-4a7e-b595-99eb6327dd92",
+        "_label_defaults": [
+          ""
+        ],
+        "_label_mode": "shared",
+        "_track_status": "images/hackparty/b485f767534cdc1cb9cfb70ecc5e4126b0c4449714049f96e1ca8ed087d9a0af.png"
+      },
+      "children": null
+    },
+    null,
+    null,
+    null,
+    {
+      "action": {
+        "name": "Live broadcast control",
+        "uuid": "party.hack.status.control",
+        "plugin": "party.hack.status.sdPlugin",
+        "states": [
+          {
+            "image": "images/hackparty/3641d34a2a1930bac17324ce93930c4cc784bedfd76094f02f87d740f38ceb34.svg",
+            "text": "",
+            "show": true,
+            "colour": "#b8c4d4",
+            "background_colour": "#10141b",
+            "alignment": "top",
+            "family": "DejaVu Sans",
+            "size": 11
+          },
+          {
+            "image": "images/hackparty/a2c37886d4c48baa9918a33b6854d8bae0620ccfa98468f067764426f4f391a4.svg",
+            "text": "",
+            "show": true,
+            "colour": "#ffe7a3",
+            "background_colour": "#201604",
+            "alignment": "top",
+            "family": "DejaVu Sans",
+            "size": 11
+          },
+          {
+            "image": "images/hackparty/80d2cba1e8194e69dd4468154b156d2838905315c0b08c17b610ddf5005303c6.svg",
+            "text": "",
+            "show": true,
+            "colour": "#b8c4d4",
+            "background_colour": "#10141b",
+            "alignment": "top",
+            "family": "DejaVu Sans",
+            "size": 11
+          }
+        ],
+        "icon": "plugins/party.hack.status.sdPlugin/icon.png",
+        "controllers": [
+          "Keypad"
+        ],
+        "disable_automatic_states": true
+      },
+      "context": "Keypad.7.0",
+      "states": [
+        {
+          "image": "images/hackparty/3641d34a2a1930bac17324ce93930c4cc784bedfd76094f02f87d740f38ceb34.svg",
+          "text": "",
+          "show": true,
+          "colour": "#b8c4d4",
+          "background_colour": "#10141b",
+          "alignment": "top",
+          "family": "DejaVu Sans",
+          "size": 11
+        },
+        {
+          "image": "images/hackparty/a2c37886d4c48baa9918a33b6854d8bae0620ccfa98468f067764426f4f391a4.svg",
+          "text": "",
+          "show": true,
+          "colour": "#ffe7a3",
+          "background_colour": "#201604",
+          "alignment": "top",
+          "family": "DejaVu Sans",
+          "size": 11
+        },
+        {
+          "image": "images/hackparty/80d2cba1e8194e69dd4468154b156d2838905315c0b08c17b610ddf5005303c6.svg",
+          "text": "",
+          "show": true,
+          "colour": "#b8c4d4",
+          "background_colour": "#10141b",
+          "alignment": "top",
+          "family": "DejaVu Sans",
+          "size": 11
+        }
+      ],
+      "current_state": 0,
+      "settings": {
+        "kind": "f1_battle",
+        "id": "f1-battle:0",
+        "slot": 0,
+        "_label_id": "f1-battle/0",
+        "_label_defaults": [
+          "",
+          "",
+          ""
+        ],
+        "_label_mode": "shared"
+      },
+      "children": null
+    },
+    {
+      "action": {
+        "name": "Live broadcast control",
+        "uuid": "party.hack.status.control",
+        "plugin": "party.hack.status.sdPlugin",
+        "states": [
+          {
+            "image": "images/hackparty/3641d34a2a1930bac17324ce93930c4cc784bedfd76094f02f87d740f38ceb34.svg",
+            "text": "",
+            "show": true,
+            "colour": "#b8c4d4",
+            "background_colour": "#10141b",
+            "alignment": "top",
+            "family": "DejaVu Sans",
+            "size": 11
+          },
+          {
+            "image": "images/hackparty/a2c37886d4c48baa9918a33b6854d8bae0620ccfa98468f067764426f4f391a4.svg",
+            "text": "",
+            "show": true,
+            "colour": "#ffe7a3",
+            "background_colour": "#201604",
+            "alignment": "top",
+            "family": "DejaVu Sans",
+            "size": 11
+          },
+          {
+            "image": "images/hackparty/80d2cba1e8194e69dd4468154b156d2838905315c0b08c17b610ddf5005303c6.svg",
+            "text": "",
+            "show": true,
+            "colour": "#b8c4d4",
+            "background_colour": "#10141b",
+            "alignment": "top",
+            "family": "DejaVu Sans",
+            "size": 11
+          }
+        ],
+        "icon": "plugins/party.hack.status.sdPlugin/icon.png",
+        "controllers": [
+          "Keypad"
+        ],
+        "disable_automatic_states": true
+      },
+      "context": "Keypad.8.0",
+      "states": [
+        {
+          "image": "images/hackparty/3641d34a2a1930bac17324ce93930c4cc784bedfd76094f02f87d740f38ceb34.svg",
+          "text": "",
+          "show": true,
+          "colour": "#b8c4d4",
+          "background_colour": "#10141b",
+          "alignment": "top",
+          "family": "DejaVu Sans",
+          "size": 11
+        },
+        {
+          "image": "images/hackparty/a2c37886d4c48baa9918a33b6854d8bae0620ccfa98468f067764426f4f391a4.svg",
+          "text": "",
+          "show": true,
+          "colour": "#ffe7a3",
+          "background_colour": "#201604",
+          "alignment": "top",
+          "family": "DejaVu Sans",
+          "size": 11
+        },
+        {
+          "image": "images/hackparty/80d2cba1e8194e69dd4468154b156d2838905315c0b08c17b610ddf5005303c6.svg",
+          "text": "",
+          "show": true,
+          "colour": "#b8c4d4",
+          "background_colour": "#10141b",
+          "alignment": "top",
+          "family": "DejaVu Sans",
+          "size": 11
+        }
+      ],
+      "current_state": 0,
+      "settings": {
+        "kind": "f1_battle",
+        "id": "f1-battle:1",
+        "slot": 1,
+        "_label_id": "f1-battle/1",
+        "_label_defaults": [
+          "",
+          "",
+          ""
+        ],
+        "_label_mode": "shared"
+      },
+      "children": null
+    },
+    {
+      "action": {
+        "name": "Live broadcast control",
+        "uuid": "party.hack.status.control",
+        "plugin": "party.hack.status.sdPlugin",
+        "states": [
+          {
+            "image": "images/hackparty/af53e57a9aee934b18abdef21c4ffd24b1bc1b501b501d3c089ffe42531e5b28.png",
+            "text": "",
+            "show": true,
+            "colour": "#FFFFFF",
+            "background_colour": "#000000",
+            "alignment": "top",
+            "family": "DejaVu Sans",
+            "size": 11
+          }
+        ],
+        "icon": "plugins/party.hack.status.sdPlugin/icon.png",
+        "controllers": [
+          "Keypad"
+        ],
+        "disable_automatic_states": true
+      },
+      "context": "Keypad.9.0",
+      "states": [
+        {
+          "image": "images/hackparty/af53e57a9aee934b18abdef21c4ffd24b1bc1b501b501d3c089ffe42531e5b28.png",
+          "text": "",
+          "show": true,
+          "colour": "#FFFFFF",
+          "background_colour": "#000000",
+          "alignment": "top",
+          "family": "DejaVu Sans",
+          "size": 11
+        }
+      ],
+      "current_state": 0,
+      "settings": {
+        "id": "f1-key:seek:-30",
+        "kind": "f1_key",
+        "command": "./mvf1_command_with_sync.sh  player --title INTERNATIONAL seek --relative -30",
+        "_label_id": "5e3ef1dd-f115-48bb-8e1c-27bded27ca21",
+        "_label_defaults": [
+          ""
+        ],
+        "_label_mode": "shared",
+        "_track_status": "images/hackparty/b21283bd2e3aab87f38cc912a4aef8682d520b87620f14a9b848a2744fd8e94b.png"
+      },
+      "children": null
+    },
+    {
+      "action": {
+        "name": "Live broadcast control",
+        "uuid": "party.hack.status.control",
+        "plugin": "party.hack.status.sdPlugin",
+        "states": [
+          {
+            "image": "images/hackparty/2aa663757ff117b304eb8b7e082041e05e9c0c73a077f93ebb43fcf389439a2d.png",
+            "text": "",
+            "show": true,
+            "colour": "#FFFFFF",
+            "background_colour": "#000000",
+            "alignment": "top",
+            "family": "DejaVu Sans",
+            "size": 11
+          }
+        ],
+        "icon": "plugins/party.hack.status.sdPlugin/icon.png",
+        "controllers": [
+          "Keypad"
+        ],
+        "disable_automatic_states": true
+      },
+      "context": "Keypad.10.0",
+      "states": [
+        {
+          "image": "images/hackparty/2aa663757ff117b304eb8b7e082041e05e9c0c73a077f93ebb43fcf389439a2d.png",
+          "text": "",
+          "show": true,
+          "colour": "#FFFFFF",
+          "background_colour": "#000000",
+          "alignment": "top",
+          "family": "DejaVu Sans",
+          "size": 11
+        }
+      ],
+      "current_state": 0,
+      "settings": {
+        "id": "f1-key:seek:-3",
+        "kind": "f1_key",
+        "command": "./mvf1_command_with_sync.sh player --title INTERNATIONAL seek --relative -3",
+        "_label_id": "ea34b5b6-06c3-408d-a4bf-6a6c4d36181f",
+        "_label_defaults": [
+          ""
+        ],
+        "_label_mode": "shared",
+        "_track_status": "images/hackparty/42d0d8bc0b4d761099fa23c3541a42b49e1c1f4687c5ac2a5c67a2bcff92af2f.png"
+      },
+      "children": null
+    },
+    {
+      "action": {
+        "name": "Live broadcast control",
+        "uuid": "party.hack.status.control",
+        "plugin": "party.hack.status.sdPlugin",
+        "states": [
+          {
+            "image": "images/hackparty/87e2565de94489601e00d24346a3dd930850f1e043cff809167b6e72b9dc94f1.png",
+            "text": "",
+            "show": true,
+            "colour": "#FFFFFF",
+            "background_colour": "#000000",
+            "alignment": "top",
+            "family": "DejaVu Sans",
+            "size": 11
+          }
+        ],
+        "icon": "plugins/party.hack.status.sdPlugin/icon.png",
+        "controllers": [
+          "Keypad"
+        ],
+        "disable_automatic_states": true
+      },
+      "context": "Keypad.11.0",
+      "states": [
+        {
+          "image": "images/hackparty/87e2565de94489601e00d24346a3dd930850f1e043cff809167b6e72b9dc94f1.png",
+          "text": "",
+          "show": true,
+          "colour": "#FFFFFF",
+          "background_colour": "#000000",
+          "alignment": "top",
+          "family": "DejaVu Sans",
+          "size": 11
+        }
+      ],
+      "current_state": 0,
+      "settings": {
+        "id": "f1-key:seek:3",
+        "kind": "f1_key",
+        "command": "./mvf1_command_with_sync.sh player --title INTERNATIONAL seek --relative 3",
+        "_label_id": "1547d102-0ac3-4232-a2c3-5db2df35f752",
+        "_label_defaults": [
+          ""
+        ],
+        "_label_mode": "shared",
+        "_track_status": "images/hackparty/19db2361d0b3cdaa134ead32625d4e78d005bff9237bd7a65ac6ee2ba22b0d74.png"
+      },
+      "children": null
+    },
+    {
+      "action": {
+        "name": "Live broadcast control",
+        "uuid": "party.hack.status.control",
+        "plugin": "party.hack.status.sdPlugin",
+        "states": [
+          {
+            "image": "images/hackparty/a9cabee2c0d3fc2bb2ffaee9067da3981853d7a7a9a2026f6f78b398681c33b5.png",
+            "text": "",
+            "show": true,
+            "colour": "#FFFFFF",
+            "background_colour": "#000000",
+            "alignment": "top",
+            "family": "DejaVu Sans",
+            "size": 11
+          }
+        ],
+        "icon": "plugins/party.hack.status.sdPlugin/icon.png",
+        "controllers": [
+          "Keypad"
+        ],
+        "disable_automatic_states": true
+      },
+      "context": "Keypad.12.0",
+      "states": [
+        {
+          "image": "images/hackparty/a9cabee2c0d3fc2bb2ffaee9067da3981853d7a7a9a2026f6f78b398681c33b5.png",
+          "text": "",
+          "show": true,
+          "colour": "#FFFFFF",
+          "background_colour": "#000000",
+          "alignment": "top",
+          "family": "DejaVu Sans",
+          "size": 11
+        }
+      ],
+      "current_state": 0,
+      "settings": {
+        "id": "f1-key:seek:30",
+        "kind": "f1_key",
+        "command": "./mvf1_command_with_sync.sh  player --title INTERNATIONAL seek --relative 30",
+        "_label_id": "c480c146-8b62-43bd-8866-d79215b6d906",
+        "_label_defaults": [
+          ""
+        ],
+        "_label_mode": "shared",
+        "_track_status": "images/hackparty/9c0c3fbdbeb1c5a7e02cf1b03b4ab6418b19138e690564152f470bcf065b4afa.png"
+      },
+      "children": null
+    },
+    null,
+    null,
+    null,
+    {
+      "action": {
+        "name": "Live broadcast control",
+        "uuid": "party.hack.status.control",
+        "plugin": "party.hack.status.sdPlugin",
+        "states": [
+          {
+            "image": "images/hackparty/3641d34a2a1930bac17324ce93930c4cc784bedfd76094f02f87d740f38ceb34.svg",
+            "text": "",
+            "show": true,
+            "colour": "#b8c4d4",
+            "background_colour": "#10141b",
+            "alignment": "top",
+            "family": "DejaVu Sans",
+            "size": 11
+          },
+          {
+            "image": "images/hackparty/a2c37886d4c48baa9918a33b6854d8bae0620ccfa98468f067764426f4f391a4.svg",
+            "text": "",
+            "show": true,
+            "colour": "#ffe7a3",
+            "background_colour": "#201604",
+            "alignment": "top",
+            "family": "DejaVu Sans",
+            "size": 11
+          },
+          {
+            "image": "images/hackparty/80d2cba1e8194e69dd4468154b156d2838905315c0b08c17b610ddf5005303c6.svg",
+            "text": "",
+            "show": true,
+            "colour": "#b8c4d4",
+            "background_colour": "#10141b",
+            "alignment": "top",
+            "family": "DejaVu Sans",
+            "size": 11
+          }
+        ],
+        "icon": "plugins/party.hack.status.sdPlugin/icon.png",
+        "controllers": [
+          "Keypad"
+        ],
+        "disable_automatic_states": true
+      },
+      "context": "Keypad.16.0",
+      "states": [
+        {
+          "image": "images/hackparty/3641d34a2a1930bac17324ce93930c4cc784bedfd76094f02f87d740f38ceb34.svg",
+          "text": "",
+          "show": true,
+          "colour": "#b8c4d4",
+          "background_colour": "#10141b",
+          "alignment": "top",
+          "family": "DejaVu Sans",
+          "size": 11
+        },
+        {
+          "image": "images/hackparty/a2c37886d4c48baa9918a33b6854d8bae0620ccfa98468f067764426f4f391a4.svg",
+          "text": "",
+          "show": true,
+          "colour": "#ffe7a3",
+          "background_colour": "#201604",
+          "alignment": "top",
+          "family": "DejaVu Sans",
+          "size": 11
+        },
+        {
+          "image": "images/hackparty/80d2cba1e8194e69dd4468154b156d2838905315c0b08c17b610ddf5005303c6.svg",
+          "text": "",
+          "show": true,
+          "colour": "#b8c4d4",
+          "background_colour": "#10141b",
+          "alignment": "top",
+          "family": "DejaVu Sans",
+          "size": 11
+        }
+      ],
+      "current_state": 0,
+      "settings": {
+        "kind": "f1_battle",
+        "id": "f1-battle:2",
+        "slot": 2,
+        "_label_id": "f1-battle/2",
+        "_label_defaults": [
+          "",
+          "",
+          ""
+        ],
+        "_label_mode": "shared"
+      },
+      "children": null
+    },
+    {
+      "action": {
+        "name": "Live broadcast control",
+        "uuid": "party.hack.status.control",
+        "plugin": "party.hack.status.sdPlugin",
+        "states": [
+          {
+            "image": "images/hackparty/3641d34a2a1930bac17324ce93930c4cc784bedfd76094f02f87d740f38ceb34.svg",
+            "text": "",
+            "show": true,
+            "colour": "#b8c4d4",
+            "background_colour": "#10141b",
+            "alignment": "top",
+            "family": "DejaVu Sans",
+            "size": 11
+          },
+          {
+            "image": "images/hackparty/a2c37886d4c48baa9918a33b6854d8bae0620ccfa98468f067764426f4f391a4.svg",
+            "text": "",
+            "show": true,
+            "colour": "#ffe7a3",
+            "background_colour": "#201604",
+            "alignment": "top",
+            "family": "DejaVu Sans",
+            "size": 11
+          },
+          {
+            "image": "images/hackparty/80d2cba1e8194e69dd4468154b156d2838905315c0b08c17b610ddf5005303c6.svg",
+            "text": "",
+            "show": true,
+            "colour": "#b8c4d4",
+            "background_colour": "#10141b",
+            "alignment": "top",
+            "family": "DejaVu Sans",
+            "size": 11
+          }
+        ],
+        "icon": "plugins/party.hack.status.sdPlugin/icon.png",
+        "controllers": [
+          "Keypad"
+        ],
+        "disable_automatic_states": true
+      },
+      "context": "Keypad.17.0",
+      "states": [
+        {
+          "image": "images/hackparty/3641d34a2a1930bac17324ce93930c4cc784bedfd76094f02f87d740f38ceb34.svg",
+          "text": "",
+          "show": true,
+          "colour": "#b8c4d4",
+          "background_colour": "#10141b",
+          "alignment": "top",
+          "family": "DejaVu Sans",
+          "size": 11
+        },
+        {
+          "image": "images/hackparty/a2c37886d4c48baa9918a33b6854d8bae0620ccfa98468f067764426f4f391a4.svg",
+          "text": "",
+          "show": true,
+          "colour": "#ffe7a3",
+          "background_colour": "#201604",
+          "alignment": "top",
+          "family": "DejaVu Sans",
+          "size": 11
+        },
+        {
+          "image": "images/hackparty/80d2cba1e8194e69dd4468154b156d2838905315c0b08c17b610ddf5005303c6.svg",
+          "text": "",
+          "show": true,
+          "colour": "#b8c4d4",
+          "background_colour": "#10141b",
+          "alignment": "top",
+          "family": "DejaVu Sans",
+          "size": 11
+        }
+      ],
+      "current_state": 0,
+      "settings": {
+        "kind": "f1_battle",
+        "id": "f1-battle:3",
+        "slot": 3,
+        "_label_id": "f1-battle/3",
+        "_label_defaults": [
+          "",
+          "",
+          ""
+        ],
+        "_label_mode": "shared"
+      },
+      "children": null
+    },
+    {
+      "action": {
+        "name": "Live broadcast control",
+        "uuid": "party.hack.status.control",
+        "plugin": "party.hack.status.sdPlugin",
+        "states": [
+          {
+            "image": "images/hackparty/28ad3ada1ae3ced947e47740c6b8a797c4d6af37378ac756af4febc4bf3a2ba8.png",
+            "text": "",
+            "show": true,
+            "colour": "#FFFFFF",
+            "background_colour": "#000000",
+            "alignment": "top",
+            "family": "DejaVu Sans",
+            "size": 11
+          }
+        ],
+        "icon": "plugins/party.hack.status.sdPlugin/icon.png",
+        "controllers": [
+          "Keypad"
+        ],
+        "disable_automatic_states": true
+      },
+      "context": "Keypad.18.0",
+      "states": [
+        {
+          "image": "images/hackparty/28ad3ada1ae3ced947e47740c6b8a797c4d6af37378ac756af4febc4bf3a2ba8.png",
+          "text": "",
+          "show": true,
+          "colour": "#FFFFFF",
+          "background_colour": "#000000",
+          "alignment": "top",
+          "family": "DejaVu Sans",
+          "size": 11
+        }
+      ],
+      "current_state": 0,
+      "settings": {
+        "id": "f1-key:pause",
+        "kind": "f1_key",
+        "command": "mvf1-cli players pause",
+        "_label_id": "f4a86db7-113a-4a3d-9ff8-ccf29a722d59",
+        "_label_defaults": [
+          ""
+        ],
+        "_label_mode": "shared",
+        "_track_status": "images/hackparty/e79cb113b9f5835fa7fce3248c14f72bb04c3463ca40a655a3cacdea8c061a24.png"
+      },
+      "children": null
+    },
+    {
+      "action": {
+        "name": "Live broadcast control",
+        "uuid": "party.hack.status.control",
+        "plugin": "party.hack.status.sdPlugin",
+        "states": [
+          {
+            "image": "images/hackparty/2f9a2ae437d72bb69288ac640cb1fffdf387bd9297c9dd606affc1f672a54779.png",
+            "text": "",
+            "show": true,
+            "colour": "#FFFFFF",
+            "background_colour": "#000000",
+            "alignment": "top",
+            "family": "DejaVu Sans",
+            "size": 11
+          }
+        ],
+        "icon": "plugins/party.hack.status.sdPlugin/icon.png",
+        "controllers": [
+          "Keypad"
+        ],
+        "disable_automatic_states": true
+      },
+      "context": "Keypad.19.0",
+      "states": [
+        {
+          "image": "images/hackparty/2f9a2ae437d72bb69288ac640cb1fffdf387bd9297c9dd606affc1f672a54779.png",
+          "text": "",
+          "show": true,
+          "colour": "#FFFFFF",
+          "background_colour": "#000000",
+          "alignment": "top",
+          "family": "DejaVu Sans",
+          "size": 11
+        }
+      ],
+      "current_state": 0,
+      "settings": {
+        "id": "f1-key:seek:-300",
+        "kind": "f1_key",
+        "command": "./mvf1_command_with_sync.sh  player --title INTERNATIONAL seek --relative -300",
+        "_label_id": "bfecf2e4-a776-4594-a806-589ceb90bfc6",
+        "_label_defaults": [
+          ""
+        ],
+        "_label_mode": "shared",
+        "_track_status": "images/hackparty/711a56552c5979286a35ded70acec4db3b10b34b9bd33e32ba509a3afccaafd6.png"
+      },
+      "children": null
+    },
+    {
+      "action": {
+        "name": "Live broadcast control",
+        "uuid": "party.hack.status.control",
+        "plugin": "party.hack.status.sdPlugin",
+        "states": [
+          {
+            "image": "images/hackparty/0ce2a98354aba3c708660ef75ac5542a498fc5a2f143b79dc77db1589b75b72c.png",
+            "text": "",
+            "show": true,
+            "colour": "#FFFFFF",
+            "background_colour": "#000000",
+            "alignment": "top",
+            "family": "DejaVu Sans",
+            "size": 11
+          }
+        ],
+        "icon": "plugins/party.hack.status.sdPlugin/icon.png",
+        "controllers": [
+          "Keypad"
+        ],
+        "disable_automatic_states": true
+      },
+      "context": "Keypad.20.0",
+      "states": [
+        {
+          "image": "images/hackparty/0ce2a98354aba3c708660ef75ac5542a498fc5a2f143b79dc77db1589b75b72c.png",
+          "text": "",
+          "show": true,
+          "colour": "#FFFFFF",
+          "background_colour": "#000000",
+          "alignment": "top",
+          "family": "DejaVu Sans",
+          "size": 11
+        }
+      ],
+      "current_state": 0,
+      "settings": {
+        "id": "f1-key:seek:300",
+        "kind": "f1_key",
+        "command": "./mvf1_command_with_sync.sh  player --title INTERNATIONAL seek --relative 300",
+        "_label_id": "0645d789-ff6b-499c-a908-781074efd3ff",
+        "_label_defaults": [
+          ""
+        ],
+        "_label_mode": "shared",
+        "_track_status": "images/hackparty/357e97c661396470d5bc0f0377d2e8da03b53b1f30399c8a2179c4bfe256bed3.png"
+      },
+      "children": null
+    },
+    {
+      "action": {
+        "name": "Live broadcast control",
+        "uuid": "party.hack.status.control",
+        "plugin": "party.hack.status.sdPlugin",
+        "states": [
+          {
+            "image": "images/hackparty/4719d7066c92f858c42123c018a5c9219d4722f3be9aba6de17b2b8d9ac8b4be.png",
+            "text": "",
+            "show": true,
+            "colour": "#FFFFFF",
+            "background_colour": "#000000",
+            "alignment": "top",
+            "family": "DejaVu Sans",
+            "size": 11
+          }
+        ],
+        "icon": "plugins/party.hack.status.sdPlugin/icon.png",
+        "controllers": [
+          "Keypad"
+        ],
+        "disable_automatic_states": true
+      },
+      "context": "Keypad.21.0",
+      "states": [
+        {
+          "image": "images/hackparty/4719d7066c92f858c42123c018a5c9219d4722f3be9aba6de17b2b8d9ac8b4be.png",
+          "text": "",
+          "show": true,
+          "colour": "#FFFFFF",
+          "background_colour": "#000000",
+          "alignment": "top",
+          "family": "DejaVu Sans",
+          "size": 11
+        }
+      ],
+      "current_state": 0,
+      "settings": {
+        "id": "f1-key:rotate-drivers",
+        "kind": "f1_key",
+        "command": "python control_driver_feeds.py rotate-drivers",
+        "_label_id": "a17a7234-d1e1-4c3f-8b24-9aa841f81a32",
+        "_label_defaults": [
+          ""
+        ],
+        "_label_mode": "shared",
+        "_track_status": "images/hackparty/81212b5ad94b4a2abbfdc103a4e37d6de8a7d6cd6cd7faac6ccef7c6fac768bc.png"
+      },
+      "children": null
+    },
+    null,
+    null,
+    null,
+    {
+      "action": {
+        "name": "Live broadcast control",
+        "uuid": "party.hack.status.control",
+        "plugin": "party.hack.status.sdPlugin",
+        "states": [
+          {
+            "image": "images/hackparty/3641d34a2a1930bac17324ce93930c4cc784bedfd76094f02f87d740f38ceb34.svg",
+            "text": "",
+            "show": true,
+            "colour": "#b8c4d4",
+            "background_colour": "#10141b",
+            "alignment": "top",
+            "family": "DejaVu Sans",
+            "size": 11
+          },
+          {
+            "image": "images/hackparty/a2c37886d4c48baa9918a33b6854d8bae0620ccfa98468f067764426f4f391a4.svg",
+            "text": "",
+            "show": true,
+            "colour": "#ffe7a3",
+            "background_colour": "#201604",
+            "alignment": "top",
+            "family": "DejaVu Sans",
+            "size": 11
+          },
+          {
+            "image": "images/hackparty/80d2cba1e8194e69dd4468154b156d2838905315c0b08c17b610ddf5005303c6.svg",
+            "text": "",
+            "show": true,
+            "colour": "#b8c4d4",
+            "background_colour": "#10141b",
+            "alignment": "top",
+            "family": "DejaVu Sans",
+            "size": 11
+          }
+        ],
+        "icon": "plugins/party.hack.status.sdPlugin/icon.png",
+        "controllers": [
+          "Keypad"
+        ],
+        "disable_automatic_states": true
+      },
+      "context": "Keypad.25.0",
+      "states": [
+        {
+          "image": "images/hackparty/3641d34a2a1930bac17324ce93930c4cc784bedfd76094f02f87d740f38ceb34.svg",
+          "text": "",
+          "show": true,
+          "colour": "#b8c4d4",
+          "background_colour": "#10141b",
+          "alignment": "top",
+          "family": "DejaVu Sans",
+          "size": 11
+        },
+        {
+          "image": "images/hackparty/a2c37886d4c48baa9918a33b6854d8bae0620ccfa98468f067764426f4f391a4.svg",
+          "text": "",
+          "show": true,
+          "colour": "#ffe7a3",
+          "background_colour": "#201604",
+          "alignment": "top",
+          "family": "DejaVu Sans",
+          "size": 11
+        },
+        {
+          "image": "images/hackparty/80d2cba1e8194e69dd4468154b156d2838905315c0b08c17b610ddf5005303c6.svg",
+          "text": "",
+          "show": true,
+          "colour": "#b8c4d4",
+          "background_colour": "#10141b",
+          "alignment": "top",
+          "family": "DejaVu Sans",
+          "size": 11
+        }
+      ],
+      "current_state": 0,
+      "settings": {
+        "kind": "f1_battle",
+        "id": "f1-battle:4",
+        "slot": 4,
+        "_label_id": "f1-battle/4",
+        "_label_defaults": [
+          "",
+          "",
+          ""
+        ],
+        "_label_mode": "shared"
+      },
+      "children": null
+    },
+    {
+      "action": {
+        "name": "Live broadcast control",
+        "uuid": "party.hack.status.control",
+        "plugin": "party.hack.status.sdPlugin",
+        "states": [
+          {
+            "image": "images/hackparty/3641d34a2a1930bac17324ce93930c4cc784bedfd76094f02f87d740f38ceb34.svg",
+            "text": "",
+            "show": true,
+            "colour": "#b8c4d4",
+            "background_colour": "#10141b",
+            "alignment": "top",
+            "family": "DejaVu Sans",
+            "size": 11
+          },
+          {
+            "image": "images/hackparty/a2c37886d4c48baa9918a33b6854d8bae0620ccfa98468f067764426f4f391a4.svg",
+            "text": "",
+            "show": true,
+            "colour": "#ffe7a3",
+            "background_colour": "#201604",
+            "alignment": "top",
+            "family": "DejaVu Sans",
+            "size": 11
+          },
+          {
+            "image": "images/hackparty/80d2cba1e8194e69dd4468154b156d2838905315c0b08c17b610ddf5005303c6.svg",
+            "text": "",
+            "show": true,
+            "colour": "#b8c4d4",
+            "background_colour": "#10141b",
+            "alignment": "top",
+            "family": "DejaVu Sans",
+            "size": 11
+          }
+        ],
+        "icon": "plugins/party.hack.status.sdPlugin/icon.png",
+        "controllers": [
+          "Keypad"
+        ],
+        "disable_automatic_states": true
+      },
+      "context": "Keypad.26.0",
+      "states": [
+        {
+          "image": "images/hackparty/3641d34a2a1930bac17324ce93930c4cc784bedfd76094f02f87d740f38ceb34.svg",
+          "text": "",
+          "show": true,
+          "colour": "#b8c4d4",
+          "background_colour": "#10141b",
+          "alignment": "top",
+          "family": "DejaVu Sans",
+          "size": 11
+        },
+        {
+          "image": "images/hackparty/a2c37886d4c48baa9918a33b6854d8bae0620ccfa98468f067764426f4f391a4.svg",
+          "text": "",
+          "show": true,
+          "colour": "#ffe7a3",
+          "background_colour": "#201604",
+          "alignment": "top",
+          "family": "DejaVu Sans",
+          "size": 11
+        },
+        {
+          "image": "images/hackparty/80d2cba1e8194e69dd4468154b156d2838905315c0b08c17b610ddf5005303c6.svg",
+          "text": "",
+          "show": true,
+          "colour": "#b8c4d4",
+          "background_colour": "#10141b",
+          "alignment": "top",
+          "family": "DejaVu Sans",
+          "size": 11
+        }
+      ],
+      "current_state": 0,
+      "settings": {
+        "kind": "f1_battle",
+        "id": "f1-battle:5",
+        "slot": 5,
+        "_label_id": "f1-battle/5",
+        "_label_defaults": [
+          "",
+          "",
+          ""
+        ],
+        "_label_mode": "shared"
+      },
+      "children": null
+    },
+    {
+      "action": {
+        "name": "Live broadcast control",
+        "uuid": "party.hack.status.control",
+        "plugin": "party.hack.status.sdPlugin",
+        "states": [
+          {
+            "image": "images/hackparty/bab17086048944c6e1f17185c2180e8d9079fbade5f50f278aa363b28d312db2.png",
+            "text": "",
+            "show": true,
+            "colour": "#FFFFFF",
+            "background_colour": "#000000",
+            "alignment": "top",
+            "family": "DejaVu Sans",
+            "size": 11
+          }
+        ],
+        "icon": "plugins/party.hack.status.sdPlugin/icon.png",
+        "controllers": [
+          "Keypad"
+        ],
+        "disable_automatic_states": true
+      },
+      "context": "Keypad.27.0",
+      "states": [
+        {
+          "image": "images/hackparty/bab17086048944c6e1f17185c2180e8d9079fbade5f50f278aa363b28d312db2.png",
+          "text": "",
+          "show": true,
+          "colour": "#FFFFFF",
+          "background_colour": "#000000",
+          "alignment": "top",
+          "family": "DejaVu Sans",
+          "size": 11
+        }
+      ],
+      "current_state": 0,
+      "settings": {
+        "id": "f1-key:toggle-speedometers",
+        "kind": "f1_key",
+        "command": "mvf1-cli players toggle-speedometers",
+        "_label_id": "7799e973-73ee-416f-b430-3aae9f92435c",
+        "_label_defaults": [
+          ""
+        ],
+        "_label_mode": "shared",
+        "_track_status": "images/hackparty/0648ae9b8f112cf8dc492d994a3eb95cd3d8988191ed5401438426b9fd94e2b4.png"
+      },
+      "children": null
+    },
+    {
+      "action": {
+        "name": "Live broadcast control",
+        "uuid": "party.hack.status.control",
+        "plugin": "party.hack.status.sdPlugin",
+        "states": [
+          {
+            "image": "images/hackparty/8b4aa999ee296bcbf93a56694ae7f340de252d91d6083c4b641e7ec2a5f423c3.png",
+            "text": "",
+            "show": true,
+            "colour": "#FFFFFF",
+            "background_colour": "#000000",
+            "alignment": "top",
+            "family": "DejaVu Sans",
+            "size": 11
+          }
+        ],
+        "icon": "plugins/party.hack.status.sdPlugin/icon.png",
+        "controllers": [
+          "Keypad"
+        ],
+        "disable_automatic_states": true
+      },
+      "context": "Keypad.28.0",
+      "states": [
+        {
+          "image": "images/hackparty/8b4aa999ee296bcbf93a56694ae7f340de252d91d6083c4b641e7ec2a5f423c3.png",
+          "text": "",
+          "show": true,
+          "colour": "#FFFFFF",
+          "background_colour": "#000000",
+          "alignment": "top",
+          "family": "DejaVu Sans",
+          "size": 11
+        }
+      ],
+      "current_state": 0,
+      "settings": {
+        "id": "f1-key:mute",
+        "kind": "f1_key",
+        "command": "mvf1-cli player --title INTERNATIONAL mute",
+        "_label_id": "26bb2c64-b561-4a21-83e8-6fa278ceb282",
+        "_label_defaults": [
+          ""
+        ],
+        "_label_mode": "shared",
+        "_track_status": "images/hackparty/8794cad930eab11f1324f9c335c8efc0b3eb202669a18fae08bbe557dcfadc75.png"
+      },
+      "children": null
+    },
+    {
+      "action": {
+        "name": "Live broadcast control",
+        "uuid": "party.hack.status.control",
+        "plugin": "party.hack.status.sdPlugin",
+        "states": [
+          {
+            "image": "images/hackparty/c1b87b97359bde0a8f166d9206da5a84e8e6b073704aec808bb7e3536b72ca62.png",
+            "text": "",
+            "show": true,
+            "colour": "#FFFFFF",
+            "background_colour": "#000000",
+            "alignment": "top",
+            "family": "DejaVu Sans",
+            "size": 11
+          }
+        ],
+        "icon": "plugins/party.hack.status.sdPlugin/icon.png",
+        "controllers": [
+          "Keypad"
+        ],
+        "disable_automatic_states": true
+      },
+      "context": "Keypad.29.0",
+      "states": [
+        {
+          "image": "images/hackparty/c1b87b97359bde0a8f166d9206da5a84e8e6b073704aec808bb7e3536b72ca62.png",
+          "text": "",
+          "show": true,
+          "colour": "#FFFFFF",
+          "background_colour": "#000000",
+          "alignment": "top",
+          "family": "DejaVu Sans",
+          "size": 11
+        }
+      ],
+      "current_state": 0,
+      "settings": {
+        "id": "f1-key:seek:10000",
+        "kind": "f1_key",
+        "command": "./mvf1_command_with_sync.sh player --title INTERNATIONAL seek --relative 10000",
+        "_label_id": "c34a9b13-911e-442d-a7aa-a93bd53ec17f",
+        "_label_defaults": [
+          ""
+        ],
+        "_label_mode": "shared",
+        "_track_status": "images/hackparty/6fec09c238929333c8d0ae35b939cc3d018b15bfaee38a02f6428f5690fa6e4e.png"
+      },
+      "children": null
+    },
+    {
+      "action": {
+        "name": "Live broadcast control",
+        "uuid": "party.hack.status.control",
+        "plugin": "party.hack.status.sdPlugin",
+        "states": [
+          {
+            "image": "images/hackparty/83e1c4c267f0589d69e052aae15a70c9b98d956496a2b6729110b10c5985f115.png",
+            "text": "",
+            "show": true,
+            "colour": "#FFFFFF",
+            "background_colour": "#000000",
+            "alignment": "top",
+            "family": "DejaVu Sans",
+            "size": 11
+          }
+        ],
+        "icon": "plugins/party.hack.status.sdPlugin/icon.png",
+        "controllers": [
+          "Keypad"
+        ],
+        "disable_automatic_states": true
+      },
+      "context": "Keypad.30.0",
+      "states": [
+        {
+          "image": "images/hackparty/83e1c4c267f0589d69e052aae15a70c9b98d956496a2b6729110b10c5985f115.png",
+          "text": "",
+          "show": true,
+          "colour": "#FFFFFF",
+          "background_colour": "#000000",
+          "alignment": "top",
+          "family": "DejaVu Sans",
+          "size": 11
+        }
+      ],
+      "current_state": 0,
+      "settings": {
+        "id": "f1-key:set-target",
+        "kind": "f1_key",
+        "command": "python control_driver_feeds.py set-target",
+        "_label_id": "7b710743-f599-43ae-b360-a40ec778c52f",
+        "_label_defaults": [
+          ""
+        ],
+        "_label_mode": "shared",
+        "_track_status": "images/hackparty/029031e13013478ef9fce5eb9b899c11c88b609c8872f65d6067c80e07a33e26.png"
+      },
+      "children": null
+    },
+    null,
+    null,
+    null,
+    {
+      "action": {
+        "name": "Live broadcast control",
+        "uuid": "party.hack.status.control",
+        "plugin": "party.hack.status.sdPlugin",
+        "states": [
+          {
+            "image": "images/hackparty/3641d34a2a1930bac17324ce93930c4cc784bedfd76094f02f87d740f38ceb34.svg",
+            "text": "",
+            "show": true,
+            "colour": "#b8c4d4",
+            "background_colour": "#10141b",
+            "alignment": "top",
+            "family": "DejaVu Sans",
+            "size": 11
+          },
+          {
+            "image": "images/hackparty/a2c37886d4c48baa9918a33b6854d8bae0620ccfa98468f067764426f4f391a4.svg",
+            "text": "",
+            "show": true,
+            "colour": "#ffe7a3",
+            "background_colour": "#201604",
+            "alignment": "top",
+            "family": "DejaVu Sans",
+            "size": 11
+          },
+          {
+            "image": "images/hackparty/80d2cba1e8194e69dd4468154b156d2838905315c0b08c17b610ddf5005303c6.svg",
+            "text": "",
+            "show": true,
+            "colour": "#b8c4d4",
+            "background_colour": "#10141b",
+            "alignment": "top",
+            "family": "DejaVu Sans",
+            "size": 11
+          }
+        ],
+        "icon": "plugins/party.hack.status.sdPlugin/icon.png",
+        "controllers": [
+          "Keypad"
+        ],
+        "disable_automatic_states": true
+      },
+      "context": "Keypad.34.0",
+      "states": [
+        {
+          "image": "images/hackparty/3641d34a2a1930bac17324ce93930c4cc784bedfd76094f02f87d740f38ceb34.svg",
+          "text": "",
+          "show": true,
+          "colour": "#b8c4d4",
+          "background_colour": "#10141b",
+          "alignment": "top",
+          "family": "DejaVu Sans",
+          "size": 11
+        },
+        {
+          "image": "images/hackparty/a2c37886d4c48baa9918a33b6854d8bae0620ccfa98468f067764426f4f391a4.svg",
+          "text": "",
+          "show": true,
+          "colour": "#ffe7a3",
+          "background_colour": "#201604",
+          "alignment": "top",
+          "family": "DejaVu Sans",
+          "size": 11
+        },
+        {
+          "image": "images/hackparty/80d2cba1e8194e69dd4468154b156d2838905315c0b08c17b610ddf5005303c6.svg",
+          "text": "",
+          "show": true,
+          "colour": "#b8c4d4",
+          "background_colour": "#10141b",
+          "alignment": "top",
+          "family": "DejaVu Sans",
+          "size": 11
+        }
+      ],
+      "current_state": 0,
+      "settings": {
+        "kind": "f1_battle",
+        "id": "f1-battle:6",
+        "slot": 6,
+        "_label_id": "f1-battle/6",
+        "_label_defaults": [
+          "",
+          "",
+          ""
+        ],
+        "_label_mode": "shared"
+      },
+      "children": null
+    },
+    {
+      "action": {
+        "name": "Live broadcast control",
+        "uuid": "party.hack.status.control",
+        "plugin": "party.hack.status.sdPlugin",
+        "states": [
+          {
+            "image": "images/hackparty/3641d34a2a1930bac17324ce93930c4cc784bedfd76094f02f87d740f38ceb34.svg",
+            "text": "",
+            "show": true,
+            "colour": "#b8c4d4",
+            "background_colour": "#10141b",
+            "alignment": "top",
+            "family": "DejaVu Sans",
+            "size": 11
+          },
+          {
+            "image": "images/hackparty/a2c37886d4c48baa9918a33b6854d8bae0620ccfa98468f067764426f4f391a4.svg",
+            "text": "",
+            "show": true,
+            "colour": "#ffe7a3",
+            "background_colour": "#201604",
+            "alignment": "top",
+            "family": "DejaVu Sans",
+            "size": 11
+          },
+          {
+            "image": "images/hackparty/80d2cba1e8194e69dd4468154b156d2838905315c0b08c17b610ddf5005303c6.svg",
+            "text": "",
+            "show": true,
+            "colour": "#b8c4d4",
+            "background_colour": "#10141b",
+            "alignment": "top",
+            "family": "DejaVu Sans",
+            "size": 11
+          }
+        ],
+        "icon": "plugins/party.hack.status.sdPlugin/icon.png",
+        "controllers": [
+          "Keypad"
+        ],
+        "disable_automatic_states": true
+      },
+      "context": "Keypad.35.0",
+      "states": [
+        {
+          "image": "images/hackparty/3641d34a2a1930bac17324ce93930c4cc784bedfd76094f02f87d740f38ceb34.svg",
+          "text": "",
+          "show": true,
+          "colour": "#b8c4d4",
+          "background_colour": "#10141b",
+          "alignment": "top",
+          "family": "DejaVu Sans",
+          "size": 11
+        },
+        {
+          "image": "images/hackparty/a2c37886d4c48baa9918a33b6854d8bae0620ccfa98468f067764426f4f391a4.svg",
+          "text": "",
+          "show": true,
+          "colour": "#ffe7a3",
+          "background_colour": "#201604",
+          "alignment": "top",
+          "family": "DejaVu Sans",
+          "size": 11
+        },
+        {
+          "image": "images/hackparty/80d2cba1e8194e69dd4468154b156d2838905315c0b08c17b610ddf5005303c6.svg",
+          "text": "",
+          "show": true,
+          "colour": "#b8c4d4",
+          "background_colour": "#10141b",
+          "alignment": "top",
+          "family": "DejaVu Sans",
+          "size": 11
+        }
+      ],
+      "current_state": 0,
+      "settings": {
+        "kind": "f1_battle",
+        "id": "f1-battle:7",
+        "slot": 7,
+        "_label_id": "f1-battle/7",
+        "_label_defaults": [
+          "",
+          "",
+          ""
+        ],
+        "_label_mode": "shared"
+      },
+      "children": null
+    }
+  ],
+  "sliders": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    {
+      "action": {
+        "name": "Broadcast dial",
+        "uuid": "party.hack.status.dial",
+        "plugin": "party.hack.status.sdPlugin",
+        "states": [
+          {
+            "image": ""
+          }
+        ],
+        "icon": "plugins/party.hack.status.sdPlugin/icon.png",
+        "controllers": [
+          "Encoder"
+        ],
+        "encoder": {
+          "layout": "dial-meter.json"
+        },
+        "disable_automatic_states": true
+      },
+      "context": "Encoder.5.0",
+      "states": [
+        {
+          "image": "",
+          "text": "BATTLE GAP",
+          "show": true,
+          "colour": "#FFFFFF",
+          "background_colour": "#000000",
+          "alignment": "bottom",
+          "family": "DejaVu Sans",
+          "size": 11
+        }
+      ],
+      "current_state": 0,
+      "settings": {
+        "kind": "dial",
+        "id": "dial:f1_gap_limit",
+        "control": "f1_gap_limit",
+        "title": "BATTLE GAP"
+      },
+      "children": null
+    }
+  ],
+  "infobars": []
+}

@@ -14,6 +14,47 @@ class BridgeTests(unittest.TestCase):
                 output = bridge.claude_hook(payload,'hook')['hookSpecificOutput']['decision']
                 self.assertEqual(output,{'behavior':expected})
 
+    def test_desktop_app_session_is_interactive_without_a_terminal(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            (root/'31').mkdir()
+            (root/'31/stat').write_text('31 (claude) S 30 31 31 0 31')
+            with patch.object(bridge, 'desktop_session', return_value=False):
+                self.assertFalse(bridge.interactive_owner(31, root))
+            with patch.object(bridge, 'desktop_session', return_value=True) as desktop:
+                self.assertTrue(bridge.interactive_owner(31, root))
+            desktop.assert_called_once_with(root/'31')
+            with patch.object(bridge, 'desktop_session', side_effect=PermissionError):
+                self.assertFalse(bridge.interactive_owner(31, root))
+
+    def test_measured_figures_fill_sessions_without_a_statusline(self):
+        import json
+        session='0f8fad5b-d9cb-469f-a165-70867728950e'
+        with tempfile.TemporaryDirectory() as folder, patch.object(bridge,'CACHE',Path(folder)), \
+                patch.object(bridge,'alive',return_value=True):
+            root=Path(folder)
+            (root/'claude').mkdir();(root/'claude-measure').mkdir()
+            (root/'claude/s.json').write_text(json.dumps({'session':session,'pid':1,'updated':1}))
+            figures={'session':session,'measured':100.0,'context':{'tokens':50000,'window':200000,'percent':25},
+                     'rateLimits':[{'kind':'five_hour','percentUsed':12.5,'resetsAt':'2026-09-28T01:00:00Z'},{'kind':'bad'}]}
+            (root/'claude-measure'/(session+'.json')).write_text(json.dumps(figures))
+            value=bridge.sessions('claude')[0]
+            self.assertEqual((value['context_remaining'],value['quota_updated']),(75.0,100.0))
+            self.assertEqual(value['rate_limits'],{'five_hour':{'used_percentage':12.5,'resets_at':1790557200.0}})
+            # A fresher statusline reading wins over an older measurement.
+            (root/'claude/s.json').write_text(json.dumps({'session':session,'pid':1,'updated':1,'quota_updated':200,'context_remaining':40}))
+            self.assertEqual(bridge.sessions('claude')[0]['context_remaining'],40)
+            # A session id that is not a UUID never becomes a path.
+            (root/'claude/s.json').write_text(json.dumps({'session':'../x','pid':1,'updated':1}))
+            self.assertNotIn('context_remaining',bridge.sessions('claude')[0])
+
+    def test_hook_effort_is_recorded_and_never_blanked(self):
+        with patch.object(bridge,'interactive_owner',return_value=True), patch.object(bridge,'publish') as publish:
+            bridge.claude_hook({'hook_event_name':'Stop','session_id':'s','effort':{'level':'max'}},'hook')
+            self.assertEqual(publish.call_args.kwargs['effort'],'max')
+            bridge.claude_hook({'hook_event_name':'SessionStart','session_id':'s'},'hook')
+            self.assertNotIn('effort',publish.call_args.kwargs)
+
     def test_noninteractive_claude_keeps_native_policy(self):
         with patch.object(bridge,'interactive_owner',return_value=False), patch.object(bridge,'approval_dialog') as dialog:
             self.assertEqual(bridge.claude_hook({'hook_event_name':'PermissionRequest'},'hook'),{})

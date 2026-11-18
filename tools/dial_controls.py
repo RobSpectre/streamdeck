@@ -10,6 +10,7 @@ from PIL import Image
 
 from tools.f1_battles import (GAP_LIMIT_MAX, GAP_LIMIT_MIN, GAP_LIMIT_STEP,
                               gap_limit, set_gap_limit)
+from tools import television_audio
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -49,11 +50,29 @@ def feedback(title, value=None, unit='%', muted=False, detail='', meter=None, de
             'detail': 'MUTED' if muted else detail or 'VOLUME'}
 
 
+def television_feedback(state):
+    if state is None:
+        raise ValueError('TV audio unavailable')
+    return feedback(state['title'], state['volume'], muted=state['mute'],
+                    detail='LISTENING · PRESS TO SOLO')
+
+
 class Dials:
     def __init__(self, obs_client, agent_dials=None, battle_visible=None):
         self.obs_client = obs_client
         self.agent_dials = agent_dials
         self.battle_visible = battle_visible or (lambda: True)
+        self.audio_view = 'studio'
+
+    def select_view(self, view):
+        if view not in ('studio', 'television'):
+            raise ValueError('Unknown audio view')
+        self.audio_view = view
+
+    def effective(self, settings):
+        if self.audio_view == 'television' and settings.get('television'):
+            return {**settings, **settings['television'], 'id': settings['id']}
+        return settings
 
     def pulse_target(self, kind):
         info = json.loads(run('pactl', '-f', 'json', 'info'))
@@ -76,6 +95,7 @@ class Dials:
         return result
 
     def read(self, settings):
+        settings = self.effective(settings)
         kind, title = settings['control'], settings['title']
         if kind == 'f1_gap_limit':
             if not self.battle_visible():
@@ -85,6 +105,8 @@ class Dials:
         if kind in ('pc_volume', 'mic_volume'):
             d, value = self.pulse_target(kind)
             return feedback(title, value, muted=d['mute'])
+        if kind == 'television':
+            return television_feedback(television_audio.read(settings['slot']))
         if kind == 'obs_volume':
             obs = self.obs_client()
             if obs.get_scene_collection_list().current_scene_collection_name != 'hack.party':
@@ -101,13 +123,23 @@ class Dials:
         agents = [s for s in settings if s.get('control') == 'agent']
         if agents and self.agent_dials:
             result.update(self.agent_dials.snapshot(agents))
+        televisions = {}
+        if any(self.effective(s).get('control') == 'television' for s in settings):
+            try:
+                televisions = television_audio.snapshot()
+            except Exception:
+                pass
         for s in settings:
             if s.get('control') == 'agent':
                 continue
             try:
-                result[s['id']] = self.read(s)
+                effective = self.effective(s)
+                result[s['id']] = (television_feedback(televisions.get(effective['slot']))
+                                   if effective['control'] == 'television' else self.read(s))
             except Exception:
-                result[s['id']] = feedback(s['title'])
+                effective = self.effective(s)
+                result[s['id']] = feedback(effective['title'], detail=(
+                    'REBIND TV AUDIO' if effective['control'] == 'television' else 'UNAVAILABLE'))
         return result
 
     def spotify_streams(self):
@@ -141,7 +173,10 @@ class Dials:
         # A long press is not another mute gesture. Non-audio sections are inert.
         if hold:
             return
+        settings = self.effective(settings)
         kind = settings['control']
+        if kind == 'television':
+            return television_audio.solo(settings['slot'])
         if kind == 'agent':
             return self.agent_dials.tap(settings)
         if kind in ('pc_volume', 'mic_volume'):
@@ -162,12 +197,20 @@ class Dials:
             for stream in streams:
                 run('pactl', 'set-sink-input-mute', str(stream['index']), str(int(muted)))
 
+    def press(self, settings):
+        # Studio knob presses remain unassigned. TV knobs match strip taps.
+        if self.effective(settings)['control'] == 'television':
+            return self.tap(settings)
+
     def rotate(self, settings, ticks):
         if isinstance(ticks, bool) or not isinstance(ticks, int) or not -100 <= ticks <= 100:
             raise ValueError('Invalid encoder ticks')
         if not ticks:
             return
+        settings = self.effective(settings)
         kind = settings['control']
+        if kind == 'television':
+            return television_audio.rotate(settings['slot'], ticks)
         if kind == 'agent':
             return self.agent_dials.rotate(settings, ticks)
         if kind == 'f1_gap_limit':

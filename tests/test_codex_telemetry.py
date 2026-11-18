@@ -6,6 +6,31 @@ from tools.codex_telemetry import RolloutUsage, compact, quota_window, render
 
 
 class TelemetryTests(unittest.TestCase):
+    def test_idle_graph_is_zero_and_disconnected_graph_is_unknown(self):
+        import threading
+        from unittest.mock import Mock
+        from tools.codex_telemetry import Telemetry
+        telemetry = object.__new__(Telemetry)
+        telemetry.presence = None
+        telemetry.attention = Mock()
+        telemetry.lock = threading.Lock()
+        telemetry.monthly = 2000
+        telemetry.thread_stats = {'a': (42.5, 1000)}
+        telemetry.limits = {}
+        telemetry.quota_at = 0
+        state = {'threadRuntimeStatus': {'type': 'idle'}}
+        telemetry.attention.snapshot.return_value = (True, {'a': state})
+        samples = {}
+        values = telemetry.values(samples)
+        self.assertEqual(samples['speed'], (0, 'a'))
+        self.assertEqual(values['speed'][1], '42.5')
+        state['threadRuntimeStatus']['type'] = 'active'
+        telemetry.values(samples)
+        self.assertEqual(samples['speed'], (42.5, 'a'))
+        telemetry.attention.snapshot.return_value = (False, {'a': state})
+        telemetry.values(samples)
+        self.assertIsNone(samples['speed'][0])
+
     def test_quota_uses_limiting_window_and_reset_age(self):
         limits = {'rateLimitsByLimitId': {'codex': {
             'primary': {'usedPercent': 80, 'windowDurationMins': 300, 'resetsAt': 11000},
@@ -43,3 +68,14 @@ class TelemetryTests(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
+
+class ClaudeModelLabelTests(unittest.TestCase):
+    def test_claude_ids_read_as_claude_names_them(self):
+        from tools.codex_telemetry import model_label
+        self.assertEqual(model_label('claude-opus-5-5'), 'Opus 5.5')
+        self.assertEqual(model_label('claude-haiku-4-5-20251001'), 'Haiku 4.5')
+        self.assertEqual(model_label('claude-sonnet-5'), 'Sonnet 5')
+        self.assertEqual(model_label('claude-opus-5-5[1m]'), 'Opus 5.5 (1M)')
+        self.assertEqual(model_label('Opus 5'), 'Opus 5')
+        self.assertEqual(model_label('claude-3-5-sonnet-20241022'), 'Claude 3 5 sonnet 20241022')

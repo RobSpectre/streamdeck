@@ -1,0 +1,170 @@
+{
+  "keys": [
+    {
+      "action": {
+        "name": "Multi Action",
+        "uuid": "opendeck.multiaction",
+        "plugin": "opendeck",
+        "icon": "opendeck/multi-action.png",
+        "property_inspector": "",
+        "states": [
+          {
+            "image": ""
+          }
+        ],
+        "controllers": [
+          "Keypad"
+        ],
+        "supported_in_multi_actions": false,
+        "disable_automatic_states": false
+      },
+      "context": "Keypad.0.0",
+      "states": [
+        {
+          "image": "images/hackparty/2aa663757ff117b304eb8b7e082041e05e9c0c73a077f93ebb43fcf389439a2d.png",
+          "text": "Back",
+          "show": true,
+          "colour": "#FFFFFF",
+          "background_colour": "#000000",
+          "alignment": "top",
+          "family": "DejaVu Sans",
+          "size": 11
+        }
+      ],
+      "current_state": 0,
+      "settings": {
+        "delays": [
+          0,
+          0
+        ],
+        "_label_id": "navigation/back/8",
+        "_label_defaults": [
+          "Back"
+        ],
+        "_label_mode": "shared"
+      },
+      "children": [
+        {
+          "action": {
+            "name": "Switch Profile",
+            "uuid": "com.amansprojects.starterpack.switchprofile",
+            "plugin": "com.amansprojects.starterpack.sdPlugin",
+            "icon": "plugins/com.amansprojects.starterpack.sdPlugin/icons/switchProfile.png",
+            "property_inspector": "plugins/com.amansprojects.starterpack.sdPlugin/propertyInspector/switchProfile.html",
+            "states": [
+              {
+                "image": ""
+              }
+            ],
+            "controllers": [
+              "Keypad"
+            ],
+            "supported_in_multi_actions": true,
+            "disable_automatic_states": false
+          },
+          "context": "Keypad.0.1",
+          "states": [
+            {
+              "image": "images/hackparty/2aa663757ff117b304eb8b7e082041e05e9c0c73a077f93ebb43fcf389439a2d.png",
+              "text": "Back",
+              "show": true,
+              "colour": "#FFFFFF",
+              "background_colour": "#000000",
+              "alignment": "top",
+              "family": "DejaVu Sans",
+              "size": 11
+            }
+          ],
+          "current_state": 0,
+          "settings": {
+            "device": "sd-CL37L2A01125",
+            "profile": "11 - Navigation"
+          },
+          "children": null
+        },
+        {
+          "action": {
+            "name": "Switch Profile",
+            "uuid": "com.amansprojects.starterpack.switchprofile",
+            "plugin": "com.amansprojects.starterpack.sdPlugin",
+            "icon": "plugins/com.amansprojects.starterpack.sdPlugin/icons/switchProfile.png",
+            "property_inspector": "plugins/com.amansprojects.starterpack.sdPlugin/propertyInspector/switchProfile.html",
+            "states": [
+              {
+                "image": ""
+              }
+            ],
+            "controllers": [
+              "Keypad"
+            ],
+            "supported_in_multi_actions": true,
+            "disable_automatic_states": false
+          },
+          "context": "Keypad.0.2",
+          "states": [
+            {
+              "image": "images/hackparty/2aa663757ff117b304eb8b7e082041e05e9c0c73a077f93ebb43fcf389439a2d.png",
+              "text": "Back",
+              "show": true,
+              "colour": "#FFFFFF",
+              "background_colour": "#000000",
+              "alignment": "top",
+              "family": "DejaVu Sans",
+              "size": 11
+            }
+          ],
+          "current_state": 0,
+          "settings": {
+            "device": "sd-AD4MA61312Z98B",
+            "profile": "11 - Navigation"
+          },
+          "children": null
+        }
+      ]
+    },
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  "sliders": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  "infobars": []
+}

@@ -7,22 +7,19 @@ import sqlite3
 import threading
 import time
 
-from tools.codex_telemetry import compact, MONTH, context_left, model_label
+from tools.agent_presence import detect
+from tools.codex_telemetry import compact, MONTH, context_left, context_remaining, model_label
 from tools.cli_agent_bridge import sessions, pending
 
 
 def hermes_cli_open(proc_root=Path('/proc')):
     """Detect the local interactive launcher, excluding gateways and helpers."""
-    launcher = str(Path.home()/'.hermes/hermes-agent/hermes')
-    for process in proc_root.glob('[0-9]*'):
-        try:
-            args = process.joinpath('cmdline').read_bytes().decode().split('\0')
-            stat = process.joinpath('stat').read_text().rsplit(')', 1)[1].split()
-            if launcher in args[:2] and int(stat[4]) != 0:
-                return True
-        except (OSError, ValueError, IndexError, UnicodeError):
-            continue
-    return False
+    return 'hermes' in detect(proc_root)
+
+
+def displayed(live):
+    """The session an agent's keys show, and so the one a key press acts on."""
+    return max(live, key=lambda v: (v.get('active', False), v['updated']), default={})
 
 
 def claude_tokens(usage):
@@ -80,6 +77,10 @@ class AgentTelemetry:
                         stamp = datetime.fromisoformat(item['timestamp'].replace('Z', '+00:00')).timestamp()
                         record['latest'] = max(record['latest'], stamp)
                         record['session'] = item.get('sessionId') or record['session']
+                        identity = (item.get('attachment') or {}).get('identity') or {}
+                        if item.get('type') == 'attachment' and identity.get('modelId') and identity.get('marketingName'):
+                            # Claude's own name for the model; sessions without a statusline need it.
+                            record.setdefault('names', {})[identity['modelId']] = identity['marketingName']
                         message = item.get('message', {})
                         if item.get('type') != 'assistant' or not message.get('usage'):
                             continue
@@ -105,7 +106,8 @@ class AgentTelemetry:
                     messages[key] = value
                 if record['session'] == session:
                     session_messages[key] = value
-        model = max((r for r in self.files.values() if r['session'] == session), key=lambda r:r['latest'], default={}).get('model')
+        latest = max((r for r in self.files.values() if r['session'] == session), key=lambda r:r['latest'], default={})
+        model = latest.get('names', {}).get(latest.get('model'), latest.get('model'))
         return {'model': model, 'session': sum(v for _, v, _ in session_messages.values()) if session else None,
                 'output': sum(o for _, _, o in session_messages.values()), 'session_id': session,
                 'month': sum(v for t, v, _ in messages.values() if t >= now-MONTH) if messages else None}
@@ -139,7 +141,7 @@ class AgentTelemetry:
             if not self.presence:
                 time.sleep(delay)
 
-    def values(self, name):
+    def values(self, name, samples=None):
         with self.lock:
             data = self.data[name].copy()
         color = '#d97757' if name == 'claude' else '#0000f2'
@@ -147,12 +149,14 @@ class AgentTelemetry:
         presence = getattr(self, 'presence', None)
         offline = presence is not None and not presence.is_open(name)
         live = [] if offline else sessions(name)
-        current = max(live, key=lambda v: (v.get('active', False), v['updated']), default={})
+        current = displayed(live)
         waiting = any(p['agent'] == name for p in pending())
         active = any(v.get('active') for v in live)
         activity = 'WAITING' if waiting else 'ACTIVE' if active else 'IDLE' if live else 'OFFLINE'
         unlinked = name == 'hermes' and not live and (presence.is_open(name) if presence else hermes_cli_open())
-        if unlinked and not waiting:
+        desktop_only = name == 'claude' and not live and (
+            presence.is_open('claude_desktop') if presence else 'claude_desktop' in detect())
+        if (unlinked or desktop_only) and not waiting:
             activity = 'OPEN'
         speed = None
         if name == 'hermes':
@@ -174,6 +178,15 @@ class AgentTelemetry:
                 age = max(0, (time.time()-window['resets_at']+duration)/86400)
         remaining = current.get('context_remaining')
         context = f'{max(0, min(100, remaining)):.0f}%' if isinstance(remaining, (float, int)) else context_left(current.get('context_used'), current.get('context_limit'))
+        if samples is not None:
+            raw_context = remaining if isinstance(remaining, (int, float)) else context_remaining(current.get('context_used'), current.get('context_limit'))
+            # Use this session's activity, not another live session's busy flag.
+            busy = current.get('active') if not offline else None
+            graph_speed = speed if busy is True else 0 if busy is False else None
+            samples.update(speed=(graph_speed, current.get('session')),
+                           context=(raw_context if not offline else None, current.get('session')),
+                           session=(data.get('session') if not offline else None, data.get('session_id')),
+                           month=(data.get('month') if not offline else None, None))
         month = compact(data.get('month'))
         if data.get('month_lower_bound') and month != '—':
             month = '≥'+month
@@ -182,7 +195,8 @@ class AgentTelemetry:
             speed_detail = ('RESTART HERMES' if current and 'native_tps' not in current else
                             'NO API SAMPLES' if current and speed is None else 'HERMES · API AVG')
         return {
-            'activity': ('', activity, model_label(current.get('model') or data.get('model')), color),
+            'activity': ('', activity, 'DESKTOP · NO TELEMETRY' if desktop_only else
+                         model_label(current.get('model') or data.get('model')), color),
             'speed': ('TOKENS / SEC', (f'{speed:.0f}' if name == 'hermes' else f'{speed:.1f}') if speed is not None else '—', speed_detail, color),
             'session': ('SESSION TOKENS', compact(data.get('session')), 'CACHED · LOCAL' if offline else brand+' · LATEST LOCAL', color),
             'month': ('30-DAY TOKENS', month, 'CACHED · LOCAL' if offline else brand+' · LOCAL', color),

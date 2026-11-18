@@ -8,10 +8,10 @@ ROOT = Path(__file__).resolve().parents[1]
 OVERRIDES = ROOT/'opendeck-labels.json'
 
 # Kinds whose titles are the plugin's own: telemetry text is inside the rendered
-# image, and a battle key shows whichever
+# image, the theme key names the look it is on, and a battle key shows whichever
 # drivers are fighting. The sync must not treat any of those titles as a user
 # edit, or the app reports our own title back and pins it in the override file.
-DYNAMIC_KINDS = ('codex_telemetry', 'agent_telemetry', 'f1_battle')
+DYNAMIC_KINDS = ('codex_telemetry', 'agent_telemetry', 'theme', 'f1_battle')
 
 
 def read(path=OVERRIDES):

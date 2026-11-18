@@ -10,7 +10,12 @@ import math
 import uuid
 from types import SimpleNamespace
 
-ROOT = '/media/rspectre/Storage/workspace/streamdeck'
+# Installed copies receive a machine-local path; source imports resolve the checkout.
+from pathlib import Path
+import json
+_runtime = Path(__file__).with_name('runtime.json')
+ROOT = str(Path(json.loads(_runtime.read_text())['repo_root']) if _runtime.exists()
+           else Path(__file__).resolve().parents[2])
 spec = importlib.util.spec_from_file_location('opendeck_cli_bridge', ROOT+'/tools/cli_agent_bridge.py')
 bridge = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(bridge)
@@ -40,6 +45,24 @@ def ui_throughput(cli):
         return value if value is not None and math.isfinite(value) else None
     except (TypeError, ValueError, RuntimeError):
         return None
+
+
+def ui_context(cli):
+    """Read the native compressor view, also mirrored by gateway-backed CLIs.
+
+    Gateway API hooks run outside the interactive process. The CLI already
+    receives last-request usage and the resolved window in session.usage; no
+    second metadata lookup, guessed window, or conversation copy is needed.
+    """
+    compressor = getattr(getattr(cli, 'agent', None), 'context_compressor', None)
+    used = getattr(compressor, 'last_prompt_tokens', None)
+    limit = getattr(compressor, 'context_length', None)
+    def valid(value):
+        return isinstance(value, (int, float)) and not isinstance(value, bool) and math.isfinite(value)
+    return {
+        'context_used': used if valid(used) and used >= 0 else None,
+        'context_limit': limit if valid(limit) and limit > 0 else None,
+    }
 
 
 class QuestionMonitor:
@@ -99,12 +122,62 @@ class QuestionMonitor:
         app.loop.call_soon_threadsafe(apply)
 
 
+class ApprovalMonitor(QuestionMonitor):
+    """Observe builtin permission panels, including transport fallback prompts."""
+    @staticmethod
+    def signature(cli, state, app):
+        return (id(state), state.get('command'), state.get('description'),
+                tuple(state.get('choices') or []), state.get('selected'),
+                id(state.get('response_queue')), getattr(cli, '_approval_deadline', 0))
+
+    def tick(self, cli):
+        state = getattr(cli, '_approval_state', None)
+        app = getattr(cli, '_app', None)
+        deadline = getattr(cli, '_approval_deadline', 0)
+        if (not state or not app or not getattr(app, 'loop', None)
+                or deadline <= time.monotonic()
+                or not {'once', 'deny'}.issubset(state.get('choices') or [])):
+            self.clear()
+            return
+        key = self.signature(cli, state, app)
+        if key != self.key:
+            self.clear()
+            self.key, self.request = key, uuid.uuid4().hex
+        request = self.request
+        bridge.atomic(bridge.CACHE/'pending'/(request+'.json'), {
+            'request': request, 'agent': 'hermes', 'kind': 'native_approval',
+            'pid': os.getpid(), 'expires': time.time()+min(3, deadline-time.monotonic()),
+            'extended': False, 'allow_tool': False, 'title': 'Hermes permission'})
+        response = bridge.CACHE/'decisions'/(request+'.json')
+        result = bridge.read(response)
+        response.unlink(missing_ok=True)
+        if result.get('request') != request or result.get('decision') not in ('approve', 'deny'):
+            return
+        self.clear()
+
+        def apply():
+            current = getattr(cli, '_approval_state', None)
+            if (current is not state or self.signature(cli, current, app) != key
+                    or getattr(cli, '_approval_deadline', 0) <= time.monotonic()):
+                return
+            # Approve always means once, even if the UI highlights a wider grant.
+            choice = 'once' if result['decision'] == 'approve' else 'deny'
+            state['selected'] = state['choices'].index(choice)
+            cli._handle_approval_selection()
+        app.loop.call_soon_threadsafe(apply)
+
+
 def monitor_cli():
     # The host has no CLI idle hook. Find its live UI once, retain only a weak
     # reference, then read two fields; do not wrap or modify host methods.
     reference = None
     previous = None
     questions = QuestionMonitor()
+    approvals = ApprovalMonitor()
+    model_spec = importlib.util.spec_from_file_location('opendeck_model_dials', ROOT+'/tools/hermes_model_dials.py')
+    model_module = importlib.util.module_from_spec(model_spec)
+    model_spec.loader.exec_module(model_module)
+    models = model_module.ModelMonitor(bridge)
     while True:
         cli = reference() if reference else None
         if cli is None:
@@ -115,13 +188,20 @@ def monitor_cli():
         snapshot = ui_snapshot(cli) if cli is not None else None
         if cli is not None:
             questions.tick(cli)
+            approvals.tick(cli)
+            try:
+                models.tick(cli)
+            except Exception:
+                pass  # Model controls must never stop telemetry/approval monitoring.
         else:
             questions.clear()
+            approvals.clear()
         if snapshot:
             session, active = snapshot
             event = ('start' if active else 'stop') if snapshot != previous else 'heartbeat'
             publish('hermes', session, event, pid=os.getpid(), ui_active=active, ui_updated=time.time(),
-                    model=getattr(getattr(cli, 'agent', None), 'model', None), native_tps=ui_throughput(cli))
+                    model=getattr(getattr(cli, 'agent', None), 'model', None), native_tps=ui_throughput(cli),
+                    **ui_context(cli))
             previous = snapshot
         cli = None
         time.sleep(1 if reference else 3)

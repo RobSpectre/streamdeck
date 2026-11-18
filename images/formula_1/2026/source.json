@@ -91,6 +91,11 @@
     "VER": {
       "archive_asset": ".webpack/renderer/cd8660f79859a39bf5067e63bb35da33.png",
       "sha256": "5d874c9a37825c1591226f4a3e52096cab3b7512df0567428a6424b2f43aaeac"
+    },
+    "CAM": {
+      "derived_from": "CAM_haasf1team_2026.png",
+      "transform": "top square (0, 0, 1336, 1336), resized to 1000x1000 with Pillow LANCZOS for the existing battle renderer",
+      "sha256": "f0e9d1a7ffd16248dfc07afeb64865949d1715998a30a7e1bd0f1264fc580eb2"
     }
   },
   "requested_2025_portraits": {
@@ -107,6 +112,38 @@
       "team": "racingbulls",
       "archive_asset": ".webpack/renderer/e63a6824c4c5f73c352a074a6218bf3d.png",
       "sha256": "6ba4542b6316539738890cbc51c1a4396fa31be90d2a2fce324a1c246678c4a9"
+    }
+  },
+  "driver_update_2026_11_07": {
+    "version": "2.15.2",
+    "archive_sha256": "6188c36a0d4ddac0345921f7569c54e1cb6308f7bf78a2ec92af176d16be6ce4",
+    "mapping": ".webpack/renderer/capture/index.js: NC explicit 2026 driver/team entries",
+    "rea_inventory_evidence": "ev_b62a8bc7008bccfce63eb5aaef9fe3991bbf681036114bdb0f69750224034ed0",
+    "portraits": {
+      "HAD": {
+        "team": "redbullracing",
+        "archive_asset": ".webpack/renderer/1f39a06f3b8bbe9c582308f2aa21117e.png",
+        "sha256": "27d462ae464df4afaf7011ca70675c299993e4fdac2e37801751a74e2071762e",
+        "local_asset": "HAD_redbullracing_2026.png",
+        "key_view": "HAD_redbullracing_2026.svg",
+        "view": "top square of full-length portrait"
+      },
+      "LAW": {
+        "team": "racingbulls",
+        "archive_asset": ".webpack/renderer/fde488fdaac5bfd90e85a78d0a1febc7.png",
+        "sha256": "d74a5e7896a6f352df0979f55a9b572dacd78b9ba112e3e69dd21fe88ba05010",
+        "local_asset": "LAW_racingbulls_2026.png",
+        "key_view": "LAW_racingbulls_2026.svg",
+        "view": "top square of full-length portrait"
+      },
+      "CAM": {
+        "team": "haasf1team",
+        "archive_asset": ".webpack/renderer/83e502c3b78631945feeea7aec8db224.png",
+        "sha256": "a4ebc2b3088db1f4dff828d0e99f56431d3f9e2204176a29bc60cd23c8d1efb6",
+        "local_asset": "CAM_haasf1team_2026.png",
+        "key_view": "CAM_haasf1team_2026.svg",
+        "view": "top square of full-length portrait"
+      }
     }
   }
 }

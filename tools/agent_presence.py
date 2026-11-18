@@ -1,7 +1,22 @@
 """Shared, low-frequency presence checks and sleeping collector gates."""
+import os
 from pathlib import Path
 import threading
 import time
+
+from tools.cli_agent_bridge import desktop_session
+
+
+def hermes_cli(process, args):
+    """This user's Hermes: the legacy launcher, or its bundled runtime named hermes."""
+    home = Path.home()/'.hermes'
+    if str(home/'hermes-agent/hermes') in args[:2]:
+        return True
+    # Current launchers exec Hermes' bundled `python3 -I -c` bootstrap and main()
+    # sets comm. The Docker demo's Hermes has the same name and a terminal too;
+    # the kernel's executable path, which setproctitle cannot rewrite, keeps it out.
+    return (process.joinpath('comm').read_text().strip() == 'hermes'
+            and Path(os.readlink(process/'exe')).is_relative_to(home.resolve()))
 
 
 def detect(proc_root=Path('/proc')):
@@ -11,9 +26,16 @@ def detect(proc_root=Path('/proc')):
             args = process.joinpath('cmdline').read_bytes().decode().split('\0')
             stat = process.joinpath('stat').read_text().rsplit(')', 1)[1].split()
             names = [Path(a).name for a in args[:2]]
-            if int(stat[4]) and ('claude' in names or 'claude-code' in names):
+            # Desktop work can exist without a local Code worker. Keep app
+            # presence separate: it must not wake CLI collectors or grant hooks
+            # an interactive owner merely because the desktop is open.
+            if (process.joinpath('comm').read_text().strip() == 'claude-desktop'
+                    and os.readlink(process/'exe') == '/usr/lib/claude-desktop/claude-desktop'
+                    and not any('--type=' in arg for arg in args)):
+                present.add('claude_desktop')
+            if ('claude' in names or 'claude-code' in names) and (int(stat[4]) or desktop_session(process)):
                 present.add('claude')
-            if int(stat[4]) and str(Path.home()/'.hermes/hermes-agent/hermes') in args[:2]:
+            if int(stat[4]) and hermes_cli(process, args):
                 present.add('hermes')
         except (OSError, ValueError, IndexError, UnicodeError):
             continue

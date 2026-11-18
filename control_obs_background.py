@@ -24,6 +24,38 @@ def items(client):
     return client.get_scene_item_list('Loops').scene_items
 
 
+def toggle_exclusive(client, settings):
+    """Toggle a source and clear its explicit peers, including across scenes."""
+    group = settings['exclusive']
+    identities = [(entry['scene'], entry['source']) for entry in group]
+    identity = (settings['scene'], settings['source'])
+    if len(set(identities)) != len(identities) or identities.count(identity) != 1:
+        raise ValueError('Exclusive source group must contain unique sources and this key exactly once.')
+    scenes = {scene: client.get_scene_item_list(scene).scene_items for scene in {s for s, _ in identities}}
+    resolved = []
+    for scene, source in identities:
+        matching = [item for item in scenes[scene] if item['sourceName'] == source]
+        if len(matching) != 1:
+            raise ValueError(f'Expected exactly one {scene} source named {source!r}; found {len(matching)}.')
+        resolved.append((scene, matching[0]))
+    scene, target = resolved[identities.index(identity)]
+    enabled = not target['sceneItemEnabled']
+    # Enable the new source before hiding its peers to avoid a blank frame.
+    if enabled:
+        client.set_scene_item_enabled(scene, target['sceneItemId'], True)
+    for peer_scene, item in resolved:
+        if item['sceneItemEnabled'] and (peer_scene, item['sourceName']) != identity:
+            client.set_scene_item_enabled(peer_scene, item['sceneItemId'], False)
+    if not enabled:
+        client.set_scene_item_enabled(scene, target['sceneItemId'], False)
+    after = {scene: client.get_scene_item_list(scene).scene_items for scene in scenes}
+    for peer_scene, item in resolved:
+        retained = [i for i in after[peer_scene] if i['sceneItemId'] == item['sceneItemId']]
+        expected = enabled and (peer_scene, item['sourceName']) == identity
+        if len(retained) != 1 or retained[0]['sceneItemEnabled'] != expected:
+            raise RuntimeError('OBS did not retain the exclusive source selection; check visibility automation.')
+
+
 def select(client, name):
     before = items(client)
     matching = [i for i in before if i['sourceName'] == name]

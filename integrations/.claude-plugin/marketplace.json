@@ -1,0 +1,14 @@
+{
+  "name": "opendeck-workstation",
+  "description": "This workstation's OpenDeck integrations for Claude Code",
+  "owner": {
+    "name": "OpenDeck workstation"
+  },
+  "plugins": [
+    {
+      "name": "opendeck-telemetry",
+      "source": "./claude-opendeck",
+      "description": "Claude's context window and rate limits for the OpenDeck keys, in sessions without a status line"
+    }
+  ]
+}

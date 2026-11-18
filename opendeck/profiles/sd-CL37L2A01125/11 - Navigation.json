@@ -1,0 +1,643 @@
+{
+  "keys": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    {
+      "action": {
+        "name": "Multi Action",
+        "uuid": "opendeck.multiaction",
+        "plugin": "opendeck",
+        "icon": "opendeck/multi-action.png",
+        "property_inspector": "",
+        "states": [
+          {
+            "image": ""
+          }
+        ],
+        "controllers": [
+          "Keypad"
+        ],
+        "supported_in_multi_actions": false,
+        "disable_automatic_states": false
+      },
+      "context": "Keypad.24.0",
+      "states": [
+        {
+          "image": "images/hackparty/ad8191f952c0f7bb91aa5ef2a59b84706589070222440a876ac4300dd0afe13b.svg",
+          "text": "Broadcast",
+          "show": true,
+          "colour": "#b8c4d4",
+          "background_colour": "#10141b",
+          "alignment": "bottom",
+          "family": "DejaVu Sans",
+          "size": 11
+        }
+      ],
+      "current_state": 0,
+      "settings": {
+        "delays": [
+          0,
+          0
+        ],
+        "_label_id": "navigation/open/0",
+        "_label_defaults": [
+          "Broadcast"
+        ],
+        "_label_mode": "shared"
+      },
+      "children": [
+        {
+          "action": {
+            "name": "Switch Profile",
+            "uuid": "com.amansprojects.starterpack.switchprofile",
+            "plugin": "com.amansprojects.starterpack.sdPlugin",
+            "icon": "plugins/com.amansprojects.starterpack.sdPlugin/icons/switchProfile.png",
+            "property_inspector": "plugins/com.amansprojects.starterpack.sdPlugin/propertyInspector/switchProfile.html",
+            "states": [
+              {
+                "image": ""
+              }
+            ],
+            "controllers": [
+              "Keypad"
+            ],
+            "supported_in_multi_actions": true,
+            "disable_automatic_states": false
+          },
+          "context": "Keypad.24.1",
+          "states": [
+            {
+              "image": "images/hackparty/ad8191f952c0f7bb91aa5ef2a59b84706589070222440a876ac4300dd0afe13b.svg",
+              "text": "Broadcast",
+              "show": true,
+              "colour": "#b8c4d4",
+              "background_colour": "#10141b",
+              "alignment": "bottom",
+              "family": "DejaVu Sans",
+              "size": 11
+            }
+          ],
+          "current_state": 0,
+          "settings": {
+            "device": "sd-AD4MA61312Z98B",
+            "profile": "01 - broadcast"
+          },
+          "children": null
+        },
+        {
+          "action": {
+            "name": "Switch Profile",
+            "uuid": "com.amansprojects.starterpack.switchprofile",
+            "plugin": "com.amansprojects.starterpack.sdPlugin",
+            "icon": "plugins/com.amansprojects.starterpack.sdPlugin/icons/switchProfile.png",
+            "property_inspector": "plugins/com.amansprojects.starterpack.sdPlugin/propertyInspector/switchProfile.html",
+            "states": [
+              {
+                "image": ""
+              }
+            ],
+            "controllers": [
+              "Keypad"
+            ],
+            "supported_in_multi_actions": true,
+            "disable_automatic_states": false
+          },
+          "context": "Keypad.24.2",
+          "states": [
+            {
+              "image": "images/hackparty/ad8191f952c0f7bb91aa5ef2a59b84706589070222440a876ac4300dd0afe13b.svg",
+              "text": "Broadcast",
+              "show": true,
+              "colour": "#b8c4d4",
+              "background_colour": "#10141b",
+              "alignment": "bottom",
+              "family": "DejaVu Sans",
+              "size": 11
+            }
+          ],
+          "current_state": 0,
+          "settings": {
+            "device": "sd-CL37L2A01125",
+            "profile": "01 - broadcast"
+          },
+          "children": null
+        }
+      ]
+    },
+    {
+      "action": {
+        "name": "Multi Action",
+        "uuid": "opendeck.multiaction",
+        "plugin": "opendeck",
+        "icon": "opendeck/multi-action.png",
+        "property_inspector": "",
+        "states": [
+          {
+            "image": ""
+          }
+        ],
+        "controllers": [
+          "Keypad"
+        ],
+        "supported_in_multi_actions": false,
+        "disable_automatic_states": false
+      },
+      "context": "Keypad.25.0",
+      "states": [
+        {
+          "image": "images/hackparty/448b6e35b436abead3ec6a90e26b699ab13481898556772f046f13d94631c8d5.svg",
+          "text": "Soundboard",
+          "show": true,
+          "colour": "#b8c4d4",
+          "background_colour": "#10141b",
+          "alignment": "bottom",
+          "family": "DejaVu Sans",
+          "size": 11
+        }
+      ],
+      "current_state": 0,
+      "settings": {
+        "delays": [
+          0,
+          0
+        ],
+        "_label_id": "navigation/open/1",
+        "_label_defaults": [
+          "Soundboard"
+        ],
+        "_label_mode": "shared"
+      },
+      "children": [
+        {
+          "action": {
+            "name": "Switch Profile",
+            "uuid": "com.amansprojects.starterpack.switchprofile",
+            "plugin": "com.amansprojects.starterpack.sdPlugin",
+            "icon": "plugins/com.amansprojects.starterpack.sdPlugin/icons/switchProfile.png",
+            "property_inspector": "plugins/com.amansprojects.starterpack.sdPlugin/propertyInspector/switchProfile.html",
+            "states": [
+              {
+                "image": ""
+              }
+            ],
+            "controllers": [
+              "Keypad"
+            ],
+            "supported_in_multi_actions": true,
+            "disable_automatic_states": false
+          },
+          "context": "Keypad.25.1",
+          "states": [
+            {
+              "image": "images/hackparty/448b6e35b436abead3ec6a90e26b699ab13481898556772f046f13d94631c8d5.svg",
+              "text": "Soundboard",
+              "show": true,
+              "colour": "#b8c4d4",
+              "background_colour": "#10141b",
+              "alignment": "bottom",
+              "family": "DejaVu Sans",
+              "size": 11
+            }
+          ],
+          "current_state": 0,
+          "settings": {
+            "device": "sd-AD4MA61312Z98B",
+            "profile": "02 - soundboard"
+          },
+          "children": null
+        },
+        {
+          "action": {
+            "name": "Switch Profile",
+            "uuid": "com.amansprojects.starterpack.switchprofile",
+            "plugin": "com.amansprojects.starterpack.sdPlugin",
+            "icon": "plugins/com.amansprojects.starterpack.sdPlugin/icons/switchProfile.png",
+            "property_inspector": "plugins/com.amansprojects.starterpack.sdPlugin/propertyInspector/switchProfile.html",
+            "states": [
+              {
+                "image": ""
+              }
+            ],
+            "controllers": [
+              "Keypad"
+            ],
+            "supported_in_multi_actions": true,
+            "disable_automatic_states": false
+          },
+          "context": "Keypad.25.2",
+          "states": [
+            {
+              "image": "images/hackparty/448b6e35b436abead3ec6a90e26b699ab13481898556772f046f13d94631c8d5.svg",
+              "text": "Soundboard",
+              "show": true,
+              "colour": "#b8c4d4",
+              "background_colour": "#10141b",
+              "alignment": "bottom",
+              "family": "DejaVu Sans",
+              "size": 11
+            }
+          ],
+          "current_state": 0,
+          "settings": {
+            "device": "sd-CL37L2A01125",
+            "profile": "02 - soundboard"
+          },
+          "children": null
+        }
+      ]
+    },
+    {
+      "action": {
+        "name": "Multi Action",
+        "uuid": "opendeck.multiaction",
+        "plugin": "opendeck",
+        "icon": "opendeck/multi-action.png",
+        "property_inspector": "",
+        "states": [
+          {
+            "image": ""
+          }
+        ],
+        "controllers": [
+          "Keypad"
+        ],
+        "supported_in_multi_actions": false,
+        "disable_automatic_states": false
+      },
+      "context": "Keypad.26.0",
+      "states": [
+        {
+          "image": "images/hackparty/c75cb63e97b98f5e5f153d87f70728fe1916ddf3c81bb2868df488becdedd7b7.svg",
+          "text": "Vibecoding",
+          "show": true,
+          "colour": "#b8c4d4",
+          "background_colour": "#10141b",
+          "alignment": "bottom",
+          "family": "DejaVu Sans",
+          "size": 11
+        }
+      ],
+      "current_state": 0,
+      "settings": {
+        "delays": [
+          0,
+          0
+        ],
+        "_label_id": "navigation/open/2",
+        "_label_defaults": [
+          "Vibecoding"
+        ],
+        "_label_mode": "shared"
+      },
+      "children": [
+        {
+          "action": {
+            "name": "Switch Profile",
+            "uuid": "com.amansprojects.starterpack.switchprofile",
+            "plugin": "com.amansprojects.starterpack.sdPlugin",
+            "icon": "plugins/com.amansprojects.starterpack.sdPlugin/icons/switchProfile.png",
+            "property_inspector": "plugins/com.amansprojects.starterpack.sdPlugin/propertyInspector/switchProfile.html",
+            "states": [
+              {
+                "image": ""
+              }
+            ],
+            "controllers": [
+              "Keypad"
+            ],
+            "supported_in_multi_actions": true,
+            "disable_automatic_states": false
+          },
+          "context": "Keypad.26.1",
+          "states": [
+            {
+              "image": "images/hackparty/c75cb63e97b98f5e5f153d87f70728fe1916ddf3c81bb2868df488becdedd7b7.svg",
+              "text": "Vibecoding",
+              "show": true,
+              "colour": "#b8c4d4",
+              "background_colour": "#10141b",
+              "alignment": "bottom",
+              "family": "DejaVu Sans",
+              "size": 11
+            }
+          ],
+          "current_state": 0,
+          "settings": {
+            "device": "sd-AD4MA61312Z98B",
+            "profile": "03 - Vibecoding"
+          },
+          "children": null
+        },
+        {
+          "action": {
+            "name": "Switch Profile",
+            "uuid": "com.amansprojects.starterpack.switchprofile",
+            "plugin": "com.amansprojects.starterpack.sdPlugin",
+            "icon": "plugins/com.amansprojects.starterpack.sdPlugin/icons/switchProfile.png",
+            "property_inspector": "plugins/com.amansprojects.starterpack.sdPlugin/propertyInspector/switchProfile.html",
+            "states": [
+              {
+                "image": ""
+              }
+            ],
+            "controllers": [
+              "Keypad"
+            ],
+            "supported_in_multi_actions": true,
+            "disable_automatic_states": false
+          },
+          "context": "Keypad.26.2",
+          "states": [
+            {
+              "image": "images/hackparty/c75cb63e97b98f5e5f153d87f70728fe1916ddf3c81bb2868df488becdedd7b7.svg",
+              "text": "Vibecoding",
+              "show": true,
+              "colour": "#b8c4d4",
+              "background_colour": "#10141b",
+              "alignment": "bottom",
+              "family": "DejaVu Sans",
+              "size": 11
+            }
+          ],
+          "current_state": 0,
+          "settings": {
+            "device": "sd-CL37L2A01125",
+            "profile": "03 - Vibecoding"
+          },
+          "children": null
+        }
+      ]
+    },
+    {
+      "action": {
+        "name": "Multi Action",
+        "uuid": "opendeck.multiaction",
+        "plugin": "opendeck",
+        "icon": "opendeck/multi-action.png",
+        "property_inspector": "",
+        "states": [
+          {
+            "image": ""
+          }
+        ],
+        "controllers": [
+          "Keypad"
+        ],
+        "supported_in_multi_actions": false,
+        "disable_automatic_states": false
+      },
+      "context": "Keypad.27.0",
+      "states": [
+        {
+          "image": "images/hackparty/cba84aaa3b418930398d582d0950c662767d28e8118e891e8a9b65620992d155.svg",
+          "text": "Backgrounds",
+          "show": true,
+          "colour": "#b8c4d4",
+          "background_colour": "#10141b",
+          "alignment": "bottom",
+          "family": "DejaVu Sans",
+          "size": 11
+        }
+      ],
+      "current_state": 0,
+      "settings": {
+        "delays": [
+          0,
+          0
+        ],
+        "_label_id": "navigation/open/3",
+        "_label_defaults": [
+          "Backgrounds"
+        ],
+        "_label_mode": "shared"
+      },
+      "children": [
+        {
+          "action": {
+            "name": "Switch Profile",
+            "uuid": "com.amansprojects.starterpack.switchprofile",
+            "plugin": "com.amansprojects.starterpack.sdPlugin",
+            "icon": "plugins/com.amansprojects.starterpack.sdPlugin/icons/switchProfile.png",
+            "property_inspector": "plugins/com.amansprojects.starterpack.sdPlugin/propertyInspector/switchProfile.html",
+            "states": [
+              {
+                "image": ""
+              }
+            ],
+            "controllers": [
+              "Keypad"
+            ],
+            "supported_in_multi_actions": true,
+            "disable_automatic_states": false
+          },
+          "context": "Keypad.27.1",
+          "states": [
+            {
+              "image": "images/hackparty/cba84aaa3b418930398d582d0950c662767d28e8118e891e8a9b65620992d155.svg",
+              "text": "Backgrounds",
+              "show": true,
+              "colour": "#b8c4d4",
+              "background_colour": "#10141b",
+              "alignment": "bottom",
+              "family": "DejaVu Sans",
+              "size": 11
+            }
+          ],
+          "current_state": 0,
+          "settings": {
+            "device": "sd-AD4MA61312Z98B",
+            "profile": "04 - Background Selection"
+          },
+          "children": null
+        },
+        {
+          "action": {
+            "name": "Switch Profile",
+            "uuid": "com.amansprojects.starterpack.switchprofile",
+            "plugin": "com.amansprojects.starterpack.sdPlugin",
+            "icon": "plugins/com.amansprojects.starterpack.sdPlugin/icons/switchProfile.png",
+            "property_inspector": "plugins/com.amansprojects.starterpack.sdPlugin/propertyInspector/switchProfile.html",
+            "states": [
+              {
+                "image": ""
+              }
+            ],
+            "controllers": [
+              "Keypad"
+            ],
+            "supported_in_multi_actions": true,
+            "disable_automatic_states": false
+          },
+          "context": "Keypad.27.2",
+          "states": [
+            {
+              "image": "images/hackparty/cba84aaa3b418930398d582d0950c662767d28e8118e891e8a9b65620992d155.svg",
+              "text": "Backgrounds",
+              "show": true,
+              "colour": "#b8c4d4",
+              "background_colour": "#10141b",
+              "alignment": "bottom",
+              "family": "DejaVu Sans",
+              "size": 11
+            }
+          ],
+          "current_state": 0,
+          "settings": {
+            "device": "sd-CL37L2A01125",
+            "profile": "04 - Background Selection"
+          },
+          "children": null
+        }
+      ]
+    },
+    {
+      "action": {
+        "name": "Multi Action",
+        "uuid": "opendeck.multiaction",
+        "plugin": "opendeck",
+        "icon": "opendeck/multi-action.png",
+        "property_inspector": "",
+        "states": [
+          {
+            "image": ""
+          }
+        ],
+        "controllers": [
+          "Keypad"
+        ],
+        "supported_in_multi_actions": false,
+        "disable_automatic_states": false
+      },
+      "context": "Keypad.28.0",
+      "states": [
+        {
+          "image": "images/hackparty/194cc893ba5ebce840e9189372af05b25ceeae1482db50d25059ef300d58fb40.svg",
+          "text": "Formula 1",
+          "show": true,
+          "colour": "#b8c4d4",
+          "background_colour": "#10141b",
+          "alignment": "bottom",
+          "family": "DejaVu Sans",
+          "size": 11
+        }
+      ],
+      "current_state": 0,
+      "settings": {
+        "delays": [
+          0,
+          0
+        ],
+        "_label_id": "navigation/open/4",
+        "_label_defaults": [
+          "Formula 1"
+        ],
+        "_label_mode": "shared"
+      },
+      "children": [
+        {
+          "action": {
+            "name": "Switch Profile",
+            "uuid": "com.amansprojects.starterpack.switchprofile",
+            "plugin": "com.amansprojects.starterpack.sdPlugin",
+            "icon": "plugins/com.amansprojects.starterpack.sdPlugin/icons/switchProfile.png",
+            "property_inspector": "plugins/com.amansprojects.starterpack.sdPlugin/propertyInspector/switchProfile.html",
+            "states": [
+              {
+                "image": ""
+              }
+            ],
+            "controllers": [
+              "Keypad"
+            ],
+            "supported_in_multi_actions": true,
+            "disable_automatic_states": false
+          },
+          "context": "Keypad.28.1",
+          "states": [
+            {
+              "image": "images/hackparty/194cc893ba5ebce840e9189372af05b25ceeae1482db50d25059ef300d58fb40.svg",
+              "text": "Formula 1",
+              "show": true,
+              "colour": "#b8c4d4",
+              "background_colour": "#10141b",
+              "alignment": "bottom",
+              "family": "DejaVu Sans",
+              "size": 11
+            }
+          ],
+          "current_state": 0,
+          "settings": {
+            "device": "sd-AD4MA61312Z98B",
+            "profile": "05 - Formula 1"
+          },
+          "children": null
+        },
+        {
+          "action": {
+            "name": "Switch Profile",
+            "uuid": "com.amansprojects.starterpack.switchprofile",
+            "plugin": "com.amansprojects.starterpack.sdPlugin",
+            "icon": "plugins/com.amansprojects.starterpack.sdPlugin/icons/switchProfile.png",
+            "property_inspector": "plugins/com.amansprojects.starterpack.sdPlugin/propertyInspector/switchProfile.html",
+            "states": [
+              {
+                "image": ""
+              }
+            ],
+            "controllers": [
+              "Keypad"
+            ],
+            "supported_in_multi_actions": true,
+            "disable_automatic_states": false
+          },
+          "context": "Keypad.28.2",
+          "states": [
+            {
+              "image": "images/hackparty/194cc893ba5ebce840e9189372af05b25ceeae1482db50d25059ef300d58fb40.svg",
+              "text": "Formula 1",
+              "show": true,
+              "colour": "#b8c4d4",
+              "background_colour": "#10141b",
+              "alignment": "bottom",
+              "family": "DejaVu Sans",
+              "size": 11
+            }
+          ],
+          "current_state": 0,
+          "settings": {
+            "device": "sd-CL37L2A01125",
+            "profile": "05 - Formula 1"
+          },
+          "children": null
+        }
+      ]
+    },
+    null,
+    null,
+    null
+  ],
+  "sliders": [],
+  "infobars": []
+}

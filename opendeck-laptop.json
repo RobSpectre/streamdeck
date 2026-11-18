@@ -1,0 +1,886 @@
+{
+  "devices": {
+    "AD4MA61312Z98B": {
+      "buttons": {
+        "0": {
+          "0": {
+            "state": 0,
+            "label_id": "navigation/back/0",
+            "states": {
+              "0": {
+                "text": "Back",
+                "icon": "images/fontawesome/angle-left.png",
+                "switch_page": 11,
+                "text_vertical_align": "top"
+              }
+            }
+          },
+          "1": {},
+          "2": {},
+          "3": {},
+          "4": {},
+          "5": {},
+          "6": {},
+          "7": {},
+          "8": {},
+          "9": {},
+          "10": {},
+          "11": {},
+          "12": {},
+          "13": {},
+          "14": {},
+          "15": {},
+          "16": {},
+          "17": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "Play",
+                "icon": "images/controls/suno-play-ready.svg",
+                "text_vertical_align": "top"
+              }
+            },
+            "live_control": {
+              "kind": "suno_media",
+              "id": "suno:play",
+              "action": "play"
+            },
+            "status_icons": [
+              "images/controls/suno-play-ready.svg",
+              "images/controls/suno-play-active.svg",
+              "images/controls/suno-play-unknown.svg"
+            ],
+            "label_id": "c79ce17c-52c0-4d31-8f0c-5878a34a0d8b"
+          },
+          "18": {},
+          "19": {},
+          "20": {},
+          "21": {},
+          "22": {},
+          "23": {},
+          "24": {},
+          "25": {},
+          "26": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "Next",
+                "icon": "images/controls/suno-next-ready.svg",
+                "text_vertical_align": "top"
+              }
+            },
+            "live_control": {
+              "kind": "suno_media",
+              "id": "suno:next",
+              "action": "next"
+            },
+            "status_icons": [
+              "images/controls/suno-next-ready.svg",
+              "images/controls/suno-next-active.svg",
+              "images/controls/suno-next-unknown.svg"
+            ],
+            "label_id": "68e37b89-6448-4464-926c-e8e6bf4a4c02"
+          },
+          "27": {},
+          "28": {},
+          "29": {},
+          "30": {},
+          "31": {},
+          "32": {},
+          "33": {},
+          "34": {},
+          "35": {}
+        },
+        "2": {
+          "0": {
+            "state": 0,
+            "label_id": "navigation/back/2",
+            "states": {
+              "0": {
+                "text": "Back",
+                "icon": "images/fontawesome/angle-left.png",
+                "switch_page": 11,
+                "text_vertical_align": "top"
+              }
+            }
+          },
+          "1": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "TURN",
+                "icon": "images/controls/codex-telemetry-activity.png",
+                "text_vertical_align": "top"
+              }
+            },
+            "live_control": {
+              "kind": "codex_telemetry",
+              "id": "codex:activity",
+              "metric": "activity"
+            },
+            "status_icons": [
+              "images/controls/codex-telemetry-activity.png",
+              "images/controls/codex-telemetry-activity.png",
+              "images/controls/codex-telemetry-activity.png"
+            ],
+            "label_id": "CL37L2A01125/2/1"
+          },
+          "2": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "TOKENS / SEC",
+                "icon": "images/controls/codex-telemetry-speed.png",
+                "text_vertical_align": "top"
+              }
+            },
+            "live_control": {
+              "kind": "codex_telemetry",
+              "id": "codex:speed",
+              "metric": "speed"
+            },
+            "status_icons": [
+              "images/controls/codex-telemetry-speed.png",
+              "images/controls/codex-telemetry-speed.png",
+              "images/controls/codex-telemetry-speed.png"
+            ],
+            "label_id": "CL37L2A01125/2/2"
+          },
+          "3": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "CONTEXT LEFT",
+                "icon": "images/controls/codex-telemetry-context.png",
+                "text_vertical_align": "top"
+              }
+            },
+            "live_control": {
+              "kind": "codex_telemetry",
+              "id": "codex:context",
+              "metric": "context"
+            },
+            "status_icons": [
+              "images/controls/codex-telemetry-context.png",
+              "images/controls/codex-telemetry-context.png",
+              "images/controls/codex-telemetry-context.png"
+            ],
+            "label_id": "77e6fbb9-91c1-4f7e-8f86-14836bcd7e52"
+          },
+          "4": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "SESSION TOKENS",
+                "icon": "images/controls/codex-telemetry-session.png",
+                "text_vertical_align": "top"
+              }
+            },
+            "live_control": {
+              "kind": "codex_telemetry",
+              "id": "codex:session",
+              "metric": "session"
+            },
+            "status_icons": [
+              "images/controls/codex-telemetry-session.png",
+              "images/controls/codex-telemetry-session.png",
+              "images/controls/codex-telemetry-session.png"
+            ],
+            "label_id": "CL37L2A01125/2/4"
+          },
+          "5": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "30-DAY TOKENS",
+                "icon": "images/controls/codex-telemetry-month.png",
+                "text_vertical_align": "top"
+              }
+            },
+            "live_control": {
+              "kind": "codex_telemetry",
+              "id": "codex:month",
+              "metric": "month"
+            },
+            "status_icons": [
+              "images/controls/codex-telemetry-month.png",
+              "images/controls/codex-telemetry-month.png",
+              "images/controls/codex-telemetry-month.png"
+            ],
+            "label_id": "CL37L2A01125/2/5"
+          },
+          "6": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "QUOTA LEFT",
+                "icon": "images/controls/codex-telemetry-quota.png",
+                "text_vertical_align": "top"
+              }
+            },
+            "live_control": {
+              "kind": "codex_telemetry",
+              "id": "codex:quota",
+              "metric": "quota"
+            },
+            "status_icons": [
+              "images/controls/codex-telemetry-quota.png",
+              "images/controls/codex-telemetry-quota.png",
+              "images/controls/codex-telemetry-quota.png"
+            ],
+            "label_id": "CL37L2A01125/2/6"
+          },
+          "7": {},
+          "8": {},
+          "9": {},
+          "10": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "TURN",
+                "icon": "images/controls/claude-telemetry-activity.png",
+                "text_vertical_align": "top"
+              }
+            },
+            "live_control": {
+              "kind": "agent_telemetry",
+              "id": "claude:activity",
+              "agent": "claude",
+              "metric": "activity"
+            },
+            "status_icons": [
+              "images/controls/claude-telemetry-activity.png",
+              "images/controls/claude-telemetry-activity.png",
+              "images/controls/claude-telemetry-activity.png"
+            ],
+            "label_id": "CL37L2A01125/2/9"
+          },
+          "11": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "TOKENS / SEC",
+                "icon": "images/controls/claude-telemetry-speed.png",
+                "text_vertical_align": "top"
+              }
+            },
+            "live_control": {
+              "kind": "agent_telemetry",
+              "id": "claude:speed",
+              "agent": "claude",
+              "metric": "speed"
+            },
+            "status_icons": [
+              "images/controls/claude-telemetry-speed.png",
+              "images/controls/claude-telemetry-speed.png",
+              "images/controls/claude-telemetry-speed.png"
+            ],
+            "label_id": "CL37L2A01125/2/10"
+          },
+          "12": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "CONTEXT LEFT",
+                "icon": "images/controls/claude-telemetry-context.png",
+                "text_vertical_align": "top"
+              }
+            },
+            "live_control": {
+              "kind": "agent_telemetry",
+              "id": "claude:context",
+              "agent": "claude",
+              "metric": "context"
+            },
+            "status_icons": [
+              "images/controls/claude-telemetry-context.png",
+              "images/controls/claude-telemetry-context.png",
+              "images/controls/claude-telemetry-context.png"
+            ],
+            "label_id": "cf5d9430-c602-4d64-8c56-d3c21563171a"
+          },
+          "13": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "SESSION TOKENS",
+                "icon": "images/controls/claude-telemetry-session.png",
+                "text_vertical_align": "top"
+              }
+            },
+            "live_control": {
+              "kind": "agent_telemetry",
+              "id": "claude:session",
+              "agent": "claude",
+              "metric": "session"
+            },
+            "status_icons": [
+              "images/controls/claude-telemetry-session.png",
+              "images/controls/claude-telemetry-session.png",
+              "images/controls/claude-telemetry-session.png"
+            ],
+            "label_id": "CL37L2A01125/2/12"
+          },
+          "14": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "30-DAY TOKENS",
+                "icon": "images/controls/claude-telemetry-month.png",
+                "text_vertical_align": "top"
+              }
+            },
+            "live_control": {
+              "kind": "agent_telemetry",
+              "id": "claude:month",
+              "agent": "claude",
+              "metric": "month"
+            },
+            "status_icons": [
+              "images/controls/claude-telemetry-month.png",
+              "images/controls/claude-telemetry-month.png",
+              "images/controls/claude-telemetry-month.png"
+            ],
+            "label_id": "CL37L2A01125/2/13"
+          },
+          "15": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "QUOTA LEFT",
+                "icon": "images/controls/claude-telemetry-quota.png",
+                "text_vertical_align": "top"
+              }
+            },
+            "live_control": {
+              "kind": "agent_telemetry",
+              "id": "claude:quota",
+              "agent": "claude",
+              "metric": "quota"
+            },
+            "status_icons": [
+              "images/controls/claude-telemetry-quota.png",
+              "images/controls/claude-telemetry-quota.png",
+              "images/controls/claude-telemetry-quota.png"
+            ],
+            "label_id": "CL37L2A01125/2/14"
+          },
+          "16": {},
+          "17": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "Play",
+                "icon": "images/controls/suno-play-ready.svg",
+                "text_vertical_align": "top"
+              }
+            },
+            "live_control": {
+              "kind": "suno_media",
+              "id": "suno:play",
+              "action": "play"
+            },
+            "status_icons": [
+              "images/controls/suno-play-ready.svg",
+              "images/controls/suno-play-active.svg",
+              "images/controls/suno-play-unknown.svg"
+            ],
+            "label_id": "c79ce17c-52c0-4d31-8f0c-5878a34a0d8b"
+          },
+          "18": {},
+          "19": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "TURN",
+                "icon": "images/controls/hermes-telemetry-activity.png",
+                "text_vertical_align": "top"
+              }
+            },
+            "live_control": {
+              "kind": "agent_telemetry",
+              "id": "hermes:activity",
+              "agent": "hermes",
+              "metric": "activity"
+            },
+            "status_icons": [
+              "images/controls/hermes-telemetry-activity.png",
+              "images/controls/hermes-telemetry-activity.png",
+              "images/controls/hermes-telemetry-activity.png"
+            ],
+            "label_id": "CL37L2A01125/2/17"
+          },
+          "20": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "TOKENS / SEC",
+                "icon": "images/controls/hermes-telemetry-speed.png",
+                "text_vertical_align": "top"
+              }
+            },
+            "live_control": {
+              "kind": "agent_telemetry",
+              "id": "hermes:speed",
+              "agent": "hermes",
+              "metric": "speed"
+            },
+            "status_icons": [
+              "images/controls/hermes-telemetry-speed.png",
+              "images/controls/hermes-telemetry-speed.png",
+              "images/controls/hermes-telemetry-speed.png"
+            ],
+            "label_id": "CL37L2A01125/2/18"
+          },
+          "21": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "CONTEXT LEFT",
+                "icon": "images/controls/hermes-telemetry-context.png",
+                "text_vertical_align": "top"
+              }
+            },
+            "live_control": {
+              "kind": "agent_telemetry",
+              "id": "hermes:context",
+              "agent": "hermes",
+              "metric": "context"
+            },
+            "status_icons": [
+              "images/controls/hermes-telemetry-context.png",
+              "images/controls/hermes-telemetry-context.png",
+              "images/controls/hermes-telemetry-context.png"
+            ],
+            "label_id": "7d65a7ef-6f60-477a-b825-f6f7b6ed30c7"
+          },
+          "22": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "SESSION TOKENS",
+                "icon": "images/controls/hermes-telemetry-session.png",
+                "text_vertical_align": "top"
+              }
+            },
+            "live_control": {
+              "kind": "agent_telemetry",
+              "id": "hermes:session",
+              "agent": "hermes",
+              "metric": "session"
+            },
+            "status_icons": [
+              "images/controls/hermes-telemetry-session.png",
+              "images/controls/hermes-telemetry-session.png",
+              "images/controls/hermes-telemetry-session.png"
+            ],
+            "label_id": "CL37L2A01125/2/20"
+          },
+          "23": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "30-DAY TOKENS",
+                "icon": "images/controls/hermes-telemetry-month.png",
+                "text_vertical_align": "top"
+              }
+            },
+            "live_control": {
+              "kind": "agent_telemetry",
+              "id": "hermes:month",
+              "agent": "hermes",
+              "metric": "month"
+            },
+            "status_icons": [
+              "images/controls/hermes-telemetry-month.png",
+              "images/controls/hermes-telemetry-month.png",
+              "images/controls/hermes-telemetry-month.png"
+            ],
+            "label_id": "CL37L2A01125/2/21"
+          },
+          "24": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "QUOTA LEFT",
+                "icon": "images/controls/hermes-telemetry-quota.png",
+                "text_vertical_align": "top"
+              }
+            },
+            "live_control": {
+              "kind": "agent_telemetry",
+              "id": "hermes:quota",
+              "agent": "hermes",
+              "metric": "quota"
+            },
+            "status_icons": [
+              "images/controls/hermes-telemetry-quota.png",
+              "images/controls/hermes-telemetry-quota.png",
+              "images/controls/hermes-telemetry-quota.png"
+            ],
+            "label_id": "CL37L2A01125/2/22"
+          },
+          "25": {},
+          "26": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "Next",
+                "icon": "images/controls/suno-next-ready.svg",
+                "text_vertical_align": "top"
+              }
+            },
+            "live_control": {
+              "kind": "suno_media",
+              "id": "suno:next",
+              "action": "next"
+            },
+            "status_icons": [
+              "images/controls/suno-next-ready.svg",
+              "images/controls/suno-next-active.svg",
+              "images/controls/suno-next-unknown.svg"
+            ],
+            "label_id": "68e37b89-6448-4464-926c-e8e6bf4a4c02"
+          },
+          "27": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "Deny",
+                "icon": "images/controls/codex-deny.svg",
+                "keys": "",
+                "write": "",
+                "command": "python3 tools/codex_pedal.py deny",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "top",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            },
+            "live_control": {
+              "kind": "codex_response",
+              "id": "codex:deny",
+              "decision": "deny"
+            },
+            "status_icons": [
+              "images/controls/codex-deny-off.svg",
+              "images/controls/codex-deny.svg",
+              "images/controls/codex-deny-off.svg"
+            ],
+            "label_id": "CL37L2A01125/2/24"
+          },
+          "28": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "Approve",
+                "icon": "images/controls/codex-approve.svg",
+                "keys": "",
+                "write": "",
+                "command": "python3 tools/codex_pedal.py approve",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "top",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            },
+            "live_control": {
+              "kind": "codex_response",
+              "id": "codex:approve",
+              "decision": "approve"
+            },
+            "status_icons": [
+              "images/controls/codex-approve-off.svg",
+              "images/controls/codex-approve.svg",
+              "images/controls/codex-approve-off.svg"
+            ],
+            "label_id": "CL37L2A01125/2/25"
+          },
+          "29": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "Auto Session",
+                "icon": "images/controls/agent-auto-off.svg",
+                "keys": "",
+                "write": "",
+                "command": "python3 tools/codex_pedal.py approve",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "top",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            },
+            "live_control": {
+              "kind": "agent_action",
+              "id": "agent-auto",
+              "decision": "auto"
+            },
+            "status_icons": [
+              "images/controls/agent-auto-off.svg",
+              "images/controls/agent-auto-ready.svg",
+              "images/controls/agent-auto-on.svg"
+            ],
+            "label_id": "65661049-dc0f-4179-adac-03c090771cb1",
+            "status_labels": [
+              "Auto Session",
+              "Auto Session",
+              "Auto ON"
+            ]
+          },
+          "30": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "Allow Tool",
+                "icon": "images/controls/agent-allow-tool-off.svg",
+                "keys": "",
+                "write": "",
+                "command": "python3 tools/codex_pedal.py approve",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "top",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            },
+            "live_control": {
+              "kind": "agent_action",
+              "id": "agent-allow-tool",
+              "decision": "allow_tool"
+            },
+            "status_icons": [
+              "images/controls/agent-allow-tool-off.svg",
+              "images/controls/agent-allow-tool-ready.svg",
+              "images/controls/agent-allow-tool-on.svg"
+            ],
+            "label_id": "d5dfa291-f361-4c63-b4c1-cc52c9f02b6a",
+            "status_labels": [
+              "Allow Tool",
+              "Allow Tool",
+              "Allow Tool"
+            ]
+          },
+          "31": {
+            "state": 0,
+            "states": {
+              "0": {
+                "text": "Dictation",
+                "icon": "images/controls/codex-dictation-off.svg",
+                "keys": "",
+                "write": "",
+                "command": "python3 tools/codex_pedal.py approve",
+                "brightness_change": 0,
+                "switch_page": 0,
+                "switch_state": 0,
+                "text_vertical_align": "top",
+                "text_horizontal_align": "",
+                "font": "",
+                "font_color": "",
+                "font_size": 0,
+                "background_color": ""
+              }
+            },
+            "live_control": {
+              "kind": "codex_dictation",
+              "id": "codex-dictation"
+            },
+            "status_icons": [
+              "images/controls/codex-dictation-off.svg",
+              "images/controls/codex-dictation-ready.svg",
+              "images/controls/codex-dictation-on.svg"
+            ],
+            "label_id": "bea7848c-ab96-4900-8072-33c7931817f6",
+            "status_labels": [
+              "Dictation",
+              "Dictation",
+              "Dictation"
+            ]
+          },
+          "32": {},
+          "33": {},
+          "34": {},
+          "35": {}
+        },
+        "10": {
+          "0": {},
+          "1": {},
+          "2": {},
+          "3": {},
+          "4": {},
+          "5": {},
+          "6": {},
+          "7": {},
+          "8": {},
+          "9": {},
+          "10": {},
+          "11": {},
+          "12": {},
+          "13": {},
+          "14": {},
+          "15": {},
+          "16": {},
+          "17": {},
+          "18": {},
+          "19": {},
+          "20": {},
+          "21": {},
+          "22": {},
+          "23": {},
+          "24": {},
+          "25": {},
+          "26": {},
+          "27": {
+            "state": 0,
+            "label_id": "laptop/navigation/local",
+            "states": {
+              "0": {
+                "text": "Local Controls",
+                "switch_page": 1,
+                "font_size": 0,
+                "font_color": "#b8c4d4",
+                "background_color": "#10141b",
+                "font": "",
+                "text_vertical_align": "top",
+                "icon": "images/controls/navigation-broadcast-top.svg"
+              }
+            }
+          },
+          "28": {},
+          "29": {
+            "state": 0,
+            "label_id": "navigation/open/2",
+            "states": {
+              "0": {
+                "text": "Vibecoding",
+                "switch_page": 3,
+                "font_size": 0,
+                "font_color": "#b8c4d4",
+                "background_color": "#10141b",
+                "font": "",
+                "text_vertical_align": "top",
+                "icon": "images/controls/navigation-vibecoding-top.svg"
+              }
+            }
+          },
+          "30": {},
+          "31": {},
+          "32": {},
+          "33": {},
+          "34": {},
+          "35": {}
+        }
+      },
+      "page": 2,
+      "page_names": {
+        "0": "Laptop Local Controls",
+        "2": "Laptop Vibecoding",
+        "10": "Laptop Navigation"
+      },
+      "slider_count": 6,
+      "dials": {
+        "0": {
+          "0": {
+            "kind": "dial",
+            "id": "dial:pc_volume",
+            "control": "pc_volume",
+            "title": "PC OUTPUT"
+          },
+          "1": {
+            "kind": "dial",
+            "id": "dial:spotify",
+            "control": "spotify",
+            "title": "SPOTIFY"
+          },
+          "3": {
+            "kind": "dial",
+            "id": "dial:terminal_font",
+            "control": "terminal_font",
+            "title": "TERMINAL FONT"
+          },
+          "4": {
+            "kind": "dial",
+            "id": "dial:window_zoom",
+            "control": "window_zoom",
+            "title": "WINDOW ZOOM"
+          },
+          "5": {
+            "kind": "dial",
+            "id": "dial:mic_volume",
+            "control": "mic_volume",
+            "title": "MIC INPUT"
+          }
+        },
+        "2": {
+          "0": {
+            "kind": "dial",
+            "id": "dial:codex:model",
+            "control": "agent",
+            "agent": "codex",
+            "parameter": "model",
+            "title": "CODEX MODEL"
+          },
+          "1": {
+            "kind": "dial",
+            "id": "dial:codex:reasoning",
+            "control": "agent",
+            "agent": "codex",
+            "parameter": "reasoning",
+            "title": "CODEX REASONING"
+          },
+          "2": {
+            "kind": "dial",
+            "id": "dial:claude:model",
+            "control": "agent",
+            "agent": "claude",
+            "parameter": "model",
+            "title": "CLAUDE MODEL"
+          },
+          "3": {
+            "kind": "dial",
+            "id": "dial:claude:reasoning",
+            "control": "agent",
+            "agent": "claude",
+            "parameter": "reasoning",
+            "title": "CLAUDE REASONING"
+          },
+          "4": {
+            "kind": "dial",
+            "id": "dial:hermes:model",
+            "control": "agent",
+            "agent": "hermes",
+            "parameter": "model",
+            "title": "HERMES MODEL"
+          },
+          "5": {
+            "kind": "dial",
+            "id": "dial:hermes:reasoning",
+            "control": "agent",
+            "agent": "hermes",
+            "parameter": "reasoning",
+            "title": "HERMES REASONING"
+          }
+        }
+      }
+    }
+  }
+}

@@ -47,6 +47,23 @@
           "Image": "icon"
         }
       ]
+    },
+    {
+      "Name": "Agent dial",
+      "UUID": "party.hack.status.agentdial",
+      "Icon": "icon",
+      "Controllers": [
+        "Encoder"
+      ],
+      "DisableAutomaticStates": true,
+      "Encoder": {
+        "layout": "agent-selector.json"
+      },
+      "States": [
+        {
+          "Image": "icon"
+        }
+      ]
     }
   ]
 }

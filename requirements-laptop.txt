@@ -1,0 +1,4 @@
+# Coding, desktop controls and rendering. OBS/mixer/light/F1 packages are not needed.
+requests==2.34.2
+websocket-client==1.9.2
+Pillow==12.3.0

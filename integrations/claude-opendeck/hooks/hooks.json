@@ -1,0 +1,4 @@
+{
+  "description": "A session.measure hook writes the measured context window and rate limits to ~/.cache/opendeck-agents/claude-measure/<session>.json for the OpenDeck bridge; it observes only and never changes the session",
+  "modules": ["./register.ts"]
+}

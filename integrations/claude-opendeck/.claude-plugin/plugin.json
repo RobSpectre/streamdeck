@@ -1,0 +1,8 @@
+{
+  "name": "opendeck-telemetry",
+  "version": "0.2.0",
+  "description": "Hands Claude's own session.measure figures (context window fill and rate-limit windows, as the status line has them) to this workstation's OpenDeck keys, for sessions that run no status line, such as the desktop app's.",
+  "author": {
+    "name": "OpenDeck workstation"
+  }
+}

@@ -21,6 +21,24 @@ class AgentActionsTests(unittest.TestCase):
         self.assertEqual(message['params'],{'conversationId':'task','requestId':42,'decision':'acceptForSession'})
         self.assertEqual(message['targetClientId'],'owner')
 
+    def test_compaction_asks_the_owner_and_needs_its_confirmation(self):
+        a=self.attention();a.setting_messages={}
+        def confirm(sock,message):
+            event,result=a.setting_messages[message['requestId']]
+            result.update(ok=True);event.set()
+        with patch.object(a,'send',side_effect=confirm) as send:
+            a.compact_thread('task')
+        message=send.call_args.args[1]
+        self.assertEqual((message['method'],message['version'],message['targetClientId'],message['params']),
+                         ('thread-follower-compact-thread',1,'owner',{'conversationId':'task'}))
+        self.assertEqual(a.setting_messages,{})
+        with patch.object(a,'send',side_effect=lambda sock,message: a.setting_messages[message['requestId']][0].set()), \
+                self.assertRaises(RuntimeError):
+            a.compact_thread('task')
+        with patch.object(a,'send') as send, self.assertRaises(RuntimeError):
+            a.compact_thread('unfollowed')
+        send.assert_not_called()
+
     def test_ambiguous_tasks_and_questions_never_autoapprove(self):
         a=self.attention();a.states['other']=a.states['task']
         with patch.object(a,'send') as send:

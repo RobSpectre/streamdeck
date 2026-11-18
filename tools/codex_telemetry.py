@@ -11,10 +11,12 @@ import subprocess
 import threading
 import time
 import math
+import re
 from functools import lru_cache
 
 from PIL import Image, ImageDraw, ImageFont
 from tools.codex_attention import needs_input
+from tools.machine_config import codex_executable
 
 CODEX = Path.home()/'.codex'
 MONTH = 30 * 86400
@@ -41,9 +43,11 @@ def quota_window(limits, now):
     return max(0, min(100, 100-limiting['usedPercent'])), max(0, (now-start)/86400), limiting.get('windowDurationMins')
 
 
-def read_quota():
-    """Query account quota without creating a thread or redeeming a reset."""
-    proc = subprocess.Popen(['/usr/lib/chatgpt/resources/codex', 'app-server', '--stdio'],
+def app_server_read(method, params=None):
+    """Issue a read-only app-server request without creating a task."""
+    if method not in ('account/rateLimits/read', 'model/list'):
+        raise ValueError('Not a read-only catalog request')
+    proc = subprocess.Popen([codex_executable(), 'app-server', '--stdio'],
                             stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.DEVNULL)
     buffer = bytearray()
     def request(message):
@@ -73,7 +77,7 @@ def read_quota():
             'clientInfo': {'name': 'opendeck_telemetry', 'version': '1.0'}}})
         proc.stdin.write(b'{"method":"initialized"}\n')
         proc.stdin.flush()
-        return request({'id': 2, 'method': 'account/rateLimits/read'})
+        return request({'id': 2, 'method': method, **({'params': params} if params is not None else {})})
     finally:
         proc.terminate()
         try:
@@ -83,6 +87,10 @@ def read_quota():
             proc.wait()
         proc.stdin.close()
         proc.stdout.close()
+
+
+def read_quota():
+    return app_server_read('account/rateLimits/read')
 
 
 class RolloutUsage:
@@ -138,6 +146,12 @@ class RolloutUsage:
         if self.turn_start is None:
             return None
         return self.turn_output/max(1, (self.turn_end or now)-self.turn_start)
+
+
+def displayed_thread(states):
+    """The task the Codex keys show, and so the one a key press acts on."""
+    return max(states.items(), key=lambda item: (
+        item[1].get('threadRuntimeStatus', {}).get('type') == 'active', item[1].get('updatedAt', 0)), default=(None, {}))
 
 
 class Telemetry:
@@ -196,14 +210,13 @@ class Telemetry:
             if not self.presence:
                 time.sleep(delay)
 
-    def values(self):
+    def values(self, samples=None):
         now = time.time()
         connected, states = self.attention.snapshot()
         offline = self.presence is not None and not self.presence.is_open('codex')
         if offline:
             connected, states = False, {}
-        thread, current = max(states.items(), key=lambda item: (
-            item[1].get('threadRuntimeStatus', {}).get('type') == 'active', item[1].get('updatedAt', 0)), default=(None, {}))
+        thread, current = displayed_thread(states)
         active = any(s.get('threadRuntimeStatus', {}).get('type') == 'active' for s in states.values())
         waiting = connected and any(needs_input(s) for s in states.values())
         with self.lock:
@@ -214,6 +227,13 @@ class Telemetry:
         quota, days, duration = quota_window(limits, now)
         usage = current.get('latestTokenUsageInfo') or {}
         context = context_left(usage.get('last', {}).get('totalTokens'), usage.get('modelContextWindow'))
+        if samples is not None:
+            runtime = current.get('threadRuntimeStatus', {}).get('type') if connected and not offline else None
+            graph_speed = speed if runtime == 'active' else 0 if runtime == 'idle' else None
+            samples.update(speed=(graph_speed, thread),
+                           context=(context_remaining(usage.get('last', {}).get('totalTokens'), usage.get('modelContextWindow')), thread),
+                           session=(tokens if not offline else None, thread),
+                           month=(monthly if not offline else None, None))
         color = '#ffffff'
         return {
             'activity': ('', 'WAITING' if waiting else 'ACTIVE' if active else 'IDLE' if connected else 'OFFLINE', model_label(current.get('latestModel')), color),
@@ -227,9 +247,14 @@ class Telemetry:
 
 
 def context_left(used, limit):
-    if not isinstance(used, (int, float)) or not isinstance(limit, (int, float)) or limit <= 0:
-        return '—'
-    return f'{max(0, min(100, 100 * (1-used/limit))):.0f}%'
+    remaining = context_remaining(used, limit)
+    return '—' if remaining is None else f'{remaining:.0f}%'
+
+
+def context_remaining(used, limit):
+    if not isinstance(used, (int, float)) or not isinstance(limit, (int, float)) or not math.isfinite(used) or not math.isfinite(limit) or limit <= 0:
+        return None
+    return max(0, min(100, 100 * (1-used/limit)))
 
 
 def model_label(model):
@@ -240,6 +265,11 @@ def model_label(model):
         parts = name.split('-')
         return 'GPT-'+parts[1]+' '+ ' '.join(p.capitalize() for p in parts[2:])
     if name.startswith('claude-'):
+        # claude-opus-5-5 → Opus 5.5; a snapshot date is dropped, a 1M marker kept.
+        match = re.fullmatch(r'claude-([a-z]+)-(\d+)(?:-(\d{1,2}))?(?:-\d{8})?(\[1m\])?', name)
+        if match:
+            family, major, minor, wide = match.groups()
+            return family.capitalize()+' '+major+('.'+minor if minor else '')+(' (1M)' if wide else '')
         return name.replace('claude-', 'Claude ', 1).replace('-', ' ')
     return name.replace('_', ' ')
 
@@ -293,12 +323,46 @@ def animation_phase(value, now):
     return int(now*8) % 16 if telemetry_color(value) == '#f26672' else None
 
 
+def draw_history(draw, history, title, color):
+    valid = [n for n in history if n is not None and math.isfinite(n)]
+    if not valid:
+        return
+    lower = min(valid) if title in ('SESSION TOKENS', '30-DAY TOKENS') else 0
+    upper = 100 if title == 'CONTEXT LEFT' else max(valid)
+    if upper <= lower:
+        lower, upper = max(0, lower - 1), upper + 1
+    rgb = tuple(int(color[i:i+2], 16) for i in (1, 3, 5))
+    background = (16, 20, 27)
+    shade = lambda amount: tuple(round(b+(c-b)*amount) for b, c in zip(background, rgb))
+    segments, points = [], []
+    for index, number in enumerate(history):
+        if number is None or not math.isfinite(number):
+            if points:
+                segments.append(points)
+                points = []
+            continue
+        x = 11 + 122 * index / max(1, len(history)-1)
+        y = 100 - 55 * max(0, min(1, (number-lower)/(upper-lower)))
+        points.append((x, y))
+    if points:
+        segments.append(points)
+    for points in segments:
+        if len(points) > 1:
+            draw.polygon([(points[0][0], 100), *points, (points[-1][0], 100)], fill=shade(.18))
+            draw.line(points, fill=shade(.5), width=2)
+        else:
+            x, y = points[0]
+            draw.ellipse((x-1, y-1, x+1, y+1), fill=shade(.5))
+
+
 @lru_cache(maxsize=256)
-def render(value, phase=None):
+def render(value, phase=None, history=()):
     title, number, detail, _ = value
     color = telemetry_color(value)
     image = Image.new('RGB', (144, 144), '#10141b')
     draw = ImageDraw.Draw(image)
+    if history:
+        draw_history(draw, history, title, value[3])
     border, width = color, 2
     if color == '#f26672' and phase is not None:
         pulse = (1-math.cos(2*math.pi*phase/16))/2
@@ -308,10 +372,14 @@ def render(value, phase=None):
     font = '/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf'
     bold = '/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf'
     draw.text((72, 24), title, font=ImageFont.truetype(bold, 11), fill='#b8c4d4', anchor='mm')
+    if history:
+        draw.text((72, 37), '24 HOURS' if title == '30-DAY TOKENS' else '10 MINUTES',
+                  font=ImageFont.truetype(font, 8), fill='#8797aa', anchor='mm')
     size = 32
     while draw.textlength(number, font=ImageFont.truetype(bold, size)) > 124:
         size -= 1
-    draw.text((72, 40 if not title else 72), number, font=ImageFont.truetype(bold, size), fill=color, anchor='mm')
+    draw.text((72, 40 if not title else 72), number, font=ImageFont.truetype(bold, size), fill=color, anchor='mm',
+              stroke_width=1 if history else 0, stroke_fill='#10141b')
     if not title:
         lines, model_font, model_size = model_lines(draw, detail.upper(), bold)
         top = 96 - (len(lines)-1)*(model_size+3)/2

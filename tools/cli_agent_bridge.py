@@ -1,4 +1,5 @@
 """User-driven CLI approval dialogs and compact local telemetry snapshots."""
+from datetime import datetime
 import fcntl
 import hashlib
 import json
@@ -58,9 +59,39 @@ def publish(agent, session, event, **fields):
     return data
 
 
+def measured(value):
+    """Merge Claude's own session.measure figures, written by the OpenDeck mod
+    (integrations/claude-opendeck), when newer than the statusline's."""
+    session = str(value.get('session', ''))
+    if not re.fullmatch(r'[0-9a-f]{8}(-[0-9a-f]{4}){3}-[0-9a-f]{12}', session):
+        return value
+    data = read(CACHE/'claude-measure'/(session+'.json'))
+    if not isinstance(data.get('measured'), (int, float)) or data['measured'] <= value.get('quota_updated', 0):
+        return value
+    context = data.get('context') or {}
+    tokens, window, percent = context.get('tokens'), context.get('window'), context.get('percent')
+    if isinstance(tokens, (int, float)) and isinstance(window, (int, float)) and window > 0:
+        remaining = 100*(1-tokens/window)
+    else:
+        remaining = 100-percent if isinstance(percent, (int, float)) else None
+    limits = {}
+    for limit in data.get('rateLimits') or []:
+        try:
+            limits[limit['kind']] = {'used_percentage': float(limit['percentUsed']), 'resets_at':
+                                     datetime.fromisoformat(limit['resetsAt'].replace('Z', '+00:00')).timestamp()}
+        except (AttributeError, KeyError, TypeError, ValueError):
+            continue
+    value.update(context_remaining=remaining, rate_limits=limits, quota_updated=data['measured'])
+    if isinstance(data.get('model'), str) and data['model']:
+        value['model'] = data['model']
+    return value
+
+
 def sessions(agent):
     values = [read(p) for p in (CACHE/agent).glob('*.json')]
     values = [v for v in values if v and alive(v.get('pid'))]
+    if agent == 'claude':
+        values = [measured(v) for v in values]
     if agent == 'hermes':
         # /new and resumed conversations share a CLI process. Old sessions
         # must not keep the process active after its current session is idle.
@@ -145,7 +176,7 @@ def respond_focused(decision, window, properties):
     """Match the dialog's exact PID and title; never type into an agent terminal."""
     pid = re.search(r'_NET_WM_PID[^=]*=\s*(\d+)', properties)
     for item in pending():
-        if item.get('kind') == 'question':
+        if item.get('kind') in ('question', 'native_approval'):
             continue
         if decision in ('auto', 'allow_tool') and not item.get('extended'):
             continue
@@ -162,9 +193,10 @@ def respond_focused(decision, window, properties):
 
 
 def respond_question(decision):
-    """A physical response press can target one unambiguous native question."""
+    """A physical response press can target one unambiguous native panel."""
     items = pending()
-    if decision not in ('approve', 'deny') or len(items) != 1 or items[0].get('kind') != 'question':
+    if (decision not in ('approve', 'deny') or len(items) != 1
+            or items[0].get('kind') not in ('question', 'native_approval')):
         return False
     item = items[0]
     atomic(CACHE/'decisions'/(item['request']+'.json'),
@@ -186,10 +218,37 @@ def claude_owner():
     return os.getppid()
 
 
-def interactive_owner(pid):
+def desktop_session(process):
+    """Whether a terminal-less `claude` is a Code session inside the Claude desktop app.
+
+    `process` is its /proc/<pid> directory (a fake root in tests), so its parent is
+    `process.parent/<ppid>`. Read errors may propagate; callers count them as no.
+    This decides where the session's permission prompts go, not only presence.
+    """
+    # Both signals: the app's own CLI copy, launched by the app itself. SDK apps
+    # ship another copy, and the app's CLI spawning itself has a claude parent.
+    if not Path(os.readlink(process/'exe')).is_relative_to((Path.home()/'.config/Claude/claude-code').resolve()):
+        return False
+    ppid = process.joinpath('stat').read_text().rsplit(')', 1)[1].split()[1]
+    parent = process.parent/ppid
+    if parent.joinpath('comm').read_text().strip() == 'claude-desktop':
+        return True
+    # Desktop 3.6556.2 inserts this bundled helper before Code 2.1.308.
+    # Allow exactly this hop, not arbitrary descendants or a matching comm alone.
+    if Path(os.readlink(parent/'exe')) != Path('/usr/lib/claude-desktop/resources/disclaimer'):
+        return False
+    grandparent_pid = parent.joinpath('stat').read_text().rsplit(')', 1)[1].split()[1]
+    grandparent = process.parent/grandparent_pid
+    return (grandparent.joinpath('comm').read_text().strip() == 'claude-desktop'
+            and Path(os.readlink(grandparent/'exe')) == Path('/usr/lib/claude-desktop/claude-desktop'))
+
+
+def interactive_owner(pid, proc_root=Path('/proc')):
+    """A person drives this Claude: on a terminal, or in the desktop app."""
+    process = proc_root/str(pid)
     try:
-        stat = (Path('/proc')/str(pid)/'stat').read_text().rsplit(')', 1)[1].split()
-        return int(stat[4]) != 0
+        stat = process.joinpath('stat').read_text().rsplit(')', 1)[1].split()
+        return int(stat[4]) != 0 or desktop_session(process)
     except (OSError, ValueError, IndexError):
         return False
 
@@ -202,6 +261,7 @@ def claude_hook(payload, mode):
         return None if mode == 'status' else {}
     if mode == 'status':
         fields['model'] = (payload.get('model') or {}).get('display_name') or (payload.get('model') or {}).get('id')
+        fields['effort'] = (payload.get('effort') or {}).get('level') if isinstance(payload.get('effort'), dict) else None
         fields['rate_limits'] = payload.get('rate_limits', {})
         fields['context_remaining'] = (payload.get('context_window') or {}).get('remaining_percentage')
         fields['quota_updated'] = time.time()
@@ -210,6 +270,9 @@ def claude_hook(payload, mode):
         if previous.get('command'):
             subprocess.run(previous['command'], shell=True, input=json.dumps(payload), text=True, check=False)
         return None
+    if isinstance(payload.get('effort'), dict) and payload['effort'].get('level'):
+        # Stop and tool hooks carry the turn's effort; sessions without a statusline need it.
+        fields['effort'] = payload['effort']['level']
     kind = {'SessionStart': 'session', 'UserPromptSubmit': 'start', 'Stop': 'stop',
             'StopFailure': 'error', 'SessionEnd': 'end'}.get(event, 'update')
     if event == 'Notification' and payload.get('notification_type') == 'idle_prompt':

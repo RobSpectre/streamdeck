@@ -13,6 +13,43 @@ except ModuleNotFoundError:
 
 @unittest.skipIf(live is None, 'run with .venv/bin/python for live plugin tests')
 class StatusTests(unittest.TestCase):
+    def test_audio_view_buttons_select_and_reflect_the_same_dial_view(self):
+        from unittest.mock import Mock
+        c = live.Controls()
+        c.dials = live.Dials(Mock())
+        settings = [dict(kind='dial_view', id=v, view=v) for v in ('studio', 'television')]
+        self.assertEqual(c.snapshot(settings), {'studio': 1, 'television': 0})
+        c.activate(settings[1])
+        self.assertEqual(c.snapshot(settings), {'studio': 0, 'television': 1})
+        c.activate(settings[0])
+        self.assertEqual(c.dials.audio_view, 'studio')
+
+    def test_context_keys_compact_and_other_telemetry_keys_navigate(self):
+        from unittest.mock import call, patch
+        c = live.Controls()
+        c.codex = object()
+        with patch.object(live, 'compact_agent') as compact, patch.object(live, 'navigate_agent') as navigate:
+            c.activate({'kind': 'codex_telemetry', 'metric': 'context'})
+            c.activate({'kind': 'agent_telemetry', 'agent': 'hermes', 'metric': 'context'})
+            c.activate({'kind': 'agent_telemetry', 'agent': 'claude', 'metric': 'session'})
+        self.assertEqual(compact.call_args_list, [call('codex', c.codex), call('hermes', c.codex)])
+        navigate.assert_called_once_with('claude', 'session')
+
+    def test_capsule_feedback_and_activation(self):
+        from unittest.mock import Mock
+        c = live.Controls()
+        c.obs = Mock()
+        c.obs.get_scene_collection_list.return_value = SimpleNamespace(current_scene_collection_name='hack.party')
+        c.obs.get_input_settings.return_value = SimpleNamespace(input_kind='browser_source', input_settings={'css': ''})
+        s = dict(kind='chyron_capsule', id='capsule', agent='codex', capsule='model', source='Token Chyron - Codex')
+        self.assertEqual(c.snapshot([s]), {'capsule': 1})
+        c.activate(s)
+        args = c.obs.set_input_settings.call_args
+        c.obs.get_input_settings.return_value.input_settings = args.args[1]
+        self.assertEqual(c.snapshot([s]), {'capsule': 0})
+        c.obs.get_scene_collection_list.return_value.current_scene_collection_name = 'Other'
+        self.assertEqual(c.snapshot([s]), {'capsule': 2})
+
     def test_codex_buttons_only_respond_when_attention_is_active(self):
         from unittest.mock import patch
         c = live.Controls()
@@ -63,6 +100,16 @@ class StatusTests(unittest.TestCase):
         def broken(*args):raise OSError()
         c.light=broken
         self.assertEqual(c.snapshot([{'id':'Key','kind':'light','light':'Key'}]),{'Key':2})
+    def test_hermes_config_key_reports_and_opens_isolated_demo(self):
+        from unittest.mock import patch
+        from tools import hermes_config
+        settings = {'kind': 'hermes_config', 'id': 'hermes-config:mode'}
+        c = live.Controls()
+        with patch.object(hermes_config, 'state', return_value=2), \
+             patch.object(hermes_config, 'toggle') as toggle:
+            self.assertEqual(c.snapshot([settings]), {'hermes-config:mode': 2})
+            c.activate(settings)
+            toggle.assert_called_once_with()
     def test_chroma_switches_both_sources(self):
         c=live.Controls()
         class OBS:
@@ -73,47 +120,6 @@ class StatusTests(unittest.TestCase):
         c.obs=OBS()
         c.activate({'kind':'item','scene':'Face Camera','source':'with','complement':'without'})
         self.assertEqual(c.obs.calls,[('Face Camera',1,True),('Face Camera',2,False)])
-
-@unittest.skipIf(live is None, 'run with .venv/bin/python for live plugin tests')
-class EffectTests(unittest.TestCase):
-    def test_effect_pair_toggles_together_and_partial_state_turns_off(self):
-        c=live.Controls()
-        class OBS:
-            def __init__(self):
-                self.items={'Sound Effects':[{'sourceName':'Mario Win','sceneItemId':1,'sceneItemEnabled':False}], 'Scene Overlays':[{'sourceName':'Confetti','sceneItemId':6,'sceneItemEnabled':False}]}
-                self.calls=[]
-            def get_scene_collection_list(self):return SimpleNamespace(current_scene_collection_name='hack.party')
-            def get_scene_list(self):return SimpleNamespace(current_program_scene_name='Portrait')
-            def get_scene_item_list(self,name):return SimpleNamespace(scene_items=self.items[name])
-            def set_scene_item_enabled(self,scene,index,enabled):
-                self.calls.append((scene,index,enabled))
-                next(i for i in self.items[scene] if i['sceneItemId']==index)['sceneItemEnabled']=enabled
-        c.obs=OBS();s={'id':'effect:Winner','kind':'effect','targets':[{'scene':'Sound Effects','source':'Mario Win'},{'scene':'Scene Overlays','source':'Confetti'}]}
-        self.assertEqual(c.snapshot([s])[s['id']],0)
-        c.activate(s)
-        self.assertEqual(c.snapshot([s])[s['id']],1)
-        self.assertEqual(len(c.obs.calls),2)
-        c.obs.items['Sound Effects'][0]['sceneItemEnabled']=False
-        self.assertEqual(c.snapshot([s])[s['id']],1)
-        c.activate(s)
-        self.assertEqual(c.snapshot([s])[s['id']],0)
-        s['targets'].append({'scene':'Sound Effects','source':'Missing'})
-        calls=len(c.obs.calls)
-        with self.assertRaises(ValueError):c.activate(s)
-        self.assertEqual(len(c.obs.calls),calls)
-        self.assertEqual(c.snapshot([s])[s['id']],2)
-
-@unittest.skipIf(live is None, 'run with .venv/bin/python for live plugin tests')
-class BackgroundIndicatorTests(unittest.TestCase):
-    def test_selection_updates_all_indicators_and_repeat_stays_selected(self):
-        from test_obs_background import FakeOBS
-        c=live.Controls();c.obs=FakeOBS()
-        c.obs.get_scene_list=lambda: SimpleNamespace(current_program_scene_name='Portrait')
-        settings=[{'id':'background:'+n,'kind':'background','scene':'Loops','source':n} for n in ['Space Highway',"'Merica",'Mars']]
-        self.assertEqual(c.snapshot(settings),{'background:Space Highway':1,"background:'Merica":0,'background:Mars':0})
-        c.activate(settings[2])
-        self.assertEqual(c.snapshot(settings),{'background:Space Highway':0,"background:'Merica":0,'background:Mars':1})
-        calls=len(c.obs.calls);c.activate(settings[2]);self.assertEqual(len(c.obs.calls),calls)
 
 @unittest.skipIf(live is None, 'run with .venv/bin/python for live plugin tests')
 class BattleKeyTests(unittest.TestCase):
@@ -198,6 +204,120 @@ class BattleKeyTests(unittest.TestCase):
             fullscreen.assert_not_called()
         with self.assertRaises(live.F1BattleError):
             self.controls([], available=False).activate(self.SETTINGS[0])
+
+@unittest.skipIf(live is None, 'run with .venv/bin/python for live plugin tests')
+class EffectTests(unittest.TestCase):
+    def test_effect_pair_toggles_together_and_partial_state_turns_off(self):
+        c=live.Controls()
+        class OBS:
+            def __init__(self):
+                self.items={'Sound Effects':[{'sourceName':'Mario Win','sceneItemId':1,'sceneItemEnabled':False}], 'Scene Overlays':[{'sourceName':'Confetti','sceneItemId':6,'sceneItemEnabled':False}]}
+                self.calls=[]
+            def get_scene_collection_list(self):return SimpleNamespace(current_scene_collection_name='hack.party')
+            def get_scene_list(self):return SimpleNamespace(current_program_scene_name='Portrait')
+            def get_scene_item_list(self,name):return SimpleNamespace(scene_items=self.items[name])
+            def set_scene_item_enabled(self,scene,index,enabled):
+                self.calls.append((scene,index,enabled))
+                next(i for i in self.items[scene] if i['sceneItemId']==index)['sceneItemEnabled']=enabled
+        c.obs=OBS();s={'id':'effect:Winner','kind':'effect','targets':[{'scene':'Sound Effects','source':'Mario Win'},{'scene':'Scene Overlays','source':'Confetti'}]}
+        self.assertEqual(c.snapshot([s])[s['id']],0)
+        c.activate(s)
+        self.assertEqual(c.snapshot([s])[s['id']],1)
+        self.assertEqual(len(c.obs.calls),2)
+        c.obs.items['Sound Effects'][0]['sceneItemEnabled']=False
+        self.assertEqual(c.snapshot([s])[s['id']],1)
+        c.activate(s)
+        self.assertEqual(c.snapshot([s])[s['id']],0)
+        s['targets'].append({'scene':'Sound Effects','source':'Missing'})
+        calls=len(c.obs.calls)
+        with self.assertRaises(ValueError):c.activate(s)
+        self.assertEqual(len(c.obs.calls),calls)
+        self.assertEqual(c.snapshot([s])[s['id']],2)
+
+@unittest.skipIf(live is None, 'run with .venv/bin/python for live plugin tests')
+class BackgroundIndicatorTests(unittest.TestCase):
+    def test_exclusive_keys_follow_live_visibility_and_toggle_off(self):
+        from test_obs_background import ExclusiveOBS, EXCLUSIVE, exclusive_settings
+        c = live.Controls()
+        c.obs = ExclusiveOBS()
+        settings = [exclusive_settings(entry) for entry in EXCLUSIVE]
+        c.activate(settings[-1])
+        self.assertEqual(c.snapshot(settings), {s['id']: int(s == settings[-1]) for s in settings})
+        c.activate(settings[3])
+        self.assertEqual(c.snapshot(settings), {s['id']: int(s == settings[3]) for s in settings})
+        c.activate(settings[3])
+        self.assertEqual(c.snapshot(settings), {s['id']: 0 for s in settings})
+
+    def test_selection_updates_all_indicators_and_repeat_stays_selected(self):
+        from test_obs_background import FakeOBS
+        c=live.Controls();c.obs=FakeOBS()
+        c.obs.get_scene_list=lambda: SimpleNamespace(current_program_scene_name='Portrait')
+        settings=[{'id':'background:'+n,'kind':'background','scene':'Loops','source':n} for n in ['Space Highway',"'Merica",'Mars']]
+        self.assertEqual(c.snapshot(settings),{'background:Space Highway':1,"background:'Merica":0,'background:Mars':0})
+        c.activate(settings[2])
+        self.assertEqual(c.snapshot(settings),{'background:Space Highway':0,"background:'Merica":0,'background:Mars':1})
+        calls=len(c.obs.calls);c.activate(settings[2]);self.assertEqual(len(c.obs.calls),calls)
+
+@unittest.skipIf(live is None, 'run with .venv/bin/python for live plugin tests')
+class ThemeKeyTests(unittest.TestCase):
+    """The chyron theme key: it reports the look the sources are on, and cycles it."""
+
+    URL = 'http://127.0.0.1:8790/?agent=codex&bg=green&theme=nebius'
+
+    class OBS:
+        def __init__(self, url=None, fail=False):
+            # Not a default argument from the enclosing class body: class scopes are
+            # not visible to a nested class's defaults.
+            self.url = url or 'http://127.0.0.1:8790/?agent=codex&bg=green&theme=nebius'
+            self.fail = fail
+        def get_scene_collection_list(self):
+            return SimpleNamespace(current_scene_collection_name='hack.party')
+        def get_scene_list(self):
+            return SimpleNamespace(current_program_scene_name='Portrait')
+        def get_input_settings(self, source):
+            if self.fail:
+                raise ConnectionError('OBS is gone')
+            return SimpleNamespace(input_settings={'url': self.url})
+
+    SETTINGS = {'kind': 'theme', 'id': 'theme:cycle', 'source': 'Token Chyron - Codex',
+                'script': '/opt/chyrons/scripts/obs_chyrons.py', '_label_defaults': ['Theme']}
+
+    def test_the_state_and_the_look_come_from_the_source_url(self):
+        """The URL OBS is holding is the truth, so a look set by hand shows up too."""
+        c = live.Controls()
+        c.obs = self.OBS()
+        self.assertEqual(c.snapshot([self.SETTINGS]), {'theme:cycle': 1})
+        self.assertEqual(c.themes['theme:cycle'], 'nebius')
+
+    def test_a_source_asked_for_a_look_is_not_a_look(self):
+        c = live.Controls()
+        c.obs = self.OBS(url='http://127.0.0.1:8790/?agent=codex&bg=green')
+        self.assertEqual(c.snapshot([self.SETTINGS]), {'theme:cycle': 2})
+        self.assertEqual(c.themes['theme:cycle'], '')
+
+    def test_an_unreachable_obs_reads_as_unknown_rather_than_a_look(self):
+        c = live.Controls()
+        c.obs = self.OBS(fail=True)
+        self.assertEqual(c.snapshot([self.SETTINGS]), {'theme:cycle': 2})
+        self.assertIsNone(c.themes.get('theme:cycle'))
+
+    def test_the_press_runs_the_same_script_a_hand_run_would(self):
+        from unittest.mock import patch
+        c = live.Controls()
+        c.obs = self.OBS()
+        with patch.object(live.subprocess, 'run') as run:
+            c.activate(self.SETTINGS)
+        run.assert_called_once_with([live.sys.executable, self.SETTINGS['script'],
+                                     '--theme', 'next'], check=True, timeout=30)
+
+    def test_the_key_art_is_found_by_name_and_missing_art_is_not_an_error(self):
+        from unittest.mock import patch
+        with patch.object(live, 'ROOT', Path('/nonexistent')):
+            self.assertIsNone(live.theme_image('nebius'))
+        self.assertIsNone(live.theme_image(''))
+        art = live.theme_image('nebius')
+        if art is not None:                    # the overlay repo draws these
+            self.assertTrue(art.startswith('data:image/png;base64,'))
 
 
 @unittest.skipIf(live is None, 'run with .venv/bin/python for live plugin tests')
